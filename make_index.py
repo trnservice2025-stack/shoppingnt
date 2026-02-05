@@ -1,8 +1,8 @@
 import os
 from datetime import datetime
+from urllib.parse import quote
 
 BASE_DIR = os.getcwd()
-
 
 def make_index(current_dir, is_root=False):
     entries = []
@@ -19,7 +19,7 @@ def make_index(current_dir, is_root=False):
             mtime = os.path.getmtime(full_path)
             entries.append(("file", name, mtime))
 
-    # 파일은 수정일 최신순, 폴더는 이름순
+    # 폴더: 이름순 / 파일: 수정일 최신순
     dirs = sorted([e for e in entries if e[0] == "dir"], key=lambda x: x[1])
     files = sorted(
         [e for e in entries if e[0] == "file"],
@@ -66,16 +66,18 @@ li {{
 
     html += f"<h1>{title}</h1><ul>\n"
 
-    # 폴더 먼저
+    # 하위 폴더 링크 (한글 → URL 인코딩)
     for _, name, _ in dirs:
-        html += f'<li><a href="{name}/">{name}/</a></li>\n'
+        encoded = quote(name)
+        html += f'<li><a href="{encoded}/">{name}/</a></li>\n'
 
-    # 파일
+    # 파일 링크 (한글 → URL 인코딩)
     for _, name, mtime in files:
+        encoded = quote(name)
         date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
         html += f'''
 <li>
-  <a href="{name}">{name}</a>
+  <a href="{encoded}">{name}</a>
   <span class="date">{date_str}</span>
 </li>
 '''
@@ -91,7 +93,7 @@ li {{
 
     print(f"✅ index.html 생성: {current_dir}")
 
-    # 🔁 재귀: 하위 폴더에도 동일하게 실행
+    # 재귀: 하위 폴더에도 동일하게 적용
     for _, name, _ in dirs:
         make_index(os.path.join(current_dir, name))
 
