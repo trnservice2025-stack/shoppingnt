@@ -1,0 +1,55 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/424/planshop_view_pc1680151923739.jpg">
+
+  <a href="/customer/provide-coupon-multi?couponNo=202303276565&rUrl=/plan/planshop/swipeDetail/S00000000591" class="pday pday1"><img src="https://img.shoppingntmall.com/htmleditor/686/ss1678945587747.jpg"></a>
+  <a href="/customer/provide-coupon-multi?couponNo=202303276566&rUrl=/plan/planshop/swipeDetail/S00000000591" class="pday pday2"><img src="https://img.shoppingntmall.com/htmleditor/686/ss1678945587747.jpg"></a>
+  <a href="/customer/provide-coupon-multi?couponNo=202303276571&rUrl=/plan/planshop/swipeDetail/S00000000591" class="pday pday3"><img src="https://img.shoppingntmall.com/htmleditor/500/jj1678945601473.jpg"></a>
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+
+<script>
+  //특정시간
+  var Now = new Date(); //현재 날짜 및 시간
+  var nowY = Now.getFullYear(); //년
+  var nowM = Now.getMonth() + 1; //월
+  var nowD = Now.getDate(); //일
+  var nowH = Now.getHours(); //시
+  var nowB = Now.getMinutes(); //분   
+  function pluszero(time){
+    var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+    if(time.length < 2){ //2자리 보다 작으면
+      time = '0' + time; //숫자앞 0 붙임
+      return time; //값 내보냄
+    }else{
+      return time; //2자리면 값 내보냄
+    }
+  }
+  //만든 함수 적용 
+  nowM = pluszero(nowM); 
+  nowD = pluszero(nowD);
+  nowH = pluszero(nowH);
+  nowB = pluszero(nowB);   
+  var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+
+  $(".pday").hide();
+  if(202304031800 <= nowT ){ $(".pday").hide(); $(".pday1").show(); }
+  if(202304040600 <= nowT ){ $(".pday").hide();}
+
+  if(202304061800 <= nowT ){ $(".pday").hide(); $(".pday2").show(); }
+  if(202304070600 <= nowT ){ $(".pday").hide();}
+
+  if(202304080000 <= nowT ){ $(".pday").hide(); $(".pday3").show(); }
+  if(202304100000 <= nowT ){ $(".pday").hide();}
+</script>

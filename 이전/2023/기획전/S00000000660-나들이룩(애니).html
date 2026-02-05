@@ -1,0 +1,133 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base1" style="background:#dbf7e0;">
+      <img src="https://img.shoppingntmall.com/htmleditor/838/base1683164988339.png" class="base2">
+      <div class="bg"></div>
+      <img src="https://img.shoppingntmall.com/htmleditor/525/11683165347750.png" class="ani ani1">
+      <img src="https://img.shoppingntmall.com/htmleditor/294/21683165354972.png" class="ani ani2">
+      <img src="https://img.shoppingntmall.com/htmleditor/004/31683165362118.png" class="ani ani3">
+      <img src="https://img.shoppingntmall.com/htmleditor/674/41683165369679.png" class="ani ani4">
+
+  </div>
+  <script>
+    $(function(){
+      setTimeout(function(){ $('.base1').fadeIn(0); },0);
+      setTimeout(function(){ $('.bg').fadeIn(500); },300);
+      setTimeout(function(){ $('.ani1').fadeIn(600); },1000);
+      setTimeout(function(){ $('.ani2').fadeIn(800); },1200);
+      setTimeout(function(){ $('.ani3').fadeIn(800); },1600);
+      setTimeout(function(){ $('.ani4').fadeIn(800); },1800);
+    });
+  </script>
+  <style media="screen">
+    .base1 {position:relative; overflow:hidden;}
+    .base2 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; z-index:2;  display:none;}
+    .bg {position:absolute; z-index:2; width:100%; height:100%; left:0; top:0; animation:bg 500s linear infinite; background:url(https://img.shoppingntmall.com/htmleditor/960/bg1683165056591.png); background-size:cover; display:none;}
+    .ani1 {top:0; animation: ani1 1.5s ease-in-out; z-index:2; left:0;}
+    .ani2 {top:0; animation: ani2 1.5s ease-in-out; z-index:4; left:0%;}
+    .ani3 {bottom:0; animation: ani3 1.5s ease-in-out; z-index:3; left:0%;}
+    .ani4 {top:0; animation: ani4 1.5s ease-in-out infinite; z-index:5; left:0;}
+
+    @keyframes ani2 {
+      0% {left:-100%;}
+      50% {left:0%;}
+      100% {left:0%;}
+    }
+    @keyframes ani3 {
+      0% {bottom:-100%;}
+      80% {bottom:0%;}
+      100% {bottom:0%;}
+    }
+    @keyframes ani4 {
+      0% {transform:scale(1);}
+      50% {transform:scale(1.02);}
+      100% {transform:scale(1);}
+    }
+
+    @media screen and (max-width:720px)  {
+
+    }
+  </style>
+  <!-- 일일엔일 -->
+  <a class="pday pday8" href="/plan/event/swipeDetail/E00000000218"><img src="https://img.shoppingntmall.com/htmleditor/001/31682580949128.jpg"></a>
+  <!-- 심야쿠폰 -->
+  <a class="pday pday6" href="/customer/provide-coupon-multi?couponNo=202305037263&rUrl=/plan/planshop/swipeDetail/S00000000658"><img src="https://img.shoppingntmall.com/htmleditor/144/ss1680848040353.jpg"></a>
+  <!-- 심야쿠폰 -->
+  <a class="pday pday7" href="/customer/provide-coupon-multi?couponNo=202305037264&rUrl=/plan/planshop/swipeDetail/S00000000658"><img src="https://img.shoppingntmall.com/htmleditor/144/ss1680848040353.jpg"></a>
+  <!-- 일일초특 -->
+  <a class="pday pday9" href="/display/deal/D00000000759"><img src="https://img.shoppingntmall.com/htmleditor/676/21682580942051.jpg"></a>
+  <!-- 미리주문 -->
+  <a class="pday pday11" href="/plan/planshop/swipeDetail/S00000000658"><img src="https://img.shoppingntmall.com/htmleditor/292/mm1683164551357.jpg"></a>
+  <!-- 나들이룩 -->
+  <!-- <a class="pday pday5" href="/plan/planshop/swipeDetail/S00000000660"><img src="https://img.shoppingntmall.com/htmleditor/883/ttt1683100950567.jpg"></a> -->
+  <!-- 주말쿠폰 -->
+  <!-- <a class="pday pday10" href="/customer/provide-coupon-multi?couponNo=202305037265&rUrl=/plan/planshop/swipeDetail/S00000000658"><img src="https://img.shoppingntmall.com/htmleditor/427/jj1680848064614.jpg"></a> -->
+  <!-- 미식마켓 -->
+  <!-- <a class="pday pday1" href="/plan/planshop/swipeDetail/S00000000650"><img src="https://img.shoppingntmall.com/htmleditor/112/mm1682660758789.jpg"></a> -->
+  <!-- 살림장만 -->
+  <!-- <a class="pday pday2" href="/plan/planshop/swipeDetail/S00000000655"><img src="https://img.shoppingntmall.com/htmleditor/487/ss1682661266318.jpg"></a> -->
+  <!-- 감사선물 -->
+  <!-- <a class="pday pday3" href="/plan/planshop/swipeDetail/S00000000640"><img src="https://img.shoppingntmall.com/htmleditor/417/551682056627877.jpg"></a> -->
+  <!-- 골든위크 -->
+  <!-- <a class="pday pday4" href="/plan/planshop/swipeDetail/S00000000648"><img src="https://img.shoppingntmall.com/htmleditor/580/41682580955521.jpg"></a> -->
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; vertical-align:middle;}
+  .promotion_con .w50 {width:50%; display:inline-block;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -31.33%;}
+  }
+</style>
+
+<script>
+  //특정시간
+  var Now = new Date(); //현재 날짜 및 시간
+  var nowY = Now.getFullYear(); //년
+  var nowM = Now.getMonth() + 1; //월
+  var nowD = Now.getDate(); //일
+  var nowH = Now.getHours(); //시
+  var nowB = Now.getMinutes(); //분   
+  function pluszero(time){
+    var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+    if(time.length < 2){ //2자리 보다 작으면
+      time = '0' + time; //숫자앞 0 붙임
+      return time; //값 내보냄
+    }else{
+      return time; //2자리면 값 내보냄
+    }
+  }
+  //만든 함수 적용 
+  nowM = pluszero(nowM); 
+  nowD = pluszero(nowD);
+  nowH = pluszero(nowH);
+  nowB = pluszero(nowB);   
+  var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+
+  $(".pday").hide();
+  if(202305080000 <= nowT ){ $(".pday5").show();}
+  if(202305120000 <= nowT ){ $(".pday5").hide();}
+
+  if(202305081800 <= nowT ){ $(".pday6").show();}
+  if(202305090000 <= nowT ){ $(".pday6").hide();}
+
+  if(202305111800 <= nowT ){ $(".pday7").show();}
+  if(202305120600 <= nowT ){ $(".pday7").hide();}
+
+  if(202305111000 <= nowT ){ $(".pday8").show();}
+  if(202305120000 <= nowT ){ $(".pday8").hide();}
+
+  if(202305110000 <= nowT ){ $(".pday9").show();}
+  if(202305120000 <= nowT ){ $(".pday9").hide();}
+
+  if(202305130000 <= nowT ){ $(".pday10").show();}
+  if(202305150000 <= nowT ){ $(".pday10").hide();}
+
+  if(202305080000 <= nowT ){ $(".pday11").show();}
+  if(202305150000 <= nowT ){ $(".pday11").hide();}
+</script>

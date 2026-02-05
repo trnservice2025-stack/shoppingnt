@@ -1,0 +1,103 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+<div class="promotion_con">
+
+  <div class="pro_time">
+    <div class="dday_wrap">
+      <img src="https://img.shoppingntmall.com/htmleditor/411/timer1688612113815.png">
+      <div class="dday">
+        <div class="dday_d">0일</div>
+        <div class="dday_s1"></div>
+        <div class="dday_s2"></div>
+        <div class="dday_s3"></div>
+      </div>
+      <div class="dday end">이벤트 종료</div>
+    </div>
+  </div>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/456/pc_021688610346061.png" class="pc">
+  <img src="https://img.shoppingntmall.com/htmleditor/664/mo_021688610353947.jpg" class="mo">
+
+</div>
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; position:relative; background:#fff7db;}
+  .promotion_con img {width:100%; display:block;}
+
+  .promotion_con * {box-sizing:content-box;}
+
+  .promotion_con .mo {display:none;}
+
+  .promotion_con .pro_time {background:#000; text-align:center; height:103px;}
+  .promotion_con .pro_time img {width:auto; display:inline-block; padding:25px 0;}
+
+  .dday_wrap {position:absolute; left:50%; transform:translate(-50%, 0); font-family:noto Sans KR; color:#373434; width:100%;}
+  .dday_wrap img {position:absolute; left:50%; transform:translate(-50%, 0);}
+  .dday_wrap .dday {font-size:0;padding:25px 0 0 95px; position:relative; z-index:3;}
+  .dday_wrap .dday>div {display:inline-block; width: 79px;text-align: center; margin-left: 18px; height:50px; line-height: 47px; font-size:33px; letter-spacing: 21px;}
+  .dday_wrap .dday {width:100%;}
+  .dday_d {display:none !important;}
+  .dday.end {font-size:26px; background:#0128dc; font-weight:700; width:250px; height:50px; text-align:center; border-radius:5px; line-height:49px; margin-left:10px;}
+
+  @media screen and (max-width:1200px)  {
+
+  }
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con .mo {display:block;}
+    .promotion_con .pc {display:none;}
+
+    .promotion_con .pro_time {height:63px;}
+    .dday_wrap {transform-origin:top center;transform: translate(-50%, 0) scale(0.7);width:100%;}
+
+
+    .dday_wrap .dday {padding: 22px 0 0 79px;}
+    .dday_wrap .dday>div {center;margin-left: -8px;letter-spacing: 12px;}
+    .dday.end {font-size:26px; background:#0128dc; font-weight:700; width:250px; height:50px; text-align:center; border-radius:5px; line-height:49px; margin-left:10px;}
+
+
+
+  }
+
+</style>
+
+<script>
+  $(function(){
+    //수신동의 위치 이동
+    $('.toggle-area').appendTo(".toggle_an");
+  });
+  //남은시간
+  var dday_d = $(".dday_d");
+  var dday_s1 = $(".dday_s1");
+  var dday_s2 = $(".dday_s2");
+  var dday_s3 = $(".dday_s3");
+  function updateTimer() {
+    var targetDate = new Date("2023-09-27T23:59:59+0900");
+    var currentDate = new Date();
+    var timeDifference = targetDate - currentDate;
+    var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); //일
+    var hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24); //시
+    var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)); //분
+    var seconds = Math.floor((timeDifference / 1000) % 60); //초
+    dday_d.text(`${days}일`);
+    dday_s1.text(`${hours < 10 ? `0${hours}` : hours}`);
+    dday_s2.text(`${minutes < 10 ? `0${minutes}` : minutes}`);
+    dday_s3.text(`${seconds < 10 ? `0${seconds}` : seconds}`);
+    $(".dday.end").hide();
+    if (currentDate > targetDate) {
+        $(".dday").hide();
+        $(".dday.end").show();
+    }
+  }
+  function startTimer() {
+      updateTimer();
+      setInterval(updateTimer, 1000);
+  }
+  startTimer();  
+  var text = $(".dday_d").text();
+  var findString = "0일";
+  if (text.indexOf(findString) !== -1) {
+      $(".dday_d").remove();
+  }
+
+</script>

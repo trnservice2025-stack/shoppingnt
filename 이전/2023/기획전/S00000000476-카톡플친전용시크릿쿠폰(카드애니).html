@@ -1,0 +1,49 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="pp_wrap">
+    <img src="https://img.shoppingntmall.com/htmleditor/818/11674190743985.png" class="pp_bg">
+    <img src="https://img.shoppingntmall.com/htmleditor/372/21674190756511.png" class="pp_top">
+    <img src="https://img.shoppingntmall.com/htmleditor/587/31674190764044.png" class="pp_txt">
+    <img src="https://img.shoppingntmall.com/htmleditor/625/41674190770814.png" class="pp_con">
+  </div>
+  <a href="/plan/event/swipeDetail/E00000000214"><img src="https://img.shoppingntmall.com/htmleditor/013/bbbb1674183133982.jpg"></a>
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; }
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .pp_wrap {position:relative; overflow:hidden;}
+  .pp_bg {position:relative; z-index:1;}
+  .pp_top {position:absolute; left:0; bottom:0; z-index:4;}
+  .pp_con {position:absolute; left:0; bottom:0; z-index:2; margin-bottom:-25%;}
+  .pp_con.on {margin-bottom:0%; animation:aniani 0.4s linear;}
+  .pp_txt {position:absolute; left:0; bottom:0; z-index:3; opacity:0;}
+  .pp_txt.on {animation:aniani2 0.4s linear; opacity:1;}
+
+  @keyframes aniani {
+    0% {margin-bottom:-25%;}
+	  100% {margin-bottom:0%;}
+	}
+
+  @keyframes aniani2 {
+    0% {opacity:0;}
+	  100% {opacity:1;}
+	}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+<script type="text/javascript">
+  $(document).ready(function () {
+    setTimeout(function() {
+      $(".pp_con").addClass("on");
+    }, 400);
+    setTimeout(function() {
+      $(".pp_txt").addClass("on");
+    }, 800);
+  });
+</script>

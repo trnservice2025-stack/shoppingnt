@@ -1,0 +1,75 @@
+<div class="promotion_con">
+    <div class="base">
+        <img src="https://img.shoppingntmall.com/htmleditor/163/t1697100314635.jpg">
+        <img src="https://img.shoppingntmall.com/htmleditor/064/11697086469166.png" class="ani coin1">
+        <img src="https://img.shoppingntmall.com/htmleditor/211/21697086657648.png" class="ani coin2">
+        <img src="https://img.shoppingntmall.com/htmleditor/770/31697086666414.png" class="ani coin3">
+        <img src="https://img.shoppingntmall.com/htmleditor/185/41697086675190.png" class="ani coin4">
+    </div>
+    
+    <div class="ib_wrap">
+      <img src="https://img.shoppingntmall.com/htmleditor/475/ss1697100482153.jpg" class="ib1">
+      <img src="https://img.shoppingntmall.com/htmleditor/475/ss1697100482153.jpg" class="ib2">
+      <img src="https://img.shoppingntmall.com/htmleditor/475/ss1697100482153.jpg" class="ib3">
+    </div>
+  </div>
+  
+  <style>
+    .base {position:relative; overflow:hidden; display:block; cursor:pointer;}
+    .ani {position:absolute; width:100%; z-index:2;}
+    .coin1 {animation: coin1 1s ease-in-out forwards; top:-100%; left:-100%; animation-delay: 0s;}
+    .coin2 {animation: coin2 1s ease-in-out forwards; bottom:-100%; right:-100%; animation-delay: 0.3s;}
+    .coin3 {animation: coin3 1s ease-in-out forwards; bottom:-100%; left:-100%; animation-delay: 0.6s;}
+    .coin4 {animation: coin4 1s ease-in-out forwards; top:-100%; right:-100%; animation-delay: 0.9s;}
+
+    @keyframes coin1 {
+      0% {top:-100%; left:-100%;}
+      100% {top:0%; left:0%;}
+    }
+    @keyframes coin2 {
+      0% {bottom:-100%; right:-100%;}
+      100% {bottom:0%; right:0%;}
+    }
+    @keyframes coin3 {
+      0% {bottom:-100%; left:-100%;}
+      100% {bottom:0%; left:0%;}
+    }
+    @keyframes coin4 {
+      0% {top:-100%; right:-100%;}
+      100% {top:0%; right:0%;}
+    }
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; position:relative; background:#fff7db;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+  
+    .ib_wrap {background:#373434; position:relative;}
+    .ib1, .ib2, .ib3 {width:100%; display:flex; flex-wrap:nowrap; z-index:2;}
+    .ib1 {animation: ib1 20s linear infinite; position:absolute;  bottom:0;}
+    .ib2 {animation: ib2 20s linear infinite;}
+    .ib3 {animation: ib3 20s linear infinite; position:absolute; left:0; bottom:0;}
+  
+    @keyframes ib1 {
+      0% {transform: translate(0%, 0);}
+      50% {transform: translate(-100%, 0);}
+      100% {transform: translate(-100%, 0);}
+    }
+  
+    @keyframes ib2 {
+      0% {transform: translate(100%, 0);}
+      50% {transform: translate(0, 0);}
+      100% {transform: translate(-100%, 0);}
+    }
+  
+    @keyframes ib3 {
+      0% {transform: translate(100%, 0);}
+      50% {transform: translate(100%, 0);}
+      100% {transform: translate(0, 0);}
+    }
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+    }
+  
+  </style>
+  

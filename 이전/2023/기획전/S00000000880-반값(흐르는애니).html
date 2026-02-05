@@ -1,0 +1,66 @@
+<div class="promotion_con"><div class="promotion_con_mo">  
+    <div class="position:relative;">
+        <img src="https://img.shoppingntmall.com/htmleditor/987/top1695100348217.png" style="position:relative; z-index:1;">
+        <img src="https://img.shoppingntmall.com/htmleditor/379/kkk1695100432291.png" class="ani1">
+        <img src="https://img.shoppingntmall.com/htmleditor/864/bbb1695100440310.png" class="ani2">
+    </div>  
+</div></div>
+<style>
+    .ani1 {animation: ani1 0.5s ease-in-out forwards; bottom:-35%; left:-100%; animation-delay: 0s; opacity:0; position:absolute; z-index:2;}
+    .ani2 {animation: ani2 1s ease-in-out forwards; top:0; left:0; animation-delay: 0.5s; opacity:0; position:absolute; z-index:2;}
+
+    @keyframes ani1 {
+    0% {opacity:0; bottom:-35%;  left:-100%;}
+    100% {opacity:100%; bottom:0; left:0;}
+  }
+  @keyframes ani2 {
+    0% {opacity:0; transform:scale(0.9)}
+    90% {opacity:1; transform:scale(1.05)}
+    100% {opacity:1; transform:scale(1)}
+  }
+</style>
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div style="background:#373434; position:relative;">
+    <img src="https://img.shoppingntmall.com/htmleditor/165/21695082580826.png" class="ib1">
+    <img src="https://img.shoppingntmall.com/htmleditor/165/21695082580826.png" class="ib2">
+    <img src="https://img.shoppingntmall.com/htmleditor/165/21695082580826.png" class="ib3">
+  </div>
+</div></div>
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; position:relative; background:#fff7db;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .promotion_con .mo {display:none;}
+
+  .ib1, .ib2, .ib3 {width:100%; display:flex; flex-wrap:nowrap; z-index:2;}
+  .ib1 {animation: ib1 20s linear infinite; position:absolute;  bottom:0;}
+  .ib2 {animation: ib2 20s linear infinite;}
+  .ib3 {animation: ib3 20s linear infinite; position:absolute; left:0; bottom:0;}
+
+  @keyframes ib1 {
+    0% {transform: translate(0%, 0);}
+    50% {transform: translate(-100%, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+
+  @keyframes ib2 {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(0, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+
+  @keyframes ib3 {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(100%, 0);}
+    100% {transform: translate(0, 0);}
+  }
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%; position:relative;}
+
+    .promotion_con .mo {display:block;}
+    .promotion_con .pc {display:none;}
+  }
+</style>

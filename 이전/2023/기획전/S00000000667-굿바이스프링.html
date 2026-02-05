@@ -1,0 +1,68 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/882/gg1683704906649.png">
+
+  <!-- 일일엔일 -->
+  <a class="pday pday1" href="/plan/event/swipeDetail/E00000000218"><img src="https://img.shoppingntmall.com/htmleditor/001/31682580949128.jpg"></a>
+  <!-- 심야쿠폰 -->
+  <a class="pday pday2" href="/customer/provide-coupon-multi?couponNo=202305087388&rUrl=/plan/planshop/swipeDetail/S00000000667"><img src="https://img.shoppingntmall.com/htmleditor/144/ss1680848040353.jpg"></a>
+  <!-- 심야쿠폰 -->
+  <a class="pday pday3" href="/customer/provide-coupon-multi?couponNo=202305087389&rUrl=/plan/planshop/swipeDetail/S00000000667"><img src="https://img.shoppingntmall.com/htmleditor/144/ss1680848040353.jpg"></a>
+  <!-- 일일초특 -->
+  <a class="pday pday4" href="/display/deal/D00000000759"><img src="https://img.shoppingntmall.com/htmleditor/328/11111c1683707282771.jpg"></a>
+  <!-- 주말쿠폰 -->
+  <a class="pday pday5" href="/customer/provide-coupon-multi?couponNo=202305087390&rUrl=/plan/planshop/swipeDetail/S00000000667"><img src="https://img.shoppingntmall.com/htmleditor/427/jj1680848064614.jpg"></a>
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+
+<script>
+  //특정시간
+  var Now = new Date(); //현재 날짜 및 시간
+  var nowY = Now.getFullYear(); //년
+  var nowM = Now.getMonth() + 1; //월
+  var nowD = Now.getDate(); //일
+  var nowH = Now.getHours(); //시
+  var nowB = Now.getMinutes(); //분   
+  function pluszero(time){
+    var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+    if(time.length < 2){ //2자리 보다 작으면
+      time = '0' + time; //숫자앞 0 붙임
+      return time; //값 내보냄
+    }else{
+      return time; //2자리면 값 내보냄
+    }
+  }
+  //만든 함수 적용 
+  nowM = pluszero(nowM); 
+  nowD = pluszero(nowD);
+  nowH = pluszero(nowH);
+  nowB = pluszero(nowB);   
+  var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+
+  $(".pday").hide();
+
+  if(202305211000 <= nowT ){ $(".pday1").show();}
+  if(202305220000 <= nowT ){ $(".pday1").hide();}
+
+  if(202305151800 <= nowT ){ $(".pday2").show();}
+  if(202305160600 <= nowT ){ $(".pday2").hide();}
+
+  if(202305181800 <= nowT ){ $(".pday3").show();}
+  if(202305190600 <= nowT ){ $(".pday3").hide();}
+
+  if(202305210000 <= nowT ){ $(".pday4").show();}
+  if(202305220000 <= nowT ){ $(".pday4").hide();}
+
+  if(202305200000 <= nowT ){ $(".pday5").show();}
+  if(202305220000 <= nowT ){ $(".pday5").hide();}
+</script>

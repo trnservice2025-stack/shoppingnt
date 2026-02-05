@@ -1,0 +1,40 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/634/ss_011683166654028.jpg">
+  <img src="https://img.shoppingntmall.com/htmleditor/534/ss_021683166596252.jpg" class="ib1">
+  <img src="https://img.shoppingntmall.com/htmleditor/534/ss_021683166596252.jpg" class="ib2">
+  <img src="https://img.shoppingntmall.com/htmleditor/534/ss_021683166596252.jpg" class="ib3">
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; background:#5fa331; position:relative;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .ib1, .ib2, .ib3 {width:100%; display:flex; flex-wrap:nowrap; z-index:2;}
+  .ib1 {animation: ib1 20s linear infinite; position:absolute;  bottom:0;}
+  .ib2 {animation: ib2 20s linear infinite;}
+  .ib3 {animation: ib3 20s linear infinite; position:absolute; left:0; bottom:0;}
+
+  @keyframes ib1 {
+    0% {transform: translate(0%, 0);}
+    50% {transform: translate(-100%, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+
+  @keyframes ib2 {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(0, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+
+  @keyframes ib3 {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(100%, 0);}
+    100% {transform: translate(0, 0);}
+  }
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%; position:relative;}
+  }
+</style>

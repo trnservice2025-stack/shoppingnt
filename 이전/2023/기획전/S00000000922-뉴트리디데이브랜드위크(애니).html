@@ -1,0 +1,62 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base" style="position:relative; z-index:1;">
+      <img src="https://img.shoppingntmall.com/htmleditor/787/bbbb1698735630944.png" class="base1">
+      
+      <div class="ani ani_bg"></div>
+      <img src="https://img.shoppingntmall.com/htmleditor/121/won1698737362807.png" class="ani ani1"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/414/iii1698737370514.png" class="ani ani2">
+
+    </div>
+    <div style=" margin-top:-16%; position:relative; z-index:2;">
+        <img src="https://img.shoppingntmall.com/htmleditor/327/pro1698735126150.png">
+    </div>   
+
+    <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202310312352&amp;rUrl=/plan/planshop/swipeDetail/S00000000922');">
+        <img src="https://img.shoppingntmall.com/htmleditor/311/c11698734938039.jpg">
+      </a>
+    <img src="https://img.shoppingntmall.com/htmleditor/725/c21698734946711.jpg">
+
+    <style>
+      .base {position:relative; overflow:hidden;}
+      .base1 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%;}
+      .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 300s linear infinite; position:absolute; width:100%; height:100%; background:#151515 url(https://img.shoppingntmall.com/htmleditor/789/bg1698734929880.jpg); background-size:cover;}
+      .ani1 {z-index:3; top:10%; left:0; animation: ani1 20s linear infinite; }
+      .ani2 {z-index:4; top:0; left:0; animation: ani2 1s ease-in-out forwards; animation-delay: .5s; opacity:0;}
+
+      @media screen and (max-width:720px)  {
+        .ani_bg {width:70%; left:15%; background-size:100% auto;}
+
+    }      
+      @keyframes ani_bg {
+        from {background-position: 0 0;}
+        to {background-position: 0 -5000px;}
+      }
+
+      @keyframes ani1 {
+        100% {
+            transform: rotate(360deg);
+        }
+      }
+      @keyframes ani2 {
+        0% { opacity:0;}
+        100% { opacity:1;}
+      }
+      
+    </style>
+  
+  </div></div>
+
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; background:#f5f5f5;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -23.33%;}
+    }
+  </style>
+  

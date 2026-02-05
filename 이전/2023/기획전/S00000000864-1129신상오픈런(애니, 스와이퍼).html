@@ -1,0 +1,249 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<script>
+    $(window).resize(function() {
+    if($(window).width() > 768) { $(".ska1").attr("href","https://www.shoppingntmall.com/assets/css/swiper.css"); $(".ska2").attr("href","https://www.shoppingntmall.com/assets/css/common.css"); }
+    else { $(".ska1").attr("href","https://m.shoppingntmall.com/moassets/css/swiper.css"); $(".ska2").attr("href","https://m.shoppingntmall.com/moassets/css/common.css"); }
+    });
+</script> -->
+
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="basic" style="margin-bottom:-1px;" id="gradient">
+        <img src="https://img.shoppingntmall.com/htmleditor/172/basic1698297701582.png">
+        <img src="https://img.shoppingntmall.com/htmleditor/914/ba11698297732215.png" class="aani aa1">
+        <img src="https://img.shoppingntmall.com/htmleditor/657/ba21698298063353.png" class="aani aa2">
+        <img src="https://img.shoppingntmall.com/htmleditor/705/ba31698298070096.png" class="aani aa3">
+        <img src="https://img.shoppingntmall.com/htmleditor/204/ba41698298076596.png" class="aani aa4">
+        <img src="https://img.shoppingntmall.com/htmleditor/479/ba51698298094297.png" class="aani aa5">
+        <img src="https://img.shoppingntmall.com/htmleditor/540/ba61698298101126.png" class="aani aa6">
+        <img src="https://img.shoppingntmall.com/htmleditor/061/ba71698298107534.png" class="aani aa7">
+    </div>
+    <style media="screen">
+        .basic {position:relative; overflow:hidden;}
+        .basic>img {position:relative; z-index:1;}
+        .basic .aani {position:absolute; width:100%; z-index:2;}
+
+        .aa1 {left:0; top:-100%; animation:aa1 1s forwards ease-in-out;}
+        .aa2 {left:0; bottom:-100%; animation:aa2 1s forwards ease-in-out; animation-delay: .4s;}
+        .aa3 {left:0; bottom:-100%; animation:aa3 1s forwards ease-in-out; animation-delay: .6s;}
+
+        .aa4 {left:-15%; opacity:0; top:0; animation:aa4 1s forwards ease-in-out; animation-delay: .8s;}
+        .aa5 {left:-15%; opacity:0; top:0;  animation:aa5 1s forwards ease-in-out; animation-delay: .9s;}
+        .aa6 {right:-15%; opacity:0; top:0; animation:aa6 1s forwards ease-in-out; animation-delay: 1.2s;}
+        .aa7 {right:-15%; opacity:0; top:0; animation:aa7 1s forwards ease-in-out; animation-delay: 1.3s;}
+
+        @keyframes aa1 {
+            0% {top:-100%;}
+            80% {top:5%;}
+            100% {top:0;}
+        }
+        @keyframes aa2 {
+            0% {bottom:-100%;}
+            80% {bottom:5%;}
+            100% {bottom:0;}
+        }
+        @keyframes aa3 {
+            0% {bottom:-100%;}
+            80% {bottom:5%;}
+            100% {bottom:0;}
+        }
+        @keyframes aa4 {
+            0% {left:-15%; opacity:0; }
+            90% {left:3%;}
+            100% {left:0%; opacity:1; }
+        }
+        @keyframes aa5 {
+            0% {left:-15%; opacity:0;}
+            100% {left:0%; opacity:1;}
+        }
+        @keyframes aa6 {
+            0% {right:-15%; opacity:0; }
+            90% {right:3%;}
+            100% {right:0%; opacity:1; }
+        }
+        @keyframes aa7 {
+            0% {right:-15%; opacity:0;}
+            100% {right:0%; opacity:1;}
+        }
+    </style>
+    <script type="text/javascript">
+        var colors = [
+        [218, 193, 183],
+        [246, 233, 228],
+        [218, 193, 183],
+        [246, 233, 228]
+        ];
+
+        var colorIndices = [0, 1, 2, 3];
+        var gradientSpeed = 0.002; // 더 작은 값으로 수정
+
+        function interpolateColor(c0, c1, step) {
+        var r = Math.round(c0[0] + (c1[0] - c0[0]) * step);
+        var g = Math.round(c0[1] + (c1[1] - c0[1]) * step);
+        var b = Math.round(c0[2] + (c1[2] - c0[2]) * step);
+        return "rgb(" + r + "," + g + "," + b + ")";
+        }
+
+        function updateGradient() {
+        var c0_0 = colors[colorIndices[0]];
+        var c0_1 = colors[colorIndices[1]];
+        var c1_0 = colors[colorIndices[2]];
+        var c1_1 = colors[colorIndices[3]];
+
+        var color1 = interpolateColor(c0_0, c0_1, gradientSpeed);
+        var color2 = interpolateColor(c1_0, c1_1, gradientSpeed);
+
+        $('#gradient').css({
+            background: `-webkit-gradient(linear, left top, right top, from(${color1}), to(${color2}))`
+        }).css({
+            background: `-moz-linear-gradient(left, ${color1} 0%, ${color2} 100%)`
+        });
+
+        gradientSpeed += 0.002; // 더 작은 값으로 수정
+
+        if (gradientSpeed >= 1) {
+            gradientSpeed = 0;
+            colorIndices[0] = colorIndices[1];
+            colorIndices[2] = colorIndices[3];
+            
+            colorIndices[1] = (colorIndices[1] + 1) % colors.length; // 간단하게 수정
+            colorIndices[3] = (colorIndices[3] + 1) % colors.length; // 간단하게 수정
+        }
+        }
+
+        setInterval(updateGradient, 10);
+    </script>
+    
+    <div class="basict">
+        <img src="https://img.shoppingntmall.com/htmleditor/684/tt1698296964046.png" style="display:block; margin-bottom:-1px;">
+        <img src="https://img.shoppingntmall.com/htmleditor/298/ta11698297091055.png" class="aaani aaa1">
+        <img src="https://img.shoppingntmall.com/htmleditor/256/ta21698297099157.png" class="aaani aaa2">
+        <img src="https://img.shoppingntmall.com/htmleditor/270/ta31698297106256.png" class="aaani aaa3">
+        <img src="https://img.shoppingntmall.com/htmleditor/961/ta41698297111920.png" class="aaani aaa4">
+    </div>
+    <style media="screen">
+        .basict {position:relative; overflow:hidden;}
+        .basict>img {position:relative; z-index:1;}
+        .basict .aaani {position:absolute; width:100%; z-index:2;}
+        .aaa1 {left:0; top:0; animation:aaa1 0.8s infinite ease-in-out; }
+        .aaa2 {left:0; top:0; animation:aaa1 0.8s infinite ease-in-out; animation-delay: .3s;}
+        .aaa3 {left:0; top:0; animation:aaa1 0.8s infinite ease-in-out; animation-delay: .6s;}
+        .aaa4 {left:0; top:0;} 
+        @keyframes aaa1 {
+        0% {top:0%;}
+            50% {top:-2%;}
+            100% {top:0;}
+        }   
+    </style>
+
+    <div class="swiper_pro_wrap">
+        <div class="swiper swiper_pro sday sday11_28"><div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="/display/goods/13956816"><img src="https://img.shoppingntmall.com/htmleditor/255/13956816_11700798828931.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14034272"><img src="https://img.shoppingntmall.com/htmleditor/046/140342721700798845275.jpg"></a></div>
+            <!-- <div class="swiper-slide"><a href="/display/goods/14047318"><img src="https://img.shoppingntmall.com/htmleditor/572/140473181700798854567.jpg"></a></div> -->
+            <div class="swiper-slide"><a href="/display/goods/13347576"><img src="https://img.shoppingntmall.com/htmleditor/846/13347576_11700798814001.jpg"></a></div>   
+        </div><div class="swiper_pro_bottom"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div></div>
+
+        <div class="swiper swiper_pro sday sday12_02"><div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="/display/goods/13956816"><img src="https://img.shoppingntmall.com/htmleditor/255/13956816_11700798828931.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14034272"><img src="https://img.shoppingntmall.com/htmleditor/046/140342721700798845275.jpg"></a></div>
+            <!-- <div class="swiper-slide"><a href="/display/goods/14047318"><img src="https://img.shoppingntmall.com/htmleditor/572/140473181700798854567.jpg"></a></div> -->
+            <div class="swiper-slide"><a href="/display/goods/13347576"><img src="https://img.shoppingntmall.com/htmleditor/265/13347576_21700798903685.jpg"></a></div>   
+        </div><div class="swiper_pro_bottom"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div></div>
+
+        <div class="swiper swiper_pro sday sday12_04"><div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="/display/goods/14111306"><img src="https://img.shoppingntmall.com/htmleditor/036/14111306_11701225398294.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14077591"><img src="https://img.shoppingntmall.com/htmleditor/036/140775911701225397889.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14065456"><img src="https://img.shoppingntmall.com/htmleditor/036/139849461701225397123.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14047317"><img src="https://img.shoppingntmall.com/htmleditor/036/140473171701225397489.jpg"></a></div>
+        </div><div class="swiper_pro_bottom"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div></div>
+
+        <div class="swiper swiper_pro sday sday12_7"><div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="/display/goods/14111306"><img src="https://img.shoppingntmall.com/htmleditor/036/14111306_21701225398571.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14077591"><img src="https://img.shoppingntmall.com/htmleditor/036/140775911701225397889.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14065456"><img src="https://img.shoppingntmall.com/htmleditor/036/139849461701225397123.jpg"></a></div>
+            <div class="swiper-slide"><a href="/display/goods/14047317"><img src="https://img.shoppingntmall.com/htmleditor/036/140473171701225397489.jpg"></a></div>
+        </div><div class="swiper_pro_bottom"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div></div>
+        
+    </div>    
+
+</div></div>  
+    
+<style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con .w50 {width:50%; display:inline-block;}
+    .promotion_con a, .promotion_con buttom {background:none; cursor:pointer;}
+    
+    .swiper_pro_wrap {overflow:hidden; background:#d9bfb4; position:relative;}
+    .swiper_pro {z-index:1; padding:0; margin:0 -25%; position:relative; padding-bottom:10%;}
+    .swiper_pro .swiper-wrapper {height:auto;}
+    .swiper_pro .swiper-slide {position:relative; overflow:hidden;}
+    .swiper_pro .swiper-slide:after {content:""; display:block; position:absolute; left:0%; top:0; width:calc(100% - 40px); left:20px; height:100%; background:rgba(0,0,0,.4); z-index:2;}
+    .swiper_pro .swiper-slide-active:after {display:none;}
+    .swiper_pro .swiper-slide button {width:100%;}
+    .swiper_pro .swiper-slide img {width:100%; padding:0 20px;}
+    .swiper_pro .swiper-slide.swiper-slide-active img {transform:scale(1); opacity:1;}
+
+    .swiper_pro_bottom {position:relative; margin:0; padding:0; width:100%; position:absolute; bottom:7%; left:0; text-align:center;}
+    .swiper_pro_bottom .swiper-pagination-fraction,
+    .swiper_pro_bottom .swiper-button-next,
+    .swiper_pro_bottom .swiper-button-prev {display:inline-block; vertical-align:middle; top:0; left:0; bottom:0; right:0; position:relative; border:0; border-radius:0; background:none;}
+    .swiper_pro_bottom .swiper-pagination-fraction {width:auto; font-size:18px; width:100px; margin-top:-15px; color:#89420c;}
+    .swiper_pro_bottom .swiper-button-next, 
+    .swiper_pro_bottom .swiper-button-prev {width:12px; height:12px;}
+    .swiper_pro_bottom .swiper-button-next:after, .swiper_pro_bottom .swiper-button-next:before,
+    .swiper_pro_bottom .swiper-button-prev:after, .swiper_pro_bottom .swiper-button-prev:before {content:""; display:block; height:2px; width:14px; background:#89420c; position:absolute; top:unset; bottom:unset; right:unset; left:unset;}
+    .swiper_pro_bottom .swiper-button-next:after {transform:rotate(-45deg); bottom:0; right:0;}
+    .swiper_pro_bottom .swiper-button-next:before {transform:rotate(45deg); top:0; right:0;}
+    .swiper_pro_bottom .swiper-button-prev:after {transform:rotate(-135deg); bottom:0; left:0;}
+    .swiper_pro_bottom .swiper-button-prev:before {transform:rotate(135deg); top:0; left:0;}
+    
+    @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33.33%;}
+    
+        .swiper_pro .swiper-slide:after {width:100%; left:0;}
+        .swiper_pro .swiper-slide img {width:100%; padding:0;}
+        .swiper_pro_bottom {bottom:5%; z-index:2;}
+        .swiper_pro_bottom .swiper-pagination-fraction {margin-top:0;}
+    }
+</style>
+    
+<script>            
+    //스와이퍼
+    var swiperzzzz = new Swiper(".swiper_pro", {
+        loop: true,
+        centermode:true,
+        centeredSlides: true,
+        slidesPerView: 3,  
+        spaceBetween: 10,        
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        autoplay: {
+            delay: 4000,
+        },
+    });    
+    
+    //예약 스크립트
+	const nowD = new Date();
+	const formatDate = (value) => String(value).padStart(2, '0');
+	const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+	const nowT = formatDateTime(nowD);
+	const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+	hideS();
+
+    //상품
+	if ('2023-11-28 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday11_28').forEach(e => e.style.display = 'block');}
+	if ('2023-12-02 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12_02').forEach(e => e.style.display = 'block');}
+	if ('2023-12-03 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday11_28').forEach(e => e.style.display = 'block');}
+	if ('2023-12-04 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12_04').forEach(e => e.style.display = 'block');}  
+	if ('2023-12-07 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12_07').forEach(e => e.style.display = 'block');}  
+	if ('2023-12-08 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12_04').forEach(e => e.style.display = 'block');}  
+ </script>

@@ -1,0 +1,64 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con">
+  <div class="promotion_con_mo2">
+    <img src="https://img.shoppingntmall.com/htmleditor/246/event_view_PC031688446909408.jpg">
+  </div>
+  <div class="toggle_an"></div>
+  <div class="only_mo">
+    <div class="promotion_con_mo">
+      <!-- 띠배너 영역 -->
+      <!-- 신상오픈런 -->
+      <a class="pday pday3" href="/plan/planshop/swipeDetail/S00000000864"><img src="https://img.shoppingntmall.com/htmleditor/205/ss1693531088257.jpg"></a>
+      <!-- 골든위크 -->
+      <a class="pday pday5" href="/plan/planshop/swipeDetail/S00000000687"><img src="https://img.shoppingntmall.com/htmleditor/218/gg1693534077437.jpg"></a>     
+      <!-- 미식마켓 -->
+      <a class="pday pday4" href="/plan/planshop/swipeDetail/S00000000690"><img src="https://img.shoppingntmall.com/htmleditor/895/2m1694067473358.jpg"></a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con, .only_mo {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+    .promotion_con_mo2 {margin:0 -12%;}
+  }
+</style>
+
+<script>
+
+  $(function(){ 
+    //pc에서만
+    //$('.coupon-wrap, .acco-wrap.plan').appendTo(".toggle_an");
+
+    //모바일에서만
+    $('.notice-fold').after($('.only_mo'));
+  });
+
+  //특정시간
+  const now = new Date();
+  const formatDate = (value) => String(value).padStart(2, '0');
+  const nowT = [
+    now.getFullYear(),
+    formatDate(now.getMonth() + 1),
+    formatDate(now.getDate()),
+    formatDate(now.getHours()),
+    formatDate(now.getMinutes())
+  ].join('');
+
+  $(".pday").hide();
+  if(202309040000 <= nowT ){ $(".pday3").show();}
+  if(202309110000 <= nowT ){ $(".pday3").hide();}
+
+  if(202309040000 <= nowT ){ $(".pday5").show();}
+  if(202309110000 <= nowT ){ $(".pday5").hide();}
+
+  if(202309080000 <= nowT ){ $(".pday4").show();}
+  if(202309110000 <= nowT ){ $(".pday4").hide();}
+
+  
+</script>

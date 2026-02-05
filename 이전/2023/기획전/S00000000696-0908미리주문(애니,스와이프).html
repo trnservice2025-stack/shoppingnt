@@ -1,0 +1,265 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css">
+<div class="promotion_con">
+  <div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/253/tit1694134955671.png">
+    <img src="https://img.shoppingntmall.com/htmleditor/115/arr1694133682325.png" class="ani ani1">
+
+    <img src="https://img.shoppingntmall.com/htmleditor/036/a11694135108172.png" class="ani ani2">    
+    <img src="https://img.shoppingntmall.com/htmleditor/530/a21694135116591.png" class="ani ani3">
+
+    <img src="https://img.shoppingntmall.com/htmleditor/679/gift1694135349912.png" class="ani ani4">
+  </div>
+  <style media="screen">
+    .base {position:relative; overflow:hidden; animation:base 500s linear infinite; background:url(https://img.shoppingntmall.com/htmleditor/594/bg1694135067799.png); background-size:auto 100%;}
+    .base>img {position:relative; z-index:1;}
+    .base .ani {position:absolute; width:100%; z-index:2;}
+
+    .ani1 {left:0; top:0; animation:ani1 0.8s infinite ease-in-out;}
+
+    .ani2 {left:0; top:-100%; animation:ani2 0.8s forwards ease-in-out;}
+    .ani3 {right:0; bottom:-100%; animation:ani3 0.8s forwards ease-in-out; animation-delay: .3s;}
+    
+    .ani4 {right:0; bottom:-100%; animation:ani4 1.2s forwards ease-in-out; animation-delay: .6s;}
+    @keyframes base {
+      from {background-position: 0 0;}
+      to {background-position: 0 -9000px;}
+    }
+
+    @keyframes ani1 {
+      0% {top:-5px;}
+      100% {top:-2px;}
+    }
+    @keyframes ani2 {
+      0% {top:-100%;}
+      80% {top:5%;}
+      100% {top:0;}
+    }
+    @keyframes ani3 {
+      0% {bottom:-100%;}
+      80% {bottom:5%;}
+      100% {bottom:0;}
+    }
+
+    @keyframes ani4 {
+      0% {bottom:-100%;}
+      70% {bottom:10%;}
+      100% {bottom:-10%;}
+    }
+  </style>
+  <img src="https://img.shoppingntmall.com/htmleditor/241/zz_021694133473683.png" style="display:block; margin:-1px 0;">
+
+  <!-- 쿠폰 영역 -->
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202309071252:202309071253:202309071254:202309081263:202309081262&amp;rUrl=/plan/planshop/swipeDetail/S00000000696');">
+    <img src="https://img.shoppingntmall.com/htmleditor/571/cc1694353158833.png">
+  </a>
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202309081261&amp;rUrl=/plan/planshop/swipeDetail/S00000000696');" style="margin-top:-6%; display:block;">
+    <img src="https://img.shoppingntmall.com/htmleditor/120/c1685406395096.png">
+  </a>
+  <div class="toggle_wrap">
+    <input class="toggle_input" id="toggle_input" type="checkbox">
+    <label class="toggle_btn" for="toggle_input">유의사항</label>
+    <ul class="toggle_con">
+      <li class="bold">[미리주문 할인쿠폰]</li>
+      <li>쿠폰은 기획전 하단에서 다운 받은 후 사용 가능합니다.</li>
+      <li>쿠폰은 기획전에 해당하는 상품의 상세페이지 상단에서도 다운 받을 수 있습니다.</li>
+      <li>상품별로 적용되는 쿠폰할인율은 상이하며, 쿠폰을 다운로드 한 후 마이페이지 메뉴의 보유쿠폰에서 쿠폰별 적용가능상품을 확인할 수 있습니다.</li>
+      <li>최종 결제금액은 다른 쿠폰 보유 및 적용 여부에 따라 상이할 수 있습니다.</li>
+      <li>해당 기획전의 쿠폰은 9/11(월) 00:00 ~ 9/17(일) 23:59까지 발급 및 사용 가능합니다.</li>
+      <li>해당 기획전의 쿠폰은 무제한으로 발급 가능하며, 발급 받은 쿠폰 사용 후에 재발급 가능합니다.</li>
+      <li>해당 기획전의 5%쿠폰은 최대 2만원, 10%쿠폰은 최대 4만원, 15%쿠폰은 최대 8만원까지 할인이 적용됩니다.</li>
+      <li>해당 기획전의 쿠폰은 쇼핑엔티 PC web, 모바일 web/APP에서 사용 가능합니다.</li>
+      <li>해당 기획전의 쿠폰은 장바구니 단위로 적용되지 않으며, 개별 상품 단위로 적용 가능합니다.</li>
+      <li>5%, 10%, 15% 쿠폰은 중복하여 사용할 수 없습니다.</li>
+      <li>비회원은 모든 쿠폰 지급 대상에서 제외됩니다.(회원가입 필수)</li>
+      <li>동일한 상품을 여러 개 구매하실 경우, 최대 10개까지 쿠폰 적용이 가능합니다.</li>
+      <li>해당 기획전은 당사 사정에 의해 변경 또는 조기 종료될 수 있습니다.</li>
+      <li class="bold">[추석맞이 장바구니 3종 쿠폰]</li>
+      <li>장바구니 쿠폰은 다운로드 받기&gt; 클릭 시 지급되며, 마이쇼핑&gt;쿠폰에서 확인 가능합니다.</li>
+      <li>장바구니 쿠폰은 9/11(월) 00:00 ~ 9/24(일) 23:59까지 발급 및 사용 가능합니다.</li>
+      <li>장바구니 쿠폰은 무제한으로 발급 가능하며, 발급 받은 쿠폰 사용 후에 재발급 가능합니다.</li>
+      <li>일부 상품은 장바구니 쿠폰 적용 대상에서 제외됩니다.</li>
+      <li>장바구니 쿠폰은 5만원 이상 구매시 적용 가능하며, 최대 10만원까지 사용 가능합니다.</li>
+      <li>3천원 장바구니 쿠폰은 전 상품 5만원 이상 구매 시 모바일앱에서 적용되며, 6% 쿠폰은 방송상품 10만원 이상 구매 시 최대 10만원, 8% 쿠폰은 방송상품 15만원 이상 구매 시 최대 10만원까지 적용 됩니다.</li>
+      <li>장바구니 쿠폰은 다른 쿠폰과 중복하여 사용하실 수 있습니다.</li>
+      <li>일부 상품은 장바구니 쿠폰 적용 대상에서 제외됩니다.</li>
+      <li>쿠폰은 장바구니 단위로 적용가능하며, 5만원 이상 구매 시 사용 가능합니다.(최종결제가 기준)</li>
+      <li>장바구니 쿠폰 사용 시 더블쿠폰은 중복하여 적용할 수 없습니다.</li>
+      <li>쇼핑엔티 PC Web, 모바일 Web/APP에서 사용 가능합니다.</li>
+      <li>발급받은 장바구니쿠폰은 주문 시 추가적으로 선택/적용해야 사용 가능합니다.</li>
+      <li>비회원은 모든 쿠폰 지급 대상에서 제외됩니다.(회원가입 필수)</li>
+      <li>해당 이벤트는 당사 사정에 의해 변경 또는 조기 종료될 수 있습니다</li>
+    </ul>
+  </div>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/903/zz_041694133493261.png" style="position:relative; z-index:1; display:block; margin:-1px 0;">
+
+  <div class="swiper_pro_wrap">
+    <div class="swiper swiper_pro">
+      <div class="swiper-wrapper"">
+        <!--<div class="swiper-slide"><a href="/display/goods/13580759"><img src="https://img.shoppingntmall.com/htmleditor/272/135807591694137160181.png" /></a></div> -->
+        <div class="swiper-slide"><a href="/display/goods/13699363"><img src="https://img.shoppingntmall.com/htmleditor/066/136993631694137204361.png" /></a></div>
+        <div class="swiper-slide"><a href="/display/goods/13694104"><img src="https://img.shoppingntmall.com/htmleditor/541/136941041694137196562.png" /></a></div>
+        <div class="swiper-slide"><a href="/display/goods/13634204"><img src="https://img.shoppingntmall.com/htmleditor/375/136342041694137187977.png" /></a></div>
+        <!-- <div class="swiper-slide"><a href="/display/goods/12889363"><img src="https://img.shoppingntmall.com/htmleditor/863/128893631694136165934.png"></a></div> -->
+        <div class="swiper-slide"><a href="/display/goods/13444600"><img src="https://img.shoppingntmall.com/htmleditor/278/134446001694137127867.png" /></a></div>
+        <div class="swiper-slide"><a href="/display/goods/13239105"><img src="https://img.shoppingntmall.com/htmleditor/790/132391051694137118997.png" /></a></div>
+        <div class="swiper-slide"><a href="/display/goods/13579240"><img src="https://img.shoppingntmall.com/htmleditor/993/135792401694137149684.png" /></a></div>
+        <!--<div class="swiper-slide"><a href="/display/goods/11415882"><img src="https://img.shoppingntmall.com/htmleditor/986/114158821694136134048.png" /></a></div> -->
+        <!--<div class="swiper-slide"><a href="/display/goods/13619725"><img src="https://img.shoppingntmall.com/htmleditor/140/136197251694137179296.png" /></a></div> -->
+        <div class="swiper-slide"><a href="/display/goods/13596297"><img src="https://img.shoppingntmall.com/htmleditor/180/135962971694137169451.png" /></a></div>
+        <!--<div class="swiper-slide"><a href="/display/goods/13548206"><img src="https://img.shoppingntmall.com/htmleditor/945/135482061694137138936.png" /></a></div> -->
+      </div>
+    </div>
+    <div class="swiper_pro_bottom">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination2"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <!-- 띠배너 영역 -->
+  <!-- 심야 -->
+  <a class="pday pday1"  onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202308240884&rUrl=/plan/planshop/swipeDetail/S00000000696');">
+    <img src="https://img.shoppingntmall.com/htmleditor/547/31689151139867.jpg">
+  </a>
+  <!-- 주말 -->
+  <a class="pday pday2"  onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202308240885&rUrl=/plan/planshop/swipeDetail/S00000000696');">
+    <img src="https://img.shoppingntmall.com/htmleditor/516/jj1690779375886.jpg">
+  </a>
+  <!-- 1일1쿠폰 -->
+  <a class="pday pday3" href="/plan/event/swipeDetail/E00000000219"><img src="https://img.shoppingntmall.com/htmleditor/797/31692942341990.jpg"></a>
+  <!-- 신상오픈런 -->
+  <a class="pday pday4" href="/plan/planshop/swipeDetail/S00000000864"><img src="https://img.shoppingntmall.com/htmleditor/980/ss1694137436931.jpg"></a>
+
+</div>
+</div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; vertical-align:middle;}
+  .promotion_con .w50 {width:50%; display:inline-block;}
+  .promotion_con a {cursor:pointer;}
+
+  .toggle_wrap {padding:30px; background:#fafafa;}
+  .toggle_btn {font-size:15px; height:60px; line-height:60px; font-weight:700; text-align:center; display:block; cursor:pointer; max-width:700px; margin:0 auto;}
+	.toggle_btn:after {width:6px; height:6px; border-style:solid; border-width:1px 1px 0 0; margin:-7px 0 0 10px; vertical-align:middle; transform:rotate(135deg); content:''; display:inline-block; }
+  .toggle_con {display:none; padding:0 20px 10px 20px; font-size:14px; line-height:22px; list-style:none; word-break:keep-all; max-width:700px; margin:0 auto; box-sizing:inherit;}
+  .toggle_con:after, .toggle_con:before {box-sizing:inherit;}
+  .toggle_con li {padding-left:7px; position:relative; margin-bottom:8px;}
+  .toggle_con li:after {content:"\00B7"; position:absolute; left:0; top:0; }
+  .toggle_con li.bold {padding-left:0; font-weight:700;}
+  .toggle_con li.bold:after {display:none;}
+  .toggle_input {position:fixed; left:-9999px;}
+  .toggle_input:checked ~ .toggle_con {display:block;}
+  .toggle_input:checked ~ .toggle_btn:after {transform:rotate(315deg); margin-top:0;}
+
+  .toggle_btn {background:#eeeeee; color:#333;}
+  .toggle_btn:after {border-color:##333;}
+  .toggle_con {background:#eeeeee; color:#999;}
+
+  .swiper_pro_wrap {background:#34665d;  padding:0 24.1%;position:relative; z-index:2;}
+  .swiper_pro {overflow:hidden; z-index:1; padding:0; margin:0 0; position:relative;  padding-bottom:5%; position:relative;}
+  .swiper_pro .swiper-wrapper {height:auto; }
+  .swiper_pro .swiper-slide button {width:100%;}
+  .swiper_pro .swiper-slide img {width:100%;}
+  .swiper_pro .swiper-slide.swiper-slide-active img {transform: scale(1); opacity:1;}
+
+  .swiper_pro_wrap .swiper-button-next,
+  .swiper_pro_wrap .swiper-button-prev {position:absolute; top:50%; transform:translateY(-50%); margin-top:-12%; width:50px; height:72px; background-size:cover; border:0; background:none;}
+  .swiper_pro_wrap .swiper-button-next {background-image:url("https://img.shoppingntmall.com/htmleditor/985/right1692939876906.png"); right:18%;}
+  .swiper_pro_wrap .swiper-button-prev {background-image:url("https://img.shoppingntmall.com/htmleditor/601/prev1692939868273.png"); left:18%;}
+  .swiper_pro_wrap .swiper-button-next:after, .swiper_pro_wrap .swiper-button-prev:after {background:none;}
+
+  .swiper_pro_bottom {height:80px; text-align:center; padding-top:6%;}
+  .swiper_pro_bottom .swiper-pagination2 {width:100%; position:relative;}
+
+  .swiper_pro_bottom .swiper-pagination-bullet {width:10px; height:10px; background:#aeaeae; border-radius:100%; border:0; opacity:1; margin:0 3px;}
+  .swiper_pro_bottom .swiper-pagination-bullet-active {background:#718a86; width:20px; border-radius:10px;}
+
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+
+    .toggle_wrap {margin:0 20%;}
+    .toggle_btn {font-size:14px; height:42px; line-height:42px;}
+  	.toggle_btn:after {width:6px; height:6px; margin:-7px 0 0 6px;}
+    .toggle_wrap {padding:15px;}
+  	.toggle_con {padding:0 15px 10px 15px; font-size:13px; line-height:20px;}
+    .toggle_con li {padding-left:6px;}
+
+    .swiper_pro {overflow:hidden; z-index:1; margin:0 1%; position:relative;}
+
+    .swiper_pro_wrap {padding:0 22%;}
+    .swiper_pro_wrap .swiper-button-next,
+    .swiper_pro_wrap .swiper-button-prev {width:15px; height:24px; background-size:cover;}
+
+    .swiper_pro_bottom {height:60px; z-index:9999; top:-50%;}
+    .swiper_pro_wrap .swiper-button-next {right:37%; margin-top:-30.5%;}
+    .swiper_pro_wrap .swiper-button-prev {left:37%; margin-top:-30.5%;}
+  }
+</style>
+
+<script>
+  $(function(){
+    //스와이퍼
+    var swiperzzzz = new Swiper(".swiper_pro_wrap .swiper_pro", {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      slidesPerView: 2,
+      spaceBetween: 22,
+      pagination: {
+        el: ".swiper_pro_wrap .swiper-pagination2",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper_pro_wrap .swiper-button-next",
+        prevEl: ".swiper_pro_wrap .swiper-button-prev",
+      },
+    });
+
+  });
+</script>
+
+<script>
+  //특정시간
+  var Now = new Date(); //현재 날짜 및 시간
+  var nowY = Now.getFullYear(); //년
+  var nowM = Now.getMonth() + 1; //월
+  var nowD = Now.getDate(); //일
+  var nowH = Now.getHours(); //시
+  var nowB = Now.getMinutes(); //분   
+  function pluszero(time){
+    var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+    if(time.length < 2){ //2자리 보다 작으면
+      time = '0' + time; //숫자앞 0 붙임
+      return time; //값 내보냄
+    }else{
+      return time; //2자리면 값 내보냄
+    }
+  }
+  //만든 함수 적용 
+  nowM = pluszero(nowM); 
+  nowD = pluszero(nowD);
+  nowH = pluszero(nowH);
+  nowB = pluszero(nowB);   
+  var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+
+  $(".pday").hide();
+  if(202309121800 <= nowT ){ $(".pday1").show();}
+  if(202309130600 <= nowT ){ $(".pday1").hide();}
+
+  if(202309150000 <= nowT ){ $(".pday2").show();}
+  if(202309180000 <= nowT ){ $(".pday2").hide();}
+
+  if(202309110000 <= nowT ){ $(".pday3").show();}
+  if(202309120000 <= nowT ){ $(".pday3").hide();}
+
+  if(202309110000 <= nowT ){ $(".pday4").show();}
+  if(202309180000 <= nowT ){ $(".pday4").hide();}
+</script>

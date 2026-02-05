@@ -1,0 +1,162 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/952/dddd1701332447438.jpg" alt="">
+    <div class="base1 air_wrap">
+      <div class="bg_1"></div>
+      <div class="bg"></div>
+      <img src="https://img.shoppingntmall.com/htmleditor/590/bbbbgggg1687938215295.png" class="base2">
+      <img src="https://img.shoppingntmall.com/htmleditor/428/tit1698733932298.png" class="ani ani1">
+      <div class="pro_anchor">
+        <img src="https://img.shoppingntmall.com/htmleditor/969/11687939490808.png" alt="" class="w20">
+        <a href="/plan/event/swipeDetail/E00000000179" class="w20"><img src="https://img.shoppingntmall.com/htmleditor/384/cc_02-031698734063028.png" alt=""></a>
+        <a href="/plan/event/swipeDetail/E00000000183" class="w20"><img src="https://img.shoppingntmall.com/htmleditor/825/cc_02-041698734071759.png" alt=""></a>
+        <a href="/plan/planshop/swipeDetail/S00000000864" class="w20"><img src="https://img.shoppingntmall.com/htmleditor/934/cc_02-051698734078930.png" alt=""></a>  
+        <img src="https://img.shoppingntmall.com/htmleditor/969/11687939490808.png" alt="" class="w20">
+      </div>
+    </div>
+    <style media="screen">
+      .pro_anchor {position:absolute; bottom:0; left:0; z-index:6;}
+      .pro_anchor a, .pro_anchor img {background:none; vertical-align:middle;}
+      .bg_1 {position:absolute; z-index:2; width:100%; height:100%; left:0; top:0; display:block; background:url(https://img.shoppingntmall.com/htmleditor/255/bg11698733818020.png); background-size:cover;}
+      .bg {position:absolute; z-index:3; width:100%; height:100%; left:0; top:0; animation:bg 500s linear infinite; display:block; background:url(https://img.shoppingntmall.com/htmleditor/427/bbgg1698733725371.png); background-size:cover;}
+      @keyframes bg {
+        from {background-position: 0 0;}
+        to {background-position: 0 -9000px;}
+      }
+      .air_wrap {
+        position: relative;
+        width: 100%;
+        background: #0052cf;
+        overflow: hidden;
+      }
+      .air_wrap .air{
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-size: 1000px 100px;
+        transform:scale(1.5);
+      }
+      .air_wrap .air.air1{
+        animation: wave 30s linear infinite;
+        z-index: 4;
+        opacity: 1;
+        animation-delay: 0s;
+        bottom: 0;
+        background-image: url(https://img.shoppingntmall.com/htmleditor/672/w11687938697811.png);
+      }
+      .air_wrap .air.air2{
+        animation: wave2 15s linear infinite;
+        z-index: 3;
+        opacity: 1;
+        animation-delay: -5s;
+        bottom: 10px;
+        background-image: url(https://img.shoppingntmall.com/htmleditor/959/w241687938707567.png);
+      }
+      .air_wrap .air.air3{
+        animation: wave 30s linear infinite;
+        z-index: 2;
+        opacity: .5;
+        animation-delay: -2s;
+        bottom: 15px;
+        background-image: url(https://img.shoppingntmall.com/htmleditor/150/w31687938755044.png);
+      }
+      .air_wrap .air.air4{
+        animation: wave2 5s linear infinite;
+        z-index: 1;
+        opacity: 0.5;
+        animation-delay: -5s;
+        bottom: 20px;
+        background-image: url(https://img.shoppingntmall.com/htmleditor/959/w241687938707567.png);
+      }
+      @keyframes wave{
+        0%{
+          background-position-x: 0px;
+        }
+        100%{
+          background-position-x: 1000px;
+        }
+      }
+      @keyframes wave2{
+        0%{
+          background-position-x: 0px;
+        }
+        100%{
+          background-position-x: -1000px;
+        }
+      }
+  
+      @media screen and (max-width:720px)  {
+        .air_wrap .air{
+          background-size: 500px 50px !important; height: 50px;
+        }
+      }
+  
+      .base1 {position:relative; overflow:hidden;}
+      .base2 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%; z-index:5;}
+      .ob {top:0;}
+  
+      .ani1 {top:0; animation: ani1 1.6s ease-in-out infinite; z-index:5; left:0;}
+  
+      @keyframes ani1 {
+        0% {top:-3px;}
+        50% {top:0px;}
+        100% {top:-3px;}
+      }
+    </style>
+  
+  </div></div>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden;}
+    .promotion_con img {width:100%; vertical-align:middle;}
+    .promotion_con .w20 {width:20%; display:inline-block;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -25.33%;}
+    }
+  </style>
+  
+  <script>
+    //특정시간
+    var Now = new Date(); //현재 날짜 및 시간
+    var nowY = Now.getFullYear(); //년
+    var nowM = Now.getMonth() + 1; //월
+    var nowD = Now.getDate(); //일
+    var nowH = Now.getHours(); //시
+    var nowB = Now.getMinutes(); //분   
+    function pluszero(time){
+      var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+      if(time.length < 2){ //2자리 보다 작으면
+        time = '0' + time; //숫자앞 0 붙임
+        return time; //값 내보냄
+      }else{
+        return time; //2자리면 값 내보냄
+      }
+    }
+    //만든 함수 적용 
+    nowM = pluszero(nowM); 
+    nowD = pluszero(nowD);
+    nowH = pluszero(nowH);
+    nowB = pluszero(nowB);   
+    var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+  
+    $(".pday").hide();
+    if(202306290000 <= nowT ){ $(".pday1").show();}
+    if(202307030000 <= nowT ){ $(".pday1").hide();}
+    if(202307030000 <= nowT ){ $(".pday2").show();}
+    if(202307100000 <= nowT ){ $(".pday2").hide();}
+    if(202307100000 <= nowT ){ $(".pday3").show();}
+    if(202307170000 <= nowT ){ $(".pday3").hide();}
+  
+    if(202307170000 <= nowT ){ $(".pday4").show();}
+    if(202308070000 <= nowT ){ $(".pday4").hide();}
+  
+    if(202308070000 <= nowT ){ $(".pday5").show();}
+  
+  
+  </script>
+  

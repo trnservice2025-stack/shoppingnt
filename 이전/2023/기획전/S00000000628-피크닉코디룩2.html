@@ -1,0 +1,270 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<img src="https://img.shoppingntmall.com/htmleditor/955/planshop_view_PC1681785721833.png" class="ppc">
+<img src="https://img.shoppingntmall.com/htmleditor/536/planshop_view_MO%20%282%291681785736428.png" class="mmo">
+<div class="promotion_con">
+  <div class="promotion_con_mo">
+    <a href="/customer/provide-coupon-multi?couponNo=202304106840&rUrl=/plan/planshop/swipeDetail/S00000000628" class="pday pday1"><img src="https://img.shoppingntmall.com/htmleditor/144/ss1680848040353.jpg"></a>
+    <a href="/plan/event/swipeDetail/E00000000218" class="pday pday2"><img src="https://img.shoppingntmall.com/htmleditor/220/111681806023509.jpg"></a>
+    <a href="/customer/provide-coupon-multi?couponNo=202304106841&rUrl=/plan/planshop/swipeDetail/S00000000628" class="jday"><img src="https://img.shoppingntmall.com/htmleditor/546/jjj1680144111360.jpg"></a>
+  </div>
+</div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .ppc, .mmo {display:block; width:100%; max-width:1200px; margin:0 auto;}
+  .mmo {display:none;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+    .mmo {display:block;}
+    .ppc {display:none;}
+  }
+</style>
+
+<script>
+  $(function(){
+    $('.coupon-wrap .coupon .tit').each(function() {
+      var text = $(this).text();
+      let reg = /[[\]/]/gim;
+      $(this).text(text.replace(/\[\쿠폰\] |\[\장바구니\] |1월 |2월 |3월 |4월 |5월 |6월 |7월 |8월 |9월 |10월 |11월 |12월 /g, ''));
+    });
+  })
+</script>
+<script>
+  $(function(){
+    $('.exhibi-coupon-list .tit').each(function() {
+      var text = $(this).text();
+      $(this).text(text.replace(/\[\쿠폰\] |\[\장바구니\] |1월 |2월 |3월 |4월 |5월 |6월 |7월 |8월 |9월 |10월 |11월 |12월 /g, ''));
+    });
+  })
+</script>
+<script>
+
+  //특정시간
+  var Now = new Date(); //현재 날짜 및 시간
+  var nowY = Now.getFullYear(); //년
+  var nowM = Now.getMonth() + 1; //월
+  var nowD = Now.getDate(); //일
+  var nowH = Now.getHours(); //시
+  var nowB = Now.getMinutes(); //분   
+  function pluszero(time) {
+    var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+    if (time.length < 2) { //2자리 보다 작으면
+      time = '0' + time; //숫자앞 0 붙임
+      return time; //값 내보냄
+    } else {
+      return time; //2자리면 값 내보냄
+    }
+  }
+  //만든 함수 적용 
+  nowM = pluszero(nowM);
+  nowD = pluszero(nowD);
+  nowH = pluszero(nowH);
+  nowB = pluszero(nowB);
+  var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+
+  $(".pday").hide();
+  if (202304201800 <= nowT) {
+    $(".pday").hide();
+    $(".pday1").show();
+  }
+  if (202304210600 <= nowT) {
+    $(".pday").hide();
+  }
+
+  if (202304211000 <= nowT) {
+    $(".pday").hide();
+    $(".pday2").show();
+  }
+  if (202304220000 <= nowT) {
+    $(".pday").hide();
+  }
+
+  $(".jday").hide();
+  if (202304221000 <= nowT) {
+    $(".jday").show();
+  }
+  if (202304230000 <= nowT) {
+    $(".jday").hide();
+  }
+</script>
+
+<div class="coupon-wrap">
+  <div class="block-list ">
+
+
+
+
+
+    <div class="block">
+      <div class="coupon " id="coupon-wrap-coupon-area-202304186981" onclick="checkDown('coupon-wrap-coupon-area-202304186981','N')">
+        <div class="info-area">
+          <div class="flag">
+
+
+
+
+
+          </div>
+          <span class="price">
+
+
+            <span class="sale"><em>15</em>%</span>
+
+
+
+          </span>
+          <span class="tit">[쿠폰] 피크닉 코디룩 15% 쿠폰</span>
+        </div>
+        <!-- disabled 버튼 -->
+
+        <div class="btn-area">
+          <button type="button" id="btnDownloadCpn_202304186981" class="btn color-white outline-whitegray" onclick="downloadCoupon('202304186981', this);"><span class="hidden">쿠폰 다운받기</span><i class="ico size-24 down"></i></button>
+        </div>
+
+      </div>
+      <div class="benef-desc">
+        <span class="txt">
+
+
+          최대 80,000원 할인
+
+
+        </span>
+        <span class="date">
+          <span class="hidden">쿠폰사용 기간</span>
+
+
+
+
+          23.04.20~23.04.24
+        </span>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="block">
+      <div class="coupon " id="coupon-wrap-coupon-area-202304186980" onclick="checkDown('coupon-wrap-coupon-area-202304186980','N')">
+        <div class="info-area">
+          <div class="flag">
+
+
+
+
+
+          </div>
+          <span class="price">
+
+
+            <span class="sale"><em>10</em>%</span>
+
+
+
+          </span>
+          <span class="tit">[장바구니] 피크닉 코디룩 10% 쿠폰</span>
+        </div>
+        <!-- disabled 버튼 -->
+
+        <div class="btn-area">
+          <button type="button" id="btnDownloadCpn_202304186980" class="btn color-white outline-whitegray" onclick="downloadCoupon('202304186980', this);"><span class="hidden">쿠폰 다운받기</span><i class="ico size-24 down"></i></button>
+        </div>
+
+      </div>
+      <div class="benef-desc">
+        <span class="txt">
+
+
+          최대 40,000원 할인
+
+
+        </span>
+        <span class="date">
+          <span class="hidden">쿠폰사용 기간</span>
+
+
+
+
+          23.04.20~23.04.24
+        </span>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="block">
+      <div class="coupon " id="coupon-wrap-coupon-area-202304186979" onclick="checkDown('coupon-wrap-coupon-area-202304186979','N')">
+        <div class="info-area">
+          <div class="flag">
+
+
+
+
+
+          </div>
+          <span class="price">
+
+
+            <span class="sale"><em>5</em>%</span>
+
+
+
+          </span>
+          <span class="tit">[쿠폰] 피크닉 코디룩 5% 쿠폰</span>
+        </div>
+        <!-- disabled 버튼 -->
+
+        <div class="btn-area">
+          <button type="button" id="btnDownloadCpn_202304186979" class="btn color-white outline-whitegray" onclick="downloadCoupon('202304186979', this);"><span class="hidden">쿠폰 다운받기</span><i class="ico size-24 down"></i></button>
+        </div>
+
+      </div>
+      <div class="benef-desc">
+        <span class="txt">
+
+
+          최대 20,000원 할인
+
+
+        </span>
+        <span class="date">
+          <span class="hidden">쿠폰사용 기간</span>
+
+
+
+
+          23.04.20~23.04.24
+        </span>
+      </div>
+    </div>
+
+  </div>
+  <div class="btn-area">
+
+
+
+    <!--                 </button> -->
+
+
+    <!--                 <button type="button" id="btnDownloadCpnAllEnded" class="btn color-white outline-black size-XL" disabled><span>쿠폰 다운받기 완료<i class="ico size-24 down"></i></span></button> -->
+
+
+
+    <button type="button" id="btnDownloadCpnAll" class="btn color-white outline-black size-XL" onclick="downloadCouponAll('202304186981,202304186980,202304186979');" style="">
+      <span>쿠폰 한번에 다운받기<i class="ico size-24 down"></i></span>
+    </button>
+
+
+
+
+    <button type="button" id="btnDownloadCpnAllEnded" class="btn color-white outline-black size-XL" disabled="" style="display:none;" onclick="CouponCheck();"><span>쿠폰 다운받기 완료<i class="ico size-24 down"></i></span></button>
+  </div>
+</div>

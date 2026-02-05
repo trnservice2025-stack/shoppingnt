@@ -1,0 +1,51 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css">
+
+<div class="promotion_con"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/786/1_011680656583252.jpg">
+
+  <div class="swiper_pro_wrap pday pday1"><div class="swiper swiper_pro">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://img.shoppingntmall.com/htmleditor/169/1_021680656831714.jpg"></div>
+      <div class="swiper-slide"><img src="https://img.shoppingntmall.com/htmleditor/695/1_031680656843570.jpg"></div>
+      <div class="swiper-slide"><img src="https://img.shoppingntmall.com/htmleditor/010/1_041680656853745.jpg"></div>
+    </div>
+  </div></div>
+
+  <a href="/display/goods/10308677"><img src="https://img.shoppingntmall.com/htmleditor/589/1_051680656610311.jpg"></a>
+  <a href="/display/goods/12738130"><img src="https://img.shoppingntmall.com/htmleditor/956/1_061680656615832.jpg"></a>
+  <a href="/display/goods/12520769"><img src="https://img.shoppingntmall.com/htmleditor/933/1_071680656620994.jpg"></a>
+</div></div>
+
+<script>
+  $(function(){
+    //스와이퍼
+    var swiperzzzz = new Swiper(".swiper_pro", {
+      allowTouchMove: false, //드래그방지
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 0,
+      autoplay: {
+        delay: 1500,
+      },
+      speed : 800,
+    });
+  });
+</script>
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .swiper_pro_wrap {overflow:hidden;}
+  .swiper_pro {overflow:hidden; z-index:1; padding:0 0 0 0; margin:0 0; position:relative;}
+  .swiper_pro .swiper-wrapper {height:auto; }
+  .swiper_pro .swiper-slide button {width:100%;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>

@@ -1,0 +1,431 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<script>
+    $(window).resize(function() {
+    if($(window).width() > 768) { $(".ska1").attr("href","https://www.shoppingntmall.com/assets/css/swiper.css"); $(".ska2").attr("href","https://www.shoppingntmall.com/assets/css/common.css"); }
+    else { $(".ska1").attr("href","https://m.shoppingntmall.com/moassets/css/swiper.css"); $(".ska2").attr("href","https://m.shoppingntmall.com/moassets/css/common.css"); }
+    });
+</script> -->
+
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="basic" style="margin-bottom:-1px;" id="gradient">
+        <img src="https://img.shoppingntmall.com/htmleditor/172/basic1698297701582.png">
+        <img src="https://img.shoppingntmall.com/htmleditor/914/ba11698297732215.png" class="aani aa1">
+        <img src="https://img.shoppingntmall.com/htmleditor/657/ba21698298063353.png" class="aani aa2">
+        <img src="https://img.shoppingntmall.com/htmleditor/705/ba31698298070096.png" class="aani aa3">
+        <img src="https://img.shoppingntmall.com/htmleditor/204/ba41698298076596.png" class="aani aa4">
+        <img src="https://img.shoppingntmall.com/htmleditor/479/ba51698298094297.png" class="aani aa5">
+        <img src="https://img.shoppingntmall.com/htmleditor/540/ba61698298101126.png" class="aani aa6">
+        <img src="https://img.shoppingntmall.com/htmleditor/061/ba71698298107534.png" class="aani aa7">
+    </div>
+    <style media="screen">
+        .basic {position:relative; overflow:hidden;}
+        .basic>img {position:relative; z-index:1;}
+        .basic .aani {position:absolute; width:100%; z-index:2;}
+
+        .aa1 {left:0; top:-100%; animation:aa1 1s forwards ease-in-out;}
+        .aa2 {left:0; bottom:-100%; animation:aa2 1s forwards ease-in-out; animation-delay: .4s;}
+        .aa3 {left:0; bottom:-100%; animation:aa3 1s forwards ease-in-out; animation-delay: .6s;}
+
+        .aa4 {left:-15%; opacity:0; top:0; animation:aa4 1s forwards ease-in-out; animation-delay: .8s;}
+        .aa5 {left:-15%; opacity:0; top:0;  animation:aa5 1s forwards ease-in-out; animation-delay: .9s;}
+        .aa6 {right:-15%; opacity:0; top:0; animation:aa6 1s forwards ease-in-out; animation-delay: 1.2s;}
+        .aa7 {right:-15%; opacity:0; top:0; animation:aa7 1s forwards ease-in-out; animation-delay: 1.3s;}
+
+        @keyframes aa1 {
+            0% {top:-100%;}
+            80% {top:5%;}
+            100% {top:0;}
+        }
+        @keyframes aa2 {
+            0% {bottom:-100%;}
+            80% {bottom:5%;}
+            100% {bottom:0;}
+        }
+        @keyframes aa3 {
+            0% {bottom:-100%;}
+            80% {bottom:5%;}
+            100% {bottom:0;}
+        }
+        @keyframes aa4 {
+            0% {left:-15%; opacity:0; }
+            90% {left:3%;}
+            100% {left:0%; opacity:1; }
+        }
+        @keyframes aa5 {
+            0% {left:-15%; opacity:0;}
+            100% {left:0%; opacity:1;}
+        }
+        @keyframes aa6 {
+            0% {right:-15%; opacity:0; }
+            90% {right:3%;}
+            100% {right:0%; opacity:1; }
+        }
+        @keyframes aa7 {
+            0% {right:-15%; opacity:0;}
+            100% {right:0%; opacity:1;}
+        }
+    </style>
+    <script type="text/javascript">
+        var colors = [
+        [218, 193, 183],
+        [246, 233, 228],
+        [218, 193, 183],
+        [246, 233, 228]
+        ];
+
+        var colorIndices = [0, 1, 2, 3];
+        var gradientSpeed = 0.002; // 더 작은 값으로 수정
+
+        function interpolateColor(c0, c1, step) {
+        var r = Math.round(c0[0] + (c1[0] - c0[0]) * step);
+        var g = Math.round(c0[1] + (c1[1] - c0[1]) * step);
+        var b = Math.round(c0[2] + (c1[2] - c0[2]) * step);
+        return "rgb(" + r + "," + g + "," + b + ")";
+        }
+
+        function updateGradient() {
+        var c0_0 = colors[colorIndices[0]];
+        var c0_1 = colors[colorIndices[1]];
+        var c1_0 = colors[colorIndices[2]];
+        var c1_1 = colors[colorIndices[3]];
+
+        var color1 = interpolateColor(c0_0, c0_1, gradientSpeed);
+        var color2 = interpolateColor(c1_0, c1_1, gradientSpeed);
+
+        $('#gradient').css({
+            background: `-webkit-gradient(linear, left top, right top, from(${color1}), to(${color2}))`
+        }).css({
+            background: `-moz-linear-gradient(left, ${color1} 0%, ${color2} 100%)`
+        });
+
+        gradientSpeed += 0.002; // 더 작은 값으로 수정
+
+        if (gradientSpeed >= 1) {
+            gradientSpeed = 0;
+            colorIndices[0] = colorIndices[1];
+            colorIndices[2] = colorIndices[3];
+            
+            colorIndices[1] = (colorIndices[1] + 1) % colors.length; // 간단하게 수정
+            colorIndices[3] = (colorIndices[3] + 1) % colors.length; // 간단하게 수정
+        }
+        }
+
+        setInterval(updateGradient, 10);
+    </script>
+    
+    <div class="basict">
+        <img src="https://img.shoppingntmall.com/htmleditor/684/tt1698296964046.png" style="display:block; margin-bottom:-1px;">
+        <img src="https://img.shoppingntmall.com/htmleditor/298/ta11698297091055.png" class="aaani aaa1">
+        <img src="https://img.shoppingntmall.com/htmleditor/256/ta21698297099157.png" class="aaani aaa2">
+        <img src="https://img.shoppingntmall.com/htmleditor/270/ta31698297106256.png" class="aaani aaa3">
+        <img src="https://img.shoppingntmall.com/htmleditor/961/ta41698297111920.png" class="aaani aaa4">
+    </div>
+    <style media="screen">
+        .basict {position:relative; overflow:hidden;}
+        .basict>img {position:relative; z-index:1;}
+        .basict .aaani {position:absolute; width:100%; z-index:2;}
+        .aaa1 {left:0; top:0; animation:aaa1 0.8s infinite ease-in-out; }
+        .aaa2 {left:0; top:0; animation:aaa1 0.8s infinite ease-in-out; animation-delay: .3s;}
+        .aaa3 {left:0; top:0; animation:aaa1 0.8s infinite ease-in-out; animation-delay: .6s;}
+        .aaa4 {left:0; top:0;} 
+        @keyframes aaa1 {
+        0% {top:0%;}
+            50% {top:-2%;}
+            100% {top:0;}
+        }   
+    </style>
+
+    <div class="swiper_pro_wrap2">
+        
+        <div class="swiper swiper_pro2 sday sday10">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="/display/goods/13545543">
+                    <img src="https://img.shoppingntmall.com/htmleditor/600/13545543_011698901404938.png" class="sday10_1">
+                    <img src="https://img.shoppingntmall.com/htmleditor/698/13545543_021698901412739.png" class="sday10_2">
+                </a></div>
+                <div class="swiper-slide"><a href="/display/goods/13444058">
+                    <img src="https://img.shoppingntmall.com/htmleditor/137/13444058_011698901364530.png" class="sday10_3">
+                    <img src="https://img.shoppingntmall.com/htmleditor/491/13444058_021698901396656.png" class="sday10_4">
+                </a></div>
+                <div class="swiper-slide"><a href="/display/goods/13563757">
+                    <img src="https://img.shoppingntmall.com/htmleditor/747/13563757_011698901420256.png" class="sday10_5">
+                    <img src="https://img.shoppingntmall.com/htmleditor/617/13563757_021698901428842.png" class="sday10_6">
+                </a></div>
+                <div class="swiper-slide"><a href="/display/goods/13627257">
+                    <img src="https://img.shoppingntmall.com/htmleditor/220/13627257_011698901436311.png" class="sday10_7">
+                    <img src="https://img.shoppingntmall.com/htmleditor/857/13627257_021698901445098.png" class="sday10_8">
+                </a></div>                
+            </div>                  
+            <div class="swiper_pro_bottom2"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div>
+        </div>
+
+        <div class="swiper swiper_pro2 sday sday11">
+            <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide"><a href="/display/goods/12983307">
+                    <img src="https://img.shoppingntmall.com/htmleditor/275/129833071699601432103.png">
+                </a></div> -->
+                <div class="swiper-slide"><a href="/display/goods/14047317">
+                    <img src="https://img.shoppingntmall.com/htmleditor/527/140473171699601495029.png">
+                </a></div>
+                <div class="swiper-slide"><a href="/display/goods/13599598">
+                    <img src="https://img.shoppingntmall.com/htmleditor/136/13599598_11699601445055.png" class="sday11_3"> 
+                    <img src="https://img.shoppingntmall.com/htmleditor/699/13599598_21699601454491.png" class="sday11_4"><!-- 11/17 -->
+                </a></div>
+                <div class="swiper-slide"><a href="/display/goods/13813964">
+                    <img src="https://img.shoppingntmall.com/htmleditor/335/13813964_11699601475758.png" class="sday11_1">
+                    <img src="https://img.shoppingntmall.com/htmleditor/730/13813964_21699601485903.png" class="sday11_2"><!-- 11/15 -->
+                </a></div>     
+                <div class="swiper-slide"><a href="/display/goods/13806468">
+                    <img src="https://img.shoppingntmall.com/htmleditor/696/138064681699601463416.png">
+                </a></div>             
+            </div>                  
+            <div class="swiper_pro_bottom2"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div>
+        </div>
+
+    </div>
+    
+    <!-- 쿠폰 영역 --> 
+    <a class="sday sday10" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311022373&amp;rUrl=/plan/planshop/swipeDetail/S00000000864');">
+        <img src="https://img.shoppingntmall.com/htmleditor/098/pc_031695214427260.jpg">
+    </a>
+    <a class="sday sday11" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311092559&amp;rUrl=/plan/planshop/swipeDetail/S00000000864');">
+        <img src="https://img.shoppingntmall.com/htmleditor/098/pc_031695214427260.jpg">
+    </a>
+    <div class="toggle_wrap">
+        <input class="toggle_input" id="toggle_input9" type="checkbox">
+        <label class="toggle_btn" for="toggle_input9">유의사항</label>        
+        <ul class="toggle_con">
+            <li class="bold">[신상오픈런 할인쿠폰]</li>
+            <li>쿠폰은 <다운로드 받기> 를 클릭하여 지급 받거나 기획전 하단에서 다운 받은 후 사용 가능합니다.</li>
+            <li>쿠폰은 기획전에 해당하는 상품의 상세페이지 상단에서도 다운 받을 수 있습니다.</li>
+            <li>상품별로 적용되는 쿠폰할인율은 상이하며, 쿠폰을 다운로드 한 후 마이페이지 메뉴의 보유쿠폰에서 쿠폰별 적용가능상품을 확인할 수 있습니다.</li>
+            <li>최종 결제금액은 다른 쿠폰 보유 및 적용 여부에 따라 상이할 수 있습니다.</li>
+            <li class="ctxt">해당 기획전의 쿠폰은 11/6(월) 00:00 ~ 11/12(일) 23:59까지 발급 및 사용 가능합니다.</li>
+            <li>해당 기획전의 쿠폰은 무제한으로 발급 가능하며, 발급 받은 쿠폰 사용 후에 재발급 가능합니다.</li>
+            <li>해당 기획전의 10% 쿠폰은 최대 4만원까지 할인이 적용됩니다.</li>
+            <li>해당 기획전의 쿠폰은 쇼핑엔티 PC web, 모바일 web/APP에서 사용 가능합니다.</li>
+            <li>해당 기획전의 쿠폰은 장바구니 단위로 적용되지 않으며, 개별 상품 단위로 적용 가능합니다.</li>
+            <li>비회원은 모든 쿠폰 지급 대상에서 제외됩니다.(회원가입 필수)</li>
+            <li>동일한 상품을 여러 개 구매하실 경우, 최대 10개까지 쿠폰 적용이 가능합니다.</li>
+            <li>해당 기획전은 당사 사정에 의해 변경 또는 조기 종료될 수 있습니다.</li>
+        </ul>
+    </div>    
+    
+    <!-- 띠배너 영역 -->    
+    <div>
+        <!-- 심야 -->
+        <a class="pday pday1" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202310312337&amp;rUrl=/plan/planshop/swipeDetail/S00000000864');">
+            <img src="https://img.shoppingntmall.com/htmleditor/547/31689151139867.jpg">
+        </a>    
+        <!-- 주말 -->
+        <a class="pday pday2" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202310312336&amp;rUrl=/plan/planshop/swipeDetail/S00000000864');">
+            <img src="https://img.shoppingntmall.com/htmleditor/516/jj1690779375886.jpg">
+        </a>  
+        <!-- 주말 -->
+        <a class="pday pday5" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202310312338&amp;rUrl=/plan/planshop/swipeDetail/S00000000864');">
+            <img src="https://img.shoppingntmall.com/htmleditor/516/jj1690779375886.jpg">
+        </a>  
+        <!-- 베스트어워즈 -->
+        <a class="pday pday3" href="/plan/planshop/swipeDetail/S00000000921"><img src="https://img.shoppingntmall.com/htmleditor/333/31699330650149.jpg"></a>            
+        <!-- 간식뽑기 -->
+        <a class="pday pday4" href="/plan/event/swipeDetail/E00000000248"><img src="https://img.shoppingntmall.com/htmleditor/983/41699330659804.jpg"></a>
+    </div>
+        
+    </div></div>  
+    
+<style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con .w50 {width:50%; display:inline-block;}
+    .promotion_con a {background:none; cursor:pointer;}
+    
+    .toggle_wrap {padding:30px; background:#fafafa;}
+    .toggle_btn {font-size:15px; height:60px; line-height:60px; font-weight:700; text-align:center; display:block; cursor:pointer; max-width:700px; margin:0 auto;}
+    .toggle_btn:after {width:6px; height:6px; border-style:solid; border-width:1px 1px 0 0; margin:-7px 0 0 10px; vertical-align:middle; transform:rotate(135deg); content:''; display:inline-block; }
+    .toggle_con {display:none; padding:0 20px 10px 20px; font-size:14px; line-height:22px; list-style:none; word-break:keep-all; max-width:700px; margin:0 auto; box-sizing:inherit;}
+    .toggle_con:after, .toggle_con:before {box-sizing:inherit;}
+    .toggle_con li {padding-left:7px; position:relative; margin-bottom:8px;}
+    .toggle_con li:after {content:"\00B7"; position:absolute; left:0; top:0; }
+    .toggle_con li.bold {padding-left:0; font-weight:700;}
+    .toggle_con li.bold:after {display:none;}
+    .toggle_input {position:fixed; left:-9999px;}
+    .toggle_input:checked ~ .toggle_con {display:block;}
+    .toggle_input:checked ~ .toggle_btn:after {transform:rotate(315deg); margin-top:0;}
+    
+    .toggle_btn {background:#eeeeee; color:#333;}
+    .toggle_btn:after {border-color:##333;}
+    .toggle_con {background:#eeeeee; color:#999;}
+    
+    .swiper_pro_wrap {overflow:hidden; background:#361368;  padding:0 24%; position:relative;}
+    .swiper_pro_wrap .swiper-button-prev2,
+    .swiper_pro_wrap .swiper-button-next2 {background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; width:50px; height:72px; position:absolute; top:22%; text-indent:-9999px; width:50px; height:72px; background-size:cover;}
+    .swiper_pro_wrap .swiper-button-prev2 {left:18%; background-image:url(https://img.shoppingntmall.com/htmleditor/788/arr11693533250572.png);}
+    .swiper_pro_wrap .swiper-button-next2 {right:18%; background-image:url(https://img.shoppingntmall.com/htmleditor/066/arr21693533269365.png);}
+    
+    .swiper_pro {overflow:hidden; z-index:1; padding:0; margin:0 0; position:relative;  padding-bottom:20%;}
+    .swiper_pro .swiper-wrapper {height:auto; }
+    .swiper_pro .swiper-slide button {width:100%;}
+    .swiper_pro .swiper-slide img {width:100%;}
+    .swiper_pro .swiper-slide.swiper-slide-active img {transform: scale(1); opacity:1;}
+    
+    .swiper_pro_bottom {position:relative; margin:0; padding:0; width:100%; position:absolute; bottom:7%; left:0; text-align:center;}
+    .swiper_pro_bottom .swiper-pagination-fraction,
+    .swiper_pro_bottom .swiper-button-next,
+    .swiper_pro_bottom .swiper-button-prev {display:inline-block; vertical-align:middle; top:0; left:0; bottom:0; right:0; position:relative; border:0; border-radius:0;}
+    .swiper_pro_bottom .swiper-pagination-fraction {width:auto; font-size:18px; width:100px; margin-top:-15px; color:#b9efc0;}
+    .swiper_pro_bottom .swiper-button-next, .swiper_pro_bottom .swiper-button-prev {width:12px; height:12px; background:none;}
+    .swiper_pro_bottom .swiper-button-next:after, .swiper_pro_bottom .swiper-button-next:before,
+    .swiper_pro_bottom .swiper-button-prev:after, .swiper_pro_bottom .swiper-button-prev:before {content:""; display:block; height:2px; width:14px; background:#b9efc0; position:absolute; top:unset; bottom:unset; right:unset; left:unset;}
+    .swiper_pro_bottom .swiper-button-next:after {transform:rotate(-45deg); bottom:0; right:0;}
+    .swiper_pro_bottom .swiper-button-next:before {transform:rotate(45deg); top:0; right:0;}
+    .swiper_pro_bottom .swiper-button-prev:after {transform:rotate(-135deg); bottom:0; left:0;}
+    .swiper_pro_bottom .swiper-button-prev:before {transform:rotate(135deg); top:0; left:0;}
+
+    .swiper_pro_wrap2 {overflow:hidden; background:#d9bfb4; position:relative;}
+    .swiper_pro2 {overflow:hidden; z-index:1; padding:0; margin:0 -25%; position:relative;  padding-bottom:10%;}
+    .swiper_pro2 .swiper-wrapper {height:auto; }
+    .swiper_pro2 .swiper-slide {position:relative; overflow:hidden;}
+    .swiper_pro2 .swiper-slide:after {content:""; display:block; position:absolute; left:0%; top:0; width:calc(100% - 40px); left:20px; height:100%; background:rgba(0,0,0,.4); z-index:2;}
+    .swiper_pro2 .swiper-slide-active:after {display:none;}
+    .swiper_pro2 .swiper-slide button {width:100%;}
+    .swiper_pro2 .swiper-slide img {width:100%; padding:0 20px;}
+    .swiper_pro2 .swiper-slide.swiper-slide-active img {transform: scale(1); opacity:1;}
+
+    .swiper_pro_bottom2 {position:relative; margin:0; padding:0; width:100%; position:absolute; bottom:7%; left:0; text-align:center;}
+    .swiper_pro_bottom2 .swiper-pagination-fraction,
+    .swiper_pro_bottom2 .swiper-button-next,
+    .swiper_pro_bottom2 .swiper-button-prev {display:inline-block; vertical-align:middle; top:0; left:0; bottom:0; right:0; position:relative; border:0; border-radius:0;}
+    .swiper_pro_bottom2 .swiper-pagination-fraction {display:inline-block; vertical-align:middle; width:auto; font-size:18px; width:100px; margin-top:-15px; color:#89420c;}
+    .swiper_pro_bottom2 .swiper-button-next, 
+    .swiper_pro_bottom2 .swiper-button-prev {width:12px; height:12px; background:none;}
+    .swiper_pro_bottom2 .swiper-button-next:after, .swiper_pro_bottom2 .swiper-button-next:before,
+    .swiper_pro_bottom2 .swiper-button-prev:after, .swiper_pro_bottom2 .swiper-button-prev:before {content:""; display:block; height:2px; width:14px; background:#89420c; position:absolute; top:unset; bottom:unset; right:unset; left:unset;}
+    .swiper_pro_bottom2 .swiper-button-next:after {transform:rotate(-45deg); bottom:0; right:0;}
+    .swiper_pro_bottom2 .swiper-button-next:before {transform:rotate(45deg); top:0; right:0;}
+    .swiper_pro_bottom2 .swiper-button-prev:after {transform:rotate(-135deg); bottom:0; left:0;}
+    .swiper_pro_bottom2 .swiper-button-prev:before {transform:rotate(135deg); top:0; left:0;}
+    
+    @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33.33%;}
+    
+        .toggle_wrap {margin:0 19.33%;}
+        .toggle_btn {font-size:14px; height:42px; line-height:42px;}
+        .toggle_btn.a1 {width:6px; height:6px; margin:-7px 0 0 6px;}
+        .toggle_wrap {padding:15px;}
+        .toggle_con {padding:0 15px 10px 15px; font-size:13px; line-height:20px;}
+        .toggle_con li {padding-left:6px;}
+    
+        .swiper_pro_wrap .swiper-button-prev2,
+        .swiper_pro_wrap .swiper-button-next2 {display:none;}
+        .swiper_pro {overflow:hidden; z-index:1; margin:0 -5%; position:relative;}
+        .swiper_pro .swiper-slide img {margin:0 -1px;}
+        .swiper_pro_bottom {bottom:5%; z-index:2;}
+        .swiper_pro_bottom .swiper-pagination-fraction {margin-top:0;}
+
+        .swiper_pro2 .swiper-slide:after {width:100%; left:0px;}
+        .swiper_pro2 .swiper-slide img {width:100%; padding:0;}
+        .swiper_pro_bottom2 {bottom:5%; z-index:2;}
+        .swiper_pro_bottom2 .swiper-pagination-fraction {margin-top:0;}
+    }
+</style>
+    
+<script>
+    $(function(){
+        $(".swiper_pro_wrap .swiper-button-prev2").bind("click", function(){
+        $(".swiper_pro_wrap .swiper-button-prev").trigger("click");
+        });
+        $(".swiper_pro_wrap .swiper-button-next2").bind("click", function(){
+        $(".swiper_pro_wrap .swiper-button-next").trigger("click");
+        });   
+    
+        //스와이퍼
+        var swiperzzzz = new Swiper(".swiper_pro", {
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 4000,
+        },
+        });
+
+        var swiperzzzz = new Swiper(".swiper_pro2", {
+        loop: true,
+        centermode:true,
+        centeredSlides: true,
+        slidesPerView: 3,  
+        spaceBetween: 10,        
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        autoplay: {
+            delay: 4000,
+        },        
+        });
+    
+    });
+    
+    //특정시간
+    const now = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const nowT = [
+      now.getFullYear(),
+      formatDate(now.getMonth() + 1),
+      formatDate(now.getDate()),
+      formatDate(now.getHours()),
+      formatDate(now.getMinutes())
+    ].join('');
+
+    $(".pday").hide();
+    if(202311141800<=nowT){$(".pday1").show();}
+    if(202311150600<=nowT){$(".pday1").hide();}
+
+    if(202311100000<=nowT){$(".pday2").show();}
+    if(202311130000<=nowT){$(".pday2").hide();}
+
+    if(202311170000<=nowT){$(".pday5").show();}
+    if(202311200000<=nowT){$(".pday5").hide();}
+
+    if(202311060000<=nowT){$(".pday3").show();}
+    if(202311200000<=nowT){$(".pday3").hide();}
+
+    if(202311060000<=nowT){$(".pday4").show();}
+    if(202311200000<=nowT){$(".pday4").hide();}
+
+    if(202311130000<=nowT){$(".ctxt").text("해당 기획전의 쿠폰은 11/13(월) 00:00 ~ 11/19(일) 23:59까지 발급 및 사용 가능합니다.");}
+
+    $(".sday").hide();
+    if(202310300000<=nowT){$(".sday9").show(); $(".sday9_1, .sday9_3").hide(); $(".sday9_2, .sday9_4").show();}
+    if(202310310000<=nowT){$(".sday9_2, .sday9_4").hide();$(".sday9_1, .sday9_3").show();}
+    if(202311030000<=nowT){$(".sday9_3").hide();$(".sday9_4").show();}
+    if(202311040000<=nowT){$(".sday9_4").hide();$(".sday9_3").show();}  
+
+    if(202311060000<=nowT){$(".sday9, .sday10_2, .sday10_4, .sday10_6, .sday10_8").hide(); $(".sday10, .sday10_1, .sday10_3, .sday10_5, .sday10_7").show(); }    
+    if(202311070000<=nowT){$(".sday10_3").hide(); $(".sday10_4").show(); }    
+    if(202311080000<=nowT){$(".sday10_4").hide(); $(".sday10_3").show(); }    
+    if(202311090000<=nowT){$(".sday10_1").hide(); $(".sday10_2").show(); }    
+    if(202311100000<=nowT){$(".sday10_7").hide(); $(".sday10_8").show(); }    
+    if(202311110000<=nowT){$(".sday10_5, .sday10_8").hide(); $(".sday10_6, .sday10_7").show(); }    
+    if(202311120000<=nowT){$(".sday10_6").hide(); $(".sday10_5").show(); }  
+    
+    if(202311130000<=nowT){$(".sday10, .sday11_2, .sday11_4").hide(); $(".sday11, .sday11_1, .sday11_3").show();}    
+    if(202311150000<=nowT){$(".sday11_1").hide(); $(".sday11_2").show(); }    
+    if(202311160000<=nowT){$(".sday11_2").hide(); $(".sday11_1").show(); }    
+    if(202311170000<=nowT){$(".sday11_3").hide(); $(".sday11_4").show(); }    
+    if(202311180000<=nowT){$(".sday11_4").hide(); $(".sday11_3").show(); }            
+ </script>

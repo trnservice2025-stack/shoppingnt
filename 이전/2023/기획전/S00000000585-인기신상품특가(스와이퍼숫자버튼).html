@@ -1,0 +1,79 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css">
+
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="swiper_pro_wrap pday pday1"><div class="swiper swiper_pro">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><a href="/display/goods/12576364"><img src="https://img.shoppingntmall.com/htmleditor/796/11680659068875.png"></a></div>
+      <div class="swiper-slide"><a href="/display/goods/12453358"><img src="https://img.shoppingntmall.com/htmleditor/345/21680659075351.png"></a></div>
+      <div class="swiper-slide"><a href="/display/goods/12601511"><img src="https://img.shoppingntmall.com/htmleditor/101/31680659082100.png"></a></div>
+    </div>
+    <div class="top-banner-paging"></div>
+		<button type="button" class="btn-top-banner-stop">정지</button>
+		<button type="button" class="btn-top-banner-play">시작</button>
+  </div></div>
+
+  <a href="/display/goods/12576366" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/059/s11680659176819.png"></a>
+  <a href="/display/goods/12738173" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/894/s21680659183606.png"></a>
+</div></div>
+
+<script>
+  $(function(){
+    //스와이퍼
+    var swiperzzzz = new Swiper(".swiper_pro", {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 0,
+      autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			},
+      speed : 800,
+      pagination: {
+				el: '.top-banner-paging',
+				type: 'fraction'
+			}
+    });
+    $('.btn-top-banner-stop').on('click', function(){
+			$(this).hide();
+			swiperzzzz.autoplay.stop();
+			$('.btn-top-banner-play').show().focus();
+		});
+		$('.btn-top-banner-play').on('click', function(){
+			$(this).hide();
+			swiperzzzz.autoplay.start();
+			$('.btn-top-banner-stop').show().focus();
+		});
+  });
+</script>
+<style>
+  .promotion_con .top-banner-paging {bottom: 15px; right:50%; margin-right:-320px; background:red; display: inline-block; position: absolute;  left: auto; width: auto; background: rgba(0 0 0 / 40%); color: #fff; font-size: 11px; font-weight: 500; z-index: 10; letter-spacing: 0; padding: 0px 10px; border-radius: 12px; height: 21px; line-height: 21px; }
+  .promotion_con .top-banner-paging .swiper-pagination-total { color: #bbb; }
+  .promotion_con .btn-top-banner-stop, .promotion_con .btn-top-banner-play,
+  .promotion_con .btn-top-banner-stop, .promotion_con .btn-top-banner-play {bottom: 15px; right: 50%; margin-right:-345px; width: 21px; height: 21px; border-radius: 50%; background-color: rgba(0 0 0 / 40%); text-indent: -9999em; position: absolute; z-index: 10; display: none; background-position: 50% 50%; background-repeat: no-repeat; background-size: 14px 14px; }
+  .promotion_con .btn-top-banner-stop,
+  .promotion_con .btn-top-banner-stop { display: block; background-image: url(https://m.shoppingntmall.com//moassets/images/common/icons-h-14-video-stop-nor@2x.png); }
+  .promotion_con .btn-top-banner-play,
+  .promotion_con .btn-top-banner-play { background-image: url(https://m.shoppingntmall.com//moassets/images/common/icons-h-14-video-play-nor@2x.png); }
+
+
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .swiper_pro_wrap {overflow:hidden;}
+  .swiper_pro {overflow:hidden; z-index:1; margin:0 -40%; position:relative;}
+  .swiper_pro .swiper-wrapper {height:auto; }
+  .swiper_pro .swiper-slide button {width:100%;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+
+    .promotion_con .top-banner-paging {bottom: 10px; margin-right:40%; right:-36px;}
+    .promotion_con .btn-top-banner-stop, .promotion_con .btn-top-banner-play,
+    .promotion_con .btn-top-banner-stop, .promotion_con .btn-top-banner-play {bottom: 10px; margin-right:40%; right:-62px;}
+  }
+</style>

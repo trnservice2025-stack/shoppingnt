@@ -1,0 +1,110 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="pro_time_wrap">
+        <img src="https://img.shoppingntmall.com/htmleditor/345/11697087979726.png" alt="">
+        <div class="pro_time">
+            <img src="https://img.shoppingntmall.com/htmleditor/942/tt1697088209431.png">
+            <div class="dday_wrap">
+                <div class="dday">
+                    <div class="dday_d">0일</div>
+                    <div class="dday_s1"></div>
+                    <div class="dday_s2"></div>
+                    <div class="dday_s3"></div>
+                </div>
+                <div class="dday end">이벤트 종료</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="base">
+        <img src="https://img.shoppingntmall.com/htmleditor/620/21697087818958.png" style="position:relative; z-index:1;">
+        <img src="https://img.shoppingntmall.com/htmleditor/630/t1697087826988.png" class="ani ani1">
+    </div>
+
+</div></div>
+
+<style>
+    .base {position:relative;}
+    .ani {position:absolute; z-index:2; width:100%; height:100%;}
+    .ani.bg {left:0; top:0; background:url(https://img.shoppingntmall.com/htmleditor/805/2cloud1695104038216.png); background-size:100% auto; animation:ani_bg 500s linear infinite; display:block; }
+    .ani1 {left:0; bottom:0; z-index:3; animation:ani1 1.2s ease-in-out infinite; animation-delay: 0s; opacity:0.7;}
+
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: -9000px 0 ;}
+    }
+
+    @keyframes ani1 {
+      0% {opacity:0.7;}
+      70% {opacity:1;}
+      100% {opacity:0.7;}
+    }
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; position:relative; background:#fff7db;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+
+    .pro_time_wrap {position:relative;}
+    .pro_time_wrap>img {position:relative; z-index:1;}
+    .pro_time {position:absolute; left:50%; top:50%; z-index:2; transform:translate(-50%, -50%);}
+    .pro_time img {widh:auto;}
+
+    .dday_wrap {font-size:20px;position:absolute;left:4px;top:0px;font-family:noto Sans KR; color:#000;}
+    .dday_wrap .dday {font-size:0;margin-left:28px;}
+    .dday_wrap .dday>div {display:inline-block;font-size:20px;width: 73px;text-align: right;margin-left: 16px;height:50px;line-height: 47px;font-size:33px;letter-spacing: 16px; font-weight:700;}
+    .dday_d {display:none !important;}
+    .dday.end {font-size:26px; background:#57188e; font-weight:700; width:252px; height:50px; text-align:center; border-radius:5px; line-height:49px; margin-left:36px; color:#fff;}
+
+    @media screen and (max-width:1200px)  {
+        .pro_time img {width:auto;}
+    }
+
+    @media screen and (max-width:800px)  {
+        .promotion_con {overflow:hidden;}
+
+        .pro_time {transform:translate(-50%, -50%) scale(0.65);}
+        .pro_time img {max-width:inherit;}
+    }
+
+</style>
+
+<script>
+  $(function(){
+    //수신동의 위치 이동
+    $('.toggle-area').appendTo(".toggle_an");
+  });
+  //남은시간
+  var dday_d = $(".dday_d");
+  var dday_s1 = $(".dday_s1");
+  var dday_s2 = $(".dday_s2");
+  var dday_s3 = $(".dday_s3");
+  function updateTimer() {
+    var targetDate = new Date("2023-10-24T23:59:59+0900");
+    var currentDate = new Date();
+    var timeDifference = targetDate - currentDate;
+    var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); //일
+    var hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24); //시
+    var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)); //분
+    var seconds = Math.floor((timeDifference / 1000) % 60); //초
+    dday_d.text(`${days}일`);
+    dday_s1.text(`${hours < 10 ? `0${hours}` : hours}`);
+    dday_s2.text(`${minutes < 10 ? `0${minutes}` : minutes}`);
+    dday_s3.text(`${seconds < 10 ? `0${seconds}` : seconds}`);
+    $(".dday.end").hide();
+    if (currentDate > targetDate) {
+        $(".dday").hide();
+        $(".dday.end").show();
+    }
+  }
+  function startTimer() {
+      updateTimer();
+      setInterval(updateTimer, 1000);
+  }
+  startTimer();  
+  var text = $(".dday_d").text();
+  var findString = "0일";
+  if (text.indexOf(findString) !== -1) {
+      $(".dday_d").remove();
+  }
+</script>

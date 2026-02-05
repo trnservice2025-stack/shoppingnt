@@ -1,0 +1,130 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+<div class="promotion_con">
+  <div class="pro_time">
+    <img src="https://img.shoppingntmall.com/htmleditor/079/time1685927899459.png">
+    <div class="dday_wrap">
+      <div class="dday">
+        <div class="dday_d">0일</div>
+        <div class="dday_s1"></div>
+        <div class="dday_s2"></div>
+        <div class="dday_s3"></div>
+      </div>
+      <div class="dday end">이벤트 종료</div>
+    </div>
+  </div>
+  <img src="https://img.shoppingntmall.com/htmleditor/023/ss_011685927569957.jpg"  class="pc">
+  <img src="https://img.shoppingntmall.com/htmleditor/610/mo1685932079664.jpg"  class="mo">
+</div>
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div style="background:#373434; ">
+    <img src="https://img.shoppingntmall.com/htmleditor/760/sssssssssssss1685927798888.jpg" class="ib1">
+    <img src="https://img.shoppingntmall.com/htmleditor/760/sssssssssssss1685927798888.jpg" class="ib2">
+    <img src="https://img.shoppingntmall.com/htmleditor/760/sssssssssssss1685927798888.jpg" class="ib3">
+  </div>
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; position:relative; background:#fff7db;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .promotion_con .mo {display:none;}
+
+  .ib1, .ib2, .ib3 {width:100%; display:flex; flex-wrap:nowrap; z-index:2;}
+  .ib1 {animation: ib1 20s linear infinite; position:absolute;  bottom:0;}
+  .ib2 {animation: ib2 20s linear infinite;}
+  .ib3 {animation: ib3 20s linear infinite; position:absolute; left:0; bottom:0;}
+
+  @keyframes ib1 {
+    0% {transform: translate(0%, 0);}
+    50% {transform: translate(-100%, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+
+  @keyframes ib2 {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(0, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+
+  @keyframes ib3 {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(100%, 0);}
+    100% {transform: translate(0, 0);}
+  }
+
+  .promotion_con .pro_time {position:absolute; left:50%; top:20px; z-index:2; transform:translate(-50%, 0);}
+  .promotion_con .pro_time img {widh:auto;}
+
+  .dday_wrap {font-size:20px;position:absolute;right: 8px;top:10px;font-family:noto Sans KR;}
+  .dday_wrap .dday {font-size:0;}
+  .dday_wrap .dday>div {display:inline-block;font-size:20px;width: 73px;text-align: right;margin-left: 16px;height:50px;line-height: 47px;font-size:33px;letter-spacing: 16px;}
+  .dday_d {display:none !important;}
+  .dday.end {font-size:26px; background:#fff; font-weight:700; width:260px; height:50px; text-align:center; border-radius:5px; line-height:49px;}
+
+  @media screen and (max-width:1200px)  {
+    .promotion_con .pro_time {top:50%; transform-origin:top center; transform:translate(-50%, -50%) scale(0.8); margin-top:-20%;}
+    .promotion_con .pro_time img {width:auto;}
+  }
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%; position:relative;}
+
+    .promotion_con .mo {display:block;}
+    .promotion_con .pc {display:none;}
+
+    .promotion_con .pro_time {transform:translate(-50%, -50%) scale(0.65); margin-top:-31%; }
+    .promotion_con .pro_time img {max-width:inherit;}
+  }
+
+</style>
+
+<script>
+  //남은시간
+  var dday_d=document.querySelector(".dday_d");
+  var dday_s1=document.querySelector(".dday_s1");
+  var dday_s2=document.querySelector(".dday_s2");
+  var dday_s3=document.querySelector(".dday_s3");
+  function t() {
+    var u=new Date("2023-11-06T23:59:59+0900");
+    var n=new Date();
+    var g=u-n;
+    var d=Math.floor(g/(1000*60*60*24)); //일
+    var h=Math.floor((g/(1000*60*60))%24); //시
+    var m=Math.floor((g%(1000*60*60))/(1000*60)) //분
+    var s=Math.floor((g/1000)%60); //초
+    dday_d.innerText=`${d}일 `;
+    dday_s1.innerText=`${h<10?`0${h}`:h}`;
+    dday_s2.innerText=`${m<10?`0${m}`:m}`;
+    dday_s3.innerText=`${s<10?`0${s}`:s}`;
+  }
+  function i() {
+    t();
+    setInterval(t,1000);
+  }
+  i();
+  var text = document.getElementsByClassName("dday_d")[0];
+  var cut = text.innerHTML;
+  var findString = "0일";
+  if(cut.indexOf(findString) != -1) {
+    text.remove()
+  }
+
+  //특정시간
+  //특정시간
+  const now = new Date();
+  const formatDate = (value) => String(value).padStart(2, '0');
+  const nowT = [
+    now.getFullYear(),
+    formatDate(now.getMonth() + 1),
+    formatDate(now.getDate()),
+    formatDate(now.getHours()),
+    formatDate(now.getMinutes())
+  ].join('');
+
+  // $(".dday").hide();
+  if(202306040000 <= nowT ){ $(".dday").show(); $(".dday.end").hide(); }
+  if(202306060000 <= nowT ){ $(".dday").hide(); $(".dday.end").show(); }
+</script>

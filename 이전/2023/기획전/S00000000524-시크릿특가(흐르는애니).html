@@ -1,0 +1,32 @@
+<div class="promotion_con">
+  <img src="https://img.shoppingntmall.com/htmleditor/777/ss_011677110770427.jpg">
+  <img src="https://img.shoppingntmall.com/htmleditor/613/21677113453414.png" class="image-box0">
+  <img src="https://img.shoppingntmall.com/htmleditor/613/21677113453414.png" class="image-box">
+  <img src="https://img.shoppingntmall.com/htmleditor/613/21677113453414.png" class="image-box2">
+</div>
+
+<style>
+  .promotion_con {font-size:0; overflow:hidden; background:#01b05b; position:relative;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  .image-box0 {width:100%; display:flex; flex-wrap:nowrap; animation: bannermove0 10s linear infinite; position:absolute; left:0; bottom:0;}
+  @keyframes bannermove0 {
+    0% {transform: translate(0%, 0);}
+    50% {transform: translate(-100%, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+
+  .image-box {width:100%; display:flex; flex-wrap:nowrap; animation: bannermove 10s linear infinite;}
+  @keyframes bannermove {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(0, 0);}
+    100% {transform: translate(-100%, 0);}
+  }
+  .image-box2 {width:100%; display:flex; flex-wrap:nowrap; animation: bannermove2 10s linear infinite; position:absolute; left:0; bottom:0;}
+  @keyframes bannermove2 {
+    0% {transform: translate(100%, 0);}
+    50% {transform: translate(100%, 0);}
+    100% {transform: translate(0, 0);}
+  }
+</style>

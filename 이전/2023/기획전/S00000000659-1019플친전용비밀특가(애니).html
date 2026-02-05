@@ -1,0 +1,154 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+        <img src="https://img.shoppingntmall.com/htmleditor/659/11697703246382.jpg" style="position:relative; z-index:1;">
+        <img src="https://img.shoppingntmall.com/htmleditor/971/21697702988269.png" class="ani ani1">
+        <img src="https://img.shoppingntmall.com/htmleditor/346/s11697703255194.png" class="ani ani7">
+        <img src="https://img.shoppingntmall.com/htmleditor/443/s21697703263319.png" class="ani ani8">
+    </div>
+    <div class="pro_time_wrap">
+        <img src="https://img.shoppingntmall.com/htmleditor/722/pctg_021697699671853.jpg" alt="">
+        <div class="pro_time">
+            <img src="https://img.shoppingntmall.com/htmleditor/438/tine1697702709479.png">
+            <div class="dday_wrap">
+                <div class="dday">
+                    <div class="dday_d">0일</div>
+                    <div class="dday_s1"></div>
+                    <div class="dday_s2"></div>
+                    <div class="dday_s3"></div>
+                </div>
+                <div class="dday end"><img src="https://img.shoppingntmall.com/htmleditor/460/end1697703627292.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 룰렛이벤트 -->
+    <a class="pday pday5" href="/event/eventRult/E00000000247?evtSn=E00000000247"><img src="https://img.shoppingntmall.com/htmleditor/267/rr1696552283593.jpg"></a>
+    <!-- 티페스타원데이 -->
+    <a class="pday pday8" href="/plan/planshop/swipeDetail/S00000000891"><img src="https://img.shoppingntmall.com/htmleditor/310/ttrr1696568364759.jpg"></a>
+
+</div></div>
+
+<style>
+    .base {position:relative;}
+    .ani {position:absolute; z-index:2; width:100%; height:100%;}
+    .ani1 {left:-100%; bottom:0; z-index:3; animation:ani1 1s ease-in-out forwards; animation-delay: 0s;}
+    .ani2 {left:-100%; bottom:0; z-index:3; animation:ani1 1s ease-in-out forwards; animation-delay: 0s;}
+
+    .ani7 {top:0; left:-0; animation: ani7 1.5s ease-in-out infinite; animation-delay: 1s; opacity:0;}
+    .ani8 {top:0; left:-0;  animation: ani8 1.5s ease-in-out infinite; animation-delay: 1s; opacity:0;}
+
+
+    @keyframes ani1 {
+        0% {left:-100%;}
+      80% {left:10%;}
+      100% {left:0%;}
+    }
+
+    @keyframes ani7 {
+        0% {opacity:1;}
+        50% {opacity:0;}
+        100% {opacity:1;}
+      }
+      @keyframes ani8 {
+        0% {opacity:0;}
+        50% {opacity:1;}
+        100% {opacity:0;}
+      }
+
+    @font-face {
+        font-family: 'GmarketSansBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; position:relative; background:#fff7db;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+
+    .pro_time_wrap {position:relative;}
+    .pro_time_wrap>img {position:relative; z-index:1;}
+    .pro_time {position:absolute; left:50%; top:50%; z-index:2; transform:translate(-50%, -50%);}
+    .pro_time img {width:auto;}
+
+    .dday_wrap {font-size:0; position:absolute; left:0px; top:0px; font-family:'GmarketSansMedium'; color:#f5e200;}
+    .dday_wrap .dday {font-size:0; width:614px;}
+    .dday_wrap .dday>div { position:relative; display:inline-block; text-align:center; font-weight:700; height:108px; line-height:108px; font-size:72px; width:150px; margin-right:66px; letter-spacing:8px; text-indent:8px;}
+    .dday_wrap .dday>div:after {content:""; width:70px; height:1px; background:#5b5b5b; border-top:2px solid #1c1c1c; position:absolute; top:52px; left:11px;}
+    .dday_wrap .dday>div:before {content:""; width:70px; height:1px; background:#5b5b5b; border-top:2px solid #1c1c1c; position:absolute; top:52px; right:11px;}
+    .dday_wrap .dday>div:last-child {margin-right:0;}
+    .dday_d {display:none !important;}
+    .dday.end {font-size:26px; background:#57188e; font-weight:700; text-align:center; color:#fff;}
+
+    @media screen and (max-width:1200px)  {
+        .pro_time {transform:translate(-50%, -50%) scale(0.8);}
+    }
+
+    @media screen and (max-width:800px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33%;}
+
+        .pro_time {transform:translate(-50%, -50%) scale(0.48);}
+        .pro_time img {max-width:inherit;}
+    }
+
+</style>
+
+<script>
+  $(function(){
+    //수신동의 위치 이동
+    $('.toggle-area').appendTo(".toggle_an");
+  });
+  //남은시간
+  var dday_d = $(".dday_d");
+  var dday_s1 = $(".dday_s1");
+  var dday_s2 = $(".dday_s2");
+  var dday_s3 = $(".dday_s3");
+  function updateTimer() {
+    const targetDate = new Date("2023-11-23T23:59:59+0900");
+    const currentDate = new Date();
+    const timeDifference = Math.max(targetDate - currentDate, 0);
+
+    const [days, hours, minutes, seconds] = [
+    Math.floor(timeDifference / (1000 * 60 * 60 * 24)),
+    Math.floor((timeDifference / (1000 * 60 * 60)) % 24),
+    Math.floor((timeDifference / (1000 * 60)) % 60),
+    Math.floor((timeDifference / 1000) % 60)
+    ];
+
+    dday_d.text(`${days}일`);
+    [dday_s1, dday_s2, dday_s3].forEach((element, index) => {
+    element.text(`${String([hours, minutes, seconds][index]).padStart(2, '0')}`);
+    });
+    $(".dday.end").hide();
+    if (currentDate > targetDate) {
+        $(".dday").hide();
+        $(".dday.end").show();
+    }
+  }
+  function startTimer() {
+      updateTimer();
+      setInterval(updateTimer, 1000);
+  }
+  startTimer();  
+  var text = $(".dday_d").text();
+  var findString = "0일";
+  if (text.indexOf(findString) !== -1) {
+      $(".dday_d").remove();
+  }
+
+    //특정시간
+    const now = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const nowT = now.toISOString().slice(0, 16).replace(/[-T:]/g, '');
+  
+    $(".pday").hide();
+    if(202310100000 <= nowT ){$(".pday5").show();}
+    if(202310240000 <= nowT ){$(".pday5").hide();}
+
+    if(202310100000 <= nowT ){$(".pday8").show();}
+    if(202310240000 <= nowT ){$(".pday8").hide();}
+
+</script>

@@ -1,0 +1,69 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+<div class="base">
+<img src="https://img.shoppingntmall.com/htmleditor/056/bg1700017017321.png" class="base1">
+<div class="ani ani_bg"></div>
+<img src="https://img.shoppingntmall.com/htmleditor/523/deco1700017041082.png" class="ani ani1"> 
+<img src="https://img.shoppingntmall.com/htmleditor/555/a11700017062288.png" class="ani ani2">
+<div class="ani ani6">
+<img src="https://img.shoppingntmall.com/htmleditor/920/a21700017069623.png" class="ani ani3">
+</div>
+<img src="https://img.shoppingntmall.com/htmleditor/204/a31700017077104.png" class="ani ani4">
+<img src="https://img.shoppingntmall.com/htmleditor/845/a41700017084978.png" class="ani ani5">
+</div>
+
+<style>
+.base {position:relative; overflow:hidden;}
+.base1 {position:relative; z-index:1;}
+.ani {position:absolute; width:100%;}
+
+.ani1 {z-index:3; top:0; left:0; animation: ani1 1.2s ease-in-out forwards; opacity:0;}
+.ani2 {z-index:4; top:0; left:0; animation: ani2 1.2s ease-in-out forwards; animation-delay: .5s; top:-100%;}
+.ani3 {z-index:5; top:0; left:0; animation: ani3 1.2s ease-in-out forwards; animation-delay: 1s; transform:scale(1.5); opacity:0;}
+.ani4 {z-index:6; bottom:0; left:0; animation: ani4 1.2s ease-in-out forwards; animation-delay: 1.5s; bottom:-100%;}
+.ani5 {z-index:7; top:0; left:0; animation: ani5 1.2s ease-in-out forwards; animation-delay: 2s; opacity:0;} 
+.ani6 {top:0; left:0; animation: ani6 1.2s ease-in-out infinite; animation-delay: 2.5s;} 
+
+@keyframes ani1 {
+0% { opacity:0;}
+100% { opacity:1;}
+}
+@keyframes ani2 {
+0% { top:-100%;}
+100% { top:0%;}
+}
+@keyframes ani3 {
+0% {transform:scale(1.5); opacity:0;}
+80% {transform:scale(0.8);}
+100% {transform:scale(1); opacity:1;}
+}
+@keyframes ani4 {
+0% { bottom:-100%;}
+100% { bottom:0%;}
+}
+@keyframes ani5 {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+@keyframes ani6 {
+0% {top:0px;}
+50% {top:-2px;}
+100% {top:0px;}        
+}
+
+</style>
+
+</div></div>
+
+<style>
+.promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+.promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+.promotion_con img {width:100%; display:block;}
+.promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+@media screen and (max-width:720px)  {
+.promotion_con {overflow:hidden;}
+.promotion_con_mo {margin:0 -33.33%;}
+}
+</style>
+  
