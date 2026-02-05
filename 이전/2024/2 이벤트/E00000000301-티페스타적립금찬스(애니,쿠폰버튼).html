@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/399/bg1729574366239.png" class="base1">
+    <div class="ani ani5 animate__animated animate__infinite animate__headShake"><img src="https://img.shoppingntmall.com/htmleditor/644/a11729574501651.png" class="ani ani1 animate__animated animate__fadeInDown"> </div>
+    <img src="https://img.shoppingntmall.com/htmleditor/644/a21729574501981.png" class="ani ani2 animate__animated animate__fadeInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/644/a31729574502363.png" class="ani ani3 animate__animated animate__bounceIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/644/a41729574503034.png" class="ani ani4 animate__animated animate__fadeInUp">
+  </div>
+
+  <button type="button"><img src="https://img.shoppingntmall.com/htmleditor/076/ev_021730797615463.jpg"></button>
+  <img src="https://img.shoppingntmall.com/htmleditor/076/ev_031730797615998.jpg">
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+    .ani2 {z-index:4; animation-delay:.5s;}
+    .ani3 {z-index:5; animation-delay:1s;}
+    .ani4 {z-index:6; animation-delay:1.5s;}
+    .ani5 {z-index:7; animation-delay:2s;}
+  </style>
+</div></div>
+<style>
+  .promotion_con, .promotion_con-wrap * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; font-size:0; line-height:inherit;}
+  .btn-area + .acco-wrap {padding-top:48px;}
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+
+  .toggle-area + .btn-area, .event-content + .type-line {display:none;}
+</style>
+
+<script>
+  $(document).ready(function() {
+    $('.promotion_con button').on('click', function(e) {
+      e.preventDefault();
+      $('.toggle-area').next('.btn-area').find('a').trigger('click'); //PC
+      $('.event-content').next('.type-line').find('button').trigger('click'); //MO
+    });
+  });
+</script>

@@ -1,0 +1,56 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/628/bg1732092420256.jpg" class="base1">
+    <div class="ani ani1w"><img src="https://img.shoppingntmall.com/htmleditor/628/a11732092419096.png" class="ani ani1"> </div>
+    <div class="ani ani2w"><img src="https://img.shoppingntmall.com/htmleditor/628/a21732092419438.png" class="ani ani2"></div>
+    <div class="ani ani3w"><img src="https://img.shoppingntmall.com/htmleditor/628/a31732092419851.png" class="ani ani3"></div> 
+  </div>  
+  <!-- animate__infinite -->
+  <img src="https://img.shoppingntmall.com/htmleditor/599/zz1732169140774.jpg" alt="">
+  <div class="btn_wrap">
+    <a href="https://forms.gle/Qa5gb47HatGfeNSZ9" target="_blank"><img src="https://img.shoppingntmall.com/htmleditor/163/btn1732090780255.png"></a> 
+    </div>
+  <img src="https://img.shoppingntmall.com/htmleditor/665/zz_041732090413703.jpg" alt="">
+  <style>
+    .base {position:relative; overflow:hidden;} 
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+    .ani1 {z-index:3; animation:ani1 1.2s ease-in-out forwards; animation-delay:0s; top:5%; opacity:0;}
+    .ani2 {z-index:4; animation:ani1 1.2s ease-in-out forwards; animation-delay:.4s; top:5%; opacity:0;}
+    .ani3 {z-index:5; animation:ani1 1.2s ease-in-out forwards; animation-delay:.8s; top:5%; opacity:0;}
+    .ani1w {z-index:6; animation:ani1w 1.2s ease-in-out infinite; animation-delay:1.2s;}
+    .ani2w {z-index:7; animation:ani1w 1.2s ease-in-out infinite; animation-delay:1.6s;}  
+    .ani3w {z-index:8;  animation:ani1w 1.2s ease-in-out infinite; animation-delay:2s;}
+
+    @keyframes ani1 {
+      0% {margin-top:2%; opacity:0;} 
+      100% {margin-top:0; opacity:1;}
+    }
+    @keyframes ani1w {
+      0% {top:0;}
+      50% {top:0.3%;}
+      100% {top:0;}
+    }
+
+    .promotion_con .btn_wrap {background:#ecf2f9;}
+    .promotion_con .btn_wrap a {width:22.95%; display:block; background: linear-gradient(120deg, #a798f5, #5467ee); padding:3% 9%; border-radius:50px; margin:0 auto; overflow:hidden; position:relative;}
+    .promotion_con .btn_wrap a:before {position:absolute; content: ''; display:inline-block; top:-180px; left:0; width:30px; height:100%; background-color:#fff; animation:cbtn 4s ease-in-out infinite;}
+    @-webkit-keyframes cbtn {
+        0% {-webkit-transform:scale(0) rotate(45deg); opacity:0; }
+        80% {-webkit-transform:scale(0) rotate(45deg); opacity:0.5; }
+        81% {-webkit-transform:scale(4) rotate(45deg); opacity:1; }
+        100% {-webkit-transform:scale(50) rotate(45deg); opacity:0; }
+    }
+  </style>
+</div></div>
+<style>
+  .promotion_con, .promotion_con-wrap * {line-height:initial; box-sizing:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;}
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>

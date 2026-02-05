@@ -1,0 +1,137 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/983/zz_011724905112253.jpg">
+  <img src="https://img.shoppingntmall.com/htmleditor/255/zz_021724905115986_011725856985434.jpg" alt="">
+  <div class="re-coupon_an"></div>
+
+  <!-- <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401024193:202401024184&cFlag=NA&rUrl=/plan/event/swipeDetail/E00000000179');" style="cursor:pointer;">
+    <img src="https://img.shoppingntmall.com/htmleditor/983/zz_021724905115986.jpg">
+  </a> -->
+  
+  <div class="toggle_an"></div>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/983/zz_031724905119670.jpg">
+  <div class="cbtn_wrap" style="background:#5217b4;"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/983/zz_041724905123005.jpg">
+    <a href="/member/join" class="cbtn" style="background:#000; border-radius:130px;"><img src="https://img.shoppingntmall.com/htmleditor/983/btn1724905108853.png"></a>
+    <img src="https://img.shoppingntmall.com/htmleditor/983/zz_061724905130174.png">
+  </div>
+</div></div>
+
+<style media="screen">  
+  .base {position:relative; overflow:hidden; display:block;}
+  .base1 {position:relative; z-index:1;}
+  .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}    
+  .ani1 {z-index:3; animation-delay:0s;}
+  .ani2 {z-index:4; animation-delay:.4s;}
+  .ani3 {z-index:5; animation-delay:.8s;}
+  .ani4 {z-index:6; animation-delay:1.2s;}
+  .ani4w {z-index:6; animation-delay:4.4s;}
+  .ani5 {z-index:7; animation:ani5 1.2s ease-in-out forwards; animation-delay:1.6s; margin-top:10%; opacity:0;}
+  .ani5w {z-index:7; animation:ani5w 1.2s ease-in-out infinite; animation-delay:4.4s;}
+  .ani6 {z-index:8; animation:ani5 1.2s ease-in-out forwards; animation-delay:2s; margin-top:10%; opacity:0;}
+  .ani6w {z-index:7; animation:ani5w 1.2s ease-in-out infinite; animation-delay:4.6s;}
+  .ani7 {z-index:9;}
+  .ani8 {z-index:10; animation-delay:2.8s;}
+  .ani9 {z-index:11; animation-delay:3.2s;}
+  .ani10 {z-index:12; animation-delay:3.6s;}
+  .ani11 {z-index:13; animation-delay:4s;}
+  .ani12 {z-index:14; animation:ani12 1.2s ease-in-out forwards; animation-delay:4.4s; transform:scale(0);} 
+  @keyframes ani5 {
+    0% {margin-top:10%; opacity:0;}
+    60% {margin-top:-5%;}
+    100% {margin-top:0; opacity:1;}
+  }
+  @keyframes ani5w {
+    0% {top:0;}
+    50% {top:-2px;}
+    100% {top:0;}
+  }
+  @keyframes ani12 {
+    0% {transform:scale(0);}
+    60% {transform:scale(1.4);}
+    100% {transform:scale(1);}
+  }
+
+  .a_d {top:0; left:0; animation:a_d 1.5s ease-in-out infinite; z-index:2;}
+  .a_s1 {top:0; left:0; animation:a_s1 1.5s ease-in-out infinite; top:-28%; left:3%; z-index:2;}
+  .a_s2 {top:0; left:0; animation:a_s2 1.5s ease-in-out infinite; top:-37%; left:-6%; z-index:2;}
+
+  @keyframes a_d {
+    0% {top:0;}
+    50% {top:-3px;}
+    100% {top:0;}
+  }    
+  @keyframes a_s1 {
+    0% {opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @keyframes a_s2 {
+    0% {opacity:0;}
+    50% {opacity:1;}
+    100% {opacity:0;}
+  }
+  .cbtn_wrap {background:#fbebe6; text-align:center;}
+  .cbtn {width:51.667%; border-radius:10px; transition:all 0.3s ease; position:relative; display:inline-block; outline:none; padding:0; border:none; background:#ffe65f; color:#fff; overflow:hidden;}
+  .cbtn:before {position:absolute; content: ''; display:inline-block; top:-180px; left:0; width:30px; height:100%; background-color:#fff; animation:cbtn 3s ease-in-out infinite;}
+  .cbtn img {max-width:100%;}  
+  @-webkit-keyframes cbtn {
+      0% {-webkit-transform:scale(0) rotate(45deg); opacity:0; }
+      80% {-webkit-transform:scale(0) rotate(45deg); opacity:0.5; }
+      81% {-webkit-transform:scale(4) rotate(45deg); opacity:1; }
+      100% {-webkit-transform:scale(50) rotate(45deg); opacity:0; }
+  }
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden;}
+  .promotion_con img {width:100%; vertical-align:middle;}
+  .promotion_con .w50 {width:50%; display:inline-block;}    
+  @media screen and (max-width:720px) {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+
+    .btn-coupon-down {padding-bottom:24px;}
+    .btn-coupon-down button {margin-bottom:0;}
+  }
+
+  .acco-wrap.plan {padding-top:48px;}
+
+  .re-coupon .coupon .badge>div.txt span:last-child,
+  .re-coupon .coupon:last-child .badge>div.txt span {display:none;}
+  .re-coupon .coupon:first-child .tit:after {content:'TV쇼핑'}
+  .re-coupon .coupon:last-child .tit:after {content:'전상품'}
+  .re-coupon_an .re-coupon-wrap {background:#5317b5;}
+
+  .re-coupon .coupon:first-child .info:after {content:'3만원 이상 구매 시, 최대 1만원 할인'}
+  .re-coupon .coupon:last-child .info:after {content:'3만원 이상 구매 시, 최대 2만원 할인'}
+
+  .re-coupon .coupon:nth-child(6n+2) .tit, .re-coupon .coupon:nth-child(6n+2) .down {color:#5D18FF;}
+  .re-coupon .coupon:nth-child(6n+2):after {background:linear-gradient(180deg, #F927EB -3.39%, #5D18FF 72.88%);}
+  .re-coupon .coupon:nth-child(6n+2) .down span:before {background-image: url("data:image/svg+xml,%3Csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M17.647%2011.2L11.823%2017.024%206%2011.2M11.823%2016.2V1.2M1%2017.2v2.785C1%2021.651%202.389%2023%204.105%2023h15.79C21.611%2023%2023%2021.651%2023%2019.985V17.2'%20stroke='%235D18FF'%20stroke-width='1.2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E")}
+  
+  
+</style>  
+
+<script>
+  $(function(){
+    //수신동의 영역 옮기기
+    $('.toggle-area').appendTo(".toggle_an");
+    $('.re-coupon-wrap').appendTo(".re-coupon_an");
+
+    if(ISLOGIN != 'Y'){
+      //미로그인시 가입하기 영역 보이기
+      $('.cbtn_wrap').show();
+    } else { 
+      //로그인시 가입하기 영역 삭제
+      $('.cbtn_wrap').hide();
+    } 
+  });
+</script>
+
+<script>
+  $(function(){
+    $('.re-coupon .coupon .badge>div.txt span:first-child').text('더블쿠폰');
+    $('.re-coupon .coupon .tit').text('');
+    $('.re-coupon .coupon .info').text('');
+  });
+</script>

@@ -1,0 +1,55 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202403136439&cFlag=A&rUrl=/plan/event/swipeDetail/E00000000271');">
+    <img src="https://img.shoppingntmall.com/htmleditor/858/base1710384411897.png" class="base1">
+    <div class="ani ani1w"><img src="https://img.shoppingntmall.com/htmleditor/858/a11710384409215.png" class="ani ani1"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/858/a21710384409762.png" class="ani ani2">
+    <img src="https://img.shoppingntmall.com/htmleditor/858/a31710384410174.png" class="ani ani3">
+    <img src="https://img.shoppingntmall.com/htmleditor/858/a41710384410566.png" class="ani ani4">
+    <img src="https://img.shoppingntmall.com/htmleditor/858/a51710384410944.png" class="ani ani5">
+    <img src="https://img.shoppingntmall.com/htmleditor/858/a61710384411347.png" class="ani ani6">
+  </div>
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+
+  .base {position:relative; overflow:hidden; cursor:pointer;}
+  .base1 {position:relative; z-index:1;}
+  .ani {position:absolute; width:100%;}
+  .ani1 {z-index:3; top:0; left:0; animation: ani1 1.2s ease-in-out forwards; top:-100%;}  
+  .ani2 {z-index:4; top:0; left:0; animation: ani1 1.2s ease-in-out forwards; animation-delay: .3s; opacity:0;}
+  .ani3 {z-index:5; top:0; left:0; animation: ani2 1.2s ease-in-out forwards; animation-delay: .6s; opacity:0; top:-10%; transform:scale(1.1);}
+  .ani4 {z-index:6; bottom:0; left:0; animation: ani3 1.2s ease-in-out forwards; animation-delay: .9s; opacity:0; bottom:-100%;}  
+  .ani5 {z-index:7; bottom:0; left:0; animation: ani3 1.2s ease-in-out forwards; animation-delay: 1.2s; opacity:0; bottom:-100%;} 
+  .ani6 {z-index:7; bottom:0; left:0; animation: ani3 1.2s ease-in-out forwards; animation-delay: 1.5s; opacity:0; bottom:-100%;} 
+  .ani1w {z-index:3; top:0; left:0; animation: ani1w 1.2s ease-in-out infinite; animation-delay: 2s; }
+
+  .toggle-area {background:#081428 !important; color:#fff;}
+
+  @keyframes ani1 {
+    0% {opacity:0; top:-100%;}
+    100% { opacity:1; top:0;}
+  }  
+  @keyframes ani2 {
+    0% { opacity:0; top:-10%; transform:scale(1.1);}
+    100% { opacity:1; top:0%; transform:scale(1);}
+  }
+  @keyframes ani3 {
+    0% { opacity:0; bottom:-10%;}
+    100% { opacity:1; bottom:0%;}
+  }
+  @keyframes ani1w {
+    0% {opacity:1;}
+    50% {opacity:.7;}
+    100% { opacity:1;}
+  }
+  
+</style>

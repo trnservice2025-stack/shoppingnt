@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202411275868&rUrl=/plan/event/swipeDetail/E00000000309');" class="base">
+    <div class="ani ani_bg"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/186/base1732760414395.png" class="base1">
+    <img src="https://img.shoppingntmall.com/htmleditor/186/a11732760406229.png" class="ani ani1 animate__animated animate__fadeInDown"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/186/a21732760406724.png" class="ani ani2 animate__animated animate__fadeInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/186/a31732760410076.png" class="ani ani3 animate__animated animate__fadeInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/535/a41732778606072.png" class="ani ani4 animate__animated animate__bounceIn">
+    <div class="ani ani5w animate__animated animate__flash animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/186/a51732760413886.png" class="ani ani5 animate__animated animate__jackInTheBox"></div>
+  </a>
+  <style>
+    .base {position:relative; overflow:hidden !important; display:block;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+    .ani2 {z-index:4; animation-delay:.4s;}
+    .ani3 {z-index:5; animation-delay:.8s;}
+    .ani4 {z-index:6; animation-delay:1.2s;}
+    .ani5 {z-index:7; animation-delay:1.6s;} 
+    .ani5w {z-index:15; animation-delay:2.4s;}
+
+    .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/072/abg1732759199989.png); background-size:cover;}
+    @keyframes ani_bg {
+      from {background-position: 0 0;} 
+      to {background-position: 0 -5000px ;}
+    }
+  </style>
+</div></div>
+<style>
+  .promotion_con, .promotion_con-wrap * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;}
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+  .re-coupon-wrap {display:none;}
+</style>

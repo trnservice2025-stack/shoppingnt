@@ -1,0 +1,42 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/461/11700705103680.png">
+      <img src="https://img.shoppingntmall.com/htmleditor/897/aa1700705147147.png" class="ani ani1">
+      <img src="https://img.shoppingntmall.com/htmleditor/220/31695263012495.png" class="ani ani2">
+    </div>
+    <img src="https://img.shoppingntmall.com/htmleditor/691/21700705113122.png">
+
+    <style media="screen">
+      .base {position:relative; overflow:hidden;}
+      .base>img {position:relative; z-index:1;}
+      .base .ani {position:absolute; width:100%; z-index:2;}
+      .ani1 {left:0; top:-100%; animation:ani1 1s forwards ease-in-out; animation-delay: 0s; z-index:2;}
+      .ani2 {left:0; bottom:-100%;  animation:ani2 1s forwards ease-in-out; animation-delay: .5s; z-index:3;}
+  
+      @keyframes ani1 {
+        0% {top:-100%;}
+        70% {top:4%;}
+        100% {top:0;}
+      }
+
+      @keyframes ani2 {
+        0% {bottom:-100%;}
+        70% {bottom:2%;}
+        100% {bottom:0;}
+      } 
+    </style>
+</div></div>
+  
+<style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con img {width:100%; vertical-align:middle;}
+    .promotion_con .w50 {width:50%; display:inline-block;}
+    .promotion_con a {background:none; cursor:pointer;}
+
+    @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33.33%;}
+
+    }
+</style>

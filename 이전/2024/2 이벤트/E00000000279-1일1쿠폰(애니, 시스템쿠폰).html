@@ -1,0 +1,161 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/687/base1716162061435.png" class="base1">      
+    <img src="https://img.shoppingntmall.com/htmleditor/089/a11716162890471.png" class="ani ani1 animate__animated animate__fadeIn"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/089/a21716162890950.png" class="ani ani2 animate__animated animate__fadeInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/089/a31716162891427.png" class="ani ani3 animate__animated animate__bounceIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/089/a41716162891779.png" class="ani ani4 animate__animated animate__fadeInUp">
+    <img src="https://img.shoppingntmall.com/htmleditor/089/a51716162892075.png" class="ani ani5 animate__animated animate__fadeInUp">
+    <div class="ani ani6w animate__animated animate__infinite animate__headShake"><img src="https://img.shoppingntmall.com/htmleditor/089/a61716162892437.png" class="ani ani6 animate__animated animate__bounceIn"></div>
+  </div>
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+    .ani2 {z-index:4; animation-delay:.4s;}
+    .ani3 {z-index:5; animation-delay:.8s;}
+    .ani4 {z-index:6; animation-delay:1.2s;}
+    .ani5 {z-index:7; animation-delay:1.6s;}  
+    .ani6 {z-index:8; animation-delay:2s;}     
+    .ani6w {z-index:8; animation-delay:2.8s;}     
+  </style>
+  <div class="toggle_an"></div>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/687/tit1716162064085.png">
+
+  <div class="w50_wrap">
+    <div class="sese"></div>
+    <img class="start" src="https://img.shoppingntmall.com/htmleditor/687/c11716162062677.png">
+    <!-- 쿠폰 다운 완료 -->
+    <button type="button" class="w50 comp">
+      <img src="https://img.shoppingntmall.com/htmleditor/823/downe1716264169501.png" class="sday sday1">
+      <img src="https://img.shoppingntmall.com/htmleditor/823/downe1716264169501.png" class="sday sday2">
+      <img src="https://img.shoppingntmall.com/htmleditor/823/downe1716264169501.png" class="sday sday3">
+    </button>
+    <!-- 쿠폰 받기 소진 -->
+    <button type="button" class="w50 end">
+      <img src="https://img.shoppingntmall.com/htmleditor/825/c1_e11716166066772.png" class="sday sday1">
+      <img src="https://img.shoppingntmall.com/htmleditor/687/c1_e21716162062282.png" class="sday sday2">
+      <img src="https://img.shoppingntmall.com/htmleditor/900/downe1716264659548.png" class="sday sday3">
+    </button>
+    <!-- 무제한 쿠폰 -->
+    <a class="w50" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202406171167&cFlag=A&rUrl=/plan/event/swipeDetail/E00000000279');">
+      <img src="https://img.shoppingntmall.com/htmleditor/687/c21716162063049.png">
+    </a>
+  </div>
+
+  <a class="isApp" href="https://m.shoppingntmall.com/interfaces/shoppingntApp"><img src="https://img.shoppingntmall.com/htmleditor/687/app1716162061002.png"></a>
+</div></div>
+<div class="pro_pop pro_pop2">
+<div class="pro_pop_con">
+  <button type="button" class="w50 btn22"><img src="https://img.shoppingntmall.com/htmleditor/973/pp_011709008820493.png"></button>
+  <button type="button" class="w50 btn11"><img src="https://img.shoppingntmall.com/htmleditor/973/pp_021709008821110.png"></button>
+</div>
+</div>
+<script>
+$(function(){
+  //완료 화면 처음 진입 시 삭제
+  $('.promotion_con .comp, .promotion_con .end').hide();
+  
+  $('.coupon-wrap .coupon, .coupon-wrap .coupon-info').click(function(){
+    setTimeout(function(){
+      location.reload();
+    }, 500);
+  });
+
+  //PC
+  $('.bbs-view .coupon-wrap').appendTo(".sese");
+  $('.promotion_con .start').appendTo(".coupon-wrap .coupon"); 
+
+  //MO
+  $('#main .exhibi-coupon-list').appendTo(".sese");
+  $('.promotion_con .start').appendTo(".coupon-wrap .coupon-info");
+
+  //쿠폰이 다운 완료 및 소진 이미지 노출
+  $(".promotion_con .btn-area button").each(function() {
+      if ($(this).text() === "쿠폰이 모두 소진되었습니다.") {
+        $(".sese").hide();
+        $('.promotion_con .end').show();
+      }
+      if ($(this).text() === "쿠폰 다운받기 완료") {
+        $(".sese").hide();
+        $('.promotion_con .comp').show();
+      }
+  });
+
+  //예약
+	const nowD = new Date();
+	const formatDate = (value) => String(value).padStart(2, '0');
+	const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+	const nowT = formatDateTime(nowD);
+	const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+	hideS();
+	if ('2024-05-21 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+	if ('2024-06-11 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+	if ('2024-06-21 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday3').forEach(e => e.style.display = 'block');}
+
+  $('.toggle-area').appendTo(".toggle_an");
+  $('.promotion_con .end').click(function(){
+    $('.pro_pop2').fadeIn(200);
+  });
+  $('.pro_pop2 .btn11').click(function(){
+    $(".pro_pop2").fadeOut(200);
+    $('#pushMarketing').trigger("click");
+  });
+  $('.pro_pop2 .btn22').click(function(){
+    $(".pro_pop2").fadeOut(200);
+  });
+  if(isApp()) { 
+    $('.isApp').hide();
+  } else { 
+    $('.isApp').show();
+  }      
+  function isApp(){
+    return DEVICECD === "03";
+  }  
+  
+});
+</script>
+<style>  
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; position:relative; z-index:1;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; display:block;}
+  .promotion_con .w50, .promotion_con .sese {width:50%; display:inline-block;}
+  .w50_wrap {overflow:hidden;}
+  .w50_wrap > * {float:left;}
+  .pro_pop {font-size:0; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,.7); z-index:9999; display:none;}    
+  .pro_pop img {width:100%; display:block;}
+  .pro_pop a, .pro_pop button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; display:block;}
+  .pro_pop .pro_pop_con {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);}
+  .pro_pop .pro_pop_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+    .pro_pop .pro_pop_con {width:90%;}
+  }
+
+  .promotion_con .coupon-wrap {background:none; padding:0;}
+  .promotion_con .coupon-wrap .btn-area, .promotion_con .coupon-wrap .benef-desc, .promotion_con .coupon-wrap .coupon > .info-area {display:none !important;}
+  .promotion_con .coupon-wrap .block-list {display:block; width:100%;}
+  .promotion_con .coupon-wrap .block-list .block {margin:0; padding:0;}
+  .promotion_con .coupon-wrap .coupon {width:100%; border:none; border-radius:0;}
+  .promotion_con .coupon-wrap .coupon > .start {display:block !important;}
+
+  .promotion_con .coupon-wrap .coupon.disabled:after, 
+  .promotion_con .coupon-list .coupon.disabled:after,
+  .coupon-wrap .coupon-info.disabled:after,
+  .promotion_con .exhibi-coupon-list .btn-area {display:none;}
+
+  .promotion_con .exhibi-coupon-list {padding:0;}
+  .promotion_con .exhibi-coupon-list .btn-area {margin:0;}
+  .promotion_con .coupon-wrap .coupon-info {padding:0; border:0; border-radius:0;}
+  .promotion_con .coupon-wrap .dot-list, .promotion_con .coupon-wrap .state-wrap, .promotion_con .coupon-wrap .price, .promotion_con .coupon-wrap .coupon-info .tit, .promotion_con .coupon-wrap>.btn.border-b {display:none;}
+
+
+  .promotion_con .start {width:50%;}
+  .promotion_con .sese .start {width:100%;}
+</style>
+

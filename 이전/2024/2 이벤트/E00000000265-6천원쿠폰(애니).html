@@ -1,0 +1,99 @@
+<div class="promotion_con">
+    <div class="base" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401244905&cFlag=A&rUrl=/plan/event/swipeDetail/E00000000265');">
+      <img src="https://img.shoppingntmall.com/htmleditor/792/bg11706141510167.png" class="base1">
+      <img src="https://img.shoppingntmall.com/htmleditor/519/a11706141701209.png" class="ani ani1"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/519/a21706141701627.png" class="ani ani2"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/519/a31706141702009.png" class="ani ani3"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/519/a41706141702508.png" class="ani ani4"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/980/a51706141911638.png" class="ani ani5"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/980/a61706141912124.png" class="ani ani6"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/980/a71706141912589.png" class="ani ani7">   
+    </div>
+
+    <img src="https://img.shoppingntmall.com/htmleditor/150/2221706171587030.jpg" alt="">
+    
+
+    <div class="base" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401244905&cFlag=A&rUrl=/plan/event/swipeDetail/E00000000265');">
+      <img src="https://img.shoppingntmall.com/htmleditor/792/bg21706141510500.png" class="base1">
+      <img src="https://img.shoppingntmall.com/htmleditor/980/a81706141913054.png" class="ani ani8"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/980/a91706141913529.png" class="ani ani9"> 
+    </div>
+
+    <div class="toggle_an"></div>
+    <script>
+      //수신동의 이동
+      document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle_an')?.appendChild(document.querySelector('.toggle-area')));
+    </script>
+
+    <div class="promotion_con_mo2">
+      <a class="isApp" href="https://m.shoppingntmall.com/interfaces/shoppingntApp"><img src="https://img.shoppingntmall.com/htmleditor/019/ab1706679042032.jpg" /></a>
+    </div>
+    <script>
+      //앱/웹 분기
+      $(function(){
+          if(isApp()) { 
+              $('.isApp').hide();
+          } else { 
+              $('.isApp').show();
+          }      
+          function isApp(){
+              return DEVICECD === "03";
+          }
+      });
+    </script>
+  </div>
+
+  
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;}
+
+    @media screen and (max-width:720px)  {
+      .promotion_con_mo2 {margin:0 -33.33%;}
+
+    }
+  
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%;}
+    .ani1 {z-index:3; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; }
+    .ani2 {z-index:4; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; animation-delay: .3s; opacity:0;}
+    .ani3 {z-index:5; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; animation-delay: .6s; opacity:0;}
+    .ani4 {z-index:6; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; animation-delay: .9s; opacity:0;}  
+    .ani5 {z-index:7; top:0; left:0; animation: ani5 1.2s ease-in-out forwards; animation-delay: 1.2s; opacity:0; top:-10%; transform:scale(1.1);} 
+    .ani6 {z-index:7; top:0; left:0; animation: ani6 1.5s ease-in-out forwards; animation-delay: 1.5s; opacity:0; top:-10%; } 
+    .ani7 {z-index:7; top:0; left:0; animation: ani6 1.5s ease-in-out forwards; animation-delay: 1.8s; opacity:0; top:-10%; } 
+
+    .ani8 {z-index:7; top:0; left:0; animation: ani8 1.5s ease-in-out forwards; animation-delay: 2.1s; opacity:0; top:0%; } 
+    .ani9 {z-index:7; top:0; left:0; animation: ani8 1.5s ease-in-out forwards; animation-delay: 2.4s; opacity:0; top:0%; } 
+
+    .promotion_con .toggle-area {background:#121212; color:#fff;}
+    
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: 0 -3000px;}
+    }
+  
+    @keyframes ani1 {
+      0% { opacity:0;}
+      50% { opacity:1;}
+      100% { opacity:0;}
+    }
+    @keyframes ani5 {
+      0% { opacity:0; top:-10%; transform:scale(1.1);}
+      100% { opacity:1; top:0%; transform:scale(1);}
+    }
+    @keyframes ani6 {
+      0% { opacity:0; top:-10%;}
+      100% { opacity:1; top:0%;}
+    }
+
+    @keyframes ani8 {
+      0% { opacity:0;;}
+      100% { opacity:1;;}
+    }
+    
+  </style>
