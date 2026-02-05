@@ -1,139 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<title>쇼핑엔티 코딩 컨벤션</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<link rel="apple-touch-icon-precomposed" href="https://img.shoppingntmall.com/htmleditor/711/favicon_ios1761726363523.png">
-<link rel="shortcut icon" href="https://img.shoppingntmall.com/htmleditor/711/favicon_ios1761726363523.png">
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="common.js"></script>
-<link rel="stylesheet" href="common.css">
+<meta charset="utf-8">
+<title>05코딩컨벤션</title>
+<style>
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 24px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+.date {
+  color: #666;
+  font-size: 0.9em;
+}
+.back {
+  margin-bottom: 16px;
+}
+</style>
 </head>
 <body>
+<div class="back"><a href="../">← 상위 폴더</a></div>
+<h1>05코딩컨벤션</h1>
+<ul>
 
-<header>
-  <h1 class="home"><a href="index.html">코딩 컨벤션</a></h1>
-  <ul class="gnb">
-    <li><a href="coding.html">개요</a></li>
-    <li><a href="chtml.html">HTML</a></li>
-    <li><a href="css.html">CSS</a></li>
-  </ul>
-  <span class="ver">ver 1.0</span>
-</header>
+<li>
+  <a href="css.html">css.html</a>
+  <span class="date">2025-10-30</span>
+</li>
 
-<nav class="lnb" style="display:none;">
-  <!-- 개요 -->
-  <h2 class="lnb_h2">개요</h2>
-  <ul class="lnb_ul">
-    <li><a href="index.html">코딩 컨벤션</a></li>
-    <li><a href="#none">이력 관리</a></li>
-  </ul>
-  <!-- HTML -->  
-  <h2 class="lnb_h2">HTML</h2>
-  <ul class="lnb_ul">
-    <li><a href="#none">기본 규칙</a>
-      <ul class="lnb_ul_sub">
-        <li><a href="index.html">W3C</a></li>
-        <li><a href="#none">네이밍</a></li><!-- id, class, for, name, 파일, 폴더 -->
-        <li><a href="#none">문자</a></li><!-- 영문, 특수 기호 -->
-        <li><a href="#none">속성 값</a></li><!-- href="" 등의 -->
-        <li><a href="#none">공백</a></li><!-- 들여쓰기, 빈 줄, 공백-->
-        <li><a href="#none">주석</a></li><!-- html, jsp에 따라 -->
-        <li><a href="#none">스크립트</a></li><!-- 선언 방식 -->
-        <li><a href="#none">기본 파일</a></li><!-- 기본이 되는 html 파일 -->
-      </ul>
-    </li>
-    <li><a href="#none">요소 규칙</a>
-      <ul class="lnb_ul_sub">
-        <li><a href="#none">전역 구조</a></li><!-- html, head(title, meta), body -->
-        <li><a href="#none">레이아웃</a></li><!-- header, nav,  main, section, article, aside, footer, div, style -->
-        <li><a href="#none">제목</a></li><!-- h1 ~ h6 -->
-        <li><a href="#none">내용</a></li><!-- p, li, ul, ol, dl, dt, dd, hr, a, em, strong, i , b, address, span, br -->
-        <li><a href="#none">외부</a></li><!-- img, video, iframe -->
-        <li><a href="#none">폼</a></li> <!-- form, legend, label, input, select, option, textarea, button -->
-        <li><a href="#none">테이블</a></li> <!-- table, cation, colgroup, col, thead, tbody, tfoot, tr, th, td, -->
-        <li><a href="#none">기타</a></li>
-      </ul>
-    </li>
-  </ul>
-  <!-- CSS -->
-  <h2 class="lnb_h2">CSS</h2>
-  <ul class="lnb_ul">
-   <li><a href="#none">기본 규칙</a>
-      <ul class="lnb_ul_sub">
-        <li><a href="#none">W3C</a></li>
-        <li><a href="#none">네이밍</a></li>
-        <li><a href="#none">방식</a></li>
-        <li><a href="#none">문자</a></li>
-        <li><a href="#none">속성</a></li>
-        <li><a href="#none">공백</a></li>
-        <li><a href="#none">주석</a></li>
-        <li><a href="#none">인코딩</a></li>
-        <li><a href="#none">선택자</a></li>
-        <li><a href="#none">순서</a></li>
-        <li><a href="#none">분기</a></li>
-        <li><a href="#none">기본 파일</a></li>
-      </ul>
-    </li>
-    <li><a href="#none">요소 규칙</a>
-      <ul class="lnb_ul_sub">
-        <li><a href="#none">reset</a></li>
-        <li><a href="#none">hex code</a></li>
-        <li><a href="#none">px</a></li>
-        <li><a href="#none">font</a></li>
-        <li><a href="#none">box-sizing</a></li>
-        <li><a href="#none">background</a></li>
-        <li><a href="#none">border</a></li>
-        <li><a href="#none">display</a></li>
-        <li><a href="#none">padding, margin</a></li>
-        <li><a href="#none">animation</a></li>
-        <li><a href="#none">before, after</a></li>
-        <li><a href="#none">url</a></li>
-        <li><a href="#none">z-index</a></li>
-        <li><a href="#none">etc</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<li>
+  <a href="chtml.html">chtml.html</a>
+  <span class="date">2025-10-30</span>
+</li>
 
-<main class="main">
-  <svg class="main_magic" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 160.14 142.69">
-    <defs>
-      <linearGradient id="magicGradient" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#000" stop-opacity="1">
-          <animate attributeName="stop-color" values="#000;#db006e" dur="1s" begin="2.5s" fill="freeze" />
-        </stop>
-        <stop offset="100%" stop-color="#000" stop-opacity="1">
-          <animate attributeName="stop-color" values="#000;#db006e" dur="1s" begin="2.5s" fill="freeze" />
-        </stop>
-      </linearGradient>
-    </defs>
-    <path d="M82.36,79.42C41.1,63.06,4.38,58.03,0.36,68.2c-4.04,10.15,26.15,31.65,67.4,48.01,41.28,16.36,77.99,21.38,82.02,11.23,4.03-10.17-26.15-31.66-67.42-48.02ZM110.4,115.53c-1.3,3.29-18.74-.53-38.97-8.55-20.21-8.03-35.54-17.18-34.23-20.47,1.3-3.29,18.74.54,38.97,8.56,20.22,8.02,35.54,17.19,34.23,20.47Z"/>
-    <path d="M102.6,4.01l-49.2,61.77c9.62,2.71,19.88,6.16,30.28,10.28,10.39,4.12,20.22,8.63,29.12,13.27l6.49-78.67c.85-10.04-10.45-14.51-16.69-6.65Z"/>
-  </svg>
+<li>
+  <a href="coding.html">coding.html</a>
+  <span class="date">2025-10-30</span>
+</li>
 
-  <h2 class="main_h2">중요한 것을 더 중요하게</h2>
-  <p class="main_p">해당 코딩 컨벤션은 쇼핑엔티 마크업 개발자를 위한 HTML, CSS 통합 가이드 라인 입니다.</p>
-
-  <div class="main_link">
-    <a href="coding.html" class="main_link_a">
-      <h3 class="main_link_h3">개요</h3>
-      <p class="main_link_p">쇼핑엔티 코딩 컨벤션에 대하여</p>
-      <span class="main_link_arr">⟶</span>
-    </a>
-    <a href="chtml.html" class="main_link_a">
-      <h3 class="main_link_h3">HTML</h3>
-      <p class="main_link_p">마크업의 시작 HTML 작성 규칙</p>
-      <span class="main_link_arr">⟶</span>
-    </a>
-    <a href="css.html" class="main_link_a">
-      <h3 class="main_link_h3">CSS</h3>
-      <p class="main_link_p">코드를 더 아름답게 CSS 작성 규칙</p>
-      <span class="main_link_arr">⟶</span>
-    </a>
-  </div>
-</main>
-
+</ul>
 </body>
-</html> 
+</html>
