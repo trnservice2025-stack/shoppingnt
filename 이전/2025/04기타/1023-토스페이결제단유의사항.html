@@ -1,0 +1,145 @@
+<script>
+$(function(){
+  const tosstoday = new Date();
+  const toss10_s  = new Date('2025-10-01');
+  const toss10_e  = new Date('2025-10-31');
+  const toss11_s  = new Date('2025-11-01');
+  const toss11_e  = new Date('2025-11-30');
+
+  if (tosstoday >= toss10_s && tosstoday <= toss10_e) {
+    // 🔸 10월
+    $('head').append(`
+      <style id="promo-style">
+        .tab-wrap.pay-method .tab-list.ipt-filt > li .ipt + label[for="filter_01_08"] img {width:90px; height:auto;}
+        .tab-wrap.pay-method .tab-list.ipt-filt > li .ipt + label[for="filter_01_08"] {font-size:0;}
+        .tab-wrap.pay-method .tab-list.ipt-filt > li .ipt + label[for="filter_01_08"]:after {content:'최대 6% 혜택'; color:#f50d87; font-size:12px; border:1px solid #f50d87; border-radius:12px; padding:0 6px; height:24px; vertical-align:middle; line-height:24px; display:inline-block; margin:-4px 0 0 2px; font-weight:500;}
+      </style>
+    `);
+
+    const $targetList = $('.tab-con-wrap>.tab-con:nth-child(3) .acco-wrap .txt-list-disc');
+    if ($targetList.length) {
+      $targetList.empty().append(`
+        <li class="tit">토스페이 추가 혜택</li>
+        <li>혜택 1) 1% 적립 : 쇼핑엔티에서 토스페이 첫 결제 3만원 이상 결제하는 경우 1% 적립 (최대 1천원)</li>
+        <li>혜택 2) 5% 할인 : 토스페이 경유 및 쿠폰 다운로드 후 토스페이에 등록된 모든 결제수단(토스페이머니/카드/계좌)으로 1원 이상 결제하는 경우 5% 할인 (최대 5만원)</li>
+        <li>최대 6% 혜택 : 상기 혜택 중복 적용 가능, 쇼핑엔티에서 토스페이 첫 결제 고객 대상, 토스페이 경유 및 쿠폰 다운로드 후 토스페이머니 혹은 토스페이에 등록된 계좌로 3만원 이상 결제하는 경우 1% 적립 + 5% 할인</li>
+        <li>상세 내용은 이벤트 페이지 확인 부탁드립니다.</li>
+        <li class="tit">토스페이 이용안내</li>
+        <li>토스는 ㈜비바리퍼블리카에서 운영하는 간편결제/송금서비스 입니다.</li>
+        <li>카드 및 할부선택은 결제하기 버튼 클릭 후 토스앱에서 가능합니다.</li>
+        <li>토스페이로 결제할 경우 토스에서 제공하는 할인/혜택만 적용됩니다. 쇼핑엔티 카드사별 무이자, 청구할인, 일시불할인, 즉시할인은 적용되지 않습니다.</li>
+        <li>결제 완료 후 취소/반품 등이 발생 할 경우 토스를 통한 신용카드 취소, 계좌 환불이 이뤄집니다.</li>
+        <li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+        <li>토스 이용가능 결제수단 : 롯데, 비씨, 삼성, 신한, 하나, 현대, 국민, 농협, 우리, 토스머니 가능</li>
+        <li>과세/면세 상품을 동시에 구매하는 경우 토스페이 결제가 불가합니다. (면세상품: 휴지,기저귀,생리대,농/축/수산물등)</li>
+        <li>토스페이의 결제 및 사용관련 문의는 토스 고객센터(1599-4905 / 24시간 연중무휴)를 이용하시기 바랍니다.</li>
+      `);
+    }
+  } else if (tosstoday >= toss11_s && tosstoday <= toss11_e) {
+    // 🔹 11월
+    $('head').append(`
+      <style id="promo-style">
+        .tab-wrap.pay-method .tab-list.ipt-filt > li .ipt + label[for="filter_01_08"] img {width:90px; height:auto;}
+        .tab-wrap.pay-method .tab-list.ipt-filt > li .ipt + label[for="filter_01_08"] {font-size:0;}
+        .tab-wrap.pay-method .tab-list.ipt-filt > li .ipt + label[for="filter_01_08"]:after {content:'최대 6% 혜택'; color:#f50d87; font-size:12px; border:1px solid #f50d87; border-radius:12px; padding:0 6px; height:24px; vertical-align:middle; line-height:24px; display:inline-block; margin:-4px 0 0 2px; font-weight:500;}
+      </style>
+    `);
+
+    const $targetList = $('.tab-con-wrap>.tab-con:nth-child(3) .acco-wrap .txt-list-disc');
+    if ($targetList.length) {
+      $targetList.empty().append(`
+        <li class="tit">토스페이 추가 혜택</li>
+        <li>혜택 1) 1% 적립 : 쇼핑엔티에서 토스페이 첫 결제 4만원 이상 결제하는 경우 1% 적립 (최대 1천원)</li>
+        <li>혜택 2) 5% 할인 : 토스페이 경유 및 쿠폰 다운로드 후 토스페이에 등록된 모든 결제수단(토스페이머니/카드/계좌)으로 1원 이상 결제하는 경우 5% 할인 (최대 5만원)</li>
+        <li>최대 6% 혜택 : 상기 혜택 중복 적용 가능, 쇼핑엔티에서 토스페이 첫 결제 고객 대상, 토스페이 경유 및 쿠폰 다운로드 후 토스페이로 4만원 이상 결제하는 경우 1% 적립 + 5% 할인</li>
+        <li>상세 내용은 이벤트 페이지 확인 부탁드립니다.</li>
+        <li class="tit">토스페이 이용안내</li>
+        <li>토스는 ㈜비바리퍼블리카에서 운영하는 간편결제/송금서비스 입니다.</li>
+        <li>카드 및 할부선택은 결제하기 버튼 클릭 후 토스앱에서 가능합니다.</li>
+        <li>토스페이로 결제할 경우 토스에서 제공하는 할인/혜택만 적용됩니다. 쇼핑엔티 카드사별 무이자, 청구할인, 일시불할인, 즉시할인은 적용되지 않습니다.</li>
+        <li>결제 완료 후 취소/반품 등이 발생 할 경우 토스를 통한 신용카드 취소, 계좌 환불이 이뤄집니다.</li>
+        <li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+        <li>토스 이용가능 결제수단 : 롯데, 비씨, 삼성, 신한, 하나, 현대, 국민, 농협, 우리, 토스머니 가능</li>
+        <li>과세/면세 상품을 동시에 구매하는 경우 토스페이 결제가 불가합니다. (면세상품: 휴지,기저귀,생리대,농/축/수산물등)</li>
+        <li>토스페이의 결제 및 사용관련 문의는 토스 고객센터(1599-4905 / 24시간 연중무휴)를 이용하시기 바랍니다.</li>
+      `);
+    }
+  }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$(function(){
+  const tosstoday = new Date();
+  const toss10_s  = new Date('2025-10-01');
+  const toss10_e  = new Date('2025-10-31');
+  const toss11_s  = new Date('2025-11-01');
+  const toss11_e  = new Date('2025-11-30');
+
+  if (tosstoday >= toss10_s && tosstoday <= toss10_e) {
+    // 🔸 10월
+    $('head').append(`
+      <style id="promo-style">
+        .type-card .tab.payment-method button.toss:after {content:'최대 6% 혜택'; color:#f50d87; font-size:12px; border:1px solid #f50d87; border-radius:10px; padding:0 6px; height:20px; vertical-align:middle; line-height:20px; display:inline-block; margin:-3px 0 0 2px; font-weight:500;}
+      </style>
+    `);
+
+    const $targetList = $('.tab-cont-item0 .dot-list');
+    if ($targetList.length) {
+      $targetList.empty().append(`
+        <li class="tit">토스페이 추가 혜택</li>
+        <li>혜택 1) 1% 적립 : 쇼핑엔티에서 토스페이 첫 결제 4만원 이상 결제하는 경우 1% 적립 (최대 1천원)</li>
+        <li>혜택 2) 5% 할인 : 토스페이 경유 및 쿠폰 다운로드 후 토스페이에 등록된 모든 결제수단(토스페이머니/카드/계좌)으로 1원 이상 결제하는 경우 5% 할인 (최대 5만원)</li>
+        <li>최대 6% 혜택 : 상기 혜택 중복 적용 가능, 쇼핑엔티에서 토스페이 첫 결제 고객 대상, 토스페이 경유 및 쿠폰 다운로드 후 토스페이로 4만원 이상 결제하는 경우 1% 적립 + 5% 할인</li>
+        <li>상세 내용은 이벤트 페이지 확인 부탁드립니다.</li>
+        <li class="tit">토스페이 이용안내</li>
+        <li>토스는 ㈜비바리퍼블리카에서 운영하는 간편결제/송금서비스 입니다.</li>
+        <li>카드 및 할부선택은 결제하기 버튼 클릭 후 토스앱에서 가능합니다.</li>
+        <li>토스페이로 결제할 경우 토스에서 제공하는 할인/혜택만 적용됩니다. 쇼핑엔티 카드사별 무이자, 청구할인, 일시불할인, 즉시할인은 적용되지 않습니다.</li>
+        <li>결제 완료 후 취소/반품 등이 발생 할 경우 토스를 통한 신용카드 취소, 계좌 환불이 이뤄집니다.</li>
+        <li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+        <li>토스 이용가능 결제수단 : 롯데, 비씨, 삼성, 신한, 하나, 현대, 국민, 농협, 우리, 토스머니 가능</li>
+        <li>과세/면세 상품을 동시에 구매하는 경우 토스페이 결제가 불가합니다. (면세상품: 휴지,기저귀,생리대,농/축/수산물등)</li>
+        <li>토스페이의 결제 및 사용관련 문의는 토스 고객센터(1599-4905 / 24시간 연중무휴)를 이용하시기 바랍니다.</li>
+      `);
+    }
+  } else if (tosstoday >= toss11_s && tosstoday <= toss11_e) {
+    // 🔹 11월
+    $('head').append(`
+      <style id="promo-style">
+        .type-card .tab.payment-method button.toss:after {content:'최대 6% 혜택'; color:#f50d87; font-size:12px; border:1px solid #f50d87; border-radius:10px; padding:0 6px; height:20px; vertical-align:middle; line-height:20px; display:inline-block; margin:-3px 0 0 2px; font-weight:500;}
+      </style>
+    `);
+
+    const $targetList = $('.tab-cont-item0 .dot-list');
+    if ($targetList.length) {
+      $targetList.empty().append(`
+        <li class="tit">토스페이 추가 혜택</li>
+        <li>혜택 1) 1% 적립 : 쇼핑엔티에서 토스페이 첫 결제 4만원 이상 결제하는 경우 1% 적립 (최대 1천원)</li>
+        <li>혜택 2) 5% 할인 : 토스페이 경유 및 쿠폰 다운로드 후 토스페이에 등록된 모든 결제수단(토스페이머니/카드/계좌)으로 1원 이상 결제하는 경우 5% 할인 (최대 5만원)</li>
+        <li>최대 6% 혜택 : 상기 혜택 중복 적용 가능, 쇼핑엔티에서 토스페이 첫 결제 고객 대상, 토스페이 경유 및 쿠폰 다운로드 후 토스페이로 4만원 이상 결제하는 경우 1% 적립 + 5% 할인</li>
+        <li>상세 내용은 이벤트 페이지 확인 부탁드립니다.</li>
+        <li class="tit">토스페이 이용안내</li>
+        <li>토스는 ㈜비바리퍼블리카에서 운영하는 간편결제/송금서비스 입니다.</li>
+        <li>카드 및 할부선택은 결제하기 버튼 클릭 후 토스앱에서 가능합니다.</li>
+        <li>토스페이로 결제할 경우 토스에서 제공하는 할인/혜택만 적용됩니다. 쇼핑엔티 카드사별 무이자, 청구할인, 일시불할인, 즉시할인은 적용되지 않습니다.</li>
+        <li>결제 완료 후 취소/반품 등이 발생 할 경우 토스를 통한 신용카드 취소, 계좌 환불이 이뤄집니다.</li>
+        <li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+        <li>토스 이용가능 결제수단 : 롯데, 비씨, 삼성, 신한, 하나, 현대, 국민, 농협, 우리, 토스머니 가능</li>
+        <li>과세/면세 상품을 동시에 구매하는 경우 토스페이 결제가 불가합니다. (면세상품: 휴지,기저귀,생리대,농/축/수산물등)</li>
+        <li>토스페이의 결제 및 사용관련 문의는 토스 고객센터(1599-4905 / 24시간 연중무휴)를 이용하시기 바랍니다.</li>
+      `);
+    }
+  }
+});
+</script>

@@ -1,0 +1,48 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%; padding:0; margin:0;} </style> -->
+
+<div class="promotion_con">
+  <img src="https://img.shoppingntmall.com/htmleditor/381/tb_011762133943014.png">
+  <img src="https://img.shoppingntmall.com/htmleditor/381/tb_021762133943435.png">
+  <!-- 2단 -->
+  <button type="button" id="copyUrlBtn"><img src="https://img.shoppingntmall.com/htmleditor/381/tb_031762133943752.png" alt=""></button>
+  <!-- ✅ 토스트 영역 -->
+    <div id="ttoast" class="ttoast">URL이 복사되었습니다.</div>
+</div>
+
+<style>
+  .promotion_con * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+  .promotion_con a, .promotion_con img {background:transparent;}
+  .promotion_con button {all:unset;display:inline-block;cursor:pointer;text-align:center;box-sizing:border-box;font:inherit;color:inherit;background:none;border:none;outline:none;padding:0;margin:0;line-height:normal;-webkit-appearance:none;-moz-appearance:none;}
+
+  .ttoast {position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: #fff; font-size: 16px; padding: 12px 24px; border-radius: 30px; opacity: 0; pointer-events: none; transition: opacity 0.3s, bottom 0.3s; z-index: 9999999;}
+  .ttoast.sshow {opacity: 1; bottom: 60px;}
+</style>
+<script>
+    document.getElementById("copyUrlBtn").addEventListener("click", function() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(showToast).catch(() => {
+            // 구형 브라우저 fallback
+            const temp = document.createElement("textarea");
+            document.body.appendChild(temp);
+            temp.value = url;
+            temp.select();
+            document.execCommand("copy");
+            document.body.removeChild(temp);
+            showToast();
+        });
+    });
+
+    function showToast() {
+        const toast = document.getElementById("ttoast");
+        toast.classList.add("sshow");
+        setTimeout(() => toast.classList.remove("sshow"), 2000);
+    }
+</script>

@@ -1,0 +1,35 @@
+
+<!-- 기입만 -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  const kjparams = new URLSearchParams(window.location.search);
+  const kjcode = kjparams.get('secretcodetest');
+  if (kjcode) {
+    const kjinput = document.querySelector('#rdnbCpnCd');
+    if (kjinput) kjinput.value = kjcode;
+  }
+});
+</script>
+
+
+
+<!-- 기입 + 받기 -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  const kjparams2 = new URLSearchParams(window.location.search);
+  const kjcode2 = kjparams2.get('secretcode');
+  if (kjcode2) {
+    const kjinput = document.querySelector('#rdnbCpnCd'); // 쿠폰번호 입력 input
+    if (kjinput) {
+      kjinput.value = kjcode2;
+
+      // 입력이 완료된 후 약간의 딜레이 후 버튼 클릭
+      setTimeout(() => {
+        // "받기" 버튼 요소 찾기
+        const kjbtn = document.querySelector('#couponIssueBtn');
+        if (kjbtn) kjbtn.click();
+      }, 500); // 0.5초 후 자동 클릭 (입력 반영 시간 고려)
+    }
+  }
+});
+</script>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>초능력 테스트</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+/* 기본 스타일 유지 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,table,th,td,form,fieldset,legend,textarea,input,select,textarea,button{margin:0;padding:0; -webkit-text-size-adjust:none; outline:none; word-break:keep-all; font-family: 'YeogiOttaeJalnan';}
+html,body{height:100%;}
+body {overflow-x:hidden; overflow-y:scroll; min-width:320px; background:#fbfbfb;}
+fieldset,li,img{border:0;vertical-align:top;outline:none;}
+ul,ol{list-style:none}
+button{border:0;background-color:transparent;cursor:pointer;outline:none;}
+table{border-collapse:collapse;border-spacing:0}
+caption {display:none;}
+@font-face {
+    font-family: 'YeogiOttaeJalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+body {background:#000005;}
+.wrap {max-width:900px; margin:0 auto; padding:0 0 30px 0;}
+.section {display:none; text-align:center;}
+.section.active {display:block;}
+.title {text-align:center; font-size:50px; margin-bottom:30px; color:#fff; padding-top:40px;}
+.title span {color:#44c0f5;}
+.title2 {text-align:center; font-size:50px; margin-bottom:30px; color:#000;}
+.title2 span {color:#44c0f5;}
+.section .content {padding:50px; margin:30px 0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.1); border-radius:40px; text-align:center; width:1100px; margin-left:-100px;}
+.section .content.end {background:none;}
+.section select {cursor:pointer; border-radius:18px; padding:20px; font-size:20px; border:0; box-shadow:0 2px 8px rgba(0,0,0,.1); margin:0 10px;}
+.section select:disabled {background-color:#f5f5f5;color:#aaa;border-color:#ddd;cursor:not-allowed;}
+.btn_end, .btn_end2, .btn_reset, .btn_next, .btn_fakefill {
+  cursor:pointer; border-radius:30px; padding:20px 40px; font-size:30px;
+  border:0; box-shadow:0 2px 8px rgba(0,0,0,.1); color:#fff; font-family:'YeogiOttaeJalnan'; display:block; margin:20px auto;
+}
+.btn_end {background:#44c0f5; opacity:0.5; pointer-events:none;}
+.btn_end.active {opacity:1; pointer-events:auto;}
+.btn_reset, .btn_fakefill {background:#888;}
+.btn_next {background:#0095ff; display:none;}
+.btn_end2 {background:#00a718; display:none;} 
+.img {display:block; height:auto; max-width:100%;}
+.img2 {display:block; height:auto; max-width:100%; width:300px; margin:0 auto;}
+/* 이미지형 초능력 카드 */
+.con_select {display:flex; flex-wrap:wrap; justify-content:center; gap:0px;}
+.con_select .power {position:relative; width:33.33%; cursor:pointer; transition:transform 0.2s ease, opacity 0.2s ease;}
+.con_select .power img {width:100%; display:block;}
+.con_select.disabled .power {pointer-events:none; opacity:0.4;}
+.con_select .power.on img {opacity:0.35;}
+.con_select .power.on::after {
+  content:"선택됨"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  background:rgba(0,0,0,0.8); color:#fff; border-radius:50%; width:120px; height:120px; line-height:120px; text-align:center; font-size:24px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ✅ STEP 0 : 시작화면 -->
+  <div id="intro" class="section active">
+    <img src="https://img.shoppingntmall.com/htmleditor/523/01762156738897.png" class="img" alt="타이틀">
+    <div class="select_wrap" style="text-align:center; margin-bottom:20px;">
+      <select id="team"><option value="">부서명</option></select>
+      <select id="name" disabled><option value="">이름</option></select>
+    </div>
+    <button class="btn_fakefill">(테스트용) 임의 참여</button>
+    <button class="btn_reset">(테스트용) 데이터 초기화</button>
+  </div>
+
+  <!-- ✅ STEP 1 : 초능력 선택 -->
+  <div id="step1" class="section">
+    <h2 class="title">나를 위한 <span>초능력 5가지</span>를 골라보세요!</h2>
+    <div class="content full">
+      <div class="con_select disabled">
+        <div class="power" data-id="1"><img src="https://img.shoppingntmall.com/htmleditor/542/11762152300729.png"></div>
+        <div class="power" data-id="2"><img src="https://img.shoppingntmall.com/htmleditor/542/21762152301348.png"></div>
+        <div class="power" data-id="3"><img src="https://img.shoppingntmall.com/htmleditor/542/31762152301907.png"></div>
+        <div class="power" data-id="4"><img src="https://img.shoppingntmall.com/htmleditor/542/41762152302376.png"></div>
+        <div class="power" data-id="5"><img src="https://img.shoppingntmall.com/htmleditor/542/51762152302906.png"></div>
+        <div class="power" data-id="6"><img src="https://img.shoppingntmall.com/htmleditor/542/61762152303427.png"></div>
+        <div class="power" data-id="7"><img src="https://img.shoppingntmall.com/htmleditor/542/71762152303983.png"></div>
+        <div class="power" data-id="8"><img src="https://img.shoppingntmall.com/htmleditor/542/81762152304603.png"></div>
+        <div class="power" data-id="9"><img src="https://img.shoppingntmall.com/htmleditor/542/91762152305173.png"></div>
+      </div>
+    </div>
+    <button type="button" class="btn_end">초능력 선택 완료</button>
+  </div>
+
+  <!-- ✅ STEP 2 : 완료화면 -->
+  <div id="step2" class="section">
+    <div class="content end">
+      <img src="https://img.shoppingntmall.com/htmleditor/983/11761123283323.png" class="img2">
+      <h3 class="title">나와 비슷한 초능력을 선택한 사람은 누굴지?<br><span>조 편성 결과</span>에서 확인하세요!</h3>
+    </div>
+    <button type="button" class="btn_next">다음 사람 테스트하기</button>
+    <button type="button" class="btn_end2">조 편성 결과 다운로드</button>
+  </div>
+
+</div>
+
+<script>
+  
+$(function(){
+  const validEntries = [
+    {team:'경영기획팀', name:'권용민'},
+    {team:'경영기획팀', name:'이시현'},
+    {team:'경영기획팀', name:'서영석'},
+    {team:'경영기획팀', name:'김병욱'},
+    {team:'경영기획팀', name:'이세진'},
+    {team:'인사팀', name:'남근우'},
+    {team:'인사팀', name:'최용익'},
+    {team:'인사팀', name:'정수빈'},
+    {team:'인사팀', name:'곽은비'},
+    {team:'인사팀', name:'원태호'},
+    {team:'재무팀', name:'백관룡'},
+    {team:'재무팀', name:'조경일'},
+    {team:'재무팀', name:'김지선'},
+    {team:'재무팀', name:'이철수'},
+    {team:'재무팀', name:'박하원'},
+    {team:'상생협력팀', name:'양우일'},
+    {team:'상생협력팀', name:'이형률'},
+    {team:'상생협력팀', name:'최윤석'},
+    {team:'상생협력팀', name:'김연주'},
+    {team:'상생협력팀', name:'김려원'},
+    {team:'상생협력팀', name:'이현범'},
+    {team:'상생협력팀', name:'박유정'},
+    {team:'상생협력팀', name:'김민지'},
+    {team:'고객서비스팀', name:'장우석'},
+    {team:'고객서비스팀', name:'오홍석'},
+    {team:'고객서비스팀', name:'서교영'},
+    {team:'고객서비스팀', name:'지경석'},
+    {team:'고객서비스팀', name:'송수민'},
+    {team:'고객서비스팀', name:'마은영'},
+    {team:'고객서비스팀', name:'박찬후'},
+    {team:'고객서비스팀', name:'오금실'},
+    {team:'고객서비스팀', name:'황지예'},
+    {team:'영업기획팀', name:'김택봉'},
+    {team:'영업기획팀', name:'이현웅'},
+    {team:'영업기획팀', name:'김정석'},
+    {team:'영업기획팀', name:'정성은'},
+    {team:'영업기획팀', name:'김민경'},
+    {team:'영업기획팀', name:'김가희'},
+    {team:'영업기획팀', name:'박새얀'},
+    {team:'영업기획팀', name:'신지윤'},
+    {team:'마케팅팀', name:'김보람'},
+    {team:'마케팅팀', name:'김정훈'},
+    {team:'마케팅팀', name:'김경주'},
+    {team:'마케팅팀', name:'정아림'},
+    {team:'마케팅팀', name:'홍미라'},
+    {team:'마케팅팀', name:'임지혜'},
+    {team:'마케팅팀', name:'김상우'},
+    {team:'마케팅팀', name:'장미연'},
+    {team:'마케팅팀', name:'정수현'},
+    {team:'마케팅팀', name:'장슬기'},
+    {team:'마케팅팀', name:'심지연'},
+    {team:'마케팅팀', name:'이지영'},
+    {team:'마케팅팀', name:'이영서'},
+    {team:'홍보팀', name:'유지원'},
+    {team:'영상제작팀', name:'심도진'},
+    {team:'영상제작팀', name:'장문석'},
+    {team:'영상제작팀', name:'최영은'},
+    {team:'영상제작팀', name:'박미정'},
+    {team:'영상제작팀', name:'한지수'},
+    {team:'영상제작팀', name:'정소연'},
+    {team:'영상제작팀', name:'김민경'},
+    {team:'영상제작팀', name:'이준현'},
+    {team:'영상제작팀', name:'김민'},
+    {team:'영상제작팀', name:'송진선'},
+    {team:'영상제작팀', name:'최하나'},
+    {team:'영상제작팀', name:'박동규'},
+    {team:'영상제작팀', name:'원종성'},
+    {team:'영상제작팀', name:'안수빈'},
+    {team:'영상제작팀', name:'김연주'},
+    {team:'영상제작팀', name:'신혜원'},
+    {team:'정보기획팀', name:'이동규'},
+    {team:'정보기획팀', name:'방기정'},
+    {team:'정보기획팀', name:'민윤경'},
+    {team:'정보기획팀', name:'신혁춘'},
+    {team:'정보기획팀', name:'최윤호'},
+    {team:'정보기획팀', name:'백성현'},
+    {team:'정보기획팀', name:'정세철'},
+    {team:'정보기획팀', name:'이용호'},
+    {team:'정보기획팀', name:'김창환'},
+    {team:'서비스기획팀', name:'이은주'},
+    {team:'서비스기획팀', name:'피설현'},
+    {team:'서비스기획팀', name:'최현규'},
+    {team:'서비스기획팀', name:'배지수'},
+    {team:'패션의류팀', name:'신은미'},
+    {team:'패션의류팀', name:'조인규'},
+    {team:'패션의류팀', name:'유윤경'},
+    {team:'패션의류팀', name:'현준'},
+    {team:'패션의류팀', name:'서준호'},
+    {team:'패션의류팀', name:'함수지'},
+    {team:'패션의류팀', name:'백하은'},
+    {team:'패션잡화팀', name:'이준석'},
+    {team:'패션잡화팀', name:'하연주'},
+    {team:'패션잡화팀', name:'장경미'},
+    {team:'패션잡화팀', name:'심재용'},
+    {team:'패션잡화팀', name:'문현'},
+    {team:'패션잡화팀', name:'신연식'},
+    {team:'패션잡화팀', name:'한남희'},
+    {team:'패션잡화팀', name:'정예지'},
+    {team:'패션잡화팀', name:'전다인'},
+    {team:'헬스뷰티팀', name:'백영희'},
+    {team:'헬스뷰티팀', name:'조혜경'},
+    {team:'헬스뷰티팀', name:'이다현'},
+    {team:'헬스뷰티팀', name:'성혜연'},
+    {team:'헬스뷰티팀', name:'이수현'},
+    {team:'헬스뷰티팀', name:'정은석'},
+    {team:'헬스뷰티팀', name:'김진덕'},
+    {team:'헬스뷰티팀', name:'김희성'},
+    {team:'푸드팀', name:'최동환'},
+    {team:'푸드팀', name:'양원석'},
+    {team:'푸드팀', name:'박지아'},
+    {team:'푸드팀', name:'박지수'},
+    {team:'푸드팀', name:'정자윤'},
+    {team:'푸드팀', name:'김소현'},
+    {team:'푸드팀', name:'정예원'},
+    {team:'리빙팀', name:'홍영기'},
+    {team:'리빙팀', name:'이호'},
+    {team:'리빙팀', name:'도종오'},
+    {team:'리빙팀', name:'김세근'},
+    {team:'리빙팀', name:'전명석'},
+    {team:'리빙팀', name:'김병준'},
+    {team:'무형서비스팀', name:'임동훈'},
+    {team:'무형서비스팀', name:'한재웅'},
+    {team:'무형서비스팀', name:'최주환'},
+    {team:'무형서비스팀', name:'남상준'},
+    {team:'무형서비스팀', name:'이예린'},
+    {team:'감사팀', name:'손민철'},
+    {team:'감사팀', name:'조태윤'}
+  ];
+  const total = validEntries.length;
+  let participants = JSON.parse(localStorage.getItem('participants') || '[]');
+
+  // ✅ 팀 목록
+  const teams = [...new Set(validEntries.map(v=>v.team))];
+  teams.forEach(t=>$('#team').append(`<option value="${t}">${t}</option>`));
+
+  // ✅ 부서 선택 시 이름 목록
+  $('#team').change(function(){
+    const team = $(this).val();
+    $('#name').html('<option value="">이름</option>');
+    if(!team){$('#name').prop('disabled',true);return;}
+    validEntries.filter(v=>v.team===team).forEach(v=>{
+      const done = participants.find(p=>p.name===v.name);
+      $('#name').append(`<option value="${v.name}" ${done?'disabled':''}>${v.name}${done?' (완료)':''}</option>`);
+    });
+    $('#name').prop('disabled',false);
+  });
+
+  // ✅ 이름 선택 시 초능력 화면 이동
+  $('#name').change(function(){
+    if($('#team').val() && $('#name').val()){
+      $('#intro').removeClass('active');
+      $('#step1').addClass('active');
+      $('.con_select').removeClass('disabled');
+      $('html, body').animate({ scrollTop: 0 }, 300);
+    }
+  });
+
+  // ✅ 초능력 선택 (이미지 클릭)
+  $('.con_select .power').click(function(){
+    if($('.con_select').hasClass('disabled')) return;
+
+    // 현재 상태 토글 전에 이미 on 개수를 미리 계산
+    const isOn = $(this).hasClass('on');
+    const currentCount = $('.con_select .power.on').length;
+    const newCount = isOn ? currentCount - 1 : currentCount + 1;
+
+    // 만약 새로 눌러서 6개가 되려 하면 취소만 (5개 상태 유지)
+    if (!isOn && newCount > 5) {
+      alert('최대 5개까지만 선택 가능합니다!');
+      return; // removeClass 하지 않음
+    }
+
+    // 정상 토글 진행
+    $(this).toggleClass('on');
+
+    // 5개면 버튼 활성화 유지
+    const cnt = $('.con_select .power.on').length;
+    $('.btn_end').toggleClass('active', cnt === 5);
+  });
+ 
+
+  // ✅ 완료 버튼
+  $('.btn_end').click(function(){
+    if(!$(this).hasClass('active')) return;
+    const team=$('#team').val(), name=$('#name').val();
+    const powers=$('.con_select .power.on').map((i,el)=>$(el).data('id')).get();
+    participants.push({team,name,powers});
+    localStorage.setItem('participants', JSON.stringify(participants));
+    
+    $('#step1').removeClass('active');$('#step2').addClass('active');
+    $('.btn_next').show();
+    // ✅ 모든 인원이 완료된 경우
+    if (participants.length >= total) {
+      $('.btn_end2').show(); // 엑셀 다운로드 버튼 표시
+      $('.btn_next')
+        .text('모든 사람 테스트 완료')
+        .css({ 
+          pointerEvents: 'none', 
+          opacity: 0.6, 
+          background: '#555' 
+        });
+    }
+  });
+
+  // ✅ 다음 사람 테스트하기
+  $('.btn_next').click(()=>location.reload());
+
+  // ✅ 초기화
+  $('.btn_reset').click(()=>{localStorage.clear();location.reload();});
+
+  // ✅ 테스트용 임의 참여 생성
+  $('.btn_fakefill').click(()=>{
+    participants=validEntries.map(v=>{
+      const p=[];while(p.length<5){const n=Math.floor(Math.random()*9)+1;if(!p.includes(n))p.push(n);}
+      return {...v,powers:p};
+    });
+    localStorage.setItem('participants',JSON.stringify(participants));
+    $('#intro').removeClass('active');$('#step2').addClass('active');
+    $('.btn_end2').show();
+    alert(`${participants.length}명 임의 데이터 생성 완료`);
+  });
+    // ✅ 조 편성 결과 다운로드 (엑셀 생성)
+  $('.btn_end2').click(()=>{
+    const data = JSON.parse(localStorage.getItem('participants') || '[]');
+    if (data.length === 0) { alert('참여 데이터가 없습니다.'); return; }
+
+    // 공통 능력 찾기 함수
+    const getCommonPowers = group => {
+      if (group.length === 0) return [];
+      return group.reduce((acc, p) => acc.filter(x => p.powers.includes(x)), [...group[0].powers]);
+    };
+
+    // === 그룹 생성 ===
+    const used = new Set();
+    const groups = [];
+
+    for (let i = 0; i < data.length; i++) {
+      if (used.has(i)) continue;
+      const p1 = data[i];
+      let group = [p1];
+      used.add(i);
+
+      const sorted = data.map((p2, idx) => ({
+        idx,
+        overlap: p1.powers.filter(x => p2.powers.includes(x)),
+        score: p1.powers.filter(x => p2.powers.includes(x)).length
+      })).sort((a, b) => b.score - a.score);
+
+      for (let s of sorted) {
+        if (group.length >= 7) break;
+        if (used.has(s.idx) || s.score < 1) continue;
+        const p2 = data[s.idx];
+        if (group.every(g => g.team !== p2.team)) {
+          group.push(p2);
+          used.add(s.idx);
+        }
+      }
+      groups.push(group);
+    }
+
+    // === 완전공통능력 강제 보정 ===
+    groups.forEach(g=>{
+      let common = getCommonPowers(g);
+      if(common.length===0 && groups.length>1){
+        for(const other of groups){
+          const overlap = getCommonPowers(other);
+          if(overlap.length>0){
+            g.push(...other.splice(0, Math.min(2, other.length)));
+            break;
+          }
+        }
+      }
+    });
+
+    // === 균등 분배 (6~7명) ===
+    const flat = groups.flat();
+    const balanced = [];
+    let idx = 0;
+    for (let i = 0; i < 20; i++) {
+      const sz = (i < 2) ? 7 : 6;
+      balanced.push(flat.slice(idx, idx + sz));
+      idx += sz;
+      if (idx >= flat.length) break;
+    }
+
+    // === 엑셀 데이터 생성 ===
+    const exportData = [];
+    balanced.forEach((g, gi) => {
+      const common = getCommonPowers(g);
+      g.forEach(p => {
+        const partners = g.filter(x => x.name !== p.name);
+        exportData.push({
+          부서명: p.team,
+          이름: p.name,
+          선택초능력: p.powers.sort((a,b)=>a-b).join(','),
+          유사도높은사람: partners.map(x=>x.name).join(', '),
+          완전같은능력: common.length ? common.join(',') : '(없음)',
+          조: `${gi + 1}조`
+        });
+      });
+    });
+
+    // === 엑셀 생성 ===
+    const ws = XLSX.utils.json_to_sheet(exportData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "초능력 조편성");
+    XLSX.writeFile(wb, "초능력_조편성결과.xlsx");
+  });
+
+
+});
+</script>
+
+<script>
+  // 오른쪽 클릭 방지
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  // 드래그 방지
+  document.addEventListener('dragstart', e => e.preventDefault());
+  // 텍스트 선택 방지
+  document.addEventListener('selectstart', e => e.preventDefault());
+  // Ctrl+C, Ctrl+U, F12 방지
+  document.addEventListener('keydown', e => {
+    if (
+      (e.ctrlKey && (e.key === 'c' || e.key === 'u')) || // Ctrl+C, Ctrl+U
+      e.key === 'F12' // 개발자도구
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<script>
+    $(document).ready(function() {
+    var cleanUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState({}, document.title, cleanUrl);
+    });
+</script>

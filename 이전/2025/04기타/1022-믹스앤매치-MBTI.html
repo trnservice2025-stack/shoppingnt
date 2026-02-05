@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>티랑이 테스트</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,table,th,td,form,fieldset,legend,textarea,input,select,textarea,button{margin:0;padding:0; -webkit-text-size-adjust:none; outline:none; word-break:keep-all;}
+	html,body{height:100%;}
+	body {overflow-x:hidden; overflow-y:scroll; min-width:320px;}
+	body,input,select,textarea,button,pre{font-family:'Noto Sans KR','Nanum Gothic','Malgun Gothic','맑은고딕','Apple SD Gothic Neo',Dotum,'돋움',sans-serif; color:#1e1e1e; font-weight:400;}
+	fieldset,li,img{border:0;vertical-align:top;outline:none;}
+	ul,ol{list-style:none}
+	button{overflow:visible;border:0;background-color:transparent;cursor:pointer;outline:none;}
+	a, button {-webkit-tap-highlight-color:transparent; color:#1e1e1e;}
+	table{border-collapse:collapse;border-spacing:0}
+	caption {display:none;}
+
+	@font-face {
+		font-family: 'RoundedFixedsys';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+		font-weight: normal;
+		font-display: swap;
+	}
+
+	body {background:#fbfbfb;}
+	.wrap {max-width:800px; margin:0 auto; padding:30px;}
+	.section {display:none;}
+	.section.active {display:block;}
+	.section>div {padding:50px; margin:30px 0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.1); border-radius:40px; text-align:center; font-size:20px;}
+	.section h3 {font-size:24px; margin-bottom:30px;}
+	.title {font-family: 'RoundedFixedsys'; text-align:center;}
+	.title dt {font-size:40px; color:#ff69bc; margin-bottom:20px;}
+	.title dd {font-size:20px; line-height:32px;  }
+	.title dd img {display:block; margin:0 auto; height:200px; margin-top:20px;}
+	.section input[type="text"], .section select, .section button {cursor:pointer; border-radius:18px; padding:20px 20px; font-size:20px; border:0; box-shadow:0 2px 8px rgba(0,0,0,.1);}
+	.section select {margin-bottom:30px; appearance: none; padding-right:50px;
+		-webkit-appearance: none;
+		-moz-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg fill='%23000000' height='20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
+		background-repeat: no-repeat;
+		background-position: right 20px center;
+		background-size: 20px;}
+		.section  select:disabled {
+		background-color: #f5f5f5;
+		color: #aaa;
+		border-color: #ddd;
+		cursor: not-allowed;
+		background-image: url("data:image/svg+xml;utf8,<svg fill='%23a7a7a7' height='20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
+	}
+	.section button {background:#ff69bc; color:#fff;}
+	#downloadExcel, #downloadExcelComplete {background:#24822c;}
+	#questionBox {max-width:600px; margin:0 auto;}
+	#questionBox>p {margin-bottom:30px; color:#ff69bc; text-decoration:underline; font-size:32px;} 
+	#questionBox>label {display:inline-block; margin:0 20px 30px 20px;} 
+	#myResult {margin-bottom:20px; font-size:26px; color:#ff69bc;}
+	#mbtiDesc {margin-bottom:30px; font-size:18px; color:#444;}
+	#groupMembers {margin-bottom:30px;}
+	#groupMembers h4 {margin-bottom:20px;}
+	#groupMembers li{margin-bottom:16px;}
+	#remainingCount {margin-top:30px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1단계 -->
+  <div id="step1" class="section active">
+	<dl class="title">
+		<dt>티랑이 테스트</dt>
+		<dd>나는 무슨 티랑이일까?
+			<img src="https://img.shoppingntmall.com/htmleditor/983/11761123283323.png" alt="">
+		</dd>
+	</dl>
+	<div>
+		<h3>부서명과 이름을 입력해주세요</h3>
+		<select id="team">
+			<option value="">선택</option>
+		</select>
+		<!-- <input type="text" id="name" placeholder="이름 입력" /> -->
+		 <select id="name" disabled>
+			<option value="">이름 선택</option>
+		</select>
+
+		<br>
+		<button id="startBtn">테스트 시작하기</button>
+	</div>
+  </div>
+
+  <!-- 2단계 -->
+  <div id="step2" class="section">
+	<dl class="title">
+		<dt>티랑이 테스트</dt>
+		<dd><img src="https://img.shoppingntmall.com/htmleditor/851/221761180319269.png" alt=""></dd>
+	</dl>
+	<div>
+		<h3>간단한 성격 테스트</h3>
+		<div id="questionBox"></div>
+		<button id="nextQuestion">다음 문항</button>
+	</div>
+  </div>
+
+  <!-- 3단계 -->
+  <div id="step3" class="section">
+	<dl class="title">
+		<dt>티랑이 테스트</dt>
+		<dd><img src="https://img.shoppingntmall.com/htmleditor/851/331761180319810.png" alt=""></dd>
+	</dl>
+	<div>
+		<div class="result-box">
+			<h3>결과 확인</h3>
+			<p id="myResult"></p>
+			<p id="mbtiDesc"></p>
+			<div id="groupMembers"></div>
+		</div>
+		<button id="nextUserBtn">다음 사람 테스트 하기</button>
+		<button id="downloadExcel">결과 엑셀로 다운로드</button>
+	</div>
+  </div>
+
+  <div id="complete" class="section">
+	<dl class="title">
+		<dt>티랑이 테스트</dt>
+		<dd><img src="https://img.shoppingntmall.com/htmleditor/851/441761180320416.png" alt=""></dd>
+	</dl>
+	<div>
+		<h2>🎉 모든 인원이 테스트를 완료했습니다! 🎉 </h2>
+		<p style="font-size:18px; line-height:26px; margin:30px 0">모든 결과가 저장되었습니다.<br>아래 버튼을 눌러 전체 결과를 다운로드할 수 있습니다.</p>
+		<button id="downloadExcelComplete">결과 엑셀로 다운로드</button>
+	</div>
+  </div>
+</div>
+
+<script>
+$(function(){  
+
+  let participants = [];
+  let mbtiGroups = {};
+  let currentUser = {};
+
+  // ✅ 팀명 + 이름 검증용 리스트
+  const validEntries = [
+    {team:'경영기획팀', name:'권용민'},
+    {team:'경영기획팀', name:'이시현'},
+    {team:'경영기획팀', name:'서영석'},
+    {team:'경영기획팀', name:'이세진'},
+    {team:'인사팀', name:'남근우'},
+    {team:'인사팀', name:'최용익'},
+    {team:'인사팀', name:'정수빈'},
+    {team:'인사팀', name:'곽은비'},
+    {team:'재무팀', name:'백관룡'},
+    {team:'재무팀', name:'김지선'},
+    {team:'재무팀', name:'조경일'},
+    {team:'재무팀', name:'이철수'},
+    {team:'재무팀', name:'박하원'},
+    {team:'상생협력팀', name:'양우일'},
+    {team:'상생협력팀', name:'이형률'},
+    {team:'상생협력팀', name:'최윤석'},
+    {team:'상생협력팀', name:'김연주'},
+    {team:'상생협력팀', name:'박유정'},
+    {team:'상생협력팀', name:'김려원'},
+    {team:'상생협력팀', name:'이현범'},
+    {team:'고객서비스팀', name:'장우석'},
+    {team:'고객서비스팀', name:'오홍석'},
+    {team:'고객서비스팀', name:'지경석'},
+    {team:'고객서비스팀', name:'마은영'},
+    {team:'고객서비스팀', name:'서교영'},
+    {team:'고객서비스팀', name:'박찬후'},
+    {team:'고객서비스팀', name:'송수민'},
+    {team:'고객서비스팀', name:'황지예'},
+    {team:'영업기획팀', name:'김택봉'},
+    {team:'영업기획팀', name:'이현웅'},
+    {team:'영업기획팀', name:'김정석'},
+    {team:'영업기획팀', name:'정성은'},
+    {team:'영업기획팀', name:'김민경'},
+    {team:'영업기획팀', name:'김가희'},
+    {team:'영업기획팀', name:'박새얀'},
+    {team:'영업기획팀', name:'신지윤'},
+    {team:'마케팅팀', name:'김보람'},
+    {team:'마케팅팀', name:'홍미라'},
+    {team:'마케팅팀', name:'정아림'},
+    {team:'마케팅팀', name:'김정훈'},
+    {team:'마케팅팀', name:'정수현'},
+    {team:'마케팅팀', name:'임지혜'},
+    {team:'마케팅팀', name:'김경주'},
+    {team:'마케팅팀', name:'김상우'},
+    {team:'마케팅팀', name:'장미연'},
+    {team:'마케팅팀', name:'장슬기'},
+    {team:'마케팅팀', name:'심지연'},
+    {team:'마케팅팀', name:'이지영'},
+    {team:'마케팅팀', name:'이영서'},
+    {team:'홍보팀', name:'유지원'},
+    {team:'영상제작팀', name:'심도진'},
+    {team:'영상제작팀', name:'장문석'},
+    {team:'영상제작팀', name:'최영은'},
+    {team:'영상제작팀', name:'박미정'},
+    {team:'영상제작팀', name:'한지수'},
+    {team:'영상제작팀', name:'정소연'},
+    {team:'영상제작팀', name:'이준현'},
+    {team:'영상제작팀', name:'김민'},
+    {team:'영상제작팀', name:'안수빈'},
+    {team:'영상제작팀', name:'최하나'},
+    {team:'영상제작팀', name:'박동규'},
+    {team:'영상제작팀', name:'원종성'},
+    {team:'영상제작팀', name:'송진선'},
+    {team:'영상제작팀', name:'김민경'},
+    {team:'영상제작팀', name:'김연주'},
+    {team:'영상제작팀', name:'신혜원'},
+    {team:'정보기획팀', name:'이동규'},
+    {team:'정보기획팀', name:'신혁춘'},
+    {team:'정보기획팀', name:'방기정'},
+    {team:'정보기획팀', name:'민윤경'},
+    {team:'정보기획팀', name:'백성현'},
+    {team:'정보기획팀', name:'최윤호'},
+    {team:'정보기획팀', name:'이용호'},
+    {team:'정보기획팀', name:'정세철'},
+    {team:'정보기획팀', name:'김창환'},
+    {team:'서비스기획팀', name:'이은주'},
+    {team:'서비스기획팀', name:'피설현'},
+    {team:'서비스기획팀', name:'최현규'},
+    {team:'서비스기획팀', name:'배지수'},
+    {team:'패션의류팀', name:'신은미'},
+    {team:'패션의류팀', name:'조인규'},
+    {team:'패션의류팀', name:'유윤경'},
+    {team:'패션의류팀', name:'서준호'},
+    {team:'패션의류팀', name:'함수지'},
+    {team:'패션의류팀', name:'현준'},
+    {team:'패션의류팀', name:'임수연'},
+    {team:'패션의류팀', name:'백하은'},
+    {team:'패션잡화팀', name:'이준석'},
+    {team:'패션잡화팀', name:'하연주'},
+    {team:'패션잡화팀', name:'장경미'},
+    {team:'패션잡화팀', name:'심재용'},
+    {team:'패션잡화팀', name:'한남희'},
+    {team:'패션잡화팀', name:'문현'},
+    {team:'패션잡화팀', name:'신연식'},
+    {team:'패션잡화팀', name:'정예지'},
+    {team:'패션잡화팀', name:'전다인'},
+    {team:'헬스뷰티팀', name:'백승주'},
+    {team:'헬스뷰티팀', name:'조혜경'},
+    {team:'헬스뷰티팀', name:'성혜연'},
+    {team:'헬스뷰티팀', name:'이수현'},
+    {team:'헬스뷰티팀', name:'이다현'},
+    {team:'헬스뷰티팀', name:'정은석'},
+    {team:'헬스뷰티팀', name:'김진덕'},
+    {team:'헬스뷰티팀', name:'김희성'},
+    {team:'푸드팀', name:'최동환'},
+    {team:'푸드팀', name:'양원석'},
+    {team:'푸드팀', name:'박지아'},
+    {team:'푸드팀', name:'박지수'},
+    {team:'푸드팀', name:'정자윤'},
+    {team:'푸드팀', name:'김소현'},
+    {team:'푸드팀', name:'정예원'},
+    {team:'리빙팀', name:'홍영기'},
+    {team:'리빙팀', name:'도종오'},
+    {team:'리빙팀', name:'이호'},
+    {team:'리빙팀', name:'김세근'},
+    {team:'리빙팀', name:'김병준'},
+    {team:'리빙팀', name:'전명석'},
+    {team:'무형서비스팀', name:'임동훈'},
+    {team:'무형서비스팀', name:'한재웅'},
+    {team:'무형서비스팀', name:'최주환'},
+    {team:'무형서비스팀', name:'남상준'},
+    {team:'감사팀', name:'손민철'},
+    {team:'감사팀', name:'조태윤'}
+  ];
+
+    // ✅ validEntries 기반으로 select 옵션 자동 생성
+	const uniqueTeams = [...new Set(validEntries.map(e => e.team))]; // 중복 제거된 팀 목록
+
+	const $teamSelect = $('#team');
+	$teamSelect.empty().append('<option value="">선택</option>'); // 기존 초기화
+
+	uniqueTeams.forEach(team => {
+		$teamSelect.append(`<option value="${team}">${team}</option>`);
+	});
+
+  const totalParticipants = validEntries.length;// 총 인원 수
+  const groupSize = 6; // 한 조당 인원 수
+
+  // ✅ MBTI 설명
+  const mbtiDescriptions = {
+    ENFJ: "계획적인 천재형 리더! 팀워크를 중요하게 생각하고 늘 앞장서는 타입 💪",
+    INFJ: "조용한 혁신가, 남몰래 팀을 빛나게 만드는 전략가 🌟",
+    ENTJ: "카리스마 리더형, 목표 달성을 위해 효율적으로 움직이는 추진력 갑 ⚡",
+    INTJ: "분석형 천재, 시스템적으로 문제를 해결하는 완벽주의자 🧠",
+    ENFP: "열정 폭발형, 주변을 에너지로 가득 채우는 긍정 전도사 🔥",
+    INFP: "감성적 이상주의자, 배려 깊고 사람 중심의 분위기 메이커 💖",
+    ENTP: "아이디어 뱅크형, 자유로운 발상으로 문제를 새롭게 풀어내는 창의형 💡",
+    INTP: "논리 중심형, 지식으로 무장한 아이디어 연구가 🔍",
+    ESFP: "분위기 메이커, 모두를 즐겁게 하는 사교력 만렙 😎",
+    ISFP: "따뜻한 감성형, 묵묵히 제 할 일을 완벽히 해내는 예술가 🌈",
+    ESTP: "실행력 갑, 일단 해보는 추진력으로 결과를 만들어내는 행동파 ⚙️",
+    ISTP: "현실 해결사, 문제를 빠르게 파악하고 직접 해결하는 실무형 🔧",
+    ESFJ: "친절한 협력가, 모두가 잘 지내도록 조율하는 인간 비타민 ☀️",
+    ISFJ: "헌신적인 수호자, 팀을 든든히 지탱하는 믿음직한 존재 🛡️",
+    ESTJ: "체계적인 관리자, 원칙과 효율을 중시하는 조직형 리더 📋",
+    ISTJ: "성실한 완벽주의자, 약속은 반드시 지키는 책임감 갑 💼"
+  };
+
+  const questions = [
+    {q:"회의 중 아이디어가 떠오르면?", a1:{text:"즉시 말한다", value:"E"}, a2:{text:"나중에 정리해서 말한다", value:"I"}},
+    {q:"새 프로젝트를 맡으면?", a1:{text:"큰 그림부터 본다", value:"N"}, a2:{text:"세부 실행부터 떠올린다", value:"S"}},
+    {q:"동료가 고민 상담할 때?", a1:{text:"논리적으로 해결책 제시", value:"T"}, a2:{text:"감정적으로 공감해준다", value:"F"}},
+    {q:"업무 마감 전날이면?", a1:{text:"계획대로 여유롭게 끝낸다", value:"J"}, a2:{text:"몰아서 한번에 한다", value:"P"}}
+  ];
+
+  let answers = [];
+  let qIndex = 0;
+
+  // ✅ 팀 선택 시, 해당 팀 인원만 이름 select에 표시
+// ✅ 팀 선택 시, 해당 팀 인원 표시 (완료된 인원은 비활성화)
+$('#team').on('change', function() {
+  const selectedTeam = $(this).val();
+  const $nameSelect = $('#name');
+  $nameSelect.empty().append('<option value="">이름 선택</option>');
+
+  if (!selectedTeam) return;
+
+  const teamMembers = validEntries.filter(e => e.team === selectedTeam);
+
+  if (teamMembers.length === 0) {
+    $nameSelect.append('<option value="">팀원이 없습니다</option>');
+    $nameSelect.prop('disabled', true);
+    return;
+  }
+
+  let allCompleted = true;
+  teamMembers.forEach(e => {
+    const isDone = participants.some(p => p.team === e.team && p.name === e.name);
+    const label = isDone ? `${e.name} (완료)` : e.name;
+    const disabled = isDone ? 'disabled' : '';
+    $nameSelect.append(`<option value="${e.name}" ${disabled}>${label}</option>`);
+    if (!isDone) allCompleted = false;
+  });
+
+  $nameSelect.prop('disabled', false);
+
+  if (allCompleted) {
+    $nameSelect.append('<option value="">모든 인원이 완료되었습니다</option>');
+    $nameSelect.prop('disabled', true);
+  }
+});
+ 
+
+// ✅ 팀 상태 갱신 (완료된 팀은 비활성화)
+function updateTeamSelect() {
+  $('#team option').each(function() {
+    const teamName = $(this).val();
+    if (!teamName) return;
+
+    const teamMembers = validEntries.filter(e => e.team === teamName);
+    const completedMembers = participants.filter(p => p.team === teamName);
+
+    // 모든 인원이 완료된 팀이라면 비활성화
+    if (teamMembers.length > 0 && teamMembers.length === completedMembers.length) {
+      $(this).prop('disabled', true).text(`${teamName} (완료)`);
+    }
+  });
+}
+
+
+  // ✅ 1단계
+  $('#startBtn').click(()=>{
+    const team = $('#team').val();
+    const name = $('#name').val().trim();
+    if(!team || !name) return alert('부서명과 이름을 모두 선택해주세요.');
+
+    const valid = validEntries.some(e => e.team === team && e.name === name);
+    if(!valid) return alert('등록된 인원이 아닙니다. 정확히 선택해주세요.');
+
+    currentUser = { team, name }; 
+    $('#step1').removeClass('active');
+    $('#step2').addClass('active');
+    showQuestion();
+  });
+
+  // ✅ 질문 표시
+  function showQuestion(){
+    const q = questions[qIndex];
+    $('#questionBox').html(`
+      <p><strong>${q.q}</strong></p>
+      <label><input type="radio" name="answer" value="${q.a1.value}"> ${q.a1.text}</label><br>
+      <label><input type="radio" name="answer" value="${q.a2.value}"> ${q.a2.text}</label>
+    `);
+  }
+
+  $('#nextQuestion').click(()=>{
+    const val = $('input[name="answer"]:checked').val();
+    if(!val) return alert('질문 중 하나를 선택해주세요.');
+    answers.push(val);
+    qIndex++;
+    if(qIndex < questions.length) showQuestion();
+    else calculateResult();
+  });
+
+  // ✅ 결과 계산 및 조 편성
+  function calculateResult(){
+    const mbti = answers.join('');
+    if(!mbtiGroups[mbti]) mbtiGroups[mbti] = [];
+    const groupNumber = Math.floor(mbtiGroups[mbti].length / groupSize) + 1;
+    const groupName = `${mbti}-${groupNumber}조`;
+
+    const userResult = {...currentUser, mbti, group: groupName};
+    participants.push(userResult);
+    mbtiGroups[mbti].push(userResult);
+
+    $('#step2').removeClass('active');
+    $('#step3').addClass('active');
+    $('#myResult').text(`${userResult.name}님은 ${mbti} 유형이며, ${groupName}에 배정되었습니다.`);
+    $('#mbtiDesc').text(mbtiDescriptions[mbti] || '티랑이님의 특별한 성격이에요!');
+
+    renderGroupMembers(userResult.group);
+    updateRemainingCount();
+
+    // ✅ 전체 완료 체크
+    if(participants.length >= totalParticipants){
+      $('#step3').removeClass('active');
+      $('#complete').addClass('active');
+    }
+
+    qIndex = 0;
+    answers = [];
+
+	updateTeamSelect();
+  }
+
+  // ✅ 조원 표시
+  function renderGroupMembers(groupName){
+    const sameGroup = participants.filter(p => p.group === groupName);
+    let list = `<h4>현재 조 구성원</h4><ul>`;
+    sameGroup.forEach(p=>{
+      list += `<li>${p.team} ${p.name} (${p.mbti})</li>`;
+    });
+    list += `</ul>`;
+    $('#groupMembers').html(list);
+  }
+
+  // ✅ 남은 인원 수 표시
+  function updateRemainingCount(){
+    const remaining = totalParticipants - participants.length;
+    if(remaining > 0){
+      if($('#remainingCount').length){
+        $('#remainingCount').text(`앞으로 테스트 남은 인원: ${remaining}명`);
+      } else {
+        $('<p id="remainingCount">').text(`앞으로 테스트 남은 인원: ${remaining}명`)
+          .insertAfter('#downloadExcel');
+      }
+    } else {
+      $('#remainingCount').remove();
+    }
+  }
+
+  // ✅ 처음으로 (다음 사람)
+  $('#nextUserBtn').click(()=>{
+    if(participants.length >= totalParticipants){
+      $('#step3').removeClass('active');
+      $('#complete').addClass('active');
+      return;
+    }
+    $('#team').val('');
+    $('#name').val('');
+    $('#groupMembers').empty();
+    $('#step3').removeClass('active');
+    $('#step1').addClass('active');
+	$('#name').empty().append('<option value="">이름 선택</option>').prop('disabled', true);
+	updateTeamSelect();
+    window.scrollTo({top:0, behavior:'smooth'});
+	
+  });
+
+  // ✅ 엑셀 다운로드
+	$('#downloadExcel').click(()=>{
+	if (participants.length === 0) return alert('참여자가 없습니다.');
+
+	// 한글 컬럼명으로 새 배열 생성
+	const exportData = participants.map(p => ({
+		부서명: p.team,
+		이름: p.name,
+		MBTI: p.mbti,
+		조: p.group
+	}));
+
+	const ws = XLSX.utils.json_to_sheet(exportData); // ✅ exportData로 변경!
+	const wb = XLSX.utils.book_new();
+	XLSX.utils.book_append_sheet(wb, ws, "MBTI 조편성");
+	XLSX.writeFile(wb, "티랑이_조편성결과.xlsx");
+	});
+
+
+	// ✅ 완료 화면에서도 엑셀 다운로드 가능하게
+	$('#downloadExcelComplete').click(()=>{
+	if (participants.length === 0) return alert('참여자가 없습니다.');
+
+	// 한글 컬럼명으로 새 배열 생성
+	const exportData = participants.map(p => ({
+		부서명: p.team,
+		이름: p.name,
+		MBTI: p.mbti,
+		조: p.group
+	}));
+
+	const ws = XLSX.utils.json_to_sheet(exportData); // ✅ exportData로 변경!
+	const wb = XLSX.utils.book_new();
+	XLSX.utils.book_append_sheet(wb, ws, "MBTI 조편성");
+	XLSX.writeFile(wb, "티랑이_조편성결과.xlsx");
+	});
+
+
+});
+</script>
+<script>
+  // 오른쪽 클릭 방지
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  // 드래그 방지
+  document.addEventListener('dragstart', e => e.preventDefault());
+  // 텍스트 선택 방지
+  document.addEventListener('selectstart', e => e.preventDefault());
+  // Ctrl+C, Ctrl+U, F12 방지
+  document.addEventListener('keydown', e => {
+    if (
+      (e.ctrlKey && (e.key === 'c' || e.key === 'u')) || // Ctrl+C, Ctrl+U
+      e.key === 'F12' // 개발자도구
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+ 
+</body>
+</html>
