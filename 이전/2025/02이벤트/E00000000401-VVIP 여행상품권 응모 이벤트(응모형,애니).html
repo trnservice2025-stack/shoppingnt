@@ -1,0 +1,224 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+
+<div class="promotion_con">
+  <div class="promotion_con_mo">
+    <div class="anicon">
+      <img src="https://img.shoppingntmall.com/htmleditor/397/bg1764206367150.png" class="base" />
+      <img src="https://img.shoppingntmall.com/htmleditor/374/title11764207794182.png" class="t1" />
+      <img src="https://img.shoppingntmall.com/htmleditor/374/title21764207794605.png" class="t2" />
+      <img src="https://img.shoppingntmall.com/htmleditor/397/list11764206369825.png" class="s1" />
+      <img src="https://img.shoppingntmall.com/htmleditor/397/list21764206370300.png" class="s2" />
+      <img src="https://img.shoppingntmall.com/htmleditor/397/list31764206370960.png" class="s3" />
+      <img src="https://img.shoppingntmall.com/htmleditor/397/list41764206371509.png" class="s4" />
+      <img src="https://img.shoppingntmall.com/htmleditor/397/list51764206371961.png" class="s5" />
+      <img src="https://img.shoppingntmall.com/htmleditor/397/ev_img11764206367658.png" class="a1" />      
+    </div>
+    <button type="button" class="btn_eungmo"><img src="https://img.shoppingntmall.com/htmleditor/397/event_view021764206368813.jpg" /></button>
+    <div class="toggle_an"></div>
+    <a href="/mypage/member/membershipLevelBenefits"><img src="https://img.shoppingntmall.com/htmleditor/397/event_view031764206369402.jpg" /></a>
+  </div>
+</div>
+<style>
+  .promotion_con * {
+    line-height: initial;
+  }
+  .promotion_con button {
+    all: unset;
+    cursor: pointer;
+  }
+  .promotion_con {
+    font-size: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .promotion_con .w50 {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+  }
+  .promotion_con img {
+    width: 100%;
+    display: block;
+  }
+  .promotion_con a,
+  .promotion_con button {
+    background: none;
+    cursor: pointer;
+    font-size: 0;
+  }
+  .promotion_con a,
+  .promotion_con img {
+    background: none;
+  }
+
+  .bbs-body + .btn-area {
+    display: none;
+  }
+  .event-content.type-line-no-pd + .type-line {
+    display: none;
+  }
+
+  .anicon {
+    position: relative;
+    overflow: hidden;
+  }
+  .anicon .base {
+    position: relative;
+    z-index: 2;
+  }
+  .anicon [class^="t"],
+  .anicon [class^="s"],
+  .anicon [class^="a"] {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+  }
+  .anicon [class^="t"] {
+    top: 15.7%;
+    z-index: 3;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+  }
+  .anicon [class^="s"] {
+    bottom: 14%;
+    z-index: 1;
+    opacity: 0;
+    animation: sFadeZoom 10s infinite;
+    transform: scale(1);
+  }
+  .anicon [class^="a"] {
+    bottom: 0%;
+    z-index: 3;
+    opacity: 1;
+    animation: floatY 1.5s ease-in-out infinite;
+  }
+
+  .anicon .t1 {
+    animation-name: t1Anim;
+  }
+  .anicon .t2 {
+    animation-name: t2Anim;
+  }
+  @keyframes t1Anim {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(20px) scale(1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes t2Anim {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+  .anicon .s2 {
+    animation-delay: 2s;
+  }
+  .anicon .s3 {
+    animation-delay: 4s;
+  }
+  .anicon .s4 {
+    animation-delay: 6s;
+  }
+  .anicon .s5 {
+    animation-delay: 8s;
+  }
+  .anicon .s6 {
+    animation-delay: 10s;
+  }
+
+  @keyframes sFadeZoom {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    30% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .anicon .a2 {
+    animation-delay: 0.8s;
+  }
+  .anicon .a3 {
+    animation-delay: 1.6s;
+  }
+
+  @keyframes floatY {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.4%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .acco-wrap.plan {padding-top: 48px;}
+  @media screen and (max-width: 720px) {
+    .promotion_con {
+      overflow: hidden;
+    }
+    .promotion_con_mo {
+      margin: 0 -33.33%;
+    }
+  }
+</style>
+<script>
+  $(function () {
+    //수신동의 이동
+    $(".toggle-area").appendTo(".toggle_an");
+
+    $(".btn_eungmo").on("click", function () {
+      $("#setSbsc").trigger("click");
+    });
+  });
+</script>

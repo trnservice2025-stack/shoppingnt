@@ -1,0 +1,344 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<div class="promotion_con">
+  <div class="promotion_con_mo">
+    <div class="anicon">
+      <img src="https://img.shoppingntmall.com/htmleditor/476/bg_011764228183061.jpg" class="base" />
+      <div class="base_bg" id="snowScene"></div>
+      <img src="https://img.shoppingntmall.com/htmleditor/476/bg_021764228183517.png" class="base2" />
+      <img src="https://img.shoppingntmall.com/htmleditor/374/title11764207794182.png" class="t1" />
+      <img src="https://img.shoppingntmall.com/htmleditor/374/title21764207794605.png" class="t2" />
+      <img src="https://img.shoppingntmall.com/htmleditor/379/list11764229776517.png" class="s1" />
+      <img src="https://img.shoppingntmall.com/htmleditor/379/list21764229776972.png" class="s2" />
+      <img src="https://img.shoppingntmall.com/htmleditor/476/list31764228180799.png" class="s3" />
+      <img src="https://img.shoppingntmall.com/htmleditor/379/list41764229775471.png" class="s4" />
+      <img src="https://img.shoppingntmall.com/htmleditor/379/list51764229775918.png" class="s5" />
+      <img src="https://img.shoppingntmall.com/htmleditor/397/ev_img11764206367658.png" class="a1" />
+    </div>
+    <button type="button" class="btn_eungmo"><img src="https://img.shoppingntmall.com/htmleditor/397/event_view021764206368813.jpg" /></button>
+    <div class="toggle_an"></div>
+    <a href="/mypage/member/membershipLevelBenefits"><img src="https://img.shoppingntmall.com/htmleditor/397/event_view031764206369402.jpg" /></a>
+  </div>
+</div>
+
+
+<style>
+  .promotion_con * {
+    line-height: initial;
+  }
+  .promotion_con button {
+    all: unset;
+    cursor: pointer;
+  }
+  .promotion_con {
+    font-size: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .promotion_con .w50 {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+  }
+  .promotion_con img {
+    width: 100%;
+    display: block;
+  }
+  .promotion_con a,
+  .promotion_con button {
+    background: none;
+    cursor: pointer;
+    font-size: 0;
+  }
+  .promotion_con a,
+  .promotion_con img {
+    background: none;
+  }
+
+  .bbs-body + .btn-area {
+    display: none;
+  }
+  .event-content.type-line-no-pd + .type-line {
+    display: none;
+  }
+
+  .anicon {
+    position: relative;
+    overflow: hidden;
+  }
+  .anicon .base {
+    position: relative;
+    z-index: 2;
+  }
+  .anicon .base2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;    
+  }
+  .anicon [class^="t"],
+  .anicon [class^="s"],
+  .anicon [class^="a"] {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+  }
+  .anicon [class^="t"] {
+    top: 15.7%;
+    z-index: 3;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+  }
+  .anicon [class^="s"] {
+    bottom: 14%;
+    z-index: 3;
+    opacity: 0;
+    animation: sFadeZoom 10s infinite;
+    transform: scale(1);
+  }
+  .anicon [class^="a"] {
+    bottom: 0%;
+    z-index: 3;
+    opacity: 1;
+    animation: floatY 1.5s ease-in-out infinite;
+  }
+
+  .anicon .t1 {
+    animation-name: t1Anim;
+  }
+  .anicon .t2 {
+    animation-name: t2Anim;
+  }
+  .anicon .a1 {
+    z-index: 5;
+  }
+  @keyframes t1Anim {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(20px) scale(1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes t2Anim {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+  .anicon .s2 {
+    animation-delay: 2s;
+  }
+  .anicon .s3 {
+    animation-delay: 4s;
+  }
+  .anicon .s4 {
+    animation-delay: 6s;
+  }
+  .anicon .s5 {
+    animation-delay: 8s;
+  }
+  .anicon .s6 {
+    animation-delay: 10s;
+  }
+
+  @keyframes sFadeZoom {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    30% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .anicon .a2 {
+    animation-delay: 0.8s;
+  }
+  .anicon .a3 {
+    animation-delay: 1.6s;
+  }
+
+  @keyframes floatY {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.4%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .acco-wrap.plan {
+    padding-top: 48px;
+  }
+  @media screen and (max-width: 720px) {
+    .promotion_con {
+      overflow: hidden;
+    }
+    .promotion_con_mo {
+      margin: 0 -33.33%;
+    }
+  }
+
+  /* 눈 내리는 영역 */
+  .base_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 3;
+  }
+
+  /* 눈 기본 스타일 */
+  .base_bg_icon {
+    position: relative;
+    top: -10vh; /* 화면 위에서 시작 */
+    border-radius: 50%; /* 기본은 동그라미 */
+    background: #fff;
+    opacity: 0.6;
+    pointer-events: none;
+    filter: blur(var(--blur, 0px));
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  /* 지그재그 + 자연스러운 낙하 */
+  @keyframes fall {
+    0% {
+      transform: translate3d(0, -10vh, 0);
+    }
+    25% {
+      transform: translate3d(calc(var(--horizontal-drift) * 0.3), 25vh, 0);
+    }
+    50% {
+      transform: translate3d(calc(var(--horizontal-drift) * -0.2), 50vh, 0);
+    }
+    75% {
+      transform: translate3d(calc(var(--horizontal-drift) * 0.5), 75vh, 0);
+    }
+    100% {
+      transform: translate3d(calc(var(--horizontal-drift) * -0.3), 110vh, 0);
+    }
+  }
+</style>
+<script>
+  $(function () {
+    //수신동의 이동
+    $(".toggle-area").appendTo(".toggle_an");
+
+    $(".btn_eungmo").on("click", function () {
+      $("#setSbsc").trigger("click");
+    });
+  });
+
+  const FLAKE_COUNT = window.innerWidth < 720 ? 50 : 100; // 눈 내리는 개수 (원하면 50~300 정도로 조정)
+  const snowScene = document.getElementById('snowScene');  
+
+  let speedMultiplier = 1;
+
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('base_bg_icon');
+
+    // 3px ~ 10px 사이 랜덤 크기
+    const size = random(3, 10);
+    snowflake.style.width = size + 'px';
+    snowflake.style.height = size + 'px';
+
+    // 화면 가로 위치 랜덤 (0 ~ 100%)
+    const startLeft = random(0, 100);
+    snowflake.style.left = startLeft + '%';
+
+    // 지그재그/흔들림 정도 (좌우 랜덤 방향)
+    const drift = random(20, 80) * (Math.random() < 0.5 ? -1 : 1);
+    snowflake.style.setProperty('--horizontal-drift', drift + 'px');
+
+    // 눈 모양 다양화: border-radius 네 값 랜덤으로 살짝 찌그러진 원 만들기
+    const r1 = random(40, 60);
+    const r2 = random(40, 60);
+    const r3 = random(40, 60);
+    const r4 = random(40, 60);
+    snowflake.style.borderRadius = `${r1}% ${r2}% ${r3}% ${r4}%`;
+
+    // 투명도, 블러도 랜덤
+    snowflake.style.opacity = random(0.3, 0.8);
+    snowflake.style.setProperty('--blur', random(0, 2.8).toFixed(1) + 'px');
+
+    // 글로우 느낌 (박스 쉐도우)
+    const glow = Math.round(size / 1.5);
+    snowflake.style.boxShadow = `0 0 ${glow}px rgba(255, 255, 255, 0.9)`;
+
+    // 각 눈송이 기본 낙하 시간 (sec)
+    const baseDuration = random(6, 16);
+    snowflake.dataset.baseDuration = baseDuration;
+    snowflake.style.animationDuration = (baseDuration / speedMultiplier).toFixed(2) + 's';
+
+    // 시작 타이밍 랜덤 (음수로 넣어 중간부터 떨어지는 것처럼 보이게)
+    snowflake.style.animationDelay = (-random(0, baseDuration)) + 's';
+
+    snowScene.appendChild(snowflake);
+  }
+
+  function initSnow() {
+    for (let i = 0; i < FLAKE_COUNT; i++) {
+      createSnowflake();
+    }
+  }
+
+  initSnow();
+</script>

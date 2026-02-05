@@ -1,0 +1,82 @@
+<div class="promotion_con">
+  <img src="https://img.shoppingntmall.com/htmleditor/677/11760925376294.png" />
+
+  <div class="video_wrap"><video src="https://img.shoppingntmall.com/htmleditor/033/odv1760925359893.mp4" poster="https://img.shoppingntmall.com/htmleditor/226/poster1760925465180.png" autoplay muted loop playsinline></video></div>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/031/3_021760930540952.jpg" />
+
+  <div class="video_wrap2"><video src="https://img.shoppingntmall.com/htmleditor/033/03-11760925358863.mp4" autoplay muted loop playsinline></video></div>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/031/3_041760930541470.jpg" />
+  <img src="https://img.shoppingntmall.com/htmleditor/031/3_051760930541991.jpg" />
+  <img src="https://img.shoppingntmall.com/htmleditor/031/3_061760930542544.jpg" />
+  <img src="https://img.shoppingntmall.com/htmleditor/031/3_071760930543101.jpg" />
+
+  <div class="video_wrap3"><video src="https://img.shoppingntmall.com/htmleditor/033/03-21760925359415.mp4" autoplay muted loop playsinline></video></div>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/031/3_091760930543523.jpg" />
+  <img src="https://img.shoppingntmall.com/htmleditor/031/3_101760930543932.jpg" />
+
+  <a href="/display/brand/category/001951" class="iframe-contenta"><img src="https://img.shoppingntmall.com/htmleditor/798/71760925667195.png" /></a>
+</div>
+
+<style>
+  .promotion_con * {
+    line-height: initial;
+  }
+  .promotion_con {
+    font-size: 0;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  .promotion_con .w50 {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+  }
+  .promotion_con img {
+    width: 100%;
+    display: block;
+  }
+  .promotion_con a,
+  .promotion_con button {
+    background: none;
+    cursor: pointer;
+    font-size: 0;
+  }
+  .promotion_con a,
+  .promotion_con img {
+    background: none;
+  }
+
+  .video_wrap {
+    background: #000;
+  }
+  .video_wrap2 {
+    background: #fff;
+    padding: 0 4.7%;
+  }
+  .video_wrap3 {
+    background: #f8f8fa;
+    padding: 0 4.7%;
+  }
+  .video_wrap video,
+  .video_wrap2 video,
+  .video_wrap3 video {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 720px) {
+    .promotion_con {
+      overflow: hidden;
+    }
+  }
+</style>
+
+<script>
+  $(".iframe-contenta").on("click", function (e) {
+    e.preventDefault();
+    const url = $(this).attr("href");
+    if (url) window.open(url, "_blank");
+  });
+</script>

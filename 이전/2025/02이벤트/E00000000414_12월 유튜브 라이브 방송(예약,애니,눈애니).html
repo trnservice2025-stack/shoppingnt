@@ -1,0 +1,400 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css" />
+<style>
+  body {
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<div class="promotion_con">
+  <div class="promotion_con_mo">
+    <!-- 방송중 -->
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/929/bg_none_011765427436966.png" class="base1" />
+      <div class="base_bg" id="snowScene">
+        <img src="https://img.shoppingntmall.com/htmleditor/369/bg_011765419830876.png" />
+      </div>
+      <!-- 배경 -->
+      <img src="https://img.shoppingntmall.com/htmleditor/369/logo_011765419834435.png" class="ani ani1" />
+      <!-- 로고 -->
+      <div class="ani ani2">
+        <img src="https://img.shoppingntmall.com/htmleditor/369/live_title2_011765419835299.png" class="ani" />
+        <img src="https://img.shoppingntmall.com/htmleditor/369/live_title_011765419834887.png" class="ani animate__animated animate__infinite animate__flash" />
+      </div>
+      <!-- 라이브 타이틀 -->
+      <img src="https://img.shoppingntmall.com/htmleditor/369/title1_011765419835727.png" class="ani ani4" />
+      <div class="ani ani5">
+        <img src="https://img.shoppingntmall.com/htmleditor/369/title2_011765419836781.png" class="ani animate__animated animate__infinite animate__headShake" />
+      </div>
+      <!-- 타이틀 -->
+      <img src="https://img.shoppingntmall.com/htmleditor/645/product1765428051014.png " class="ani ani6" />
+      <!-- 제품 -->
+    </div>
+    <!-- //방송중 -->
+    <div class="sday sday16">
+      <img src="https://img.shoppingntmall.com/htmleditor/369/planshop_view_021765419831386.jpg">
+      <a href="/display/goods/26566593" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/369/planshop_view_031765419831766.jpg" />
+      </a>
+      <a href="/display/goods/12554590" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/369/planshop_view_041765419834065.jpg" />
+      </a>
+      <a href="/display/goods/17697532" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/992/planshop_view_051765429116011.jpg" />
+      </a>
+      <a href="/display/goods/12538144" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/369/planshop_view_061765419832472.jpg" />
+      </a>      
+      <a href="/display/goods/12426153"><img src="https://img.shoppingntmall.com/htmleditor/369/planshop_view_081765419832872.jpg" /></a>
+    </div>
+    <div class="fake_btn">
+      <a href="https://www.youtube.com/@_shoppingnt" target="_blank">쇼핑엔티 유튜브 라이브방송 바로가기</a>
+      <img src="https://img.shoppingntmall.com/htmleditor/369/planshop_view_091765419833369.jpg" />
+    </div>
+  </div>
+  <style>
+    .base {
+      position: relative;
+      overflow: hidden;
+    }
+    .base1 {
+      position: relative;
+      z-index: 1;
+    }
+    .ani {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    .promotion_con,
+    .promotion_con-wrap * {
+      line-height: initial;
+    }
+    .promotion_con {
+      font-size: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .promotion_con .w50 {
+      display: inline-block;
+      width: 50%;
+      vertical-align: middle;
+    }
+    .promotion_con img {
+      width: 100%;
+      display: block;
+    }
+    .promotion_con a,
+    .promotion_con button {
+      background: inherit;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      overflow: visible;
+      cursor: pointer;
+    }
+    .fake_btn {
+      position: relative;
+    }
+    .fake_btn a {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      text-indent: -9999px;
+    }
+    .fake_btn img {
+      position: relative;
+      z-index: 1;
+    }
+    .ani1 {
+      z-index: 3;      
+      animation: check-ani3 1.25s ease-in-out forwards;      
+      top:-100%;
+    }
+    .ani2 {
+      z-index: 4;      
+      animation: check-ani3 1.25s ease-in-out forwards;
+      animation-delay: 0.5s;
+      top:-100%;
+    }    
+    .animate__flash {
+      z-index: 3;
+      animation-duration: 2.2s;
+    }
+    .ani4 {
+      z-index: 6;
+      top: 0;
+      left: 0;
+      animation: live-ani2 1s ease-in-out forwards;
+      animation-delay: 1.5s;
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    .ani5 {
+      z-index: 6;
+      top: 0;
+      left: 0;
+      animation: live-ani2 1s ease-in-out forwards;
+      animation-delay: 2s;
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    .ani6 {
+      z-index: 6;
+      top: 0;
+      left: 0;
+      animation: live-ani 1s ease-in-out forwards;
+      animation-delay: 2.5s;
+      opacity: 0;
+      transform: scale(1.2);
+    }
+    .live_product_list li a {
+      position: absolute;
+      top: 26%;
+      width: 100%;
+      height: 34%;
+      z-index: 16;
+      text-indent: -9999px;
+    }
+    .live_product_list li:nth-of-type(1) a {
+      left: 0;
+      width: 36%;
+    }
+    .live_product_list li:nth-of-type(2) a {
+      width: 14%;
+      left: 36%;
+    }
+    .live_product_list li:nth-of-type(3) a {
+      width: 14%;
+      right: 36%;
+    }
+    .live_product_list li:nth-of-type(4) a {
+      right: 0;
+      width: 36%;
+    }
+    /* 눈 내리는 영역 */
+    .base_bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    /* 눈 기본 스타일 */
+    .base_bg_icon {
+      position: absolute;
+      top: -10%; /* 화면 위에서 시작 */
+      border-radius: 50%; /* 기본은 동그라미 */
+      background: #fff;
+      opacity: 0.6;
+      pointer-events: none;
+      filter: blur(var(--blur));
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    /* r5: 이미지 눈 전용 스타일 */
+    .base_bg_icon.base_bg_icon_img {
+      background: transparent;
+      box-shadow: none;
+      filter: none;
+      background-image: url("https://img.shoppingntmall.com/htmleditor/369/snow1765419833716.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      /* 회전 포함된 전용 낙하 애니메이션 사용 */
+      animation-name: fall-image;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      mix-blend-mode: soft-light;
+    }
+
+    /* 지그재그 + 자연스러운 낙하 */
+    @keyframes fall {
+      0% {
+        top: -10%;
+        transform: translate3d(0, 0, 0);
+      }
+      25% {
+        top: 25%;
+        transform: translate3d(calc(var(--horizontal-drift) * 0.3), 0, 0);
+      }
+      50% {
+        top: 50%;
+        transform: translate3d(calc(var(--horizontal-drift) * -0.2), 0, 0);
+      }
+      75% {
+        top: 75%;
+        transform: translate3d(calc(var(--horizontal-drift) * 0.5), 0, 0);
+      }
+      100% {
+        top: 110%;
+        transform: translate3d(calc(var(--horizontal-drift) * -0.3), 0, 0);
+      }
+    }
+    /* 이미지 눈용: 지그재그 + 회전(180도씩 증가) */
+    @keyframes fall-image {
+      0% {
+        top: -10%;
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+      25% {
+        top: 25%;
+        transform: translate3d(calc(var(--horizontal-drift) * 0.3), 0, 0) rotate(180deg);
+      }
+      50% {
+        top: 50%;
+        transform: translate3d(calc(var(--horizontal-drift) * -0.2), 0, 0) rotate(-180deg);
+      }
+      75% {
+        top: 75%;
+        transform: translate3d(calc(var(--horizontal-drift) * 0.5), 0, 0) rotate(180deg);
+      }
+      100% {
+        top: 110%;
+        transform: translate3d(calc(var(--horizontal-drift) * -0.3), 0, 0) rotate(-180deg);
+      }
+    }
+    @media screen and (max-width: 720px) {
+      .promotion_con {
+        overflow: hidden;
+      }
+      .promotion_con_mo {
+        margin: 0 -33.33%;
+      }
+    }
+    @keyframes live-ani {
+      0% {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes live-ani2 {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2);      
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+  <!-- 눈내리는 효과 -->
+  <script>
+    const responsiveWidth = window.innerWidth < 720;
+    const FLAKE_COUNT = responsiveWidth ? 30 : 50; // 눈 내리는 개수 (원하면 50~300 정도로 조정)
+    const snowScene = document.getElementById("snowScene");
+
+    let speedMultiplier = 1;
+    const speedDuration = 1.8; // 떨어지는 속도 조절 숫자 높을수록 느리게
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("base_bg_icon");
+
+      // r1~r5 중 하나 선택 (5가 이미지 눈)
+      const shapeType = Math.floor(random(1, 6)); // 1,2,3,4,5
+
+      // 공통: 화면 가로 위치 / 드리프트
+      const startLeft = random(0, 100);
+      snowflake.style.left = startLeft + "%";
+
+      const drift = random(20, 80) * (Math.random() < 0.5 ? -1 : 1);
+      snowflake.style.setProperty("--horizontal-drift", drift + "px");
+
+      if (shapeType === 5) {
+        // r5: 이미지 눈
+        snowflake.classList.add("base_bg_icon_img");
+
+        // 80 ~ 120px 랜덤 크기
+        const size = responsiveWidth ? random(40, 60) : random(80, 120); // 모바일일때 : PC일때
+        snowflake.style.width = size + "px";
+        snowflake.style.height = size + "px";
+
+        // 이미지 눈은 좀 더 선명하게
+        snowflake.style.opacity = random(0.5, 0.8).toFixed(2);
+        // 블러 사용 안 함
+        snowflake.style.removeProperty("--blur");
+        snowflake.style.boxShadow = "none";
+        snowflake.style.borderRadius = "0"; // 필요하면 50%로 바꿔도 됨
+      } else {
+        // r1~r4: 기존 원형 + 변형된 눈
+        const size = responsiveWidth ? random(15, 40) : random(10, 40); // 모바일일때 : PC일때
+        snowflake.style.width = size + "px";
+        snowflake.style.height = size + "px";
+
+        // 찌그러진 원 느낌
+        const r1 = random(50, 50);
+        const r2 = random(50, 50);
+        const r3 = random(50, 50);
+        const r4 = random(50, 50);
+        snowflake.style.borderRadius = `${r1}% ${r2}% ${r3}% ${r4}%`;
+
+        snowflake.style.opacity = random(0.4, 0.8).toFixed(2);
+        snowflake.style.setProperty("--blur", random(5, 10).toFixed(1) + "px");
+
+        const glow = Math.round(size / 1.5);
+        snowflake.style.boxShadow = `0 0 ${glow}px rgba(255, 255, 255, 0.9)`;
+      }
+
+      // 낙하 시간
+      const baseDuration = random(6, 16) * speedDuration;
+      snowflake.dataset.baseDuration = baseDuration;
+      snowflake.style.animationDuration = (baseDuration / speedMultiplier).toFixed(2) + "s";
+
+      // 시작 타이밍 랜덤 (중간부터 떨어지는 느낌)
+      snowflake.style.animationDelay = -random(0, baseDuration) + "s";
+
+      snowScene.appendChild(snowflake);
+    }
+
+    function initSnow() {
+      for (let i = 0; i < FLAKE_COUNT; i++) {
+        createSnowflake();
+      }
+    }
+
+    initSnow();
+  </script>
+  <!-- //눈내리는 효과 -->
+  <script>
+    //예약
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, "0");
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll(".sday").forEach((e) => (e.style.display = "none"));
+    hideS();
+    if ("2025-12-16 00:00:00" <= nowT) {
+      hideS();
+      document.querySelectorAll(".sday16").forEach((e) => (e.style.display = "block"));
+    }
+  </script>
+</div>

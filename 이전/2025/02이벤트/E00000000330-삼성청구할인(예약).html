@@ -1,8 +1,6 @@
-<div class="promotion_con"><div class="promotion_con_mo">
-    <img src="https://img.shoppingntmall.com/htmleditor/450/ev1754958937827.jpg"  class="sday sday9">
-    <img src="https://img.shoppingntmall.com/htmleditor/554/pc1757896475921.jpg"  class="sday sday10">
-    <img src="https://img.shoppingntmall.com/htmleditor/067/pc1760940620734.jpg"  class="sday sday11">
-    <!-- <img src="ㅋㅋㅋ"  class="sday sday12"> -->
+<div class="promotion_con"><div class="promotion_con_mo">    
+    <img src="https://img.shoppingntmall.com/htmleditor/037/event_view_PC%20%288%291766534815730.jpg"  class="sday sday12">
+    <img src="https://img.shoppingntmall.com/htmleditor/479/event_view1766540131148.jpg"  class="sday sday1">
   </div></div>
   
   <style>
@@ -20,15 +18,13 @@
   </style>
 
 <script>
-    //예약 
-    const nowD = new Date();
-    const formatDate = (value) => String(value).padStart(2, '0');
-    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
-    const nowT = formatDateTime(nowD);
-    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
-    hideS();      
-    if ('2025-09-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday9').forEach(e => e.style.display = 'block');}
-    if ('2025-10-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday10').forEach(e => e.style.display = 'block');}
-    if ('2025-11-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday11').forEach(e => e.style.display = 'block');}
-    // if ('2025-12-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12').forEach(e => e.style.display = 'block');}
-  </script>
+  //예약 
+  const nowD = new Date();
+  const formatDate = (value) => String(value).padStart(2, '0');
+  const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+  const nowT = formatDateTime(nowD);
+  const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+  hideS();          
+  if ('2025-12-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12').forEach(e => e.style.display = 'block');}
+  if ('2026-01-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+</script>

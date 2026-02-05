@@ -1,0 +1,167 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css" />
+<style>
+  body {
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+</style> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<div class="promotion_con">
+  <div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/328/bg_011769484840618.png" class="base1" />
+      <!-- 배경 -->
+      <img src="https://img.shoppingntmall.com/htmleditor/328/live_011769484842542.png" class="ani ani1" />      
+      <!-- 로고 -->
+      <img src="https://img.shoppingntmall.com/htmleditor/328/title1_011769484843394.png" class="ani ani2" />      
+      <img src="https://img.shoppingntmall.com/htmleditor/328/title2_011769484843750.png" class="ani ani4 mo" />      
+      <img src="https://img.shoppingntmall.com/htmleditor/314/pc_title2_011769491900169.png" class="ani ani4 pc" />      
+      <!-- 타이틀 -->      
+      <img src="https://img.shoppingntmall.com/htmleditor/328/img_011769484842109.png" class="ani ani6" />
+      <!-- 제품 -->
+       <div class="ani ani6">
+        <img src="https://img.shoppingntmall.com/htmleditor/328/sale_txt_011769484842960.png" class="ani animate__animated animate__infinite animate__headShake" />
+      </div>
+      <!-- 세일 타이틀 -->
+    </div>
+    <div class="bg1">
+      <a href="/display/goods/24771866" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/583/item_041769489552232.jpg" />
+      </a>
+      <a href="/display/goods/26570323" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/583/item_051769489552679.jpg" />
+      </a>
+      <a href="/display/goods/17830330" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/583/item_061769489553051.jpg" />
+      </a>
+      <a href="/display/goods/17100286" class="w50">
+        <img src="https://img.shoppingntmall.com/htmleditor/583/item_071769489553461.jpg" />
+      </a>
+    </div>
+    <div class="fake_btn mo">
+      <a href="https://abr.ge/nvskxg">쇼핑엔티 라이브방송 바로가기</a>
+      <img src="https://img.shoppingntmall.com/htmleditor/328/ev_071769484840995.jpg" />
+    </div>
+    <img src="https://img.shoppingntmall.com/htmleditor/314/btn_051769491900531.jpg"  class="pc" />
+    <img src="https://img.shoppingntmall.com/htmleditor/328/ev_081769484841377.jpg" />
+  </div>
+  <style>
+    .base {
+      position: relative;
+      overflow: hidden;
+    }
+    .base1 {
+      position: relative;
+      z-index: 1;
+    }
+    .ani {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    .promotion_con,
+    .promotion_con-wrap * {
+      line-height: initial;
+    }
+    .promotion_con {
+      font-size: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .promotion_con .w50 {
+      display: inline-block;
+      width: 50%;
+      vertical-align: middle;
+    }
+    .promotion_con img {
+      width: 100%;
+      display: block;
+    }
+    .promotion_con a,
+    .promotion_con button {
+      background: inherit;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      overflow: visible;
+      cursor: pointer;
+    }
+    .promotion_con .bg1 {
+      background: #6969ef;
+    }
+    .fake_btn {
+      position: relative;
+    }
+    .fake_btn a {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      text-indent: -9999px;
+    }
+    .fake_btn img {
+      position: relative;
+      z-index: 1;
+    }
+    .ani1 {
+      z-index: 3;      
+      animation: check-ani3 1.25s ease-in-out forwards;      
+      top:-100%;
+    }
+    .ani2 {
+      z-index: 4;      
+      animation: check-ani3 1.25s ease-in-out forwards;
+      animation-delay: 0.5s;
+      top:-100%;
+    }    
+    .animate__flash {
+      z-index: 3;
+      animation-duration: 2.2s;
+    }
+    .ani4 {
+      z-index: 6;
+      top: 0;
+      left: 0;
+      animation: check-ani3 1.25s ease-in-out forwards;
+      animation-delay: 1s;
+      top:-100%;
+    }
+    .ani6 {
+      z-index: 6;
+      top: 0;
+      left: 0;
+      animation: live-ani 1s ease-in-out forwards;
+      animation-delay: 2s;
+      opacity: 0;
+    }
+    .promotion_con .mo {display:none;}
+    @media screen and (max-width: 720px) {
+      .promotion_con {
+        overflow: hidden;
+      }
+      .promotion_con_mo {
+        margin: 0 -33.33%;
+      }
+      .promotion_con .pc {display:none;}
+      .promotion_con .mo {display:block;}
+    }
+    @keyframes live-ani {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</div>

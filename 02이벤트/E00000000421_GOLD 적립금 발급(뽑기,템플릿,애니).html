@@ -1,0 +1,116 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css" />
+<style>
+  body {
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+</style> -->
+
+<div class="bbob-wrap">
+  <div>
+    <div class="bbob-event">
+      <div class="ev-top bg1">
+        <img src="https://img.shoppingntmall.com/htmleditor/233/ev_top1768362939759.jpg" class="a2" />
+      </div>
+      <button class="bbob-event-start" id="rultStart" type="button">
+        <img src="https://img.shoppingntmall.com/htmleditor/233/title1768362940973.png" class="ani a1" />
+        <span id="evtJoin"><img alt="뽑기 이벤트" src="https://img.shoppingntmall.com/htmleditor/233/ev_start1768362941538.jpg" /></span>
+        <span id="evtEnd" style="display: none"><img alt="뽑기 이벤트 참여 완료" src="https://img.shoppingntmall.com/htmleditor/233/ev_end1768362940134.jpg" /></span>
+        <span id="evtLast" style="display: none"><img alt="뽑기 이벤트 참여 완료" src="https://img.shoppingntmall.com/htmleditor/233/ev_end1768362940134.jpg" /></span>        
+      </button>      
+    </div>
+  </div>
+</div>
+
+<div class="toggle-an"></div>
+
+<div class="bbob-wrap">
+  <div>
+    <a href="/display/best/bestMain?tab=tv"><img src="https://img.shoppingntmall.com/htmleditor/233/ev_bottom1768362940614.jpg" /></a>
+  </div>
+</div>
+
+<style type="text/css">
+  .bbob-wrap {
+    font-size: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .bbob-wrap > div {
+    margin: 0;
+  }
+  .bbob-wrap .bbob-event-start {
+    position: relative;
+    background: transparent;
+  }
+  .bbob-event-start .ani {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+  }
+  .bbob-wrap .ev-top.bg1 {
+    background: #984e11;
+  }
+  .bbob-event-start .ani.a1 {
+    animation: ani1 1.2s ease-in-out forwards;
+    opacity: 0;
+    transform-origin : center 20%;
+  }
+  .bbob-wrap .ev-top .a2 {
+    animation: ani2 1.0s ease-in-out infinite;
+    opacity: 1;
+  }
+  @media screen and (max-width: 720px) {
+    .bbob-wrap {
+      overflow: hidden;
+    }
+    .bbob-wrap > div {
+      margin: 0 -33.33%;
+    }
+  }
+  @keyframes ani1 {
+    0% {
+      opacity: 0;
+      transform: scale(0.2);
+    }
+    80% {
+      opacity: 0.8;
+      transform: scale(1.15);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes ani2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<!-- 모바일만 적용 -->
+<div class="pop-bbob">
+  <div class="pop-bbob-con">
+    <div id="pop-bbob-prize" style="display: none"><img alt="경품" src="" /></div>
+    <div id="pop-bbob-end" style="display: none"><img alt="이벤트 참여 완료" src="https://img.shoppingntmall.com/htmleditor/891/popup_21768371689019.png" /></div>
+    <div id="pop-bbob-last" style="display: none"><img alt="이벤트 참여 완료 마지막날" src="https://img.shoppingntmall.com/htmleditor/891/popup_21768371689019.png" /></div>
+    <div class="pop-bbob-btn">
+      <button type="button"><img alt="닫기" src="https://img.shoppingntmall.com/htmleditor/353/11744265443446.png" /></button>
+      <button type="button"><img alt="확인" src="https://img.shoppingntmall.com/htmleditor/353/21744265443902.png" /></button>
+    </div>
+  </div>
+</div>

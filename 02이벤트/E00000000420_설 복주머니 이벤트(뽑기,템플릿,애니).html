@@ -1,0 +1,141 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css" />
+<style>
+  body {
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+</style> -->
+<div class="bbob-wrap">
+  <div>
+    <div class="bbob-event">
+      <div class="bbob-ani">
+        <img src="https://img.shoppingntmall.com/htmleditor/603/bg1769070584636.jpg" class="base" />
+        <img src="https://img.shoppingntmall.com/htmleditor/603/title1769070588384.png" class="ani a1" />
+        <img src="https://img.shoppingntmall.com/htmleditor/603/ev_img11769070586196.png" class="ani a2" />
+        <img src="https://img.shoppingntmall.com/htmleditor/603/star11769070586902.png" class="ani a4" />
+        <img src="https://img.shoppingntmall.com/htmleditor/603/star21769070587316.png" class="ani a3" />
+        <img src="https://img.shoppingntmall.com/htmleditor/603/star31769070587803.png" class="ani a3" />
+      </div>
+      <button class="bbob-event-start" id="rultStart" type="button">
+        <span id="evtJoin"><img alt="뽑기 이벤트" src="https://img.shoppingntmall.com/htmleditor/603/btn_on1769070585672.png" /></span>
+        <span id="evtEnd" style="display: none"><img alt="뽑기 이벤트 참여 완료" src="https://img.shoppingntmall.com/htmleditor/603/btn_off1769070585133.png" /></span>
+        <span id="evtLast" style="display: none"><img alt="뽑기 이벤트 참여 완료" src="https://img.shoppingntmall.com/htmleditor/603/btn_off1769070585133.png" /></span>
+      </button>
+      <div class="bbob-move" style="height: 9%">
+        <a href="/mypage/mymain">당첨 선물 보러가기</a>
+        <button onclick="popup.open('#snsSharePop');" type="button">이벤트 공유하기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toggle-an"></div>
+
+<div class="bbob-wrap">
+  <div><img alt="이벤트 정보" src="https://img.shoppingntmall.com/htmleditor/603/info1769070586536.jpg" /></div>
+</div>
+
+<style type="text/css">
+  .bbob-wrap {
+    font-size: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .bbob-wrap > div {
+    margin: 0;
+  }
+  .bbob-wrap .bbob-event-start {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    z-index: 2;
+  }
+  .bbob-ani .ani {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+  .bbob-ani .ani.a1 {
+    top:-100%; 
+    animation: ani1 1.5s ease-in-out forwards;    
+  }
+  .bbob-ani .ani.a2 {
+    transform: scale(0);
+    transform-origin: center 65%;
+    animation: ani2 1.2s ease-in-out forwards;
+    animation-delay: 1.4s;
+  }
+  .bbob-ani .ani.a3 {
+    opacity: 0;
+    animation: ani3 1.2s ease-in-out infinite;
+    animation-delay: 1.4s;
+  }
+  .bbob-ani .ani.a4 {
+    opacity: 0;
+    animation: ani3 1.4s ease-in-out infinite;
+    animation-delay: 1.6s;
+  }
+  .bbob-move {
+    z-index: 3;
+  }
+  @keyframes ani1 {
+    0% {
+      top: -100%;
+    }    
+    100% {
+      top: 0;
+    }
+  }
+  @keyframes ani2 {
+    0% {
+      transform: scale(0);
+    }
+    60% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes ani3 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .bbob-wrap {
+      overflow: hidden;
+    }
+    .bbob-wrap > div {
+      margin: 0 -33.33%;
+    }
+  }
+</style>
+
+<!-- 모바일만 적용 -->
+<div class="pop-bbob">
+  <div class="pop-bbob-con">
+    <div id="pop-bbob-prize" style="display: none"><img alt="경품" src="" /></div>
+    <div id="pop-bbob-end" style="display: none"><img alt="이벤트 참여 완료" src="https://img.shoppingntmall.com/htmleditor/324/off_011769071124718.png" /></div>
+    <div id="pop-bbob-last" style="display: none"><img alt="이벤트 참여 완료 마지막날" src="https://img.shoppingntmall.com/htmleditor/324/off_021769071125187.png" /></div>
+    <div class="pop-bbob-btn">
+      <button type="button"><img alt="닫기" src="https://img.shoppingntmall.com/htmleditor/353/11744265443446.png" /></button>
+      <button type="button"><img alt="확인" src="https://img.shoppingntmall.com/htmleditor/353/21744265443902.png" /></button>
+    </div>
+  </div>
+</div>
