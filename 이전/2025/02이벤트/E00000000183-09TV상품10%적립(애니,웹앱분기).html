@@ -1,0 +1,112 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <a onclick="goAppDown()" class="base btn1">    
+    <div class="bg_app">
+        <img src="https://img.shoppingntmall.com/htmleditor/114/btn11692774693200.png" alt="">
+        <img src="https://img.shoppingntmall.com/htmleditor/426/btn1_arr1692774876406.png" class="ani arr1">
+    </div>
+
+    <img class="bg_appno" src="https://img.shoppingntmall.com/htmleditor/485/bg1742448253050.jpg" alt="">
+
+    <img src="https://img.shoppingntmall.com/htmleditor/566/coin11692775308178.png" class="ani coin1">
+    <img src="https://img.shoppingntmall.com/htmleditor/722/coin21692775314740.png" class="ani coin2">
+    <img src="https://img.shoppingntmall.com/htmleditor/873/coin31692775321063.png" class="ani coin3">
+    <img src="https://img.shoppingntmall.com/htmleditor/671/coin41692775328286.png" class="ani coin4">
+    <img src="https://img.shoppingntmall.com/htmleditor/318/coin51692775641995.png" class="ani coin5">
+    <img src="https://img.shoppingntmall.com/htmleditor/299/coin61692775341379.png" class="ani coin6">
+  </a>
+  <a href="/display/best/bestMain?tab=tv" class="base btn2">
+    <img src="https://img.shoppingntmall.com/htmleditor/201/btn21709197213995.png">
+    <img src="https://img.shoppingntmall.com/htmleditor/597/btn2_arr1692774953881.png" class="ani arr2">
+  </a>
+</div></div>
+<style>
+  .base {position:relative; overflow:hidden; display:block; cursor:pointer;}
+  .ani {position:absolute; width:100%; z-index:2;}
+  .arr1 {animation: arr1 1.5s ease-in-out infinite; top:0; left:0; }
+  .arr2 {animation: arr2 0.8s ease-in-out infinite; top:0; left:0; }
+
+  .coin1 {animation: coin1 1s ease-in-out forwards; top:-100%; left:-100%;}
+  .coin2 {animation: coin2 1s ease-in-out forwards; bottom:-100%; right:-100%; animation-delay: 0.3s;}
+  .coin3 {animation: coin3 1s ease-in-out forwards; bottom:-100%; left:-100%; animation-delay: 0.6s;}
+  .coin4 {animation: coin4 1s ease-in-out forwards; top:-100%; right:-100%; animation-delay: 0.9s;}
+  .coin5 {animation: coin5 1s ease-in-out forwards; top:0; right:0; animation-delay: 1.8s; opacity:0; z-index:3;}
+  .coin6 {animation: coin6 1s ease-in-out forwards; top:0; right:0; animation-delay: 2s; opacity:0; z-index:3;}
+
+  @keyframes coin1 {
+    0% {top:-100%; left:-100%;}
+    100% {top:0%; left:0%;}
+  }
+  @keyframes coin2 {
+    0% {bottom:-100%; right:-100%;}
+    100% {bottom:0%; right:0%;}
+  }
+  @keyframes coin3 {
+    0% {bottom:-100%; left:-100%;}
+    100% {bottom:0%; left:0%;}
+  }
+  @keyframes coin4 {
+    0% {top:-100%; right:-100%;}
+    100% {top:0%; right:0%;}
+  }
+  @keyframes coin5 {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @keyframes coin6 {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @keyframes arr1 {
+    0% {top:-2px;}
+    50% {top:2px;}
+    100% {top:-2px;}
+  }
+
+  @keyframes arr2 {
+    0% {left:-2px}
+    50% {left:0px;}
+    100% {left:-2px;}
+  }
+
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%;}
+  .promotion_con img {width:100%; vertical-align:middle;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+
+
+<script>
+  $(document).ready(function () {
+    function isIOS() {
+        return isApp() && OSCD === "02"; // iOS 여부 확인
+    }
+
+    function isAndroid() {
+        return isApp() && OSCD === "01"; // Android 여부 확인
+    }
+
+    function isApp() {
+        return DEVICECD === "03"; // 앱 여부 확인
+    }
+
+    function isPcWeb() {
+        return DEVICECD === "01"; // PC 웹 여부 확인
+    }
+
+    if (isApp()) {
+        $("a.base.btn1").attr("onclick", "#none");
+        $(".bg_app").hide();
+        $(".bg_appno").show();
+    } else {
+        $("a.base.btn1").attr("onclick", "goAppDown()");
+        $(".bg_appno").hide();
+        $(".bg_app").show();
+    }
+});
+</script>

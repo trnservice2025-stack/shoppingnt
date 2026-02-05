@@ -1,0 +1,49 @@
+<div class="promotion_con sday sday1"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/419/ev_011744275571791.jpg">
+  <a href="https://www.samsungcard.com/personal/event/ing/UHPPBE1404P0.jsp?bgdAlncPdC=AAP1666&site=QLSHOPNT&cms_id=3693249&ojDvC=01&operAgree=Y"><img src="https://img.shoppingntmall.com/htmleditor/419/ev_021744275572212.jpg"></a>
+  <img src="https://img.shoppingntmall.com/htmleditor/419/ev_031744275572725.jpg">
+  <a href="https://www.samsungcard.com/personal/card/simple-apply/UHPPCA0225M0.jsp?code=AAP1666&alncmpC=QLSHOPNT&affcode=QLSHOPNT"><img src="https://img.shoppingntmall.com/htmleditor/419/ev_041744275575974.jpg"></a>
+  <img src="https://img.shoppingntmall.com/htmleditor/419/ev_051744275576525.jpg">    
+</div></div>
+
+<div class="promotion_con sday sday2"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/808/ev_011745974098671.png
+  ">
+  <a href="https://www.samsungcard.com/personal/event/ing/UHPPBE1404P0.jsp?bgdAlncPdC=AAP1666&site=QLSHOPNT&cms_id=3698600&ojDvC=01&operAgree=Y
+  "><img src="  https://img.shoppingntmall.com/htmleditor/808/ev_021745974099607.png
+    "></a>
+  <img src="  https://img.shoppingntmall.com/htmleditor/808/ev_031745974100191.png
+  ">
+  <a href="https://www.samsungcard.com/personal/card/simple-apply/UHPPCA0225M0.jsp?code=AAP1666&alncmpC=QLSHOPNT&affcode=QLSHOPNT
+  "><img src="  https://img.shoppingntmall.com/htmleditor/808/ev_041745974100777.png
+    "></a>
+  <img src="  https://img.shoppingntmall.com/htmleditor/808/ev_051745974101427.png
+  ">  
+</div></div>
+  
+  <style>
+    .promotion_con * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+
+<script>
+  //예약 
+  const nowD = new Date();
+  const formatDate = (value) => String(value).padStart(2, '0');
+  const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+  const nowT = formatDateTime(nowD);
+  const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+  hideS();      
+  if ('2025-04-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+  if ('2025-05-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+</script>
+  

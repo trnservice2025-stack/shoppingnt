@@ -1,0 +1,34 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/560/ppp1756358651601.jpg"  class="sday sday9">
+    <img src="https://img.shoppingntmall.com/htmleditor/365/ppp1758692862545.jpg"  class="sday sday10">
+    <img src="https://img.shoppingntmall.com/htmleditor/740/pc1761121944076.jpg"  class="sday sday11">
+    <img src="ㅋㅋㅋ"  class="sday sday12">
+  </div></div>
+  
+  <style>
+    .promotion_con * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+
+<script>
+    //예약 
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();      
+    if ('2025-09-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday9').forEach(e => e.style.display = 'block');}
+    if ('2025-10-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday10').forEach(e => e.style.display = 'block');}
+    if ('2025-11-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday11').forEach(e => e.style.display = 'block');}
+    if ('2025-12-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12').forEach(e => e.style.display = 'block');}
+  </script>

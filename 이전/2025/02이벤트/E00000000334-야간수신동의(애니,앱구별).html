@@ -1,0 +1,110 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/230/base1743038319847.jpg" class="base2">
+      <img src="https://img.shoppingntmall.com/htmleditor/230/phon1743038320400.png" class="ani sma">
+      <div class="onoff"></div>
+    </div>
+      <style media="screen">
+        .base {position:relative; overflow:hidden; display:block;}
+        .ani {position:absolute; width:100%; left:0; z-index:2;}
+        .sma {bottom:-100%; animation: sma 1s ease-in-out forwards;}
+
+        @keyframes sma {
+          0% {bottom:-100%}
+          60% {bottom:0%;}
+          65% {bottom:0%;}
+          100% {bottom:-2%;}
+        }
+        .onoff, .onoff:after, .onoff:before {
+          -webkit-transition:all 0.6s;
+          -moz-transition:all 0.6s;
+          -ms-transition:all 0.6s;
+          -o-transition:all 0.6s;
+          transition:all 0.6s;
+        }
+        .onoff {display:none; width:261px; height:72px; border-radius:112px; background:#fff; position:absolute; left:50%; bottom:5%; z-index:9; transform:translateX(-50%); box-shadow:0 25px 20px rgb(000, 000, 000, .1); 
+          background-image:url(https://img.shoppingntmall.com/htmleditor/685/off1743038574893.png); background-size:cover;  }
+        .onoff:before {left:7px; content:""; display:block; width:58px; height:58px; border-radius:100%; background:#fff; background-size:cover; position:absolute; top:50%; transform:translateY(-50%);}
+        .onoff.on {background-image:url(https://img.shoppingntmall.com/htmleditor/685/on1743038575531.png); } 
+        .onoff.on:before {left:100%; margin-left:-66px;}
+
+        @media screen and (max-width:1200px)  {
+          .onoff {width:23vw; height:6vw; border-radius:9vw;}
+          .onoff:before {left:0.8vw;; width:5vw; height:5vw;}
+          .onoff.on:before {margin-left:-5.6vw;}
+        }
+        @media screen and (max-width:720px)  {
+          .onoff {transform:translateX(-50%) scale(1.7); transform-origin: center center;} 
+        }
+      </style>
+  <div class="toggle_an"></div>
+</div></div>
+
+<div class="coupon_an"></div>
+
+<div class="promotion_con"><div class="promotion_con_mo">
+  <img src="https://img.shoppingntmall.com/htmleditor/322/ev_031742977056647.jpg">
+  <a onclick="goAppDown()" class="bg_app"><img src="https://img.shoppingntmall.com/htmleditor/322/ev_041742977057178.jpg"></a>
+</div></div>
+
+<style>
+    .coupon_an {font-size:0;}   
+  .promotion_con * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+  .promotion_con a, .promotion_con img {background:none;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+
+<script>  
+  $(function () {
+  setTimeout(function(){ $('.onoff').fadeIn(500); },1000);
+  setTimeout(function(){ $('.onoff').addClass("on"); },1300); 
+    //쿠폰다운 이동
+    $('.acco-wrap.plan, .notice-fold, .re-coupon-wrap').appendTo(".coupon_an");  
+    
+    //수신동의 이동
+    $('.toggle-area').appendTo(".toggle_an");
+  });
+</script>
+<script> 
+
+    $(document).ready(function () {
+      function isIOS() {
+          return isApp() && OSCD === "02"; // iOS 여부 확인
+      }
+  
+      function isAndroid() {
+          return isApp() && OSCD === "01"; // Android 여부 확인
+      }
+  
+      function isApp() {
+          return DEVICECD === "03"; // 앱 여부 확인
+      }
+  
+      function isPcWeb() {
+          return DEVICECD === "01"; // PC 웹 여부 확인
+      }
+  
+      if (isApp()) {
+          $(".bg_app").hide();
+      }  else {
+
+      }
+  });   
+</script>
+
+<script>
+  // PC에만 반영 
+  function goAppDown() {
+    alert("모바일에서 다운 가능합니다.");
+  }
+</script>

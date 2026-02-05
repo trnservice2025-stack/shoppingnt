@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="sday sday1">
+        <div class="base">
+            <img src="https://img.shoppingntmall.com/htmleditor/795/base1740009362156.png" class="base1">
+            <img src="https://img.shoppingntmall.com/htmleditor/795/a11740009361382.png" class="ani ani1 animate__animated animate__infinite animate__flash">
+        </div>
+        <a href="https://bit.ly/49sRp19"><img src="https://img.shoppingntmall.com/htmleditor/795/btn1740009365930.png" alt=""></a>
+    </div>
+    <div class="sday sday2">
+        <div class="base">
+            <img src="https://img.shoppingntmall.com/htmleditor/795/base21740009365488.png" class="base1">
+            <img src="https://img.shoppingntmall.com/htmleditor/795/a1_21740009360950.png" class="ani ani1 animate__animated animate__infinite animate__flash">
+        </div>
+        <a href="https://bit.ly/49sRp19"><img src="https://img.shoppingntmall.com/htmleditor/795/btn21740009366326.png" alt=""></a>
+    </div>
+
+  
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:2.2s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+  </style>
+</div></div>
+<style>
+  .promotion_con, .promotion_con-wrap * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;}
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+<script>
+    //예약 
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();      
+    if ('2025-02-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2025-02-21 11:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+  </script>    

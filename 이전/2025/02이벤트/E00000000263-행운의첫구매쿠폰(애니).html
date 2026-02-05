@@ -1,0 +1,66 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401104483&rUrl=/plan/event/swipeDetail/E00000000263');">
+    <img src="https://img.shoppingntmall.com/htmleditor/324/base1705391331406.jpg" class="base1">    
+    <div class="ani ani_bg"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/324/a11705391331865.png" class="ani ani1 animate__animated animate__flash animate__infinite"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/324/a21705391332289.png" class="ani ani2 animate__animated animate__flash animate__infinite">
+    <img src="https://img.shoppingntmall.com/htmleditor/324/a31705391332663.png" class="ani ani3 animate__animated animate__lightSpeedInLeft">
+    <img src="https://img.shoppingntmall.com/htmleditor/324/a41705391332983.png" class="ani ani4 animate__animated animate__flipInY">
+    <img src="https://img.shoppingntmall.com/htmleditor/324/a51705391333324.png" class="ani ani5 animate__animated animate__backInUp">
+    <img src="https://img.shoppingntmall.com/htmleditor/324/a61705391333765.png" class="ani ani6 animate__animated animate__bounceIn">
+  </div>
+  <div class="promotion_con_mo2">
+    <a class="isApp" href="https://m.shoppingntmall.com/interfaces/shoppingntApp"><img src="https://img.shoppingntmall.com/htmleditor/019/ab1706679042032.jpg" /></a>
+  </div>
+  <script>
+    //앱/웹 분기
+    $(function(){
+        if(isApp()) { 
+            $('.isApp').hide();
+        } else { 
+            $('.isApp').show();
+        }      
+        function isApp(){
+            return DEVICECD === "03";
+        }
+    });
+  </script>
+
+  <style>
+    .base {position:relative; overflow:hidden; display:block; cursor:pointer;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%;}
+    .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/324/bg1705391334479.png); background-size:cover;}
+    .ani1 {z-index:3; top:0; left:0; animation-delay: 0s; animation-duration:2s;}
+    .ani2 {z-index:4; top:0; left:0; animation-delay: .3s; animation-duration:2s;}
+    .ani3 {z-index:5; top:0; left:0; animation-delay: 0s; animation-duration:1.2s;}
+    .ani4 {z-index:6; top:0; left:0; animation-delay: 0.6s; animation-duration:1.2s;}
+    .ani5 {z-index:7; top:0; left:0; animation-delay: 1.2s; animation-duration:1.2s;}  
+    .ani6 {z-index:8; top:0; left:0; animation-delay: 1.8s; animation-duration:1.2s;}  
+
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: 0 -10000px;}
+    }
+    
+    @keyframes ani1 {
+      0% {}
+      100% {}
+    }
+  </style>
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con_mo2 {margin:0 -33.33%;}
+
+  }
+</style>
