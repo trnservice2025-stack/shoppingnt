@@ -3,23 +3,37 @@ from datetime import datetime
 
 BASE_DIR = os.getcwd()
 
-def make_index(target_dir):
-    files = []
 
-    for name in os.listdir(target_dir):
-        if name.endswith(".html") and name != "index.html":
-            full_path = os.path.join(target_dir, name)
+def make_index(current_dir, is_root=False):
+    entries = []
+
+    for name in os.listdir(current_dir):
+        if name.startswith("."):
+            continue
+
+        full_path = os.path.join(current_dir, name)
+
+        if os.path.isdir(full_path):
+            entries.append(("dir", name, None))
+        elif name.endswith(".html") and name != "index.html":
             mtime = os.path.getmtime(full_path)
-            files.append((name, mtime))
+            entries.append(("file", name, mtime))
 
-    # 🔹 수정일 최신순 정렬
-    files.sort(key=lambda x: x[1], reverse=True)
+    # 파일은 수정일 최신순, 폴더는 이름순
+    dirs = sorted([e for e in entries if e[0] == "dir"], key=lambda x: x[1])
+    files = sorted(
+        [e for e in entries if e[0] == "file"],
+        key=lambda x: x[2],
+        reverse=True
+    )
+
+    title = "shoppingnt" if is_root else os.path.basename(current_dir)
 
     html = f"""<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>{os.path.basename(target_dir)} 목록</title>
+<title>{title}</title>
 <style>
 body {{
   font-family: system-ui, -apple-system, sans-serif;
@@ -39,19 +53,29 @@ li {{
   color: #666;
   font-size: 0.9em;
 }}
+.back {{
+  margin-bottom: 16px;
+}}
 </style>
 </head>
 <body>
-
-<h1>{os.path.basename(target_dir)}</h1>
-<ul>
 """
 
-    for filename, mtime in files:
+    if not is_root:
+        html += '<div class="back"><a href="../">← 상위 폴더</a></div>\n'
+
+    html += f"<h1>{title}</h1><ul>\n"
+
+    # 폴더 먼저
+    for _, name, _ in dirs:
+        html += f'<li><a href="{name}/">{name}/</a></li>\n'
+
+    # 파일
+    for _, name, mtime in files:
         date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
         html += f'''
 <li>
-  <a href="{filename}">{filename}</a>
+  <a href="{name}">{name}</a>
   <span class="date">{date_str}</span>
 </li>
 '''
@@ -62,14 +86,15 @@ li {{
 </html>
 """
 
-    with open(os.path.join(target_dir, "index.html"), "w", encoding="utf-8") as f:
+    with open(os.path.join(current_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
-    print(f"✅ {target_dir}/index.html 생성 완료")
+    print(f"✅ index.html 생성: {current_dir}")
+
+    # 🔁 재귀: 하위 폴더에도 동일하게 실행
+    for _, name, _ in dirs:
+        make_index(os.path.join(current_dir, name))
 
 
-# 🔥 여러 폴더 자동 처리
-for item in os.listdir(BASE_DIR):
-    path = os.path.join(BASE_DIR, item)
-    if os.path.isdir(path) and not item.startswith("."):
-        make_index(path)
+# ▶ 실행 시작 (루트부터)
+make_index(BASE_DIR, is_root=True)
