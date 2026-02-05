@@ -1,0 +1,89 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="">
+    <div class="base" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202312113550&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000259');">
+        <img src="https://img.shoppingntmall.com/htmleditor/578/bg1699251762316.png" class="base1">
+        <img src="https://img.shoppingntmall.com/htmleditor/059/bg11699252202988.png" class="ani ani1"> 
+        <img src="https://img.shoppingntmall.com/htmleditor/618/bg21699252211390.png" class="ani ani2">
+        <img src="https://img.shoppingntmall.com/htmleditor/225/bg31699252219492.png" class="ani ani3">
+        <img src="https://img.shoppingntmall.com/htmleditor/858/bg41699252226799.png" class="ani ani4">
+  
+        <img src="https://img.shoppingntmall.com/htmleditor/145/bg51699252340131.png" class="ani ani5">
+        <img src="https://img.shoppingntmall.com/htmleditor/675/a11702425815883.png" class="ani ani6">
+        <img src="https://img.shoppingntmall.com/htmleditor/675/a21702425816868.png" class="ani ani7">
+        <img src="https://img.shoppingntmall.com/htmleditor/675/a31702425817174.png" class="ani ani8">
+        <img src="https://img.shoppingntmall.com/htmleditor/675/a41702425817573.png" class="ani ani9">
+    </div>
+
+    <!-- 수신동의 영역 --><div class="toggle_an"></div>
+
+    <script>
+        //수신동의 이동
+	    document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle_an')?.appendChild(document.querySelector('.toggle-area')));
+    </script>
+
+    <!-- 1단 -->
+    <a href="/plan/planshop/swipeDetail/S00000000945" class="sday sday1"><img src="https://img.shoppingntmall.com/htmleditor/675/7_021702425815416.png"></a>
+    <a href="/plan/planshop/swipeDetail/S00000000671" class="sday sday2"><img src="https://img.shoppingntmall.com/htmleditor/675/7_021702425815416.png"></a>
+
+    <script>
+        //예약
+        const nowD = new Date();
+        const formatDate = (value) => String(value).padStart(2, '0');
+        const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+        const nowT = formatDateTime(nowD);
+        const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+        hideS();
+        if ('2023-12-13 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+        if ('2023-12-18 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+    </script>
+
+    <style>
+      .base {position:relative; overflow:hidden;}
+      .base1 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%;}
+      .ani1 {z-index:3; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; }
+      .ani2 {z-index:4; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; animation-delay: .3s; opacity:0;}
+      .ani3 {z-index:5; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; animation-delay: .6s; opacity:0;}
+      .ani4 {z-index:6; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; animation-delay: .9s; opacity:0;}
+
+      .ani5 {z-index:7; top:0; left:0; animation: ani5 1.2s ease-in-out forwards; animation-delay: 1.2s; opacity:0; top:-10%; transform:scale(1.1);} 
+      .ani6 {z-index:7; top:0; left:0; animation: ani6 1.5s ease-in-out forwards; animation-delay: 1.5s; opacity:0; top:-10%; } 
+      .ani7 {z-index:7; top:0; left:0; animation: ani6 1.5s ease-in-out forwards; animation-delay: 1.8s; opacity:0; top:-10%; } 
+      .ani8 {z-index:7; top:0; left:0; animation: ani6 1.5s ease-in-out forwards; animation-delay: 2.1s; opacity:0; top:-10%; } 
+      .ani9 {z-index:7; top:0; left:0; animation: ani6 1.5s ease-in-out forwards; animation-delay: 2.4s; opacity:0; top:-10%; } 
+      
+      @keyframes ani_bg {
+        from {background-position: 0 0;}
+        to {background-position: 0 -3000px;}
+      }
+
+      @keyframes ani1 {
+        0% { opacity:0;}
+        50% { opacity:1;}
+        100% { opacity:0;}
+      }
+      @keyframes ani5 {
+        0% { opacity:0; top:-10%; transform:scale(1.1);}
+        100% { opacity:1; top:0%; transform:scale(1);}
+      }
+      @keyframes ani6 {
+        0% { opacity:0; top:-10%;}
+        100% { opacity:1; top:0%;}
+      }
+      
+    </style>
+  
+  </div></div>
+
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+  

@@ -1,0 +1,30 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <a onclick="wepApp()"><img src="https://img.shoppingntmall.com/htmleditor/126/zz1696405032595.png"></a>
+  </div></div>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con a {cursor:pointer;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a {background:none; cursor:pointer;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+  <script type="text/javascript">
+    // 앱 다운로드
+    function wepApp() {
+      if(isApp()) {
+        alert("응모 완료되었습니다!");
+      } else {
+        alert("모바일 앱에서만 응모가능합니다.");
+      }
+    }    
+    /* App 여부 */
+    function isApp(){
+      return DEVICECD === "03";
+    }
+  </script>

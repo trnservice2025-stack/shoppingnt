@@ -1,0 +1,134 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base0">
+    <div class="base1">
+      <div class="onoff"></div>
+      <img src="https://img.shoppingntmall.com/htmleditor/898/base21682490692101.png" class="base2">
+      <img src="https://img.shoppingntmall.com/htmleditor/568/j11682491288565.png" class="ani st1">
+      <img src="https://img.shoppingntmall.com/htmleditor/249/j21682491296253.png" class="ani st2">
+      <img src="https://img.shoppingntmall.com/htmleditor/757/sma1682493721708.png" class="ani sma">
+      <img src="https://img.shoppingntmall.com/htmleditor/670/jong1682491470228.png" class="ani jong">
+    </div>
+  </div>
+
+  <a class="base1" href="/customer/app-push-coupon?couponNo=202207012549&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000180">
+    <img src="https://img.shoppingntmall.com/htmleditor/154/2221682496687279.png" class="base2">
+    <img src="https://img.shoppingntmall.com/htmleditor/230/ddddd1682496696821.png" class="ani ddd1">
+  </a>
+
+  <img src="https://img.shoppingntmall.com/htmleditor/887/11682496786924.png">
+  <img src="https://img.shoppingntmall.com/htmleditor/633/21682496794799.png">
+
+
+  <script>
+    $(function(){
+      setTimeout(function(){ $('.jong').fadeIn(500); },900);
+      setTimeout(function(){ $('.st1').fadeIn(1200); },1200);
+      setTimeout(function(){ $('.st2').fadeIn(1200); },1200);
+      setTimeout(function(){ $('.onoff').fadeIn(1000); },1700);
+      setTimeout(function(){ $('.onoff').addClass("on"); },2000);
+    });
+  </script>
+
+  <style media="screen">
+    .base0 {position:relative; overflow:hidden; display:block; background:url(https://img.shoppingntmall.com/htmleditor/576/base01682490642951.png); background-size:auto 100%;}
+    .base1 {position:relative; overflow:hidden; display:block; animation:base1 800s linear infinite; display:block; background:url(https://img.shoppingntmall.com/htmleditor/479/base11682490753639.png); background-size:auto 100%;}
+    .base2 {position:relative; z-index:1;}
+
+    .ani {position:absolute; width:100%; left:0; z-index:2;}
+
+    .sma {bottom:-100%; animation: sma 1s ease-in-out forwards;}
+    .jong {top:0; animation: st2 1.5s ease-in-out infinite; left:0; display:none;}
+    .st1 {top:0; animation: st1 1.5s ease-in-out infinite; display:none;}
+    .st2 {top:0; animation: st2 1.5s ease-in-out infinite; display:none;}
+
+    .ddd1 {top:0; animation: ddd1 1.5s ease-in-out infinite; }
+    .ddd2 {top:0; animation: ddd1 1.5s ease-in-out infinite; }
+    .down {bottom:0; animation: down 1.5s ease-in-out infinite; }
+
+    @keyframes base1 {
+      from {background-position: center 0;}
+      to {background-position: center 9000px;}
+    }
+
+    @keyframes down {
+      0% {bottom:-2px;}
+      50% {bottom:2px;}
+      100% {bottom:-2px;}
+    }
+
+    @keyframes ddd1 {
+      0% {top:7px;}
+      50% {top:0px;}
+      100% {top:7px;}
+    }
+
+    @keyframes st1 {
+      0% {transform:scale(1.02);}
+      50% {transform:scale(1)}
+      100% {transform:scale(1.02)}
+    }
+    @keyframes st2 {
+      0% {transform:scale(1)}
+      50% {transform:scale(1.02)}
+      100% {transform:scale(1)}
+    }
+    @keyframes jong {
+      0% {transform:scale(1)}
+      50% {transform:scale(1.01); left:-10%}
+      100% {transform:scale(1)}
+    }
+    @keyframes sma {
+      0% {bottom:-100%}
+      60% {bottom:0%;}
+      65% {bottom:0%;}
+      100% {bottom:-2%;}
+    }
+  </style>
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; vertical-align:middle;}
+  .promotion_con .w50 {width:50%; display:inline-block;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+
+  .onoff, .onoff:after, .onoff:before {
+    -webkit-transition:all 0.6s;
+    -moz-transition:all 0.6s;
+    -ms-transition:all 0.6s;
+    -o-transition:all 0.6s;
+    transition:all 0.6s;
+  }
+
+  .onoff {display:none; width:195px; height:77px; border-radius:77px; background:#e9e9e9; position:absolute; left:50%; bottom:16%; z-index:9; transform:translateX(-50%); box-shadow: inset 5px 0 11px rgb(000, 000, 000, .35); posiion:relative;}
+  .onoff:after {left:7px; content:""; display:block; width:62px; height:62px; border-radius:100%; background:url(https://img.shoppingntmall.com/htmleditor/017/ww1682494160062.png); background-size:cover; position:absolute; top:50%; transform:translateY(-50%);}
+  .onoff:before {left:100%; margin-left:-100px; content:"OFF"; display:block; color:#262626; font-size:40px; font-weight:700; position:absolute; line-height:76px;}
+  .onoff.on {background:#f40d86;}
+  .onoff.on:after {left:100%; margin-left:-70px;}
+  .onoff.on:before {left:42px; margin-left:0; color:#fff; content:"ON"; }
+
+  @media screen and (max-width:1200px)  {
+    .onoff {width:17vw; height:7vw; border-radius:7vw;}
+    .onoff:after {left:0.8vw;; width:6vw; height:6vw;}
+    .onoff:before {margin-left:-9.5vw; font-size:3.8vw; line-height:7.4vw;}
+    .onoff.on:after {margin-left:-6.5vw;}
+    .onoff.on:before {left:3.5vw; }
+  }
+
+  @media screen and (max-width:720px)  {
+    .base0 {background:url(https://img.shoppingntmall.com/htmleditor/375/b01682495736657.jpg); background-size:auto 100%; background-position:center;}
+    .base1 {background:url(https://img.shoppingntmall.com/htmleditor/450/b21682495744320.png); background-size:auto 100%; background-position:center;}
+    .onoff {width:22vw; height:10vw; border-radius:10vw;}
+    .onoff:after {left:1.5vw;; width:8vw; height:8vw;}
+    .onoff:before {margin-left:-11.5vw; font-size:5vw; line-height:10vw;}
+    .onoff.on:after {margin-left:-8.8vw;}
+    .onoff.on:before {left:4.2vw; }
+  }
+</style>

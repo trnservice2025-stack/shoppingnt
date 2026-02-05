@@ -1,0 +1,63 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/889/11695195409053.png">
+    <img src="https://img.shoppingntmall.com/htmleditor/624/app1693299435602.png" class="ani ani1">
+    <img src="https://img.shoppingntmall.com/htmleditor/875/cash1693299425851.png" class="front">
+  </div>
+  <!-- 하단 -->
+  <img src="https://img.shoppingntmall.com/htmleditor/129/111698796866062.jpg" class="tday tday12">
+  <img src="https://img.shoppingntmall.com/htmleditor/684/b1703577803620.png" class="tday tday1"> 
+</div></div>
+
+<style media="screen">
+  .base {position:relative; overflow:hidden;}
+  .base>img {position:relative; z-index:1;}
+  .base .front {position:absolute; left:0; top:0; width:100%; z-index:3;}
+  .base .ani {position:absolute; width:100%; z-index:2;}
+  .ani1 {left:0; top:0; animation:ani1 1.5s infinite ease-in-out; animation-delay: .3s; transform-origin: center center;}
+
+  @keyframes ani1 {
+    0% {transform:rotate(3deg);}
+    50% {transform:rotate(0deg);}
+    100% {transform:rotate(3deg);}
+  }
+</style>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+
+<script>
+  //시간 체크 출력
+  var Now = new Date(); //현재 날짜 및 시간
+  var nowY = Now.getFullYear(); //년
+  var nowM = Now.getMonth() + 1; //월
+  var nowD = Now.getDate(); //일
+  var nowH = Now.getHours(); //시
+  var nowB = Now.getMinutes(); //분   
+  function pluszero(time){
+    var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+    if(time.length < 2){ //2자리 보다 작으면
+      time = '0' + time; //숫자앞 0 붙임
+      return time; //값 내보냄
+    }else{
+      return time; //2자리면 값 내보냄
+    }
+  }
+  //만든 함수 적용 
+  nowM = pluszero(nowM); 
+  nowD = pluszero(nowD);
+  nowH = pluszero(nowH);
+  nowB = pluszero(nowB);   
+  var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+  if(202312010000 <= nowT ){$(".tday").hide();$(".tday12").show();}
+  if(202401010000 <= nowT ){$(".tday").hide();$(".tday1").show();}
+</script>

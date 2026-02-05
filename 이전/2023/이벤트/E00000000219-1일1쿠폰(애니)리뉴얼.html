@@ -1,0 +1,97 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/631/base1698127684688.png" class="base1">      
+      <img src="https://img.shoppingntmall.com/htmleditor/960/0bg1698127863616.png" class="ani ani1">
+      <img src="https://img.shoppingntmall.com/htmleditor/685/1tbg11698127335249.png" class="ani ani2">
+      <img src="https://img.shoppingntmall.com/htmleditor/247/2tbg21698127342786.png" class="ani ani3">
+      <img src="https://img.shoppingntmall.com/htmleditor/519/331698128731695.png" class="ani ani4">
+      <img src="https://img.shoppingntmall.com/htmleditor/563/4title1698127350143.png" class="ani ani5">
+      <img src="https://img.shoppingntmall.com/htmleditor/863/5sub1698127366835.png" class="ani ani6">
+    </div>
+    <style>
+      .base {position:relative; overflow:hidden;}
+      .base1 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%; top:0; left:0;}
+      .ani1 {z-index:2; animation: ani1 40s ease-in-out infinite; }
+      .ani2 {z-index:3; animation: ani2 1s ease-in-out forwards; opacity:0;}
+      .ani3 {z-index:4; animation: ani3 1s ease-in-out forwards; animation-delay: .5s; opacity:0; left:10%;}
+      .ani4 {z-index:5; animation: ani4 1s ease-in-out forwards; animation-delay: 1s; opacity:0; left:-5%;}
+      .ani5 {z-index:6; animation: ani5 .6s ease-in-out forwards; animation-delay: 1.5s; transform:scale(2); opacity:0;}
+      .ani6 {z-index:7; animation: ani6 1s ease-in-out forwards; animation-delay: 1.8s; top:-100%;}
+      @keyframes ani1 {
+        0% { transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+      }
+      @keyframes ani2 {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+      @keyframes ani3 {
+        0% {opacity:0; left:5%;}
+        100% {opacity:1; left:0;}
+      }
+      @keyframes ani4 {
+        0% {opacity:0; left:-5%;}
+        100% {opacity:1; left:0;}
+      }
+      @keyframes ani5 {
+        0% {transform:scale(2); opacity:0;}
+        100% {transform:scale(1); opacity:1;}
+      }
+      @keyframes ani6 {
+        0% {top:-100%;}
+        80% {top:5%;}
+        100% {top:0;}
+      }      
+    </style>
+    <!-- 수신동의영역 --><div class="toggle_an"></div>
+    <!-- 선착순 더블쿠폰 -->
+    <!-- <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311273135&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000219');"><img src="https://img.shoppingntmall.com/htmleditor/394/c11698125425759.jpg"></a> -->
+    <!-- 쿠폰 소진 -->
+    <button type="button" class="end"><img src="https://img.shoppingntmall.com/htmleditor/311/c1_end1698125416728.jpg"></button>
+    <!-- 전상품 더블쿠폰 -->
+    <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311273136&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000219');">
+      <img src="https://img.shoppingntmall.com/htmleditor/445/c21698125434302.jpg">
+    </a>  
+  </div></div>
+  <div class="pro_pop pro_pop2">
+    <div class="pro_pop_con">
+      <button type="button" class="w50 btn22"><img src="https://img.shoppingntmall.com/htmleditor/865/p2_011698125768277.png" alt=""></button>
+      <button type="button" class="w50 btn11"><img src="https://img.shoppingntmall.com/htmleditor/771/p2_021698125775631.png" alt=""></button>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      //수신동의 위치 이동
+      $('.toggle-area').appendTo(".toggle_an");
+      //팝업
+      $('.promotion_con .end').click(function(){
+        $('.pro_pop2').fadeIn(200);
+      });
+      $('.pro_pop2 .btn11').click(function(){
+        $(".pro_pop2").fadeOut(200);
+        $('#appPushToggle').trigger("click");
+      });
+      $('.pro_pop2 .btn22').click(function(){
+        $(".pro_pop2").fadeOut(200);
+      });
+    });
+  </script>
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; position:relative; z-index:1;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; display:block;}
+    .pro_pop {font-size:0; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,.7); z-index:9999; display:none;}    
+    .pro_pop img {width:100%; display:block;}
+    .pro_pop a, .pro_pop button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; display:block;}
+    .pro_pop .pro_pop_con {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);}
+    .pro_pop .pro_pop_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+      .pro_pop .pro_pop_con {width:90%;}
+    }
+  </style>
+  

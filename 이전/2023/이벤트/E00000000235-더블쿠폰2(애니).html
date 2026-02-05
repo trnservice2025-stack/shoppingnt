@@ -1,0 +1,140 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+
+  <div class="base" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311012358&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000235');">
+    <svg stroke="#fff" stroke-linecap="round" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311012358&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000235');">
+      <g class="stage" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311012358&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000235');">
+        <rect width="100%" height="100%" fill="rgba(0,0,0,0)" stroke="none"/>
+      </g>
+      <g class="togglez" style="cursor:pointer;user-select:none">
+        <path d="M100,20 118,20" stroke-width="25"/>
+        <path class="knob" d="M100,20 100,20" stroke-width="20" stroke="#000"/>
+        <text class="txt1" fill="#fff" x="11" y="26">Manual</text>
+        <text class="txt2" fill="#fff" x="144" y="26" opacity="0.3">Auto</text>
+      </g>
+    </svg>
+  </div>
+
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202311012358&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000235');">
+    <img src="https://img.shoppingntmall.com/htmleditor/781/con1692692209453.png">
+  </a>
+  <a class="btn" href="/plan/planshop/swipeDetail/S00000000733">
+    <img src="https://img.shoppingntmall.com/htmleditor/380/btn1692692191855.png">
+    <img src="https://img.shoppingntmall.com/htmleditor/815/arr1692692201529.png" class="ani2">
+  </a>
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; background:#000; overflow:hidden; position:relative;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a {cursor:pointer;}
+
+  .promotion_con_mo>a {position:relative; z-index:9 !important; overflow:hidden; background:none;}
+
+  .base {position:absolute; left:0; top:0; width:100%; height:100%; overflow:hidden; z-index:1 !important; }
+  .base svg {position:absolute; left:0; top:0; width:100%; height:100%; overflow:hidden; font-size:19px; z-index:1 !important; }
+  .base svg .stage {z-index:1 !important; }
+  .base svg .stage g {z-index:1 !important; }
+  .base svg .stage g path {z-index:1 !important; }
+  .base .togglez {display:none;}
+
+  .btn {position:relative; overflow:hidden; background:none;}
+  .btn .ani2 {position:absolute; width:100%; z-index:2; animation: btn 0.8s ease-in-out infinite; bottom:0; left:0; }
+
+  @keyframes base {
+    from {background-position: 0 0;}
+    to {background-position: 0 -9000px;}
+  }
+
+  @keyframes btn {
+    0% {left:-2px}
+    50% {left:0px;}
+    100% {left:-2px;}
+  }
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -46%;}
+  }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+<script type="text/javascript">
+  let auto = false
+  const m = {x:0, y:0},
+        stage = document.querySelector('.stage'),
+        togglez = document.querySelector('.togglez')
+
+  window.onpointerdown = window.onpointermove = (e)=>{
+    m.x = Math.round(e.clientX)
+    m.y = Math.round(e.clientY)
+  }
+
+  stage.onpointerup = (e)=>{
+    gsap.killTweensOf(autoPlay)
+    gsap.killTweensOf(fire)
+    auto = true
+    toggleAuto()
+    fire(m)
+  }
+
+  function fire(m){
+
+    const firework = document.createElementNS('http://www.w3.org/2000/svg', 'g'),
+          trail = document.createElementNS('http://www.w3.org/2000/svg', 'g'),
+          ring = document.createElementNS('http://www.w3.org/2000/svg', 'g'),
+          hsl = 'hsl('+gsap.utils.random(0,360,1)+',100%,50%)'
+
+    stage.appendChild(firework)
+    firework.appendChild(trail)
+    firework.appendChild(ring)
+
+    for (let i=1; i<5; i++){
+      const t = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+      gsap.set(t, {x:m.x, y:innerHeight, opacity:0.25, attr:{'stroke-width':i, d:'M0,0 0,'+innerHeight}})
+      gsap.to(t, {y:m.y, ease:'expo'})// for some reason this can't be combined with the above set() in a fromTo() without generating errors ¯\_(ツ)_/¯
+      trail.appendChild(t)
+    }
+
+    for (let i=1; i<gsap.utils.random(6,13,1); i++){
+      const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+      gsap.set(c, {x:m.x, y:m.y, attr:{class:'core', r:()=>(i/1.5)*18, fill:'none', stroke:hsl, 'stroke-width':()=>0.25+(9-i), 'stroke-dasharray':'1 '+i/2*gsap.utils.random(i+3,i+6)}})
+      ring.appendChild(c)
+    }
+
+    gsap.timeline({onComplete:()=>stage.removeChild(firework)})
+      .to(trail.children, {duration:0.2, attr:{d:'M0,0 0,0'}, stagger:-0.08, ease:'expo.inOut'}, 0)
+      .to(trail.children, {duration:0.4, scale:()=>gsap.utils.random(40,80,1), attr:{stroke:hsl}, stagger:-0.15, ease:'expo'}, 0.4)
+      .to(trail.children, {duration:0.3, opacity:0, ease:'power2.inOut', stagger:-0.1}, 0.5)
+      .from(ring.children, {duration:1, rotate:()=>gsap.utils.random(-90,90,1), scale:0, stagger:0.05, ease:'expo'}, 0.4)
+      .to(ring.children, {opacity:0, stagger:0.1, ease:'sine.inOut'}, 0.7)
+      .to(ring.children, {duration:1, y:'+=30', ease:'power2.in'}, 0.7)
+  }
+
+  togglez.onpointerup = toggleAuto
+
+  function toggleAuto(){
+    auto = !auto
+    gsap.timeline({defaults:{duration:0.3, ease:'power2.inOut'}})
+      .to('.knob', {x:()=>(auto)?18:0}, 0)
+      .to('.txt1', {opacity:(i)=>(auto)?0.3:1}, 0)
+      .to('.txt2', {opacity:(i)=>(auto)?1:0.3}, 0)
+    if (auto) autoPlay()
+    else {
+      gsap.killTweensOf(autoPlay)
+      gsap.killTweensOf(fire)
+    }
+  }
+
+  function autoPlay(){
+    for (let i=0; i<gsap.utils.random(3,9,1); i++){
+      gsap.delayedCall(i/2, fire, [{x:gsap.utils.random(99, innerWidth-99, 1), y:gsap.utils.random(99, innerHeight-99, 1)}])
+    }
+    (auto) ? gsap.delayedCall(3.5,autoPlay) : gsap.killTweensOf(autoPlay)
+  }
+
+  toggleAuto();
+</script>

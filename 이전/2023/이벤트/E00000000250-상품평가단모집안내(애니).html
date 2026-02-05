@@ -1,0 +1,130 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+
+<div class="promotion_con"><div class="promotion_con_mo">
+    
+    <div class="base sday sday9" style="margin-bottom:-1px;" id="gradient">
+        <img src="https://img.shoppingntmall.com/htmleditor/376/spm_011698731812896.png">
+        <div class="ani ani_bg"></div>
+        <img src="https://img.shoppingntmall.com/htmleditor/362/11698732807666.png" class="ani a1">
+        <img src="https://img.shoppingntmall.com/htmleditor/084/21698732814399.png" class="ani a2">
+
+        <img src="https://img.shoppingntmall.com/htmleditor/801/e11698732776388.png" class="ani a3">
+        <img src="https://img.shoppingntmall.com/htmleditor/561/e21698732787902.png" class="ani a4">
+        <img src="https://img.shoppingntmall.com/htmleditor/988/e31698732795393.png" class="ani a5">
+        <img src="https://img.shoppingntmall.com/htmleditor/675/e41698732801783.png" class="ani a6">
+    </div>
+
+    <a href="https://bit.ly/40gOO5K" target="_blank"><img src="https://img.shoppingntmall.com/htmleditor/405/spm_021698731804220.png" alt=""></a>
+
+    <style media="screen">
+        .base {position:relative; overflow:hidden;}
+        .base>img {position:relative; z-index:1;}
+        .base .ani {position:absolute; width:100%; z-index:2;}
+
+        .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 300s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/430/bgg1698732162732.png); background-size:cover;}
+        .a1 {left:0; top:-100%; animation:a1 1s forwards ease-in-out;}
+        .a2 {left:0; bottom:-100%; animation:a2 1s forwards ease-in-out; animation-delay: .4s;}
+
+        .a3 {left:0%; opacity:0; bottom:-10%; animation:a3 1s forwards ease-in-out; animation-delay: .8s;}
+        .a4 {left:0%; opacity:0; bottom:-10%; animation:a3 1s forwards ease-in-out; animation-delay: 1.0s;}
+        .a5 {left:0%; opacity:0; bottom:-10%; animation:a3 1s forwards ease-in-out; animation-delay: 1.2s;}
+        .a6 {left:0%; opacity:0; bottom:-10%; animation:a3 1s forwards ease-in-out; animation-delay: 1.4s;}
+
+        @keyframes ani_bg {
+        from {background-position: 0 0;}
+        to {background-position: 0 -6000px;}
+      }
+
+        @keyframes a1 {
+            0% {top:-100%;}
+            80% {top:5%;}
+            100% {top:0;}
+        }
+        @keyframes a2 {
+            0% {bottom:-100%;}
+            80% {bottom:5%;}
+            100% {bottom:0;}
+        }
+        @keyframes a3 {
+            0% {bottom:-10%; opacity:0;}
+            80% {bottom:3%;}
+            100% {bottom:0; opacity:1;}
+        }        
+    </style>
+
+    <script type="text/javascript">
+      var colors = new Array(
+      [139,104,241],
+      [108,182,200],
+      [139,104,241],
+      [108,182,200]);
+
+      var step = 0;
+      //color table indices for:
+      // current color left
+      // next color left
+      // current color right
+      // next color right
+      var colorIndices = [0,1,2,3];
+
+      //transition speed
+      var gradientSpeed = 0.005;
+
+      function updateGradient()
+      {
+
+        if ( $===undefined ) return;
+
+      var c0_0 = colors[colorIndices[0]];
+      var c0_1 = colors[colorIndices[1]];
+      var c1_0 = colors[colorIndices[2]];
+      var c1_1 = colors[colorIndices[3]];
+
+      var istep = 1 - step;
+      var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+      var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+      var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+      var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+      var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+      var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+      var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+      var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+      $('#gradient').css({
+        background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+          background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+
+        step += gradientSpeed;
+        if ( step >= 1 )
+        {
+          step %= 1;
+          colorIndices[0] = colorIndices[1];
+          colorIndices[2] = colorIndices[3];
+
+          //pick two new target color indices
+          //do not pick the same as the current one
+          colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+          colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+
+        }
+      }
+
+      setInterval(updateGradient,10);
+    </script>
+  
+       
+  </div></div>  
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con .w50 {width:50%; display:inline-block;}
+    .promotion_con a {background:none; cursor:pointer;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}  
+      
+    }
+  </style>

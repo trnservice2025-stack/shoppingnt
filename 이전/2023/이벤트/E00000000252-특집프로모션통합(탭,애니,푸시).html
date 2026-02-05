@@ -1,0 +1,356 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<header class="fake_head">헤더</header><div class="fake_div" style="height:174px;"></div> -->
+<div class="promotion_con">
+    <div class="promotion_con_mo"><div style="position:relative;">
+        <img src="https://img.shoppingntmall.com/htmleditor/754/ttj_011698715238628.jpg">
+        <canvas id="canvas"></canvas>
+        <div class="buttonContainer" style="display:none;">
+            <button class="canvasBtn" id="stopButton">Stop Confetti</button>
+            <button class="canvasBtn" id="startButton">Drop Confetti</button>	
+        </div>
+    </div></div>
+    <div class="promotion_tab_wrap">
+      <div class="promotion_tab">
+        <a href="#pro_tab1" class="tab1">1</a>
+        <a href="#pro_tab2" class="tab2">2</a>
+        <a href="#pro_tab3" class="tab3">3</a>
+      </div>
+    </div>
+    <div id="pro_tab1" class="promotion_con_mo"><div>
+        <a onclick="wepApp()"><img src="https://img.shoppingntmall.com/htmleditor/474/sss1699577074376.jpg" alt=""></a>
+    </div></div>
+
+	<!-- 수신동의영역 --><div class="toggle_an"></div>
+
+    <div id="pro_tab2" class="promotion_con_mo"><div>
+        <img src="https://img.shoppingntmall.com/htmleditor/555/ttj_041698715259568.jpg" alt="">
+    </div></div>
+
+    <div id="pro_tab3" class="promotion_con_mo"><div>
+        <img src="https://img.shoppingntmall.com/htmleditor/973/ttj_051698715268213.jpg" alt="">          
+    </div></div>
+</div>
+
+<style>
+    .fake_head {height:174px; width:100%; position:fixed; top:0; left:0; background:#fff; z-index:997;}
+    .fake_head.fixed {height:74px;}
+    .img-wrap .fake_head, .img-wrap .fake_div, .exhibi-detail-img-link .fake_head, .exhibi-detail-img-link .fake_div {display:none !important;}
+
+    #canvas {position:absolute; left:0; top:0; width:auto; height:100%; transform:scale(2)}
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con img {width:100%; vertical-align:middle;}
+    .promotion_con .w50 {width:50%; display:inline-block;}
+    .promotion_con a {cursor:pointer;}
+    .promotion_con a, .promotion_con img {background:none;}
+    .promotion_con_mo {overflow:hidden;}
+    
+    .promotion_tab_wrap {position:sticky; top:74px; padding: 0 20%; z-index:3; overflow:hidden; background:#160534;}
+    .promotion_tab {margin:0 auto; display:table; width:100%; text-align:center; table-layout: fixed; z-index:998; min-height:99px;}
+    .promotion_tab a {position:relative;cursor:pointer; height:150px; display:table-cell; vertical-align:middle; font-weight:700; flex:1; text-decoration:none; text-indent:-9999px; background-repeat:no-repeat; background-position:center; position:relative; z-index:2;}
+    .promotion_tab a:nth-child(2):after {background:#6a6993; width:1px; height:50%; position:absolute; left:0px; top:25%; display:block; content:"";}
+    .promotion_tab a:nth-child(2):before {background:#6a6993; width:1px; height:50%; position:absolute; right:0px; top:25%; display:block; content:"";}
+    .promotion_tab a img {width:auto; display:inline-block; max-width:100%;}
+    .promotion_tab a.on:after, .promotion_tab a.on:before {display:none;}
+
+    .promotion_tab a.tab1 {background-image:url("https://img.shoppingntmall.com/htmleditor/371/t11696572751612.png");}
+    .promotion_tab a.tab2 {background-image:url("https://img.shoppingntmall.com/htmleditor/613/t21696572822063.png");}
+    .promotion_tab a.tab3 {background-image:url("https://img.shoppingntmall.com/htmleditor/885/t31696572829628.png");}
+    .promotion_tab a.on {background-color:#5325a9;}
+
+    @media screen and (max-width:1200px) {
+        .promotion_tab_wrap {padding: 0 0;}
+		#canvas {transform:scale(1); width:100%; height:auto;}
+    }
+
+    @media screen and (max-width:720px) {
+        
+        .promotion_con_mo>div {margin:0 -33.33%;}
+        #canvas {width:70%; left:15%; height:auto;}
+
+        .fake_head {height:100px;}
+        .fake_head.fixed {height:50px;}
+
+        .promotion_tab_wrap {top:49px;}
+        .promotion_tab {min-height:57px;}
+        .promotion_tab a.tab1, .promotion_tab a.tab2, .promotion_tab a.tab3, .promotion_tab a.tab4 {background-size:auto 125%;}
+        .promotion_tab a {height:80px; }
+    }
+</style>
+<script>
+	//앱 다운로드
+    function wepApp() {
+        if(isApp()) {
+			if($('input[name="togle_apppush"]').is(":checked") == true){
+				alert("응모 완료되었습니다!");
+			} else {				
+				document.getElementById('appPushToggle').click();		
+				setTimeout(function() {
+					alert("응모 완료되었습니다!");
+				}, 2000);				
+			}
+        } else {
+            alert("모바일 앱에서만 응모가능합니다.");			
+        }
+    }    
+    /* App 여부 */
+    function isApp(){
+        return DEVICECD === "03";
+    }
+  $(function(){   
+	//수신동의 위치 이동
+	$('.toggle-area').appendTo(".toggle_an");
+
+	//수신동의 클릭
+	$('.zzz').click(function(){
+		$('#appPushToggle').trigger("click");
+	});    
+
+    $('.promotion_tab_wrap').css("top", $("header").height());
+
+    $(window).scroll(function() {
+        var headh = $("header").height();
+        var tabh = $(".promotion_tab").height();
+        var pos = $(window).scrollTop();
+        var pos2 = pos + headh + tabh + 1;
+
+        // 고정된 헤더 클래스 추가/제거
+        $('.fake_head').toggleClass('fixed', $(document).scrollTop() > 30);
+
+        // 탭 클릭 시 해당 영역으로 스크롤 애니메이션
+        $('.promotion_tab a').click(function() {
+            var target = $($.attr(this, 'href'));
+            $("html, body").stop().animate({
+                scrollTop: target.offset().top - headh - tabh + 1
+            }, 500);
+            return false;
+        });
+
+        // 탭 활성화 함수 호출
+        highlightLink();
+
+        // 탭 고정 위치 설정
+        $('.promotion_tab_wrap').css("top", headh - 1);
+
+        function highlightLink() {
+            $('.promotion_tab a').each(function() {
+                var anchor = $(this).attr('href').substring(1); // # 제거
+                if (pos2 > $('#' + anchor).offset().top) {
+                    $('.promotion_tab a.on').removeClass('on');
+                    $(this).addClass('on');
+                }
+            });
+        }
+    });
+
+    //페이지 로드시 스크롤 살짝
+    var zscrollTop = window.scrollY || document.documentElement.scrollTop;
+    $('html, body').animate({scrollTop: zscrollTop + 1}, '0');
+
+  });
+</script>
+
+<script>
+	(function () {
+		// globals
+		var canvas;
+		var ctx;
+		var W;
+		var H;
+		var mp = 150; //max particles
+		var particles = [];
+		var angle = 0;
+		var tiltAngle = 0;
+		var confettiActive = true;
+		var animationComplete = true;
+		var deactivationTimerHandler;
+		var reactivationTimerHandler;
+		var animationHandler;
+		// objects
+		var particleColors = {
+			colorOptions: ["#a78e53", "#c4b19a", "#e0a837", "#c49121", "#ead37f", "#efe26f"],
+			colorIndex: 0,
+			colorIncrementer: 0,
+			colorThreshold: 10,
+			getColor: function () {
+				if (this.colorIncrementer >= 10) {
+					this.colorIncrementer = 0;
+					this.colorIndex++;
+					if (this.colorIndex >= this.colorOptions.length) {
+						this.colorIndex = 0;
+					}
+				}
+				this.colorIncrementer++;
+				return this.colorOptions[this.colorIndex];
+			}
+		}
+		function confettiParticle(color) {
+			this.x = Math.random() * W; // x-coordinate
+			this.y = (Math.random() * H) - H; //y-coordinate
+			this.r = RandomFromTo(10, 15); //radius;
+			this.d = (Math.random() * mp) + 10; //density;
+			this.color = color;
+			this.tilt = Math.floor(Math.random() * 10) - 10;
+			this.tiltAngleIncremental = (Math.random() * 0.07) + .05;
+			this.tiltAngle = 0;
+			this.draw = function () {
+				ctx.beginPath();
+				ctx.lineWidth = this.r / 2;
+				ctx.strokeStyle = this.color;
+				ctx.moveTo(this.x + this.tilt + (this.r / 4), this.y);
+				ctx.lineTo(this.x + this.tilt, this.y + this.tilt + (this.r / 4));
+				return ctx.stroke();
+			}
+		}
+		$(document).ready(function () {
+			SetGlobals();
+			InitializeButton();
+			//InitializeConfetti();
+			$(window).resize(function () {
+				W = window.innerWidth;
+				H = window.innerHeight;
+				canvas.width = W;
+				canvas.height = H;
+			});
+		});
+		function InitializeButton() {
+			$('#stopButton').click(DeactivateConfetti);
+			$('#startButton').click(RestartConfetti);
+		}
+		function SetGlobals() {
+			canvas = document.getElementById("canvas");
+			ctx = canvas.getContext("2d");
+			W = window.innerWidth;
+			H = window.innerHeight;
+			canvas.width = W;
+			canvas.height = H;
+		}
+		function InitializeConfetti() {
+			particles = [];
+			animationComplete = false;
+			for (var i = 0; i < mp; i++) {
+				var particleColor = particleColors.getColor();
+				particles.push(new confettiParticle(particleColor));
+			}
+			StartConfetti();
+		}
+		function Draw() {
+			ctx.clearRect(0, 0, W, H);
+			var results = [];
+			for (var i = 0; i < mp; i++) {
+				(function (j) {
+					results.push(particles[j].draw());
+				})(i);
+			}
+			Update();
+			return results;
+		}
+		function RandomFromTo(from, to) {
+			return Math.floor(Math.random() * (to - from + 1) + from);
+		}
+		function Update() {
+			var remainingFlakes = 0;
+			var particle;
+			angle += 0.01;
+			tiltAngle += 0.1;
+			for (var i = 0; i < mp; i++) {
+				particle = particles[i];
+				if (animationComplete) return;
+
+				if (!confettiActive && particle.y < -15) {
+					particle.y = H + 100;
+					continue;
+				}
+				stepParticle(particle, i);
+				if (particle.y <= H) {
+					remainingFlakes++;
+				}
+				CheckForReposition(particle, i);
+			}
+			if (remainingFlakes === 0) {
+				StopConfetti();
+			}
+		}
+		function CheckForReposition(particle, index) {
+			if ((particle.x > W + 20 || particle.x < -20 || particle.y > H) && confettiActive) {
+				if (index % 5 > 0 || index % 2 == 0) //66.67% of the flakes
+				{
+					repositionParticle(particle, Math.random() * W, -10, Math.floor(Math.random() * 10) - 20);
+				} else {
+					if (Math.sin(angle) > 0) {
+						//Enter from the left
+						repositionParticle(particle, -20, Math.random() * H, Math.floor(Math.random() * 10) - 20);
+					} else {
+						//Enter from the right
+						repositionParticle(particle, W + 20, Math.random() * H, Math.floor(Math.random() * 10) - 20);
+					}
+				}
+			}
+		}
+		function stepParticle(particle, particleIndex) {
+			particle.tiltAngle += particle.tiltAngleIncremental;
+			particle.y += (Math.cos(angle + particle.d) + 3 + particle.r / 2) / 3;
+			particle.x += Math.sin(angle);
+			particle.tilt = (Math.sin(particle.tiltAngle - (particleIndex / 3))) * 15;
+		}
+		function repositionParticle(particle, xCoordinate, yCoordinate, tilt) {
+			particle.x = xCoordinate;
+			particle.y = yCoordinate;
+			particle.tilt = tilt;
+		}
+		function StartConfetti() {
+			W = window.innerWidth;
+			H = window.innerHeight;
+			canvas.width = W;
+			canvas.height = H;
+			(function animloop() {
+				if (animationComplete) return null;
+				animationHandler = requestAnimFrame(animloop);
+				return Draw();
+			})();
+		}
+		function ClearTimers() {
+			clearTimeout(reactivationTimerHandler);
+			clearTimeout(animationHandler);
+		}
+		function DeactivateConfetti() {
+			confettiActive = false;
+			ClearTimers();
+		}
+		function StopConfetti() {
+			animationComplete = true;
+			if (ctx == undefined) return;
+			ctx.clearRect(0, 0, W, H);
+		}
+		function RestartConfetti() {
+			ClearTimers();
+			StopConfetti();
+			reactivationTimerHandler = setTimeout(function () {
+				confettiActive = true;
+				animationComplete = false;
+				InitializeConfetti();
+			}, 100);
+		}
+		window.requestAnimFrame = (function () {
+			return window.requestAnimationFrame || 
+			window.webkitRequestAnimationFrame || 
+			window.mozRequestAnimationFrame || 
+			window.oRequestAnimationFrame || 
+			window.msRequestAnimationFrame || 
+			function (callback) {
+				return window.setTimeout(callback, 1000 / 60);
+			};
+		})();
+	})();
+</script>
+<script>
+	$(document).ready(function(){  
+		function reAction(){
+			$("#startButton").trigger("click");
+			setTimeout(function(){
+				$("#stopButton").trigger("click");
+			}, 6000);
+		}  
+		reAction(); 
+	});
+</script>

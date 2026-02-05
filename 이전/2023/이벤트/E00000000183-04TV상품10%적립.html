@@ -1,0 +1,101 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="pday pday4">
+    <!-- 4월 -->
+    <a onclick="goAppDown()" style="width:100%;">
+      <div class="base1">
+        <img src="https://img.shoppingntmall.com/htmleditor/064/11680483042237.png" class="base2">
+        <img src="https://img.shoppingntmall.com/htmleditor/738/ani1680483050729.png" class="ani down">
+      </div>
+    </a>
+    <a href="/category/g-list-cate/90000352"><img src="https://img.shoppingntmall.com/htmleditor/688/pp_021680481636156.png"></a>
+    <a href="/category/g-list-cate/90000351"><img src="https://img.shoppingntmall.com/htmleditor/749/pp_031680481644756.png"></a>
+    <a href="/category/g-list-cate/90000356"><img src="https://img.shoppingntmall.com/htmleditor/123/pp_041680481652258.png"></a>
+  </div>
+</div></div>
+<style>
+  .base1 {position:relative; overflow:hidden; display:block;}
+  .base2 {position:relative; z-index:1;}
+  .ani {position:absolute; width:100%; left:0; z-index:2;}
+  .down {bottom:0; animation: down 1.5s ease-in-out infinite; }
+
+  @keyframes down {
+    0% {bottom:-2px;}
+    50% {bottom:2px;}
+    100% {bottom:-2px;}
+  }
+
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%;}
+  .promotion_con img {width:100%; vertical-align:middle;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+<script>
+  //시간 체크 출력
+  var Now = new Date(); //현재 날짜 및 시간
+  var nowY = Now.getFullYear(); //년
+  var nowM = Now.getMonth() + 1; //월
+  var nowD = Now.getDate(); //일
+  var nowH = Now.getHours(); //시
+  var nowB = Now.getMinutes(); //분   
+  function pluszero(time){
+    var time = time.toString(); // 시간을 숫자에서 문자로 바꿈
+    if(time.length < 2){ //2자리 보다 작으면
+      time = '0' + time; //숫자앞 0 붙임
+      return time; //값 내보냄
+    }else{
+      return time; //2자리면 값 내보냄
+    }
+  }
+  //만든 함수 적용 
+  nowM = pluszero(nowM); 
+  nowD = pluszero(nowD);
+  nowH = pluszero(nowH);
+  nowB = pluszero(nowB);   
+  var nowT = nowY + nowM + nowD + nowH + nowB; // 월+일+시+분
+  if(202303010000 <= nowT ){$(".pday").hide();$(".pday3").show();}
+  if(202304010000 <= nowT ){$(".pday").hide();$(".pday4").show();}
+</script>
+<script type="text/javascript">
+  // 앱 다운로드
+  function goAppDown() {
+    if(isIOSWeb() === 1) {
+      window.open('https://itunes.apple.com/kr/app/syoping-ent/id1004806037?mt=8', '_blank')
+    } else {
+      //window.open('http://play.google.com/store/apps/details?id=com.shoppingntmall.mcapp', '_blank');
+      alert("모바일 웹에서 이용 가능합니다.");
+    }
+  }
+  /* IOS Web 여부 */
+  function isIOSWeb(){
+  	var mobileKeyWords = new Array('iPhone', 'iPod','iPad');
+  	var iosYn = 0;
+  	for (var i = 0 ; i < mobileKeyWords.length ; i++){
+  		//모바일 디바이스로 접속일때
+  		if (navigator.userAgent.match(mobileKeyWords[i]) != null){
+  			iosYn = 1;
+  		}
+  	}
+  	return iosYn;
+  }
+  /* IOS 여부 */
+  function isIOS(){
+    return isApp() && OSCD === "02";
+  }
+  /* Android 여부 */
+  function isAndroid(){
+    return isApp() && OSCD === "01";
+  }
+  /* App 여부 */
+  function isApp(){
+    return DEVICECD === "03";
+  }
+  /* PC Web 여부 */
+  function isPcWeb(){
+    return DEVICECD === "01";
+  }
+</script>

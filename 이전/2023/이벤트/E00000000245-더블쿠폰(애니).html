@@ -1,0 +1,40 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+    <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202309151372&rUrl=/plan/event/swipeDetail/E00000000245');">
+      <!-- <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202309151372&cFlag=P&rUrl=/plan/event/swipeDetail/E00000000245');"> -->
+        <img src="https://img.shoppingntmall.com/htmleditor/264/con1692691687430.png">
+      </a>
+      <a class="btn" href="/plan/planshop/swipeDetail/S00000000696">
+        <img src="https://img.shoppingntmall.com/htmleditor/694/btn1692691844696.png">
+        <img src="https://img.shoppingntmall.com/htmleditor/083/arr1692691728865.png" class="ani2">
+      </a>
+    </div>
+  </div></div>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a {cursor:pointer;}
+  
+    .base {position:relative; animation:base 500s linear infinite; display:block; background:url(https://img.shoppingntmall.com/htmleditor/191/bg1692689616212.png); background-size:cover; overflow:hidden; z-index:2;}
+  
+    .btn {position:relative; overflow:hidden; background:none;}
+    .btn .ani2 {position:absolute; width:100%; z-index:2; animation: btn 0.8s ease-in-out infinite; top:0; left:0; }
+  
+    @keyframes base {
+      from {background-position: 0 0;}
+      to {background-position: 0 -9000px;}
+    }
+  
+    @keyframes btn {
+      0% {left:-2px}
+      50% {left:0px;}
+      100% {left:-2px;}
+    }
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -46%;}
+    }
+  </style>

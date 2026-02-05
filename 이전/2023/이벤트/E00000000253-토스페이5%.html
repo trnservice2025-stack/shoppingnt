@@ -1,0 +1,35 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/245/tt1699606182777.png">
+      <img src="https://img.shoppingntmall.com/htmleditor/624/app1693299435602.png" class="ani ani1">
+      <img src="https://img.shoppingntmall.com/htmleditor/875/cash1693299425851.png" class="front">
+    </div>
+    <!-- 하단 -->
+    <img src="https://img.shoppingntmall.com/htmleditor/235/final1703229434687.jpg">
+  </div></div>
+  
+  <style media="screen">
+    .base {position:relative; overflow:hidden;}
+    .base>img {position:relative; z-index:1;}
+    .base .front {position:absolute; left:0; top:0; width:100%; z-index:3;}
+    .base .ani {position:absolute; width:100%; z-index:2;}
+    .ani1 {left:0; top:0; animation:ani1 1.5s infinite ease-in-out; animation-delay: .3s; transform-origin: center center;}
+  
+    @keyframes ani1 {
+      0% {transform:rotate(3deg);}
+      50% {transform:rotate(0deg);}
+      100% {transform:rotate(3deg);}
+    }
+  </style>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
