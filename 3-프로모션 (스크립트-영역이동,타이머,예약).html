@@ -1,0 +1,170 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<script>
+  $(window).resize(function() {
+    if($(window).width() > 768) { $(".ska2").attr("href","https://www.shoppingntmall.com/assets/css/common.css"); }
+    else { $(".ska2").attr("href","https://m.shoppingntmall.com/moassets/css/common.css"); }
+  });
+</script> 
+
+<!-- S 기본폼 -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    내용
+</div></div>
+<style>
+	.promotion_con, .promotion_con-wrap * {line-height:initial;}
+	.promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+	.promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+	.promotion_con img {width:100%; display:block;}
+	.promotion_con a {background:none; cursor:pointer;}
+	.promotion_con a, .promotion_con img {background:none;}
+
+	@media screen and (max-width:720px)  {
+		.promotion_con {overflow:hidden;}
+		.promotion_con_mo {margin:0 -33.33%;}
+	}
+</style>
+<!-- E 기본폼 -->
+
+<!-- S 위치 이동 -->
+<!-- 수신동의 영역 --><div class="toggle_an"></div>
+<!-- 쿠폰다운 영역 --><div class="coupon_an"></div>
+<!-- 유의사항 영역 --><div class="acco_an"></div>
+<div class="toggle-area">수신동의</div>
+<div class="coupon-wrap">쿠폰다운PC</div>
+<div class="exhibi-coupon-list">쿠폰다운MO</div>
+<div class="acco-wrap plan">유의사항PC</div>
+<div class="notice-fold">유의사항MO</div>
+
+<!-- 이런 상품은 어떠세요 영역 삭제 -->
+<style>
+	#search_eigen_area, #search_eigen_swiper {display:none !important;}
+</style>
+
+<script>
+	// $(function () {
+	// 	//수신동의 이동
+	// 	$('.toggle-area').appendTo(".toggle_an");
+	// 	//유의사항 이동
+	// 	$('.acco-wrap.plan').appendTo(".acco_an");
+	// 	$('.notice-fold').appendTo(".acco_an");
+	// 	//쿠폰다운 이동
+	// 	$('.coupon-wrap').appendTo(".coupon_an");
+	// 	$('.exhibi-coupon-list').appendTo(".coupon_an");		   
+	// });
+
+  //수신동의 이동
+	document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle_an')?.appendChild(document.querySelector('.toggle-area')));
+
+	//쿠폰다운 이동
+	//document.addEventListener("DOMContentLoaded", () => ['.toggle-area', '.exhibi-coupon-list'].forEach(e => document.querySelector('.coupon_an')?.appendChild(document.querySelector(e))));
+	document.addEventListener("DOMContentLoaded", () => document.querySelector('.coupon_an')?.appendChild(document.querySelector('.toggle-area')));
+	document.addEventListener("DOMContentLoaded", () => document.querySelector('.coupon_an')?.appendChild(document.querySelector('.exhibi-coupon-list')));
+
+  //유의사항 이동
+	//document.addEventListener("DOMContentLoaded", () => ['.acco-wrap.plan', '.notice-fold'].forEach(e => document.querySelector('.acco_an')?.appendChild(document.querySelector(e))));
+	document.addEventListener("DOMContentLoaded", () => document.querySelector('.acco_an')?.appendChild(document.querySelector('.acco-wrap.plan')));
+	document.addEventListener("DOMContentLoaded", () => document.querySelector('.acco_an')?.appendChild(document.querySelector('.notice-fold')));
+
+	//로그인/미로그인 체크	
+	if(ISLOGIN != 'Y'){
+		//미로그인 시              
+	} else { 
+		//로그인 시
+	}
+
+	//앱/웹 체크
+	if(isApp()) { 
+		//앱일 경우
+		$('.isApp').hide();
+	} else { 
+		//웹일 경우
+		$('.isApp').show();
+	}   
+</script>
+<!-- E 위치 이동 -->
+
+
+<!-- S 예약 -->
+<div class="sday sday1">sday1</div>
+<div class="sday sday2">sday2</div>
+<script>
+  //예약
+	const nowD = new Date();
+	const formatDate = (value) => String(value).padStart(2, '0');
+	const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+	const nowT = formatDateTime(nowD);
+	const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+	hideS();
+	if ('2023-11-27 09:14:40' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+	if ('2023-11-27 09:14:40' <= nowT) { hideS(); document.querySelectorAll('.sday1, .sday2').forEach(e => e.style.display = 'block');}
+	if ('2023-11-27 09:20:40' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+</script>
+<!-- E 예약 -->
+
+
+<!-- S 타이머 -->
+<div class="dday_wrap">
+    <div class="dday_con">
+        <div class="dday_d">0</div>
+        <div class="dday_s1"></div>
+        <div class="dday_s2"></div>
+        <div class="dday_s3"></div>
+    </div>
+    <div class="dday_end">이벤트가 종료되었습니다.</div>
+</div>
+<style>
+	.dday_wrap {}
+	.dday_con {font-size:0;}
+	.dday_con>div {display:inline-block; width:30px; height:30px; line-height:30px; font-size:20px; text-align:center;}
+	.dday_d {}
+	.dday_s1 {}
+	.dday_s2 {}
+	.dday_s3 {}
+	.dday_end {font-size:20px; }
+</style>
+<script>
+	//타이머
+	const dday_d = document.querySelector(".dday_d");
+	const dday_s1 = document.querySelector(".dday_s1");
+	const dday_s2 = document.querySelector(".dday_s2");
+	const dday_s3 = document.querySelector(".dday_s3");
+
+	function updateTimer() {
+		const targetDate = new Date("2023-11-26T23:59:59+0900");
+		const currentDate = new Date();
+		const timeDifference = Math.max(targetDate - currentDate, 0);
+
+		const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+		const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+		const seconds = Math.floor((timeDifference / 1000) % 60);
+
+		dday_d.textContent = `${days}`;
+		[dday_s1, dday_s2, dday_s3].forEach((element, index) => {
+			element.textContent = `${String([hours, minutes, seconds][index]).padStart(2, '0')}`;
+		});
+
+		document.querySelector(".dday_end").style.display = 'none';
+		if (currentDate > targetDate) {
+			document.querySelectorAll(".dday_con").forEach(element => element.style.display = 'none');
+			document.querySelector(".dday_end").style.display = 'block';
+		}
+	}
+
+	function startTimer() {
+		updateTimer();
+		setInterval(updateTimer, 1000);
+	}
+
+	startTimer();
+
+	const txt = dday_d.textContent;
+	const fString = "0";
+	if (txt.indexOf(fString) !== -1) {
+		dday_d.remove();
+	}
+</script>
+<!-- E 타이머 -->

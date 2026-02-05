@@ -1,0 +1,597 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style>
+	body {
+		min-width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+</style>
+
+<div style="max-width:720px; margin:0 auto;">
+	<div class="bbob-wrap">
+		<div class="bbob-ani">
+			<!-- <img src="https://img.shoppingntmall.com/htmleditor/317/tit1744248189329.png" alt="뽑기 이벤트" class="base">  -->
+			<img src="https://img.shoppingntmall.com/htmleditor/048/test1744259682070.png" alt="뽑기 이벤트" class="base">
+			<img src="https://img.shoppingntmall.com/htmleditor/796/tttt1744260921936.png" class="a1" alt="">
+			<!-- <img src="https://img.shoppingntmall.com/htmleditor/385/cover1744251190554.png" class="a2"> -->
+			<!-- <video class="responsive-video" src="https://img.shoppingntmall.com/htmleditor/317/tit1744248188041.mp4" autoplay muted playsinline></video> -->
+			<video class="responsive-video" src="https://img.shoppingntmall.com/htmleditor/048/test1744259678801.mp4"
+				autoplay="" muted="" playsinline=""></video>
+		</div>
+		<div class="bbob-event">
+
+			<button type="button" class="bbob-event-start"><img
+					src="https://img.shoppingntmall.com/htmleditor/796/bbbbb1744260917958.png" alt="뽑기 이벤트"></button>
+
+
+
+
+			<div class="bbob-move">
+				<a href="/mypage/mymain">당첨 선물 보러가기</a>
+				<button type="button">이벤트 공유하기</button>
+			</div>
+		</div>
+	</div>
+	<div class="bbob-wrap">
+		<div>
+			<img src="https://img.shoppingntmall.com/htmleditor/101/last1744260752033.jpg" alt="이벤트 정보">
+		</div>
+	</div>
+</div>
+<div class="pop-bbob" style="display: none;">
+	<div class="pop-bbob-con" style="display: block;">
+		<img src="https://img.shoppingntmall.com/htmleditor/100/50001744264805955.png" alt="적립금 5,000원">
+		<div class="pop-bbob-btn">
+			<button type="button"><img src="https://img.shoppingntmall.com/htmleditor/353/11744265443446.png"
+					alt="닫기"></button>
+			<button type="button"><img src="https://img.shoppingntmall.com/htmleditor/353/21744265443902.png"
+					alt="확인"></button>
+		</div>
+	</div>
+</div>
+<style>
+	/* 이벤트 - 뽑기 (단일) */
+	.bbob-wrap {
+		overflow: hidden;
+	}
+
+	.bbob-wrap>div {
+		margin: 0 -33.33%;
+	}
+
+	.bbob-wrap img {
+		width: 100%;
+	}
+
+	.bbob-ani {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.bbob-ani>img {
+		position: absolute;
+		width: 100%;
+	}
+
+	.bbob-ani .base {
+		position: relative;
+		z-index: 1;
+	}
+
+	.bbob-ani .ani1 {
+		z-index: 2;
+		top: 0;
+		left: 0;
+		animation: bbob-ani1 500s linear infinite;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url("/moassets/images/_temp/bbob_a1.png");
+		background-size: cover;
+	}
+
+	.bbob-ani .ani2 {
+		z-index: 3;
+		top: 0;
+		left: 0;
+		animation: bbob-ani2 1.5s ease-in-out forwards;
+		animation-delay: .3s;
+		top: -100%;
+	}
+
+	.bbob-ani .ani3 {
+		z-index: 4;
+		top: 0;
+		left: 0;
+		animation: bbob-ani2 1.5s ease-in-out forwards;
+		animation-delay: .6s;
+		top: -100%;
+	}
+
+	.bbob-ani .ani4 {
+		z-index: 5;
+		bottom: 0;
+		left: 0;
+		animation: bbob-ani4 1.5s ease-in-out forwards;
+		animation-delay: .9s;
+		bottom: -100%;
+	}
+
+	.bbob-ani .ani5 {
+		z-index: 6;
+		bottom: 0;
+		left: 0;
+		animation: bbob-ani4 1.5s ease-in-out forwards;
+		animation-delay: 1.2s;
+		bottom: -100%;
+	}
+
+	.bbob-ani .ani6 {
+		z-index: 7;
+		bottom: 0;
+		left: 0;
+		animation: bbob-ani4 1.5s ease-in-out forwards;
+		animation-delay: 1.5s;
+		bottom: -100%;
+	}
+
+	.bbob-ani .ani7 {
+		z-index: 8;
+		top: 0;
+		left: 0;
+		animation: bbob-ani7 1.4s ease-in-out forwards;
+		animation-delay: 1.8s;
+		top: 0;
+		opacity: 0;
+	}
+
+	@keyframes bbob-ani1 {
+		from {
+			background-position: 0 -5000px;
+		}
+
+		to {
+			background-position: 0 0;
+		}
+	}
+
+	@keyframes bbob-ani2 {
+		0% {
+			top: -100%;
+		}
+
+		80% {
+			top: 5%;
+		}
+
+		100% {
+			top: 0;
+		}
+	}
+
+	@keyframes bbob-ani4 {
+		0% {
+			bottom: -100%;
+		}
+
+		80% {
+			bottom: 1%;
+		}
+
+		100% {
+			bottom: 0;
+		}
+	}
+
+	@keyframes bbob-ani7 {
+		0% {
+			top: 0;
+			opacity: 0;
+		}
+
+		30% {
+			top: 0;
+			opacity: 1;
+		}
+
+		80% {
+			top: -3%;
+			opacity: 1;
+		}
+
+		100% {
+			top: 0%;
+			opacity: 1;
+		}
+	}
+
+	.bbob-event {
+		position: relative;
+	}
+
+	.bbob-event a,
+	.bbob-event button {
+		cursor: pointer;
+	}
+
+	.bbob-move {
+		position: absolute;
+		bottom: 0;
+		font-size: 0;
+		left: 0;
+		width: 100%;
+		height: 18%;
+	}
+
+	.bbob-move a,
+	.bbob-move button {
+		width: 50%;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+		text-indent: -9999px;
+		background: none;
+	}
+
+	.pop-bbob {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		z-index: 999999;
+		display: none;
+	}
+
+	.pop-bbob:after {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background: rgba(0, 0, 0, .5);
+		content: '';
+		display: block;
+	}
+
+	.pop-bbob-con {
+		position: absolute;
+		z-index: 2;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		top: 50%;
+		width: 90%;
+		max-width: 630px;
+		border-radius: 10px;
+		display: none;
+	}
+
+	.pop-bbob-con:before {
+		animation: sparkle 4s infinite linear;
+		background: linear-gradient(90deg, #7FEFBD 0%, #FFF689 11%, #EC0B43 22%, #7FEFBD 33%, #FFF689 44%, #EC0B43 55%, #7FEFBD 66%, #FFF689 77%, #EC0B43 88%, #7FEFBD 100%);
+		background-size: 300% 100%;
+		content: '';
+		position: absolute;
+		left: -1%;
+		top: -2%;
+		width: 102%;
+		height: 103%;
+		border-radius: 4px;
+		filter: blur(3px);
+		z-index: -1;
+		transform: scale(0.99) translateY(3px);
+		border-radius: 3%;
+	}
+
+	@keyframes sparkle {
+		from {
+			background-position: 0% 100%;
+		}
+
+		to {
+			background-position: 200% 100%;
+		}
+	}
+
+	.pop-bbob-btn {
+		font-size: 0;
+		overflow: hidden;
+		border-radius: 0 0 10px 10px;
+	}
+
+	.pop-bbob-btn button,
+	.pop-bbob-btn a {
+		width: 50%;
+		display: inline-block;
+	}
+
+	.bbob-wrap.r-1 .bbob-move {
+		height: 24%;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .over {
+		z-index: 13;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani [class*=bbob1-ani] {
+		left: 0;
+		top: 0;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani1 {
+		z-index: 3;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani2 {
+		z-index: 4;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani3 {
+		z-index: 5;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani4 {
+		z-index: 6;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani5 {
+		z-index: 7;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani6 {
+		z-index: 8;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani7 {
+		z-index: 9;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani8 {
+		z-index: 10;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani9 {
+		z-index: 11;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani10 {
+		z-index: 12;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani11 {
+		z-index: 13;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani .bbob1-ani12 {
+		z-index: 14;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani1 {
+		animation: bbob1-ani1 .8s ease forwards;
+		animation-delay: .3s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani2 {
+		animation: bbob1-ani2 .8s ease-in-out forwards;
+		animation-delay: .4s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani3 {
+		animation: bbob1-ani1 .8s ease-out forwards;
+		animation-delay: .2s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani4 {
+		animation: bbob1-ani2 .8s linear forwards;
+		animation-delay: .1s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani5 {
+		animation: bbob1-ani1 .8s ease-in-out forwards;
+		animation-delay: .3s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani6 {
+		animation: bbob1-ani2 .8s ease-out forwards;
+		animation-delay: .2s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani7 {
+		animation: bbob1-ani1 .8s ease-in-out forwards;
+		animation-delay: .1s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani8 {
+		animation: bbob1-ani2 .8s ease forwards;
+		animation-delay: .2s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani9 {
+		animation: bbob1-ani1 .8s ease-in-out forwards;
+		animation-delay: .3s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani10 {
+		animation: bbob1-ani2 .8s ease-out forwards;
+		animation-delay: .4s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani11 {
+		animation: bbob1-ani1 .8s linear forwards;
+		animation-delay: .3s;
+	}
+
+	.bbob-wrap.r-1 .bbob-ani.on .bbob1-ani12 {
+		animation: bbob1-ani2 .8s ease-in-out forwards;
+		animation-delay: .1s;
+	}
+
+	@keyframes bbob1-ani1 {
+		0% {
+			left: 0%;
+			top: 0%;
+		}
+
+		25% {
+			left: 2%;
+			top: 1%;
+		}
+
+		50% {
+			left: -2%;
+			top: -2%;
+		}
+
+		75% {
+			left: -1%;
+			top: 2%;
+		}
+
+		100% {
+			left: 0;
+			top: 0;
+		}
+	}
+
+	@keyframes bbob1-ani2 {
+		0% {
+			left: 0%;
+		}
+
+		25% {
+			left: -2%;
+		}
+
+		50% {
+			left: 2%;
+		}
+
+		75% {
+			left: -1%;
+		}
+
+		100% {
+			left: 0;
+		}
+	}
+
+	.bbob-wrap {
+		position: relative;
+	}
+
+	.bbob-wrap .bbob-move {
+		height: 45%;
+	}
+
+	.toggle-area {
+		background: #e04899;
+		color: #fff;
+	}
+
+	.bbob-wrap>.bbob-ani,
+	.bbob-wrap>.bbob-event {
+		margin: 0;
+	}
+
+	.bbob-event {
+		position: absolute;
+		bottom: 0;
+		z-index: 5;
+		width: 100%;
+	}
+
+	.bbob-event>button {
+		width: 100%;
+	}
+
+	.bbob-event a,
+	.bbob-event button {
+		background: transparent;
+	}
+
+	.bbob-ani .a1 {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 4;
+	}
+
+	.bbob-ani .a2 {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 3;
+	}
+
+	.bbob-ani .responsive-video {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+		display: none;
+	}
+
+	.bbob-ani.on .responsive-video {
+		display: block;
+	}
+
+	.pop-bbob-con {
+		width: 480px;
+	}
+
+	.pop-bbob:after {
+		background: none;
+	}
+
+	.pop-bbob-con img {
+		width: 100%;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function () {
+		//수신동의 위치 이동
+		$('.toggle-area').appendTo(".toggle-an");
+
+		//뽑기 팝업 
+		$('.bbob-event-start').click(function () {
+			//모바일웹일때 앱 설치 O : 앱으로 / 앱 설치 X : 해당 디바스에 맞는 앱스토어로 이동
+			//goAppDown();
+
+			//앱일 경우 미참여시 & 참여시 분기								
+			//미참여시 클릭
+			$('.bbob-ani').addClass("on");
+			setTimeout(() => {
+				$('.pop-bbob').fadeIn(300);
+				$('.pop-bbob-con').slideDown(500);
+				//플레이 클릭 시 참여완료로 이미지 변경
+				$('.bbob-event-start img').attr("src", "https://img.shoppingntmall.com/htmleditor/796/bbbbb21744260918692.png");
+			}, 1500);
+			//참여한 경우 클릭
+			//$('.pop-bbob').fadeIn(300);
+			//$('.pop-bbob-con').show(500);
+		});
+		//뽑기 팝업 닫기
+		$('.pop-bbob button').click(function () {
+			//팝업 출력
+			$('.pop-bbob').fadeOut(300);
+			$('.pop-bbob-con').slideUp(500);
+			//$('.bbob-ani').removeClass("on");
+		});
+		//페이지 진입 시 뽑기 팝업 영역 푸터로 이동
+		$('.pop-bbob').appendTo("footer");
+		//클릭 시 공유하기 팝업
+		$('.bbob-move button').click(function () {
+			//공유하기 팝업 출력	    	
+		});
+	});
+</script>

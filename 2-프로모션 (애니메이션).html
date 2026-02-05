@@ -1,0 +1,93 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="zzz" class="base1"> 
+    <div class="ani ani_bg"></div>
+    <img src="zzz" class="ani ani1"> 
+    <img src="zzz" class="ani ani2">
+    <img src="zzz" class="ani ani3">
+    <img src="zzz" class="ani ani4">
+    <img src="zzz" class="ani ani5">
+    <img src="zzz" class="ani ani6">
+    <img src="zzz" class="ani ani7">
+    <img src="zzz" class="ani ani8">
+    <img src="zzz" class="ani ani9">
+  </div>
+  
+  <!-- 1단 -->
+  <a href="/display/goods/상품코드"><img src="이미지url"></a>
+  <!-- 2단 -->
+  <a href="/display/goods/상품코드" class="w50"><img src="이미지url"></a>
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=쿠폰코드&rUrl=/plan/event/swipeDetail/이벤트코드');">
+    <img src="쿠폰이미지">
+  </a>
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=쿠폰코드&amp;rUrl=/plan/planshop/swipeDetail/기획전코드');">
+    <img src="쿠폰이미지">
+  </a>
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0;}    
+    .ani1 {z-index:3; animation:ani1 1.2s ease-in-out forwards;}
+    .ani2 {z-index:4; animation:ani2 1.2s ease-in-out forwards; animation-delay:.4s;}
+    .ani3 {z-index:5; animation:ani3 1.2s ease-in-out forwards; animation-delay:.8s;}
+    .ani4 {z-index:6; animation:ani4 1.2s ease-in-out forwards; animation-delay:1.2s;}
+    .ani5 {z-index:7; animation:ani5 1.2s ease-in-out forwards; animation-delay:1.6s;} 
+    .ani6 {z-index:8; animation:ani6 1.2s ease-in-out forwards; animation-delay:2s;} 
+    .ani7 {z-index:9; animation:ani7 1.2s ease-in-out forwards; animation-delay:2.4s;} 
+    .ani8 {z-index:10; animation:ani8 1.2s ease-in-out forwards; animation-delay:2.8s;} 
+    .ani9 {z-index:11; animation:ani9 1.2s ease-in-out forwards; animation-delay:3.2s;}     
+    .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(이미지url); background-size:cover;}
+
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: 0 -10000px;}
+    }
+    @keyframes ani1 {
+      0% {}
+      100% {}
+    }
+    @keyframes ani2 {
+      0% {}
+      100% {}
+    }
+    @keyframes ani3 {
+      0% {}
+      100% {}
+    } 
+    @keyframes ani4 {
+      0% {}
+      100% {}
+    }
+    @keyframes ani5 {
+      0% {}
+      100% {}
+    }
+    @keyframes ani6 {
+      0% {}
+      100% {}
+    }
+    @keyframes ani7 {
+      0% {}
+      100% {}
+    }
+    @keyframes ani8 {
+      0% {}
+      100% {}
+    }
+    @keyframes ani9 {
+      0% {}
+      100% {}
+    }    
+  </style>
+</div></div>
+<style>
+  .promotion_con, .promotion_con-wrap * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>

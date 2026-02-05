@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="zzz" class="base1">
+    <img src="zzz" class="ani ani1 animate__animated animate__애니명"> 
+    <img src="zzz" class="ani ani2 animate__animated animate__애니명">
+    <img src="zzz" class="ani ani3 animate__animated animate__애니명">
+    <img src="zzz" class="ani ani4 animate__animated animate__애니명">
+    <img src="zzz" class="ani ani5 animate__animated animate__애니명">
+    <img src="zzz" class="ani ani6 animate__animated animate__애니명">
+    <img src="zzz" class="ani ani7 animate__animated animate__애니명">
+    <img src="zzz" class="ani ani8 animate__animated animate__애니명">
+    <img src="zzz" class="ani ani9 animate__animated animate__애니명">
+  </div>  
+  <!-- animate__infinite -->
+  <!-- 1단 -->
+  <a href="/display/goods/상품코드"><img src="이미지url"></a>
+  <!-- 2단 -->
+  <a href="/display/goods/상품코드" class="w50"><img src="이미지url"></a>
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=쿠폰코드&rUrl=/plan/event/swipeDetail/이벤트코드');">
+    <img src="쿠폰이미지">
+  </a>
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=쿠폰코드&amp;rUrl=/plan/planshop/swipeDetail/기획전코드');">
+    <img src="쿠폰이미지">
+  </a>
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+    .ani2 {z-index:4; animation-delay:.4s;}
+    .ani3 {z-index:5; animation-delay:.8s;}
+    .ani4 {z-index:6; animation-delay:1.2s;}
+    .ani5 {z-index:7; animation-delay:1.6s;}  
+    .ani6 {z-index:8; animation-delay:2s;}
+    .ani7 {z-index:9; animation-delay:2.4s;}
+    .ani8 {z-index:10; animation-delay:2.8s;}
+    .ani9 {z-index:11; animation-delay:3.2s;}
+  </style>
+</div></div>
+<style>
+  .promotion_con, .promotion_con-wrap * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;}
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>

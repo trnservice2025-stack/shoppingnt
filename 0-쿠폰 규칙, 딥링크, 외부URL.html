@@ -1,0 +1,82 @@
+//쿠폰규칙
+생성방식
+<a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=쿠폰코드&rUrl=/plan/event/swipeDetail/이벤트코드');">
+  <img src="쿠폰이미지">
+</a>
+<a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=쿠폰코드&amp;rUrl=/plan/planshop/swipeDetail/기획전코드');">
+  <img src="쿠폰이미지">
+</a>
+
+없음	/customer/provide-coupon-multi?couponNo=쿠폰코드&rUrl=/plan/planshop/swipeDetail/기획전코드
+/customer/provide-coupon-multi?couponNo=쿠폰코드&rUrl=/plan/event/swipeDetail/이벤트코드
+M	마케팅 동의 고객 체크	/customer/provide-coupon-multi?couponNo=쿠폰코드&cFlag=M&rUrl=/plan/planshop/swipeDetail/기획전코드
+P	앱푸시 동의 고객 체크 (APP에서만 다운 가능) /customer/provide-coupon-multi?couponNo=쿠폰코드&cFlag=P&rUrl=/plan/planshop/swipeDetail/기획전코드
+A	마케팅 동의 + 앱푸시 동의 고객 체크 (APP에서만 다운 가능) /customer/provide-coupon-multi?couponNo=쿠폰코드&cFlag=A&rUrl=/plan/planshop/swipeDetail/기획전코드
+N	신규가입 체크로직 /customer/provide-coupon-multi?couponNo=쿠폰코드&cFlag=N&rUrl=/plan/planshop/swipeDetail/기획전코드
+NM	신규가입 체크로직 + 마케팅 동의 체크 /customer/provide-coupon-multi?couponNo=쿠폰코드&cFlag=NM&rUrl=/plan/planshop/swipeDetail/기획전코드
+NP	신규가입 체크로직 + 앱푸시 동의 고객 체크 (APP에서만 다운 가능) /customer/provide-coupon-multi?couponNo=쿠폰코드&cFlag=NP&rUrl=/plan/planshop/swipeDetail/기획전코드
+NA	신규가입 체크로직 + 마케팅 동의 + 앱푸시 동의 고객 체크 (APP에서만 다운 가능) /customer/provide-coupon-multi?couponNo=쿠폰코드&cFlag=NA&rUrl=/plan/planshop/swipeDetail/기획전코드
+
+
+//딥링크
+1.상품랜딩
+https://m.shoppingntmall.com/interfaces/goods/18002265
+2.기획전
+https://m.shoppingntmall.com/interfaces/plan/S00000001712
+3.이벤트 상세
+https://m.shoppingntmall.com/interfaces/event/E00000000354
+4.쇼핑엔딜 상세
+https://m.shoppingntmall.com/interfaces/display/deal/D00000000576
+5.쇼타임딜
+https://m.shoppingntmall.com/interfaces/showtimedeal/showTimeDealMain
+6.마이페이지(로그인X: 로그인 / 로그인O: 마이페이지)
+https://m.shoppingntmall.com/interfaces/mypage/mymain
+4.쇼핑엔딜탭
+https://m.shoppingntmall.com/interfaces/display/deal/dealMain
+
+
+//외부URL
+<button onclick=appBrowserUrlOpen('https://hianna.tistory.com')>외부열기</button>
+<a href="javascript:appBrowserUrlOpen('https://hianna.tistory.com')">외부열기</a>
+
+
+<div style="padding:30px;">
+
+
+  <div class="triangle"></div>
+</div>
+<style>
+  .triangle {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid #000;
+  position: relative;
+}
+
+.triangle::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 9px solid #fff;
+}
+
+.triangle::before {
+  content: "";
+  position: absolute;
+  top: -5px; /* 둥글게 만들기 위해 위치 조정 */
+  left: -8px;
+  width: 16px;
+  height: 8px;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+}
+
+
+</style>

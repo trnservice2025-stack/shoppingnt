@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜 모니터링 대시보드</title>
+    <style>
+        :root {--primary-color: #000; --secondary-color: #f8f9fa; --alert-color: #e74c3c; --success-color: #04b64e; --ars-color: #f1c40f; --text-dark: #333; --text-blue: #003366;}
+        body {font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background-color: #e9ecef; }
+        .mobile-container {max-width: 430px; margin: 0 auto; background-color: #fff; min-height: 100vh;  box-shadow: 0 0 15px rgba(0,0,0,0.1);}
+        .header {background-color:var(--primary-color); color:#fff; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 1.2rem;}
+        .header .logo {width:80px;}
+        .header .refresh-btn {appearance: none; -webkit-appearance: none; border: none; background: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer;font-size:13px;}
+        .tab-nav {display: flex; background-color: #fff; border-bottom: 2px solid #ddd;}
+        .tab-button {flex: 1; padding: 15px; border: none; background: none; font-size: 16px; font-weight: bold; color: #777; cursor: pointer; transition: 0.3s; background-color: #f9f9f9;}
+        .tab-button.active { color: var(--primary-color); border-bottom: 3px solid var(--primary-color); background-color: #fff;}
+        .tab-content {display: none;padding: 24px 16px;animation: fadeIn 0.3s ease-in-out;}
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card {background: #fff;border-radius: 10px;box-shadow: 0 2px 5px rgba(0,0,0,0.05);padding: 15px;margin-bottom: 32px;border: 1px solid #eee;}
+        .section-title {font-size: 18px;color: #000;margin-bottom: 10px;display: flex;align-items: center;font-weight: bold;}
+        .section-title .icon { margin-right:3px; }
+
+        /* 실시간 배너 3분할 */
+        .realtime-banner-3col { display: flex; gap: 8px; margin-bottom: 32px; }
+        .status-box {flex: 1; padding: 16px 5px; border-radius: 8px; text-align: center; color: white;box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+        .status-box.wait { background-color: var(--alert-color); }
+        .status-box.talking { background-color: var(--primary-color); }
+        .status-box.ars { background-color: #f9ca24; color: #333; }
+        .status-box .label { font-size: 14px; margin-bottom: 6px; opacity: 0.9; }
+        .status-box .value { font-size: 26px; font-weight: bold; }
+
+        /* Daily 요약 */
+        .daily-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .summary-item {background: var(--secondary-color); padding: 16px 12px; border-radius: 8px; text-align: center;}
+        .summary-item.highlight { background: #e3f2fd; color: var(--text-blue); }
+        .summary-item .label { font-size: 14px; color: #666; }
+        .summary-item .value { font-size: 24px; font-weight: bold; margin-top: 8px; }
+
+        /* [TABLE 스타일 개선] */
+        .custom-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        .custom-table th {color: #000; font-weight: bold;padding: 10px 2px; border-bottom: 2px solid #ddd; text-align: center;}
+        .custom-table td {padding: 12px 2px; border-bottom: 1px solid #f1f1f1;text-align: center; vertical-align: middle;}
+        
+        .col-category { font-weight: bold; color: #000; letter-spacing: -0.5px;}
+        .col-rate { font-weight: bold; color: var(--text-blue); font-size: 0.95rem; }
+        .col-val { color: #666; }
+        .col-active { font-weight: bold; color: var(--alert-color); background-color: #fff8e1; border-radius: 4px; } /* 상담중 강조 */
+
+        /* [ARS 분리선 스타일] */
+        .row-ars { background-color: #fffdf5; border-bottom: 3px double #bbb !important; } /* 이중선 적용 */
+        .row-ars .col-category { color: var(--alert-color); }
+
+        /* 탭2 스타일 유지 */
+        .group-box { border-left: 5px solid var(--text-blue); }
+        .group-box + .group-box {margin-top:-10px;}
+        .group-box.inquiry { border-left: 5px solid var(--success-color); }
+        .sub-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; text-align: center; margin-top: 10px; border-top:1px solid #ddd; padding-top:14px;}
+        .sub-item .val { font-weight: bold; font-size:20px; margin-bottom:4px; }
+        .sub-item .lbl { font-size: 14px; color: #888; }
+        
+        .agent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .agent-box {background: #fff; border: 1px solid #ddd; border-radius: 12px;padding: 18px 4px 10px 4px; text-align: center; display: flex; flex-direction: column; align-items: center;}
+        .agent-box .icon { width:24px; height:24px; margin-bottom: 5px; }
+        .agent-box .label { font-size: 14px; color: #666; margin:8px 0; }
+        .agent-box .value { font-size: 26px; font-weight: bold; }
+
+        .st-wait .icon { background: var(--success-color); }
+        .st-talk .icon { background: var(--text-blue); }
+        .st-after .icon { background: var(--alert-color); }
+        .st-rest .icon { background: var(--alert-color); }
+        
+        .st-wait .value { color: var(--success-color); }
+        .st-talk .value { color: var(--text-blue); }
+        .st-after .value { color: var(--alert-color); }
+        .st-rest .value { color: var(--alert-color); }
+
+        .icon {display: inline-block; width: 20px;height: 20px;background-color: currentColor;mask-size: contain;mask-repeat: no-repeat;mask-position: center;-webkit-mask-size: contain;-webkit-mask-repeat: no-repeat;-webkit-mask-position: center;vertical-align: middle;margin-top:-3px;}
+        .icon-sync {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M370.7 133.3C339.5 104 298.9 88 256 88c-77.4 0-144.3 52.2-164.1 126.9l-38.6-10.3C77.4 111.2 160.6 32 256 32c58.7 0 112.2 23.7 150.7 62.3L448 64v128H320l50.7-58.7zM141.3 378.7C172.5 408 213.1 424 256 424c77.4 0 144.3-52.2 164.1-126.9l38.6 10.3C434.6 400.8 351.4 480 256 480c-58.7 0-112.2-23.7-150.7-62.3L64 448V320h128l-50.7 58.7z'/%3E%3C/svg%3E");}
+        .icon-chartline {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M496 384H64V80c0-8.8-7.2-16-16-16H16C7.2 64 0 71.2 0 80v336c0 17.7 14.3 32 32 32h464c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM400 160L272 288l-80-80L64 336v64h448V128l-112 32z'/%3E%3C/svg%3E");}
+        .icon-chart-line {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 17l6-6 4 4 7-7 1.5 1.5L13 18l-4-4-5 5z'/%3E%3C/svg%3E");}
+        .icon-users {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zM8 11c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13zm8 0c-.3 0-.7 0-1 .1 1.2.8 2 1.8 2 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z'/%3E%3C/svg%3E");}
+        .icon-satellite {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 21l6-6c-2.5-2.5-2.5-6.5 0-9l9 9c-2.5 2.5-6.5 2.5-9 0l-6 6zm13-13c1.5-1.5 3.5-2.5 5-2v2c-1.5-.5-3.5.5-5 2z'/%3E%3C/svg%3E");}
+        .icon-chart-bar {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 9h3v10H5zm5-4h3v14h-3zm5 7h3v7h-3z'/%3E%3C/svg%3E");}
+        .icon-list {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 6h2v2H4zm4 0h12v2H8zm-4 5h2v2H4zm4 0h12v2H8zm-4 5h2v2H4zm4 0h12v2H8z'/%3E%3C/svg%3E");}
+        .icon-balance {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l4 7h-3v13h-2V9H8l4-7zm-6 9l-4 7h8l-4-7zm12 0l-4 7h8l-4-7z'/%3E%3C/svg%3E");}
+        .icon-clock {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 12V7h2v4.5l3 1.5-1 1.7-4-2.2zM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z'/%3E%3C/svg%3E");}
+        .icon-phone {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 2h4l2 5-3 2c1 2 3 4 5 5l2-3 5 2v4c-8 2-16-6-15-15z'/%3E%3C/svg%3E");}
+        .icon-headset {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3a9 9 0 0 0-9 9v6a3 3 0 0 0 3 3h2v-8H5v-1a7 7 0 0 1 14 0v1h-3v8h2a3 3 0 0 0 3-3v-6a9 9 0 0 0-9-9z'/%3E%3C/svg%3E");}
+        .icon-filepen {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 2h10l6 6v14H4V2zm11 7V3.5L18.5 9H15zm-2 10l5-5-2-2-5 5v2h2z'/%3E%3C/svg%3E");}
+        .icon-mug {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 3h10v8h2a3 3 0 0 1 0 6h-2v2H6V3zm10 10h2a1 1 0 0 0 0-2h-2v2z'/%3E%3C/svg%3E");}
+        .icon-cap {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3L1 9l11 6 9-4.9V17h2V9L12 3zm0 13L4 11v5c0 2.2 3.6 4 8 4s8-1.8 8-4v-5l-8 5z'/%3E%3C/svg%3E");}
+        .icon-cog {mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19.4 13a7.8 7.8 0 0 0 0-2l2-1.5-2-3.5-2.3 1a7.5 7.5 0 0 0-1.7-1L15 2h-6l-.4 2.9a7.5 7.5 0 0 0-1.7 1l-2.3-1-2 3.5L4.6 11a7.8 7.8 0 0 0 0 2L2.6 14.5l2 3.5 2.3-1a7.5 7.5 0 0 0 1.7 1L9 22h6l.4-2.9a7.5 7.5 0 0 0 1.7-1l2.3 1 2-3.5z'/%3E%3C/svg%3E");}
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        <div class="header">
+            <img src="https://img.shoppingntmall.com/htmleditor/699/logo1770020297084.png" class="logo">
+            <button type="button" class="refresh-btn"><span class="icon icon-sync"></span> 새로고침</button>
+        </div>
+
+        <div class="tab-nav">
+            <button class="tab-button active" data-tab="call-status"><span class="icon icon-chartline"></span> 콜(Call) 현황</button>
+            <button class="tab-button" data-tab="order-agent-status"><span class="icon icon-users"></span> 주문&상담사</button>
+        </div>
+
+        <div id="call-status" class="tab-content active">
+            
+            <div class="section-title"><span class="icon icon-clock"></span> 실시간 현황</div>
+            <div class="realtime-banner-3col">
+                <div class="status-box wait">
+                    <div class="label">고객대기</div>
+                    <div class="value">0</div>
+                </div>
+                <div class="status-box talking">
+                    <div class="label">상담중</div>
+                    <div class="value">22</div>
+                </div>
+                <div class="status-box ars">
+                    <div class="label">ARS주문</div>
+                    <div class="value">29</div>
+                </div>
+            </div>
+
+            <div class="section-title"><span class="icon icon-chart-bar"></span> Daily 전체 누적</div>
+            <div class="card daily-summary">
+                <div class="summary-item highlight">
+                    <div class="label">응대율</div>
+                    <div class="value">91.2%</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">총 인입콜</div>
+                    <div class="value">4,341</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">응대콜</div>
+                    <div class="value">3,960</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">포기콜</div>
+                    <div class="value">381</div>
+                </div>
+            </div>
+
+            <div class="section-title"><span class="icon icon-list"></span> 문의 유형별 상세</div>
+            <div class="card" style="padding: 5px;">
+                <div style="border-radius:6px; overflow:hidden;">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>응대율</th>
+                            <th>인입</th>
+                            <th>포기</th>
+                            <th style="color:var(--alert-color)">상담중</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-ars">
+                            <td class="col-category">ARS주문</td>
+                            <td class="col-rate" style="color:#aaa;">-</td>
+                            <td class="col-val">7,241</td>
+                            <td class="col-val">1,547</td>
+                            <td class="col-val">-</td>
+                        </tr>
+                        <tr>
+                            <td class="col-category">상담주문</td>
+                            <td class="col-rate">90.7%</td>
+                            <td class="col-val">2,662</td>
+                            <td class="col-val">248</td>
+                            <td class="col-active">10</td>
+                        </tr>
+                        <tr>
+                            <td class="col-category">배송문의</td>
+                            <td class="col-rate">95.1%</td>
+                            <td class="col-val">81</td>
+                            <td class="col-val">4</td>
+                            <td class="col-active">1</td>
+                        </tr>
+                        <tr>
+                            <td class="col-category">취소/반품</td>
+                            <td class="col-rate">93.8%</td>
+                            <td class="col-val">145</td>
+                            <td class="col-val">9</td>
+                            <td class="col-active">1</td>
+                        </tr>
+                        <tr>
+                            <td class="col-category">교환</td>
+                            <td class="col-rate">91.3%</td>
+                            <td class="col-val">46</td>
+                            <td class="col-val">4</td>
+                            <td class="col-active">0</td>
+                        </tr>
+                        <tr style="border-bottom:none;">
+                            <td class="col-category">기타</td>
+                            <td class="col-rate">91.8%</td>
+                            <td class="col-val">1,407</td>
+                            <td class="col-val">116</td>
+                            <td class="col-active">6</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div> 
+
+        <div id="order-agent-status" class="tab-content">
+            <div class="card group-box">
+                <div style="font-weight:bold; color:var(--text-blue); font-size:18px;"><span class="icon icon-balance"></span> 주문 현황</div>
+                <div class="sub-grid">
+                    <div class="sub-item"><div class="val" style="color:var(--text-blue)">90.7%</div><div class="lbl">응대율</div></div>
+                    <div class="sub-item"><div class="val">2,662</div><div class="lbl">인입</div></div>
+                    <div class="sub-item"><div class="val">2,415</div><div class="lbl">응대</div></div>
+                    <div class="sub-item"><div class="val" style="color:#999">247</div><div class="lbl">포기</div></div>
+                </div>
+            </div>
+            <div class="card group-box inquiry">
+                <div style="font-weight:bold; color:var(--success-color); font-size:18px;"><span class="icon icon-phone" style="margin-top:0;"></span> 문의 현황</div>
+                <div class="sub-grid">
+                    <div class="sub-item"><div class="val" style="color:var(--success-color)">92.1%</div><div class="lbl">응대율</div></div>
+                    <div class="sub-item"><div class="val">1,679</div><div class="lbl">인입</div></div>
+                    <div class="sub-item"><div class="val">1,546</div><div class="lbl">응대</div></div>
+                    <div class="sub-item"><div class="val" style="color:#999">133</div><div class="lbl">포기</div></div>
+                </div>
+            </div>
+            <div class="section-title"><span class="icon icon-clock"></span> 실시간 활동 상태 (총 47명)</div>
+            <div class="agent-grid">
+                <div class="agent-box st-wait"><span class="icon icon-phone"></span><div class="label">상담대기</div><div class="value">13</div></div>
+                <div class="agent-box st-talk"><span class="icon icon-headset"></span><div class="label">상담중(합계)</div><div class="value">14</div></div>
+                <div class="agent-box st-after"><span class="icon icon-filepen"></span><div class="label">후처리</div><div class="value">8</div></div>
+                <div class="agent-box st-rest"><span class="icon icon-mug"></span><div class="label">휴식/식사</div><div class="value">7</div></div>
+                <div class="agent-box" style="color:#7f8c8d"><span class="icon icon-cap"></span><div class="label">교육/회의</div><div class="value">0</div></div>
+                <div class="agent-box" style="color:#7f8c8d"><span class="icon icon-cog"></span><div class="label">관리중</div><div class="value">2</div></div>
+            </div>
+        </div> 
+
+    </div>
+
+    <script>
+        //탭
+        const tabs = document.querySelectorAll(".tab-button");
+        const contents = document.querySelectorAll(".tab-content");
+        const showTab = id => {
+            contents.forEach(c => c.classList.toggle("active", c.id === id));
+            tabs.forEach(t => t.classList.toggle("active", t.dataset.tab === id));
+            location.hash = id;
+        };
+        tabs.forEach(t => t.onclick = () => showTab(t.dataset.tab));
+        showTab(location.hash.replace("#","") || "call-status");
+        
+
+        //새로고침
+        const refreshBtn = document.querySelector(".refresh-btn");
+        refreshBtn.addEventListener("click", function () {
+            location.reload();
+        });
+    </script>
+</body>
+</html>
+
+    
