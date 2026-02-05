@@ -74,7 +74,7 @@ li {{
     # 파일 링크 (한글 → URL 인코딩)
     for _, name, mtime in files:
         encoded = quote(name)
-        date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
+        date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")      
         html += f'''
 <li>
   <a href="{encoded}">{name}</a>
