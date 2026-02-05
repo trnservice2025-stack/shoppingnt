@@ -1,11 +1,19 @@
 import os
+import unicodedata
 from datetime import datetime
 from urllib.parse import quote
 
 BASE_DIR = os.getcwd()
 
+def safe_url(name: str) -> str:
+    """
+    macOS 한글(NFD)을 NFC로 정규화한 뒤 URL 인코딩
+    """
+    normalized = unicodedata.normalize("NFC", name)
+    return quote(normalized)
+
 def make_index(current_dir, is_root=False):
-    entries = []
+    items = []
 
     for name in os.listdir(current_dir):
         if name.startswith("."):
@@ -14,15 +22,15 @@ def make_index(current_dir, is_root=False):
         full_path = os.path.join(current_dir, name)
 
         if os.path.isdir(full_path):
-            entries.append(("dir", name, None))
+            items.append(("dir", name, None))
         elif name.endswith(".html") and name != "index.html":
             mtime = os.path.getmtime(full_path)
-            entries.append(("file", name, mtime))
+            items.append(("file", name, mtime))
 
     # 폴더: 이름순 / 파일: 수정일 최신순
-    dirs = sorted([e for e in entries if e[0] == "dir"], key=lambda x: x[1])
+    dirs = sorted([i for i in items if i[0] == "dir"], key=lambda x: x[1])
     files = sorted(
-        [e for e in entries if e[0] == "file"],
+        [i for i in items if i[0] == "file"],
         key=lambda x: x[2],
         reverse=True
     )
@@ -64,17 +72,17 @@ li {{
     if not is_root:
         html += '<div class="back"><a href="../">← 상위 폴더</a></div>\n'
 
-    html += f"<h1>{title}</h1><ul>\n"
+    html += f"<h1>{title}</h1>\n<ul>\n"
 
-    # 하위 폴더 링크 (한글 → URL 인코딩)
+    # 하위 폴더
     for _, name, _ in dirs:
-        encoded = quote(name)
+        encoded = safe_url(name)
         html += f'<li><a href="{encoded}/">{name}/</a></li>\n'
 
-    # 파일 링크 (한글 → URL 인코딩)
+    # HTML 파일
     for _, name, mtime in files:
-        encoded = quote(name)
-        date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")      
+        encoded = safe_url(name)
+        date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
         html += f'''
 <li>
   <a href="{encoded}">{name}</a>
@@ -93,7 +101,7 @@ li {{
 
     print(f"✅ index.html 생성: {current_dir}")
 
-    # 재귀: 하위 폴더에도 동일하게 적용
+    # 🔁 재귀 처리
     for _, name, _ in dirs:
         make_index(os.path.join(current_dir, name))
 
