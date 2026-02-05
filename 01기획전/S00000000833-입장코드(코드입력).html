@@ -1,0 +1,93 @@
+<!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/jquery-ui.min.css">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/video-js.css">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css"> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css" type="text/css"/>
+<div class="inputc">
+  <div class="inputc_tit"><img src="https://img.shoppingntmall.com/htmleditor/040/top1744852417201.png"></div>
+  <div class="inputc_con">
+    <p class="inputc_ip">인증코드 입력</p>
+    <div class="entry_code_wrap"><input type="text" class="entry_code" placeholder="인증코드"></div>
+    <button class="enter_btn" disabled>확인</button>
+    <p class="error_msg error_msg1">* 올바른 인증코드가 아닙니다.</p>
+    <p class="error_msg error_msg2">* 영문 및 숫자만 입력 가능 합니다.</p> 
+    <div class="inputc_u"><img src="https://img.shoppingntmall.com/htmleditor/066/uuu1743666855574.png"></div>
+  </div>
+</div>
+<script>
+  //입장코드
+  const validCodes = [
+    "250418" //, "npshgo"
+  ];
+  $('.entry_code').on('input', function () {
+    const code = $(this).val().trim();
+    const upperCode = code.toUpperCase();
+    const isValid = validCodes.map(c => c.toUpperCase()).includes(upperCode);
+    const isAlphaNumeric = /^[a-zA-Z0-9]*$/.test(code);
+
+    if (isValid) {
+      $('.enter_btn').prop('disabled', false);
+      $('.error_msg').hide();
+    } else {
+      $('.enter_btn').prop('disabled', true);
+      if (code.length > 0) {
+        $('.error_msg1').show(); 
+      } else {
+        $('.error_msg1').hide();
+      }
+    }
+    if (!isAlphaNumeric && code.length > 0) {
+      $('.error_msg2').show();
+    } else {
+      $('.error_msg2').hide();
+    }
+  });
+
+  $('.enter_btn').on('click', function () {
+    const currentUrl = window.location.href;
+    if (currentUrl.includes("S00000000833")) {
+      window.location.href = '/interfaces/plan/S00000000831?mediaCode=SE25&utm_source=kakao&utm_medium=dm&utm_content=250418_pvs_open'; //카카오
+    } else if (currentUrl.includes("S00000001728")) {
+      window.location.href = '/interfaces/plan/S00000001729?mediaCode=SE27A&utm_source=phone&utm_medium=sms&utm_campaign=push&utm_content=250418_pvs_open'; //LMS
+    } else if (currentUrl.includes("S00000001746")) {
+      window.location.href = '/interfaces/plan/S00000001749?mediaCode=SE27E&utm_source=emforce&utm_medium=viral&utm_content=250418_pvs_open'; //엠포스
+    } else if (currentUrl.includes("S00000001747")) {
+      window.location.href = '/interfaces/plan/S00000001750?mediaCode=MC34&utm_source=insta&utm_medium=dm&utm_content=250418_pvs_open'; //인스타
+    } else if (currentUrl.includes("S00000001748")) {
+      window.location.href = '/interfaces/plan/S00000001751?mediaCode=SE27D&utm_source=trn&utm_medium=trn&utm_content=250418_pvs_open'; //내부
+    }
+  });
+
+  $(window).on('pageshow', function () {
+    $('.entry_code').val('');
+    $('.enter_btn').prop('disabled', true);
+    $('.error_msg').hide();
+  });
+</script>
+<style>
+  html, body {padding:0; margin:0;}
+  body {background:#333; color:#fff; min-width:100%;}
+  body * {font-family:"Gmarket Sans"; font-weight:500; box-sizing: border-box;}
+  #header, .bbs-view .bbs-head, .sub-tit-area, .btn-area, .plan-wrap.swiper-wrap, .quick-recent-shop, #footer, #ok-entry, .exhibi-detail, .type-line, .tab-bar-re, #wrap>input, #wrap>script, #sticky-line {display:none !important}
+  #wrap, #main, #header[class*=type-cart] ~ #main, .exhibi-detail-img-link, .content, .center-wrap, .bbs-view .bbs-body, .bbs-view {margin:0 !important; padding:0 !important; border:0 !important; background:none !important; width:100% !important;}
+  .inputc {text-align:center;overflow:hidden;}
+  .inputc img {width:100%; max-width:100%;}
+  .inputc .inputc_con {max-width:100%; width:600px; margin:0 auto; padding:0 20px; }
+  .inputc .inputc_con .inputc_ip {font-size:35px; font-weight:700; padding:38px 0 0 0;}
+  .inputc .inputc_con .entry_code_wrap {padding:0 20px;}
+  .inputc .inputc_con .entry_code {width:100%; margin:20px 0; max-width:100%; display:block; border-radius:0; height:62px; line-height:62px; padding:0 26px; font-size:35px; border:1px solid #929292; border-width:1px 0; box-sizing:border-box;}
+  .inputc .inputc_con .entry_code::placeholder {font-size:35px;}
+  .inputc .enter_btn {background:#000; color:#fff; transition: background-color 0.3s ease, color 0.3s ease; background:#c42149; height:90px; font-size:38px; font-weight:700; display:block; width:100%; border-radius:50px;}
+  .inputc .enter_btn:disabled { background-color: #ccc; cursor: not-allowed;}
+  .inputc .error_msg {color:red; font-size:16px; margin-top:10px;}
+  .inputc_u {padding:30px 0 40px 0;}  
+  @media screen and (max-width:1200px)  {
+    .inputc_tit {margin:0 -33.33%; display:block;}
+  }
+  @media screen and (max-width:720px)  {
+    .inputc_tit {margin:0 -130%; display:block;}
+  }
+</style>
