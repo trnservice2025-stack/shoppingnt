@@ -1,0 +1,46 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/093/111111744957897855.jpg">
+    <a href="/display/goods/10364526"><img src="https://img.shoppingntmall.com/htmleditor/163/pv_021744792295342.jpg"></a>
+
+    <a href="/display/goods/12889363" class="sday sday17 sday23 sday27"><img src="https://img.shoppingntmall.com/htmleditor/163/pv_031744792295811.jpg"></a>
+    <a href="/display/goods/12889363" class="sday sday22"><img src="https://img.shoppingntmall.com/htmleditor/485/221744874921625.jpg"></a>
+
+    <a href="/display/goods/20546836"><img src="https://img.shoppingntmall.com/htmleditor/163/pv_041744792296715.jpg"></a>
+    <a href="/display/goods/20382662"><img src="https://img.shoppingntmall.com/htmleditor/163/pv_051744792297248.jpg"></a>
+    <a href="/display/goods/20120119"><img src="https://img.shoppingntmall.com/htmleditor/163/pv_061744792297846.jpg"></a>
+
+
+    <a href="/display/goods/18879887" class="sday sday17 sday22 sday23"><img src="https://img.shoppingntmall.com/htmleditor/163/pv_071744792298833.jpg"></a>
+    <a href="/display/goods/14439379" class="sday sday27"><img src="https://img.shoppingntmall.com/htmleditor/485/271744874922241.jpg"></a>
+  </div></div>
+  
+  <style>
+    .promotion_con * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+  
+  <script>
+    //예약 
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+  
+    hideS();      
+    
+    if ('2025-04-17 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday17').forEach(e => e.style.display = 'block');}
+    if ('2025-04-22 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday22').forEach(e => e.style.display = 'block');}
+    if ('2025-04-23 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday23').forEach(e => e.style.display = 'block');}
+    if ('2025-04-27 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday27').forEach(e => e.style.display = 'block');}
+  </script>
+    

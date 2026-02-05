@@ -1,0 +1,50 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/032/11762322115862.jpg" alt="">
+    <a href="/display/goods/23930247" class="sday sday12"><img src="https://img.shoppingntmall.com/htmleditor/683/239302471762322237494.jpg"></a>
+    <a href="/display/goods/24778544" class="sday sday13"><img src="https://img.shoppingntmall.com/htmleditor/683/247785441762322237951.jpg"></a>
+    <a href="/display/goods/11658415" class="sday sday14"><img src="https://img.shoppingntmall.com/htmleditor/683/116584151762322233901.jpg"></a>
+    <a href="/display/goods/21159626" class="sday sday15"><img src="https://img.shoppingntmall.com/htmleditor/683/211596261762322236599.jpg"></a>
+    <a href="/display/goods/18248206" class="sday sday16"><img src="https://img.shoppingntmall.com/htmleditor/683/182482061762322235156.jpg"></a>
+    <a href="/display/goods/11306445" class="sday sday17"><img src="https://img.shoppingntmall.com/htmleditor/122/113064451762840815418.jpg"></a>
+    <a href="/display/goods/23567923" class="sday sday18"><img src="https://img.shoppingntmall.com/htmleditor/683/235679231762322236964.jpg"></a>
+    <a href="/display/goods/18150644" class="sday sday19"><img src="https://img.shoppingntmall.com/htmleditor/683/181506441762322234731.jpg"></a>
+    <a href="/display/goods/24201288" class="sday sday20"><img src="https://img.shoppingntmall.com/htmleditor/052/242012881762474640906.jpg"></a>
+    <a href="/display/goods/19042178" class="sday sday21"><img src="https://img.shoppingntmall.com/htmleditor/683/190421781762322236117.jpg"></a>
+    <a href="/display/goods/18762682" class="sday sday22"><img src="https://img.shoppingntmall.com/htmleditor/683/187626821762322235723.jpg"></a>
+    <a href="/display/goods/14018863" class="sday sday23"><img src="https://img.shoppingntmall.com/htmleditor/683/140188631762322234370.jpg"></a>
+</div></div>
+
+<style>
+    .promotion_con * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+
+    @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33%;}
+    }
+</style>
+<script>
+    //예약 
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();      
+    if ('2025-10-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12').forEach(e => e.style.display = 'block');}
+    if ('2025-11-13 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday13').forEach(e => e.style.display = 'block');}
+    if ('2025-11-14 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday14').forEach(e => e.style.display = 'block');}
+    if ('2025-11-15 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday15').forEach(e => e.style.display = 'block');}
+    if ('2025-11-16 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday16').forEach(e => e.style.display = 'block');}
+    if ('2025-11-17 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday17').forEach(e => e.style.display = 'block');}
+    if ('2025-11-18 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday18').forEach(e => e.style.display = 'block');}
+    if ('2025-11-19 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday19').forEach(e => e.style.display = 'block');}
+    if ('2025-11-20 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday20').forEach(e => e.style.display = 'block');}
+    if ('2025-11-21 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday21').forEach(e => e.style.display = 'block');}
+    if ('2025-11-22 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday22').forEach(e => e.style.display = 'block');}
+    if ('2025-11-23 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday23').forEach(e => e.style.display = 'block');}
+</script>

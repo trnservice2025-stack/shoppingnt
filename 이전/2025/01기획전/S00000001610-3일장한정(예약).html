@@ -1,0 +1,37 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/451/planshop_view_pc%20%2834%291739930935103.jpg">
+</div></div>
+<div class="promotion_con sday sday1">
+    <a href="/plan/event/swipeDetail/E00000000329">
+        <img src="https://img.shoppingntmall.com/htmleditor/971/main_list_PC%20%281%291739930969501.jpg" alt="" class="pc">
+        <img src="https://img.shoppingntmall.com/htmleditor/827/main_list_MO%20%283%291739930979614.jpg" alt="" class="mo">
+    </a>
+</div>
+<style>
+    .promotion_con * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+    .promotion_con .mo {display:none;}
+
+    @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33.33%;}
+        .promotion_con .mo {display:block;}
+        .promotion_con .pc {display:none;}
+    }
+</style>
+<script>
+    //예약 
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();      
+    if ('2025-02-21 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2025-02-21 12:00:00' <= nowT) { hideS();}
+  </script>    
+  

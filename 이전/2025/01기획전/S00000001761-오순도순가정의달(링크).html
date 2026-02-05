@@ -1,0 +1,42 @@
+<div class="promotion_con"><div class="promotion_con_mo">    
+    <div class="sday sday1">  
+      <img src="https://img.shoppingntmall.com/htmleditor/145/zz_011745542270754.jpg">
+      <a href="/display/goods/10228824"><img src="https://img.shoppingntmall.com/htmleditor/145/zz_021745542271367.jpg"></a>
+      <a href="/display/goods/14812344"><img src="https://img.shoppingntmall.com/htmleditor/145/zz_031745542271893.jpg"></a>
+      <a href="/display/goods/15750826"><img src="https://img.shoppingntmall.com/htmleditor/145/zz_041745542272424.jpg"></a>
+      <a href="/display/goods/16037373"><img src="https://img.shoppingntmall.com/htmleditor/312/41745814828273.png"></a>
+    </div>     
+    <div class="sday sday2">  
+      <img src="https://img.shoppingntmall.com/htmleditor/251/pv_011746578017185.jpg">
+      <a href="/display/goods/20427689"><img src="https://img.shoppingntmall.com/htmleditor/251/pv_021746578017587.jpg"></a>
+      <a href="/display/goods/21032738"><img src="https://img.shoppingntmall.com/htmleditor/226/pv_031745991026049.jpg"></a>
+      <a href="/display/goods/10342391"><img src="https://img.shoppingntmall.com/htmleditor/226/pv_041745991026777.jpg"></a>
+      <a href="/display/goods/19975015"><img src="https://img.shoppingntmall.com/htmleditor/115/pppv_021746606972774.jpg"></a>
+    </div>     
+  </div></div>
+  
+  <style>
+    .promotion_con * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+  
+  <script>
+    //예약 
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');  
+    hideS();          
+    if ('2025-04-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2025-05-05 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+  </script>

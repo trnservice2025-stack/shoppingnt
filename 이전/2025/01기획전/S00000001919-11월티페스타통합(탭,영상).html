@@ -1,0 +1,238 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<script>
+$(window).resize(function() { 
+    if($(window).width() > 768) { $(".ska1").attr("href","https://www.shoppingntmall.com/assets/css/swiper.css"); $(".ska2").attr("href","https://www.shoppingntmall.com/assets/css/common.css"); }
+    else { $(".ska1").attr("href","https://m.shoppingntmall.com/moassets/css/swiper.css"); $(".ska2").attr("href","https://m.shoppingntmall.com/moassets/css/common.css"); }
+});
+</script>
+<header class="fake_head">헤더</header><div class="fake_div" style="height:174px;"></div>
+
+
+<div class="promotion_con_wrap">
+    <!-- <div class="gra"></div> -->
+    <div class="video_wrap">
+        <!-- 배경영상 --><video id="promoVideo" class="responsive-video" src="https://img.shoppingntmall.com/htmleditor/753/top1761609513394.mp4" poster="https://img.shoppingntmall.com/htmleditor/753/스틸이미지1761609512767.jpg" autoplay muted loop playsinline></video>
+        <!-- 메인이미지 --><div>
+            <img src="https://img.shoppingntmall.com/htmleditor/896/dfdf1761716578283.png">
+        </div>
+        <button type="button" class="btn-share" onclick="popup.open('#snsSharePop');">공유하기</button>
+    </div>
+</div>
+
+
+<div class="promotion_tab_wrap">
+  <div class="promotion_tab">
+    <a href="#pro_tab1" class="tab1">1</a>
+    <a href="#pro_tab2" class="tab2">2</a>                
+  </div>
+</div>    
+
+<div id="pro_tab1">  
+    <div class="promotion_con"><div class="promotion_con_mo"><div>  
+      <img src="https://img.shoppingntmall.com/htmleditor/940/c1762129873477.png" alt="">
+    </div></div> </div>
+
+    <div class="promotion_con cday"><div class="promotion_con_mo"><div>  
+      <img src="https://img.shoppingntmall.com/htmleditor/846/cccc1761716194922.jpg" alt="">
+    </div></div> </div>
+
+    <div class="toggle_an1"></div>
+    <div class="toggle_an3"></div>
+    <div class="toggle_an2"></div>
+
+    <script>
+      $(function(){
+        $('.re-coupon-wrap').appendTo(".toggle_an1");
+        $('.acco-wrap.plan').appendTo(".toggle_an2");
+        $('.toggle-area').appendTo(".toggle_an3");
+        $('.notice-fold').appendTo(".toggle_an2");
+      });         
+    </script>
+
+      <div class="promotion_con"><div class="promotion_con_mo"><div>  
+        <a href="/plan/planshop/swipeDetail/S00000001923"><img src="https://img.shoppingntmall.com/htmleditor/031/c1-21761609712981.png"></a>
+      </div></div> </div> 
+</div>
+
+<div id="pro_tab2">
+  <div class="promotion_con"><div class="promotion_con_mo"><div>
+    <a href="/plan/event/swipeDetail/E00000000392"><img src="https://img.shoppingntmall.com/htmleditor/031/c21761609713394.png"></a>
+  </div></div></div>
+</div>          
+  
+<style>
+
+  .toggle_an1 {background:#f2f1f6; }
+  .fake_head {height:174px; width:100%; position:fixed; top:0; left:0; background:#fff; z-index:997;}
+  .fake_head.fixed {height:74px;}
+  .img-wrap .fake_head, .img-wrap .fake_div, .exhibi-detail-img-link .fake_head, .exhibi-detail-img-link .fake_div {display:none !important;}
+
+  .promotion_con_wrap {max-width:1200px; margin:0 auto; background:#000; position:relative;}
+  .promotion_con_wrap>p {position:absolute; right:16px; bottom:16px; color:#DFDFDF; font-size:12px; border-radius:4px; background:#000; z-index:4; padding:4px 6px; font-weight:700; display:block; margin:0;}
+
+  .video_wrap {position:relative; max-width:720px; margin:0 auto; background:#000; padding:0;}     
+  .video_wrap::after {display:block; content:''; background: rgba(0, 0, 0, 0); position:absolute; z-index:2; left:0; top:0; width:100%; height:100%;}
+  .video_wrap video {position:absolute; z-index:1; left:50%; transform:translateX(-50%);}
+  .video_wrap>div {position:relative; z-index:3; left:0; top:0; margin:0 -33.33%; width:166.66%;}
+  .video_wrap>div img {width:100%;}
+  .video_wrap p {position:absolute; right:16px; top:16px; color:#DFDFDF; font-size:12px; border-radius:4px; background:#000; z-index:4; padding:4px 6px; font-weight:700; display:block; margin:0;}
+  .video_wrap .responsive-video {height:auto; display:block; margin:0 auto; width:166.66%;}
+  .video_wrap .btn-share {display:none; width:36px; height:36px; border:0; border-radius:50%; background:url(https://img.shoppingntmall.com/htmleditor/304/sss1760081048583.png) no-repeat transparent; background-size:cover; text-indent:-9999em; margin-left:0; position:absolute; bottom:3%; right:5%; z-index:5; cursor:pointer;} 
+  
+
+  .promotion_con * {line-height:initial;} 
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+  .promotion_con a, .promotion_con img {background:none;}
+  .promotion_con_mo {overflow:hidden;}
+
+  .promotion_tab_wrap {position:sticky; top:74px; padding: 0 20%; z-index:5; overflow:hidden; background:#060163;}
+  .promotion_tab {margin:0 auto; display:table; width:100%; text-align:center; table-layout: fixed; z-index:998; min-height:99px;}
+  .promotion_tab a {position:relative;cursor:pointer; height:170px; display:table-cell; vertical-align:middle; font-weight:700; flex:1; text-decoration:none; text-indent:-9999px; background-repeat:no-repeat; background-color:transparent; :no-repeat; background-position:center; position:relative; z-index:2;}
+  /* .promotion_tab a:nth-child(1):before {background:#574d7f; width:1px; height:100%; position:absolute; left:0px; top:0%; display:block; content:"";} */
+  .promotion_tab a:nth-child(1):after {background:#514e92; width:1px; height:100%; position:absolute; right:0px; top:0%; display:block; content:"";}
+  .promotion_tab a img {width:auto; display:inline-block; max-width:100%;}
+  .promotion_tab a.on:after, .promotion_tab a.on:before {display:none;}
+  .promotion_tab a.tab1 {background-image:url("https://img.shoppingntmall.com/htmleditor/031/g11761609713910.png");}
+  .promotion_tab a.tab2 {background-image:url("https://img.shoppingntmall.com/htmleditor/031/g21761609714477.png");}
+  /* .promotion_tab a.tab1 {background-image:url("https://img.shoppingntmall.com/htmleditor/465/t11748841596723.png");} */
+  /* .promotion_tab a.tab3 {background-image:url("https://img.shoppingntmall.com/htmleditor/339/t31748841507810.png");}  */
+  .promotion_tab a.on {background-color:#6931d2; opacity:1;}
+
+  .re-coupon-wrap {background:transparent;}
+
+  @media screen and (max-width:1200px) {
+      .promotion_tab_wrap {padding: 0 0;}
+  }
+
+  @media screen and (max-width:720px) {        
+    .video_wrap {overflow:hidden;}
+    .video_wrap>div {margin:0 -30%; width:160%;}
+    .video_wrap .responsive-video {width:160%;}
+
+    .promotion_con_mo>div {margin:0 -33.33%;}
+    
+
+    .promotion_con_mo2 {overflow:hidden;}
+    .promotion_con_mo2>div {margin:0 -13%;}
+
+    .fake_head {height:100px;}
+    .fake_head.fixed {height:50px;}
+
+    .promotion_tab_wrap {top:49px;}
+    .promotion_tab {min-height:65px;}
+    .promotion_tab a.tab1, .promotion_tab a.tab2, .promotion_tab a.tab3, .promotion_tab a.tab4 {background-size:auto 130%;}
+    .promotion_tab a {height:55px; }
+
+    .video_wrap .btn-share {display:block;}
+
+    /* #header[class*=type-cart] {background:#fff;}
+    #header[class*=type-cart] ~ #main {padding-top:39px;}
+    .gra {position:absolute; left:0; top:0; z-index:2; height:10%; width:100%; background: linear-gradient(180deg, rgba(13, 24, 74, 1) 0%, rgba(13, 24, 74, 0) 100%);}
+    #header {border-color:transparent; } 
+    #header .total-search-area {background:#C1C0C0;}
+    #header .cartb, #header .cash {background-color:transparent;}
+    #gnb-wrap {visibility:hidden;}
+    #gnb-wrap > ul > li > a > span > em {color:#FBA2D1;}    
+    #gnb-wrap > ul > li > a > span.is-active::after {background:#FBA2D1;}        
+    #header .cash {background-image:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect fill="none" width="24" height="24"  /><circle stroke="white" cx="12" cy="12" r="10" stroke-width="1.5"/><path fill="white" d="M16.8203 8.16645C16.7047 8.05945 16.5507 8 16.371 8C16.1399 8 15.8318 8.09511 15.7035 8.58256L14.3427 14.2655L12.6483 8.51123C12.5071 8.08322 12.2246 8 12.0193 8C11.8139 8 11.5443 8.08322 11.4031 8.51123L9.7086 14.2299L8.32221 8.59445C8.20668 8.107 7.89859 8 7.65469 8C7.47497 8 7.32092 8.05945 7.19255 8.16645C7.06418 8.28534 7 8.41612 7 8.57067C7 8.61823 7 8.6539 7 8.70145C7 8.74901 7.01284 8.79657 7.02567 8.83223L8.91271 16.4055C9.04108 16.893 9.34917 17 9.58023 17C9.8113 17 10.1065 16.9049 10.2478 16.4412L12.0064 10.5324L13.7779 16.4531C13.9063 16.9049 14.2015 17 14.4069 17C14.6508 17 14.9461 16.9049 15.0616 16.4412L16.9743 8.83223C16.9743 8.83223 17 8.74901 17 8.70145C17 8.6539 17 8.61823 17 8.57067C17 8.40423 16.9358 8.26156 16.8074 8.15456L16.8203 8.16645Z"/><rect fill="white" x="6" y="12" width="3" height="1.4" rx="0.7" /><rect fill="white" x="15" y="12" width="3" height="1.4" rx="0.7" /></svg>')}
+    #header .cartb {background-image:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" fill="none"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.6 17.1001C10.4839 17.1001 11.2 17.8162 11.2 18.7001C11.2 19.5832 10.4839 20.3001 9.6 20.3001C8.7169 20.3001 8 19.5832 8 18.7001C8 17.8162 8.7169 17.1001 9.6 17.1001Z" stroke="white" stroke-width="1.4"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.6 17.1001C18.4831 17.1001 19.2 17.8162 19.2 18.7001C19.2 19.5832 18.4831 20.3001 17.6 20.3001C16.7169 20.3001 16 19.5832 16 18.7001C16 17.8162 16.7169 17.1001 17.6 17.1001Z" stroke="white" stroke-width="1.4"/><path d="M5.80453 6.26426H20.4033C21.0415 6.26426 21.515 6.83542 21.3753 7.43572L19.9615 13.5007C19.7576 14.3771 18.9502 15 18.0183 15H7.74776L5.25094 4H2.3999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')}
+
+    .exhibi-detail {display:none;}
+    #main, #header  {background:#0d184a;}
+    #main {padding-bottom:0; margin-bottom:48px;}
+    #gnb-wrap > ul .swiper-slide.is-active > a > span::before, #main > section:not(.full), #main > .main-contents > section:not(.full), #main > .tab-cont-wrap , #main > .main-contents > .tab-cont-wrap {background:#fff;}
+    #gnb-wrap > ul > li > a > span, #gnb-wrap > ul .swiper-slide.is-active > a > span,  .exhibi-detail > a, .exhibi-detail .subject-area {color:#fff; } */
+
+  }
+</style>
+
+<script>
+  $(function(){
+
+    var headh = $("header").height();
+    var tabh = $(".promotion_tab").height();
+    var proffset = $("#pro_tab1").offset();
+  
+    $('.promotion_tab_wrap').css("top",headh);
+  
+    $(window).scroll(function(){
+      var headh = $("header").height();
+      var tabh = $(".promotion_tab").height();
+  
+      //삭제해도 되는 스크립트
+      if ($(document).scrollTop() > 30) { 
+        $('.fake_head').addClass('fixed');
+      } else {
+        $('.fake_head').removeClass('fixed');
+      }
+      if ($(document).scrollTop() > proffset.top - tabh - headh === false) {
+        $('.promotion_tab').children("a").removeClass('on');
+      }
+  
+      //탭 고정 위치
+      $('.promotion_tab_wrap').css("top",headh);
+  
+      //클릭시 해당 영역
+      $('.promotion_tab a').click(function(){
+        $("html, body").stop().animate({scrollTop: $($.attr(this, 'href')).offset().top - headh - tabh + 1}, 500);
+        return false;
+      });
+  
+      var pos = $(window).scrollTop();
+      var pos2 = pos + headh + tabh + 1;
+      var scrollBottom = pos + $(window).height();
+      if (pos2 > $('#pro_tab1').offset().top) {highlightLink('pro_tab1');}
+      if (pos2 > $('#pro_tab2').offset().top) {highlightLink('pro_tab2');}
+      if (pos2 > $('#pro_tab3').offset().top) {highlightLink('pro_tab3');}
+  
+    });
+  
+    function highlightLink(anchor){
+      $('.promotion_tab .on').removeClass('on');
+      $(".promotion_tab").find('[href="#' + anchor + '"]').addClass('on');
+    }
+
+    $('.notice-fold').removeClass('pt0');
+    $('.acco-wrap.plan').addClass('pt45');
+
+  });
+</script>
+
+<script>
+    //예약 
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    const hideC = () => document.querySelectorAll('.cday').forEach(e => e.style.display = 'none');
+    hideS();      
+    hideC();      
+    if ('2025-10-17 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2025-10-29 00:00:00' <= nowT) { document.querySelectorAll('.cday').forEach(e => e.style.display = 'block');} 
+    if ('2025-10-29 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+    if ('2025-11-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    
+    if ('2025-11-01 10:00:00' <= nowT) { hideC(); }
+
+</script>
+
+<script>
+  const targets = document.querySelectorAll('.toggle_an1, .toggle_an2, .toggle_an3');
+  const observer = new MutationObserver(() => {
+    targets.forEach(el => {
+      if (el.innerHTML.trim() === '&nbsp;' || el.textContent.trim() === ' ') {
+        el.innerHTML = '';
+      }
+    });
+  });
+  targets.forEach(el => observer.observe(el, { childList: true, characterData: true, subtree: true }));
+</script>

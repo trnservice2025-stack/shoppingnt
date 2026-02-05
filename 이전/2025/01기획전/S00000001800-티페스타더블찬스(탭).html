@@ -1,0 +1,131 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<script>
+$(window).resize(function() { 
+    if($(window).width() > 768) { $(".ska1").attr("href","https://www.shoppingntmall.com/assets/css/swiper.css"); $(".ska2").attr("href","https://www.shoppingntmall.com/assets/css/common.css"); }
+    else { $(".ska1").attr("href","https://m.shoppingntmall.com/moassets/css/swiper.css"); $(".ska2").attr("href","https://m.shoppingntmall.com/moassets/css/common.css"); }
+});
+</script>
+<header class="fake_head">헤더</header><div class="fake_div" style="height:174px;"></div> -->
+
+<div class="promotion_con">
+
+    <div class="promotion_con_mo"><div>  
+        <img src="https://img.shoppingntmall.com/htmleditor/270/dd1750225407889.jpg">
+    </div></div>  
+
+    <div class="promotion_tab_wrap">
+      <div class="promotion_tab">
+        <a href="#pro_tab1" class="tab1">1</a>
+        <a href="/plan/planshop/swipeDetail/S00000001793" class="tab2">2</a>                
+      </div>
+    </div>    
+
+    <div id="pro_tab1" class="promotion_con_mo"><div>  
+       <a href="/display/goods/19957271" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/842/ppp_061749628583764.png"></a>
+       <a href="/display/goods/19971044" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/842/ppp_071749628584199.png"></a>
+       <a href="/display/goods/18203559" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/842/ppp_081749628584627.png"></a>
+       <a href="/display/goods/20293069" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/842/ppp_091749628585011.png"></a>
+    </div></div>  
+
+  </div>
+  
+<style>
+  .fake_head {height:174px; width:100%; position:fixed; top:0; left:0; background:#fff; z-index:997;}
+  .fake_head.fixed {height:74px;}
+  .img-wrap .fake_head, .img-wrap .fake_div, .exhibi-detail-img-link .fake_head, .exhibi-detail-img-link .fake_div {display:none !important;}
+
+  .promotion_con_wrap {max-width:1200px; margin:0 auto; background:#000; position:relative;}
+  .promotion_con_wrap>p {position:absolute; right:16px; bottom:16px; color:#DFDFDF; font-size:12px; border-radius:4px; background:#000; z-index:4; padding:4px 6px; font-weight:700; display:block; margin:0;}
+
+  .promotion_con * {line-height:initial;} 
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+  .promotion_con a, .promotion_con img {background:none;}
+  .promotion_con_mo {overflow:hidden;}
+
+  .promotion_tab_wrap {position:sticky; top:74px; padding: 0 20%; z-index:3; overflow:hidden; background:#2529d0;}
+  .promotion_tab {margin:0 auto; display:table; width:100%; text-align:center; table-layout: fixed; z-index:998; min-height:99px;}
+  .promotion_tab a {position:relative;cursor:pointer; height:150px; display:table-cell; vertical-align:middle; font-weight:700; flex:1; text-decoration:none; text-indent:-9999px; background-repeat:no-repeat; background-color:transparent; :no-repeat; background-position:center; position:relative; z-index:2;}
+  .promotion_tab a:nth-child(2):before {background:#7c7fe3; width:1px; height:50%; position:absolute; left:0px; top:25%; display:block; content:"";}
+  /* .promotion_tab a:nth-child(2):after {background:#574d7f; width:1px; height:100%; position:absolute; right:0px; top:0%; display:block; content:"";} */
+  .promotion_tab a img {width:auto; display:inline-block; max-width:100%;}
+  .promotion_tab a.on:after, .promotion_tab a.on:before {display:none;}
+  .promotion_tab a.tab1 {background-image:url("https://img.shoppingntmall.com/htmleditor/842/t11749628585549.png");}
+  .promotion_tab a.tab2 {background-image:url("https://img.shoppingntmall.com/htmleditor/842/t21749628585902.png");} 
+  .promotion_tab a.on {background-color:#00025a; opacity:1;}
+
+  @media screen and (max-width:1200px) {
+      .promotion_tab_wrap {padding: 0 0;}
+  }
+
+  @media screen and (max-width:720px) {        
+    .promotion_con_mo>div {margin:0 -33.33%;}
+    
+
+    .promotion_con_mo2 {overflow:hidden;}
+    .promotion_con_mo2>div {margin:0 -13%;}
+
+    .fake_head {height:100px;}
+    .fake_head.fixed {height:50px;}
+
+    .promotion_tab_wrap {top:49px;}
+    .promotion_tab {min-height:65px;}
+    .promotion_tab a.tab1, .promotion_tab a.tab2, .promotion_tab a.tab3, .promotion_tab a.tab4 {background-size:auto 130%;}
+    .promotion_tab a {height:55px; }
+  }
+</style>
+
+<script>
+  $(function(){
+
+    var headh = $("header").height();
+    var tabh = $(".promotion_tab").height();
+    var proffset = $("#pro_tab1").offset();
+  
+    $('.promotion_tab_wrap').css("top",headh);
+  
+    $(window).scroll(function(){
+      var headh = $("header").height();
+      var tabh = $(".promotion_tab").height();
+  
+      //삭제해도 되는 스크립트
+      if ($(document).scrollTop() > 30) { 
+        $('.fake_head').addClass('fixed');
+      } else {
+        $('.fake_head').removeClass('fixed');
+      }
+      if ($(document).scrollTop() > proffset.top - tabh - headh === false) {
+        $('.promotion_tab').children("a").removeClass('on');
+      }
+  
+      //탭 고정 위치
+      $('.promotion_tab_wrap').css("top",headh);
+  
+      //클릭시 해당 영역
+      $('.promotion_tab a').click(function(){
+        $("html, body").stop().animate({scrollTop: $($.attr(this, 'href')).offset().top - headh - tabh + 1}, 500);
+        return false;
+      });
+  
+      var pos = $(window).scrollTop();
+      var pos2 = pos + headh + tabh + 1;
+      var scrollBottom = pos + $(window).height();
+      if (pos2 > $('#pro_tab1').offset().top) {highlightLink('pro_tab1');}
+      if (pos2 > $('#pro_tab2').offset().top) {highlightLink('pro_tab2');}
+      if (pos2 > $('#pro_tab3').offset().top) {highlightLink('pro_tab3');}
+  
+    });
+  
+    function highlightLink(anchor){
+      $('.promotion_tab .on').removeClass('on');
+      $(".promotion_tab").find('[href="#' + anchor + '"]').addClass('on');
+    }
+  });
+</script>

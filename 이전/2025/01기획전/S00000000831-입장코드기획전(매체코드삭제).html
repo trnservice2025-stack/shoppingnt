@@ -1,0 +1,48 @@
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+ 
+<div class="promotion_con"><div class="promotion_con_mo"><img src="https://img.shoppingntmall.com/htmleditor/798/pc1744852281384.jpg"></div></div>
+<script>
+  $(document).ready(function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasMediaCode = urlParams.has('mediaCode');
+    const hasUtmSource = urlParams.has('utm_source');
+    const hasUtmMedium = urlParams.has('utm_medium');    
+    const hasUtmContent = urlParams.has('utm_content');
+    const hasUtmCampaign = urlParams.has('utm_campaign');
+
+    if (hasMediaCode || hasUtmSource || hasUtmMedium || hasUtmContent || hasUtmCampaign) {
+      sessionStorage.setItem('entryCodeValidated', 'true');
+      const cleanUrl = window.location.origin + window.location.pathname;
+      window.history.replaceState({}, document.title, cleanUrl);
+    } else {      
+      const previouslyValidated = sessionStorage.getItem('entryCodeValidated');
+      if (!previouslyValidated) {
+        alert('인증코드를 입력하세요.');
+        const currentUrl = window.location.href;
+        if (currentUrl.includes("S00000000831")) {
+          window.location.href = '/interfaces/plan/S00000000833?mediaCode=SE25&utm_source=kakao&utm_medium=dm&utm_content=pvs'; //카카오
+        } else if (currentUrl.includes("S00000001729")) {
+          window.location.href = '/interfaces/plan/S00000001728?mediaCode=SE27A&utm_source=phone&utm_medium=sms&utm_campaign=push&utm_content=250418_pvs'; //LMS
+        } else if (currentUrl.includes("S00000001749")) {
+          window.location.href = '/interfaces/plan/S00000001746?mediaCode=SE27E&utm_source=emforce&utm_medium=viral&utm_content=pvs'; //엠포스
+        } else if (currentUrl.includes("S00000001750")) {
+          window.location.href = '/interfaces/plan/S00000001747?mediaCode=MC34&utm_source=insta&utm_medium=dm&utm_content=pvs'; //인스타
+        } else if (currentUrl.includes("S00000001751")) {
+          window.location.href = '/interfaces/plan/S00000001748?mediaCode=SE27D&utm_source=trn&utm_medium=trn&utm_content=pvs'; //내부
+        }
+      }
+    }
+  });
+</script>
+<style>
+    .promotion_con * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+    @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33.33%;}
+    }
+</style>
