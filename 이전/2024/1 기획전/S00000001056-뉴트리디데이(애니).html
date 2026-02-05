@@ -1,0 +1,190 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/096/bg11705389474939.jpg" class="base1">
+      <img src="https://img.shoppingntmall.com/htmleditor/096/bg21705389475387.png" class="ani ani1"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/624/tt1706766418555.png" class="ani ani2">
+
+      <div class="firework_wrap">
+            <div class="firework" id="firework1">
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+            </div>
+            <div class="firework" id="firework2">
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+            </div>
+            <div class="firework" id="firework3">
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+            </div>
+        </div>
+    </div>
+</div></div>
+<div class="promotion_con"><div class="promotion_con_mo2">
+    <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401315146&amp;rUrl=/plan/planshop/swipeDetail/S00000001056');">
+        <img src="https://img.shoppingntmall.com/htmleditor/624/bb_021706766417316.jpg">
+      </a>
+
+      <img src="https://img.shoppingntmall.com/htmleditor/624/bb_031706766417687.jpg" alt="">
+  
+    <style>
+      .base {position:relative; overflow:hidden;}      
+      .base1 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%;}
+      .ani1 {z-index:3; top:0; left:0;}
+      .ani2 {z-index:4; top:0; left:0;}
+
+    </style>
+  
+  </div></div>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -10%;}
+      .promotion_con_mo2 {margin:0 -28%;}
+    }
+
+    .firework_wrap {z-index:2; position:absolute; left:0; top:-10%; width:100%; height:100%; transform:scale(2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        @media screen and (max-width:720px)  {
+            .firework_wrap {top:0%; transform:scale(1);
+            }
+    }
+
+
+        .firework { 
+            position: absolute; 
+        }
+        .explosion {
+            position: absolute;
+            left: -2px;
+            bottom: 0;
+            width: 4px;
+            height: 80px;
+            transform-origin: 50% 100%;
+            /* background-color: rgba(0,0,0,.2); */
+            overflow: hidden;
+        }
+        .explosion:nth-child(1) {
+            transform: rotate(0deg) translateY(-15px);
+        }
+        .explosion:nth-child(2) {
+            transform: rotate(30deg) translateY(-15px);
+        }
+        .explosion:nth-child(3) {
+            transform: rotate(60deg) translateY(-15px);
+        }
+        .explosion:nth-child(4) {
+            transform: rotate(90deg) translateY(-15px);
+        }
+        .explosion:nth-child(5) {
+            transform: rotate(120deg) translateY(-15px);
+        }
+        .explosion:nth-child(6) {
+            transform: rotate(150deg) translateY(-15px);
+        }
+        .explosion:nth-child(7) {
+            transform: rotate(180deg) translateY(-15px);
+        }
+        .explosion:nth-child(8) {
+            transform: rotate(210deg) translateY(-15px);
+        }
+        .explosion:nth-child(9) {
+            transform: rotate(240deg) translateY(-15px);
+        }
+        .explosion:nth-child(10) {
+            transform: rotate(270deg) translateY(-15px);
+        }
+        .explosion:nth-child(11) {
+            transform: rotate(300deg) translateY(-15px);
+        }
+        .explosion:nth-child(12) {
+            transform: rotate(330deg) translateY(-15px);
+        }
+
+        .explosion::before {
+            content: '';
+            position: absolute;
+            left: 0; 
+            right: 0;
+            top: 100%;
+            height: 40px;
+            background-color: #94a1b3;
+        }
+        @keyframes explosion {
+            0% {
+                top: 100%;
+            }
+            33%, 100% {
+                top: -50%;
+            }
+        }
+
+        #firework1 {
+            left: 50%;
+            top: 50%;
+            transform: scale(1);
+        }
+        #firework1 .explosion::before {
+            animation: explosion 2s ease-in-out infinite;
+        }
+
+        #firework2 {
+            left: 40%;
+            top: 45%;
+            transform: scale(.7);
+        }
+        #firework2 .explosion::before {
+            animation: explosion 2s .6s ease-in-out infinite;
+        }
+
+        #firework3 {
+            left: 60%;
+            top: 65%;
+            transform: scale(.4);
+        }
+        #firework3 .explosion::before {
+            animation: explosion 2s .4s ease-in-out infinite;
+        }
+  </style>

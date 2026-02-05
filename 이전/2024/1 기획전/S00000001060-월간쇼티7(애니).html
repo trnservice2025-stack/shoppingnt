@@ -1,0 +1,81 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">  
+  <div class="base sday sday1">
+    <img src="https://img.shoppingntmall.com/htmleditor/807/base1711518592797.png" class="base1">
+    <div class="ani ani_bg"></div>
+    <div class="ani ani7w animate__animated animate__headShake animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/284/a11711521908389.png" class="ani ani1 animate__animated animate__bounceInDown"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a21711521908895.png" class="ani ani2 animate__animated animate__bounceInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a31711521909438.png" class="ani ani3 animate__animated animate__bounceInUp">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a41711521909892.png" class="ani ani4 animate__animated animate__rotateIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a51711521910272.png" class="ani ani5 animate__animated animate__rotateIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a61711521910779.png" class="ani ani6 animate__animated animate__fadeInDown">
+    <div class="ani ani7w animate__animated animate__flash animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/284/a71711521911276.png" class="ani ani7 animate__animated animate__fadeIn"></div>
+  </div>
+  <div class="base sday sday2">
+    <img src="https://img.shoppingntmall.com/htmleditor/222/base1714022009103.png" class="base1">
+    <div class="ani ani_bg"></div>
+    <div class="ani ani7w animate__animated animate__headShake animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/222/a11714022008489.png" class="ani ani1 animate__animated animate__bounceInDown"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/222/a21714022008802.png" class="ani ani2 animate__animated animate__bounceInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a31711521909438.png" class="ani ani3 animate__animated animate__bounceInUp">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a41711521909892.png" class="ani ani4 animate__animated animate__rotateIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a51711521910272.png" class="ani ani5 animate__animated animate__rotateIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a61711521910779.png" class="ani ani6 animate__animated animate__fadeInDown">
+    <div class="ani ani7w animate__animated animate__flash animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/284/a71711521911276.png" class="ani ani7 animate__animated animate__fadeIn"></div>
+  </div>
+
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1s;}
+    .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/359/bg1711521683115.png); background-size:cover;}
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: -10000px 0 ;}
+    }
+    .ani1 {z-index:3; animation-delay: 0s;}
+    .ani2 {z-index:4; animation-delay: .3s;}
+    .ani3 {z-index:5; animation-delay: .6s;}
+    .ani4 {z-index:6; animation-delay: .9s;}
+    .ani5 {z-index:7; animation-delay: 1.2s;}  
+    .ani6 {z-index:8; animation-delay: 1.5s;}
+    .ani7 {z-index:9; animation-delay: 1.8s;}
+    .ani7w {z-index:3; animation-delay: 2.1s; animation-duration:2s;}
+  </style>
+
+  <script>
+    //예약
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();
+    if ('2024-04-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2024-05-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+  </script>
+  
+</div></div>
+
+<style>    
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con .w50 {width:50%; display:inline-block;}
+  .promotion_con a {cursor:pointer;}
+  .promotion_con a, .promotion_con img {background:none;}
+  .promotion_con_mo {overflow:hidden;}
+  @media screen and (max-width:720px) {  
+      .promotion_con {overflow:hidden;}     
+      .promotion_con>div {margin:0 -33.33%;}
+  }
+</style>
+
+<script>
+  $(function(){
+    $('.coupon-wrap .coupon .tit, .coupon-info .tit').each(function() {
+      var text222 = $(this).text();
+      let reg222 = /[[\]/]/gim;
+      $(this).text(text222.replace(/\[\쿠폰\] |\[\장바구니\] |의 /g, ''));
+    });
+  })
+</script>

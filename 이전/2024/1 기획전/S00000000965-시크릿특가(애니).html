@@ -1,0 +1,73 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+<div class="toggle_an"><span class="txt1">알람 <b>ON</b>하고 <b>시크릿 특가</b> 소식 받아보세요!</span></div>
+<div class="promotion_con">
+<div class="promotion_con_mo">
+<div class="base">
+  <img class="base1" src="https://img.shoppingntmall.com/htmleditor/854/base1712638462233.png" />
+  <img class="ani ani1 animate__animated animate__bounceInDown" src="https://img.shoppingntmall.com/htmleditor/854/a11712638458113.png" />
+  <img class="ani ani2 animate__animated animate__bounceInDown" src="https://img.shoppingntmall.com/htmleditor/854/a21712638458635.png" />
+  <img class="ani ani3 animate__animated animate__fadeInDown" src="https://img.shoppingntmall.com/htmleditor/854/a31712638459140.png" />
+  <img class="ani ani4 animate__animated animate__fadeInDown" src="https://img.shoppingntmall.com/htmleditor/854/a41712638459603.png" />
+  <div class="ani ani6w animate__animated animate__headShake animate__infinite">
+    <img class="ani ani6 animate__animated animate__rotateInDownLeft" src="https://img.shoppingntmall.com/htmleditor/854/a61712638460350.png" />
+    <img class="ani ani7 animate__animated animate__rotateInDownRight" src="https://img.shoppingntmall.com/htmleditor/854/a71712638460765.png" />
+  </div>
+  <img class="ani ani8 animate__animated animate__bounceInUp" src="https://img.shoppingntmall.com/htmleditor/854/a81712638461294.png" />
+  <img class="ani ani9 animate__animated animate__bounceInUp" src="https://img.shoppingntmall.com/htmleditor/854/a91712638461719.png" />
+</div>
+<img src="https://img.shoppingntmall.com/htmleditor/202/ev_021712638006460.jpg" />
+<a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202407262454&cFlag=A&rUrl=/plan/planshop/swipeDetail/S00000000965');">
+  <img src="https://img.shoppingntmall.com/htmleditor/413/ev_031712638007016%20%281%291716879103422%20%281%291721801828677.png" />
+</a>
+<style type="text/css">.base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+    .ani2 {z-index:4; animation-delay:.4s;}
+    .ani3 {z-index:5; animation-delay:.8s;}
+    .ani4 {z-index:6; animation-delay:1.2s;}
+    .ani5 {z-index:7; animation-delay:1.6s;}  
+    .ani6 {z-index:8; animation-delay:2s;}
+    .ani6w {z-index:8; animation-delay:3.6s; animation-duration:2s;}
+    .ani7 {z-index:9; animation-delay:2.4s;}
+    .ani8 {z-index:10; animation-delay:2.8s;}
+    .ani9 {z-index:11; animation-delay:3.2s;}
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+
+    @font-face {font-family:'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight:normal; font-style:normal;}
+    @font-face {font-family:'GmarketSansBold'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight:normal; font-style:normal;}
+
+    .toggle-area {padding:10px 0; background:#0049d0; color:#fff; }
+    .toggle-area .toggle-btn-area {border:0;}
+    .toggle-area .toggle-btn-area .txt1 {font-weight:400; height:28px; line-height:26px;  font-size:28px; font-family: 'GmarketSansMedium'; display:block; margin-bottom:10px;}
+    .toggle-area .toggle-btn-area .txt1 b {font-family: 'GmarketSansBold';}
+    .toggle-area .toggle-btn-area .txt {margin-right:6px; font-size:24px; font-family: 'GmarketSansMedium';}
+    .toggle-area .toggle-switch {margin-top:-3px;}
+    .toggle-area .toggle-switch input:checked + label {background:#3fb9f8;}
+
+    @media screen and (max-width:720px)  {
+      .toggle-area {padding:0;}
+      .toggle-area .toggle-btn-area .txt1 {font-size:16px; margin:0;}
+      .toggle-area .toggle-btn-area .txt {font-size:14px;}
+    }
+</style>
+</div>
+</div>
+<script>
+  //수신동의 이동
+  document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle_an')?.appendChild(document.querySelector('.toggle-area')));
+  document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle-area .toggle-btn-area')?.prepend(document.querySelector('.toggle_an .txt1')));
+  $(function () {
+    $('.toggle-area .toggle-btn-area .tit').hide();
+    $('.toggle-area .toggle-btn-area .txt').text("알람 현황");
+  });
+</script>

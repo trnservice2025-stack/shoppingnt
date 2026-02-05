@@ -1,0 +1,65 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">   
+    <div class="base sday sday1">
+    <!-- 배경 --> <img src="https://img.shoppingntmall.com/htmleditor/640/bg1729736357053.png" class="base1">
+    <!-- 특가찬스 --><div class="ani ani7w animate__animated animate__headShake animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/640/a11729736351343.png" class="ani ani1 animate__animated animate__bounceInDown"></div>
+    <!-- 월간쇼티 --><img src="https://img.shoppingntmall.com/htmleditor/640/a21729736351951.png" class="ani ani2 animate__animated animate__bounceInDown">
+    <!-- 서브텍스트 --><img src="https://img.shoppingntmall.com/htmleditor/640/a31729736355259.png" class="ani ani3 animate__animated animate__bounceInUp">
+    <!-- 데코1 <img src="https://img.shoppingntmall.com/htmleditor/107/decologo1724897999776.png" class="ani ani4 animate__animated animate__rotateIn"> -->
+    <!-- 데코이미지 --><img src="https://img.shoppingntmall.com/htmleditor/640/a51729736356009.png" class="ani ani5 animate__animated animate__bounceInUp">
+    <!-- 데코반짝이 --><div class="ani ani7w animate__animated animate__flash animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/640/a61729736356437.png" class="ani ani7 animate__animated animate__fadeIn"></div>
+    </div>
+  <div class="base sday sday2">
+    <!-- 배경 --> <img src="https://img.shoppingntmall.com/htmleditor/226/bg1732251710974.png" class="base1">
+    <!-- 특가찬스 --><div class="ani ani7w animate__animated animate__headShake animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/226/xt1732251715774.png" class="ani ani1 animate__animated animate__bounceInDown"></div>
+    <!-- 월간쇼티 --><img src="https://img.shoppingntmall.com/htmleditor/640/a21729736351951.png" class="ani ani2 animate__animated animate__bounceInDown">
+    <!-- 서브텍스트 --><img src="https://img.shoppingntmall.com/htmleditor/640/a31729736355259.png" class="ani ani3 animate__animated animate__bounceInUp">
+    <!-- 데코1 --> <img src="https://img.shoppingntmall.com/htmleditor/107/decologo1724897999776.png" class="ani ani4 animate__animated animate__rotateIn">
+    <!-- 데코이미지 --><img src="https://img.shoppingntmall.com/htmleditor/226/deco1732251711621.png" class="ani ani5 animate__animated animate__bounceInUp">
+    <!-- 데코반짝이 --><div class="ani ani7w animate__animated animate__flash animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/226/snow1732251715245.png" class="ani ani7 animate__animated animate__fadeIn"></div>
+  </div>
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1s;}
+    .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/359/bg1711521683115.png); background-size:cover;}
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: -10000px 0 ;}
+    }
+    .ani1 {z-index:3; animation-delay: 0s;}
+    .ani2 {z-index:4; animation-delay: .3s;}
+    .ani3 {z-index:5; animation-delay: .6s;}
+    .ani4 {z-index:6; animation-delay: .9s;}
+    .ani5 {z-index:7; animation-delay: 1.2s;}  
+    .ani6 {z-index:8; animation-delay: 1.5s;}
+    .ani7 {z-index:9; animation-delay: 1.8s;}
+    .ani7w {z-index:3; animation-delay: 2.1s; animation-duration:2s;}
+  </style>
+
+  <script>
+    //예약
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();
+    if ('2024-11-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2024-12-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+  </script>  
+</div></div>
+
+<style>    
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con .w50 {width:50%; display:inline-block;}
+  .promotion_con a {cursor:pointer;}
+  .promotion_con a, .promotion_con img {background:none;}
+  .promotion_con_mo {overflow:hidden;}
+  @media screen and (max-width:720px) {  
+      .promotion_con {overflow:hidden;}     
+      .promotion_con>div {margin:0 -33.33%;}
+  }
+</style>

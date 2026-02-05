@@ -1,0 +1,65 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="zzstars"></div>    
+    <div class="dday_wrap">
+      <img src="https://img.shoppingntmall.com/htmleditor/625/ssss1708572656380.jpg">
+      <!-- <img src="https://img.shoppingntmall.com/htmleditor/805/ss1670914735382.jpg"> -->
+    </div>
+</div></div>
+
+<div class="promotion_con"><div class="promotion_con_mo">
+  <a class="isApp" href="https://m.shoppingntmall.com/interfaces/shoppingntApp"><img src="https://img.shoppingntmall.com/htmleditor/019/ab1706679042032.jpg" /></a>
+</div></div>
+
+<style type="text/css">
+  @keyframes rotate{
+    0% {transform:perspective(1400px) rotateZ(10deg) rotateX(-15deg) rotateY(0);}
+    100% {transform:perspective(1400px) rotateZ(10deg) rotateX(-15deg) rotateY(-360deg);}
+  }
+  .zzstars{z-index:2; transform:perspective(500px); transform-style:preserve-3d; position:absolute; bottom:0; perspective-origin:50% 100%; left:50%; animation:rotate 90s infinite linear;}
+  .zzstar{width:2px; height:2px; background:#F7F7B6; position:absolute; top:0; left:0; transform-origin:0 0 -300px; transform:translate3d(0,0,-300px); backface-visibility:hidden;}
+
+  .dday_wrap {position:relative; overflow:hidden; word-break:keep-all;}
+
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; text-align:center; overflow:hidden; position:relative;}
+  .promotion_con img {width:100%;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con_mo {margin:0 -33.33%;}
+    .promotion_con_mo2 {margin:0 -24%;}
+  }
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var stars=800;
+    var $stars=$(".zzstars");
+    var r=800;
+    for(var i=0;i<stars;i++){
+      var $star=$("<div/>").addClass("zzstar");
+      $stars.append($star);
+    }
+    $(".zzstar").each(function(){
+      var cur=$(this);
+      var s=0.2+(Math.random()*1);
+      var curR=r+(Math.random()*300);
+      cur.css({
+        transformOrigin:"0 0 "+curR+"px",
+        transform:" translate3d(0,0,-"+curR+"px) rotateY("+(Math.random()*360)+"deg) rotateX("+(Math.random()*-50)+"deg) scale("+s+","+s+")"
+      })
+    })
+  });
+  //앱/웹 분기
+  $(function(){
+      if(isApp()) { 
+          $('.isApp').hide();
+      } else { 
+          $('.isApp').show();
+      }      
+      function isApp(){
+          return DEVICECD === "03";
+      }
+  });
+</script>
+
+
+

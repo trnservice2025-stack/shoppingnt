@@ -1,0 +1,91 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="zzstars"></div>    
+  <div class="dday_wrap">
+  <div class="dday"><i class="first">남은 시간</i> <i class="dday_day middle">0일</i> <i class="dday_sub last">00:00:00</i></div>
+  <!-- 시간끝 -->
+  <div class="dday end">기획전 종료</div>
+  <img src="https://img.shoppingntmall.com/htmleditor/805/ss1670914735382.jpg" /></div>
+  </div>
+  </div>
+  <style type="text/css">.ttday .mo {display:none;}
+  @keyframes rotate{
+  0% {transform:perspective(1400px) rotateZ(10deg) rotateX(-15deg) rotateY(0);}
+  100% {transform:perspective(1400px) rotateZ(10deg) rotateX(-15deg) rotateY(-360deg);}
+  }
+  .zzstars{z-index:2; transform:perspective(500px); transform-style:preserve-3d; position:absolute; bottom:0; perspective-origin:50% 100%; left:50%; animation:rotate 90s infinite linear;}
+  .zzstar{width:2px; height:2px; background:#F7F7B6; position:absolute; top:0; left:0; transform-origin:0 0 -300px; transform:translate3d(0,0,-300px); backface-visibility:hidden;}
+  
+  .dday_wrap {position:relative; overflow:hidden; word-break:keep-all;}
+  .dday {background:#1e7a93; font-size:40px; margin:130px 0 0 0; position:absolute; width:430px; height:77px; line-height:77px; border-radius:77px;
+  left:50%; top:50%; transform:translate(-50%, -50%); text-align:center; color:#fff !important; font-weight:700; display:inline-block; vertical-align:top;}
+  .dday i {font-style:normal;vertical-align:top; display:inline-block;}
+  .dday i.first {font-size:30px; font-weight:500;}
+  .dday i.middle {padding:0 5px;}
+  .dday i.last {width:150px; text-align:left;}
+  
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto; text-align:center; overflow:hidden; position:relative;}
+  .promotion_con img {width:100%;}
+  
+  @media screen and (max-width:720px)  {
+  .ttday .pc {display:none;}
+  .ttday .mo {display:block;}
+  .promotion_con_mo {margin:0 -33.33%;}
+  .promotion_con_mo2 {margin:0 -24%;}
+  .dday {margin:17vw 0 0 0; font-size:4.5vw; width:60vw; height:10vw; line-height:10vw;}
+  .dday i.first {font-size:4vw;}
+  .dday i.middle {padding:0 1vw;}
+  .dday i.last {width:16vw;}
+  }
+      </style>
+<script type="text/javascript">
+    $(document).ready(function(){
+      var stars=800;
+      var $stars=$(".zzstars");
+      var r=800;
+      for(var i=0;i<stars;i++){
+        var $star=$("<div/>").addClass("zzstar");
+        $stars.append($star);
+      }
+      $(".zzstar").each(function(){
+        var cur=$(this);
+        var s=0.2+(Math.random()*1);
+        var curR=r+(Math.random()*300);
+        cur.css({
+          transformOrigin:"0 0 "+curR+"px",
+          transform:" translate3d(0,0,-"+curR+"px) rotateY("+(Math.random()*360)+"deg) rotateX("+(Math.random()*-50)+"deg) scale("+s+","+s+")"
+        })
+      })
+    })
+</script>
+<script>
+  //남은시간
+  const dday_day = $(".dday_day");
+  const dday_sub = $(".dday_sub");
+  function updateTimer() {
+    const targetDate=new Date("2024-02-28T05:59:59+0900"); //이벤트종료시간
+      const currentDate = new Date();
+      const timeDifference = targetDate - currentDate;
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+      const seconds = Math.floor((timeDifference / 1000) % 60);
+      dday_day.text(`${days}일`);
+      dday_sub.text(`${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`);
+      $(".dday.end").hide();
+      if (currentDate > targetDate) {
+          $(".dday").hide();
+          $(".dday.end").show();
+      }
+  }
+  function startTimer() {
+      updateTimer();
+      setInterval(updateTimer, 1000);
+  }
+  startTimer();
+    const txt = $(".dday_day").text();
+    const fString = "0일";
+    if (txt.indexOf(fString) !== -1) {
+        $(".dday_day").remove();
+    }
+</script>

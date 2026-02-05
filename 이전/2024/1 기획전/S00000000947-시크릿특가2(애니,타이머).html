@@ -1,0 +1,159 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<script>
+  $(window).resize(function() {
+    if($(window).width() > 768) { $(".ska2").attr("href","https://www.shoppingntmall.com/assets/css/common.css"); }
+    else { $(".ska2").attr("href","https://m.shoppingntmall.com/moassets/css/common.css"); }
+  });
+</script>  -->
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+        <img src="https://img.shoppingntmall.com/htmleditor/818/base1706157100846.png" class="base1">
+        <div class="ani ani_bg"></div>
+        <img src="https://img.shoppingntmall.com/htmleditor/818/tit1706157102060.png" class="ani ani1"> 
+    </div>
+    <img src="https://img.shoppingntmall.com/htmleditor/818/11706157099629.jpg">
+    <div class="pro_time_wrap">
+        <img src="https://img.shoppingntmall.com/htmleditor/437/21706158037508.jpg" alt="2bg">
+        <div class="pro_time">
+            <img src="https://img.shoppingntmall.com/htmleditor/818/ccc1706157101759.png">
+            <div class="dday_wrap">
+                <div class="dday">
+                    <div class="dday_d">0</div>
+                    <div class="dday_s1"></div>
+                    <div class="dday_s2"></div>
+                    <div class="dday_s3"></div>
+                </div>
+                <div class="dday end"><img src="https://img.shoppingntmall.com/htmleditor/944/cc1699432205575.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <img src="https://img.shoppingntmall.com/htmleditor/818/31706157100472.jpg">
+    
+    <div class="base" style="cursor:pointer;" onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401234876&cFlag=P&rUrl=/plan/planshop/swipeDetail/S00000000947');">
+        <img src="https://img.shoppingntmall.com/htmleditor/925/1base1706159223726.jpg" class="base1">    
+        <div class="ani ani_bg2"></div>
+        <img src="https://img.shoppingntmall.com/htmleditor/925/3con1706159224573.png" class="ani ani_no"> 
+        <img src="https://img.shoppingntmall.com/htmleditor/925/4over1706159225066.png" class="ani ani2">
+      </div>
+
+</div></div>
+
+<style>
+    .base {position:relative; overflow:hidden; display:block;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%;}
+    .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/818/bg1706157101145.png); background-size:cover;}
+    .ani_bg2 {z-index:2; top:0; left:0; animation:ani_bg2 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/925/2bg1706159224099.png); background-size:cover;}
+    .ani1 {z-index:3; top:0; left:0; animation: ani1 1.2s ease-in-out forwards; top:-100%;}
+    .ani2 {z-index:4; top:0; left:0; animation: ani2 1.2s ease-in-out infinite; top:0;}
+    .ani_no {z-index:3; top:0; left:0; top:0;}
+
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: -10000px 0 ;}
+    }
+    @keyframes ani_bg2 {
+      from {background-position: 0 0;}
+      to {background-position:  0 -10000px;}
+    }
+
+    @keyframes ani1 {
+      0% { top:-100%;}
+      80% { top:5%;}
+      100% {top:0;}
+    }
+    @keyframes ani2 {
+      0% { top:0;}
+      50% { top:2px;}
+      100% {top:0;}
+    }
+
+    @font-face {
+        font-family: 'GmarketSansBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto; overflow:hidden; position:relative; }
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+
+    .pro_time_wrap {position:relative;}
+    .pro_time_wrap>img {position:relative; z-index:1;}
+    .pro_time {position:absolute; left:50%; top:50%; z-index:2; transform:translate(-50%, -50%);}
+    .pro_time img {width:auto;}
+
+    .dday_wrap {font-size:0; position:absolute; left:0px; top:0px; font-family:'GmarketSansMedium'; color:#fff;}
+    .dday_wrap .dday {font-size:0; width:614px;}
+    .dday_wrap .dday>div {position:relative; display:inline-block; text-align:center; font-weight:400; height:66px; line-height:66px; font-size:44px; width:128px; margin-right:75px; letter-spacing:8px;}
+    .dday_wrap .dday>div:nth-child(3n) {margin-right:50px;}
+    .dday_wrap .dday>div:last-child {margin-right:0;}
+    .dday_wrap .dday>div:first-child {display:none !important;} /* 날짜 지우기 */
+    .dday.end {font-size:26px; font-weight:700; text-align:center; color:#fff;}
+
+    @media screen and (max-width:1200px)  {
+        .pro_time img {max-width:inherit;}
+    }
+
+    @media screen and (max-width:800px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33%;}
+
+        .pro_time {transform:translate(-50%, -50%) scale(0.62);}
+    }
+    @media screen and (max-width:360px)  {
+        .pro_time {transform:translate(-50%, -50%) scale(0.55);}
+    }
+
+</style>
+
+<script>
+	//타이머
+	const dday_d = document.querySelector(".dday_d");
+	const dday_s1 = document.querySelector(".dday_s1");
+	const dday_s2 = document.querySelector(".dday_s2");
+	const dday_s3 = document.querySelector(".dday_s3");
+
+	function updateTimer() {
+		const targetDate = new Date("2024-01-28T23:59:59+0900");
+		const currentDate = new Date();
+		const timeDifference = Math.max(targetDate - currentDate, 0);
+
+		const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+		const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+		const seconds = Math.floor((timeDifference / 1000) % 60);
+
+		dday_d.textContent = `${days}`;
+		[dday_s1, dday_s2, dday_s3].forEach((element, index) => {
+			element.textContent = `${String([hours, minutes, seconds][index]).padStart(2, '0')}`;
+		});
+
+		document.querySelector(".dday.end").style.display = 'none';
+		if (currentDate > targetDate) {
+			document.querySelectorAll(".dday").forEach(element => element.style.display = 'none');
+			document.querySelector(".dday.end").style.display = 'block';
+		}
+	}
+
+	function startTimer() {
+		updateTimer();
+		setInterval(updateTimer, 1000);
+	}
+
+	startTimer();
+
+	const text = dday_d.textContent;
+	const findString = "0";
+	if (text.indexOf(findString) !== -1) {
+		//날짜 지우기 dday_d.remove();
+	}
+
+</script>

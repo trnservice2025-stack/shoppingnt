@@ -1,0 +1,31 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/252/1200%20-%202024-12-04T103642.0931733276253807.jpg" class="oday oday1">
+    <img src="https://img.shoppingntmall.com/htmleditor/207/zz1733287696282.jpg" class="oday oday2">
+  </div></div>
+  
+  <style>
+    .promotion_con, .promotion_con-wrap * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+  
+
+<script>
+    //예약
+  const nowD = new Date();
+  const formatDate = (value) => String(value).padStart(2, '0');
+  const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+  const nowT = formatDateTime(nowD);
+  const hideS = () => document.querySelectorAll('.oday').forEach(e => e.style.display = 'none');
+  hideS();
+  if ('2024-12-04 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.oday1').forEach(e => e.style.display = 'block');}
+  if ('2024-12-16 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.oday2').forEach(e => e.style.display = 'block');}
+</script>

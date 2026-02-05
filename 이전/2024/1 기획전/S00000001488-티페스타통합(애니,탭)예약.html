@@ -1,0 +1,220 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<header class="fake_head">헤더</header><div class="fake_div" style="height:174px;"></div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con">
+    <div class="promotion_con_mo">        
+        <div class="base">
+            <img src="https://img.shoppingntmall.com/htmleditor/448/bg1730102943343.png" class="base1">
+            <img src="https://img.shoppingntmall.com/htmleditor/962/a11730361671557.png" class="ani ani1 animate__animated animate__fadeInDown"> 
+            <img src="https://img.shoppingntmall.com/htmleditor/962/a21730361672150.png" class="ani ani2 animate__animated animate__fadeInDown">
+            <img src="https://img.shoppingntmall.com/htmleditor/962/a31730361672721.png" class="ani ani3 animate__animated animate__fadeInDown">
+          </div>  
+    </div>
+
+    <style>
+      .base {position:relative; overflow:hidden;}
+        .base1 {position:relative; z-index:1;}
+        .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+        .ani1 {z-index:3; animation-delay:0s;}
+        .ani2 {z-index:4; animation-delay:.4s;}
+        .ani3 {z-index:5; animation-delay:.8s;} 
+        .ani4 {z-index:6; animation-delay:1.2s;}
+        .ani5 {z-index:7; animation-delay:1.6s;}
+    </style> 
+    <div class="promotion_tab_wrap">
+      <div class="promotion_tab">
+        <a href="#pro_tab1" class="tab1">1</a>
+        <a href="#pro_tab2" class="tab2 tday tday1">2</a>       
+        <a href="#pro_tab3" class="tab3">3</a>               
+      </div>
+    </div>    
+
+    <div class="promotion_con_mo"><div>   
+        <div id="pro_tab1">
+            <button type="button" class="cdown"><img src="https://img.shoppingntmall.com/htmleditor/926/zzz_021730185513128.jpg"></button>
+            <div class="cdown_end">
+               <img src="https://img.shoppingntmall.com/htmleditor/857/e11730185574164.jpg" class="oday oday1"><!-- 소진완료 -->
+               <img src="https://img.shoppingntmall.com/htmleditor/857/e21730185577424.jpg" class="oday oday2"><!-- 소진완료막날 -->               
+            </div>
+        </div>
+        <div class="toggle_an"></div>
+        <a href="/plan/planshop/swipeDetail/S00000001514" class="dday dday1"><img src="https://img.shoppingntmall.com/htmleditor/926/zzz_031730185516162.jpg"></a> 
+        <a href="/plan/planshop/swipeDetail/S00000001515" class="dday dday2"><img src="https://img.shoppingntmall.com/htmleditor/028/00_021731628908313.png"></a> 
+        <div class="toggle_an"></div>
+        <div id="pro_tab2">
+            <a href="/plan/event/swipeDetail/E00000000299"><img src="https://img.shoppingntmall.com/htmleditor/448/con31730102945143.png"  class="dday dday1"></a>  
+        </div>
+        <div id="pro_tab3">
+            <a href="/plan/event/swipeDetail/E00000000301">
+                <img src="https://img.shoppingntmall.com/htmleditor/026/441730797822032.jpg" class="dday dday1">
+                <img src="https://img.shoppingntmall.com/htmleditor/026/44441730797822740.jpg" class="dday dday2">
+            </a>   
+        </div>
+    </div></div>  
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('.cdown_end').hide();
+      $('.cdown').on('click', function(e) {
+        e.preventDefault();
+        if ($('main .re-coupon-wrap').length > 0) {
+            $('.re-coupon-wrap .re-coupon .coupon').trigger('click');
+        } else {
+          if(isApp()) { 
+            alert("오전 10시에 마케팅 수신동의 후 다운 가능합니다.");
+          } else { 
+            alert("오전 10시에 앱에서 마케팅 수신동의 후 다운 가능합니다.");
+          }   
+        }
+    });
+
+      if ($('.re-coupon-wrap .coupon').hasClass('disabled dead')) {
+            $('#pro_tab1 .cdown').hide();
+            $('#pro_tab1 .cdown').next('.cdown_end').show();
+        }
+    });
+
+    //수신동의 이동
+	  document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle_an')?.appendChild(document.querySelector('.toggle-area')));
+  </script>
+
+  <style>
+    .re-coupon-wrap {display:none;}
+    .acco-wrap.plan {padding-top:48px;}
+    .toggle-area .toggle-btn-area {border-top:1px solid rgba(0, 0, 0, 0.05);}
+  </style>
+
+<!-- <div class="promotion_con2">
+    <div class="promotion_con_mo2"><div>
+        <a href="/plan/planshop/swipeDetail/S00000001488"><img src="https://img.shoppingntmall.com/htmleditor/041/zz1730439499331.jpg"></a>  
+    </div></div>
+</div>  
+
+<style>
+    .promotion_con2 {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con2 img {width:100%; display:block;}
+    .promotion_con2 a {cursor:pointer;}
+    .promotion_con2 a, .promotion_con2 img {background:none;}
+    .promotion_con_mo2 {overflow:hidden;}
+
+    @media screen and (max-width:720px) {        
+        .promotion_con_mo2>div {margin:0 -24%;}
+    }
+</style> -->
+
+<style>
+  .fake_head {height:174px; width:100%; position:fixed; top:0; left:0; background:#fff; z-index:997;}
+  .fake_head.fixed {height:74px;}
+  .img-wrap .fake_head, .img-wrap .fake_div, .exhibi-detail-img-link .fake_head, .exhibi-detail-img-link .fake_div {display:none !important;}
+
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con, .promotion_con-wrap * {line-height:initial;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con .w50 {width:50%; display:inline-block;}
+  .promotion_con a, .promotion_con button {cursor:pointer; font-size:0;}
+  .promotion_con a, .promotion_con img {background:none;}
+  .promotion_con_mo {overflow:hidden;}
+
+  .promotion_tab_wrap {position:sticky; top:74px; padding: 0 20%; z-index:3; overflow:hidden; background:#161361;}
+  .promotion_tab {margin:0 auto; display:table; width:100%; text-align:center; table-layout: fixed; z-index:998; min-height:99px;}
+  .promotion_tab a {position:relative;cursor:pointer; height:150px; display:table-cell; vertical-align:middle; font-weight:700; flex:1; text-decoration:none; text-indent:-9999px; background-repeat:no-repeat; background-color:transparent; :no-repeat; background-position:center; position:relative; z-index:2;}
+  .promotion_tab a:nth-child(2):after {background:#4a487f; width:1px; height:50%; position:absolute; left:0px; top:25%; display:block; content:"";}
+  .promotion_tab a:nth-child(2):before {background:#4a487f; width:1px; height:50%; position:absolute; right:0px; top:25%; display:block; content:"";}
+  .promotion_tab a img {width:auto; display:inline-block; max-width:100%;}
+  .promotion_tab a.on:after, .promotion_tab a.on:before {display:none;}
+  .promotion_tab a.tab1 {background-image:url("https://img.shoppingntmall.com/htmleditor/448/t11730102948792.png");}
+  .promotion_tab a.tab2 {background-image:url("https://img.shoppingntmall.com/htmleditor/448/t21730102951814.png");}
+  .promotion_tab a.tab3 {background-image:url("https://img.shoppingntmall.com/htmleditor/448/t31730102952210.png");} 
+  .promotion_tab a.on {background-color:#0304d7; opacity:1;}
+
+  @media screen and (max-width:1200px) {
+      .promotion_tab_wrap {padding: 0 0;}
+  }
+
+  @media screen and (max-width:720px) {        
+      .promotion_con_mo>div {margin:0 -33.33%;}
+
+      .promotion_con_mo2 {overflow:hidden;}
+      .promotion_con_mo2>div {margin:0 -13%;}
+
+      .fake_head {height:100px;}
+      .fake_head.fixed {height:50px;}
+
+      .promotion_tab_wrap {top:49px;}
+      .promotion_tab {min-height:65px;}
+      .promotion_tab a.tab1, .promotion_tab a.tab2, .promotion_tab a.tab3, .promotion_tab a.tab4 {background-size:auto 130%;}
+      .promotion_tab a {height:55px; }
+  }
+</style>
+  
+<script>
+  $(function(){
+
+    var headh = $("header").height();
+    var tabh = $(".promotion_tab").height();
+    var proffset = $("#pro_tab1").offset();
+  
+    $('.promotion_tab_wrap').css("top",headh);
+  
+    $(window).scroll(function(){
+      var headh = $("header").height();
+      var tabh = $(".promotion_tab").height();
+  
+      //삭제해도 되는 스크립트
+      if ($(document).scrollTop() > 30) { 
+        $('.fake_head').addClass('fixed');
+      } else {
+        $('.fake_head').removeClass('fixed');
+      }
+      if ($(document).scrollTop() > proffset.top - tabh - headh === false) {
+        $('.promotion_tab').children("a").removeClass('on');
+      }
+  
+      //탭 고정 위치
+      $('.promotion_tab_wrap').css("top",headh);
+  
+      //클릭시 해당 영역
+      $('.promotion_tab a').click(function(){
+        $("html, body").stop().animate({scrollTop: $($.attr(this, 'href')).offset().top - headh - tabh + 1}, 500);
+        return false;
+      });
+  
+      var pos = $(window).scrollTop();
+      var pos2 = pos + headh + tabh + 1;
+      var scrollBottom = pos + $(window).height();
+      if (pos2 > $('#pro_tab1').offset().top) {highlightLink('pro_tab1');}
+      if (pos2 > $('#pro_tab2').offset().top) {highlightLink('pro_tab2');}
+      if (pos2 > $('#pro_tab3').offset().top) {highlightLink('pro_tab3');}
+  
+    });
+  
+    function highlightLink(anchor){
+      $('.promotion_tab .on').removeClass('on');
+      $(".promotion_tab").find('[href="#' + anchor + '"]').addClass('on');
+    }
+  });
+
+  //예약
+  const nowD = new Date();
+  const formatDate = (value) => String(value).padStart(2, '0');
+  const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+  const nowT = formatDateTime(nowD);
+  const hideS = () => document.querySelectorAll('.oday').forEach(e => e.style.display = 'none');
+  const hideS2 = () => document.querySelectorAll('.dday').forEach(e => e.style.display = 'none');
+  const hideS3 = () => document.querySelectorAll('.tday').forEach(e => e.style.display = 'none');
+  hideS();
+  if ('2024-10-28 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.oday1').forEach(e => e.style.display = 'block');}
+  if ('2024-11-30 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.oday2').forEach(e => e.style.display = 'block');}
+
+  if ('2024-10-30 00:00:00' <= nowT) { hideS2(); document.querySelectorAll('.dday1').forEach(e => e.style.display = 'block');}
+  if ('2024-11-15 00:00:00' <= nowT) { hideS2(); document.querySelectorAll('.dday2').forEach(e => e.style.display = 'block');}
+
+  if ('2024-10-30 00:00:00' <= nowT) { hideS3(); document.querySelectorAll('.tday1').forEach(e => e.style.display = 'table-cell');}
+  if ('2024-11-15 00:00:00' <= nowT) { hideS3(); document.querySelectorAll('.tday2').forEach(e => e.style.display = 'table-cell');}
+
+</script>

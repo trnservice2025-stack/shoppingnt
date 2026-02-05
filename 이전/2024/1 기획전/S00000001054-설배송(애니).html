@@ -1,0 +1,190 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/149/base1706510699415.png" class="base1">
+    <img src="https://img.shoppingntmall.com/htmleditor/149/bg1706510699953.png" class="ani ani1 animate__animated animate__backInUp"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/149/a11706510697387.png" class="ani ani2 animate__animated animate__backInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/149/a21706510697987.png" class="ani ani3 animate__animated animate__bounceIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/149/a31706510698365.png" class="ani ani4 animate__animated animate__bounceIn">
+    
+    <img src="https://img.shoppingntmall.com/htmleditor/496/l11706511621027.png" class="ani ani5">
+    <img src="https://img.shoppingntmall.com/htmleditor/496/l21706511621687.png" class="ani ani6">
+    <img src="https://img.shoppingntmall.com/htmleditor/496/l31706511622291.png" class="ani ani7">
+
+    <div class="bird-container-w">
+      <div class="bird-container bird-container-one"><div class="bird bird-one"></div></div>        
+      <div class="bird-container bird-container-two"><div class="bird bird-two"></div></div>  
+      <div class="bird-container bird-container-three"><div class="bird bird-three"></div></div> 
+      <div class="bird-container bird-container-four"><div class="bird bird-four"></div></div>
+    </div>
+  </div>
+
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%;}
+    .ani1 {z-index:3; top:0; left:0; animation-delay: 0s; animation-duration:1s;}
+    .ani2 {z-index:5; top:0; left:0; animation-delay: .6s; animation-duration:1s;}
+    .ani3 {z-index:6; top:0; left:0; animation-delay: .9s; animation-duration:1s;}
+    .ani4 {z-index:7; top:0; left:0; animation-delay: 1.2s; animation-duration:1s;}
+    .ani5 {z-index:8; bottom:0; left:0;}
+    .ani6 {z-index:9; bottom:0; left:0; animation-duration:1s; animation: ani6 1.5s ease-in-out infinite; opacity:.2}
+    .ani7 {z-index:10; bottom:0; left:0;}
+    @keyframes ani6 {
+      0% { opacity:.2}
+      50% {opacity:1}
+      100% {opacity:.2}
+    }
+    .bird-container-w {transform:scaleX(-1); z-index:4; position:absolute; width:100%; height:100%; left:0; top:0; opacity:.6;}
+      @media screen and (max-width:720px) {        
+        .bird-container-w {width:133%; left:-50%;}
+      }
+      .bird{
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg');
+          filter: invert(34%) sepia(55%) saturate(427%) hue-rotate(141deg) brightness(93%) contrast(91%);
+          background-size: auto 100%;
+          width: 88px;
+          height: 125px;
+          will-change: background-position;
+
+          animation-name: fly-cycle;
+          animation-timing-function: steps(10);
+          animation-iteration-count: infinite;
+      }
+
+      .bird-one {animation-duration: 1s; animation-delay: -0.5s;}
+      .bird-two {animation-duration: 0.9; animation-delay: -0.75s;}
+      .bird-three {animation-duration:1.25s; animation-delay: -0.25s}
+      .bird-four {animation-duration: 1.1s;animation-delay: -0.5s;}
+
+      .bird-container { z-index:2; 
+        position: absolute;
+        top: 10%;
+        left: -3%;
+        transform: scale(0) translateX(-10vw);
+        will-change: transform;
+        
+        animation-name: fly-right-one;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+        
+      .bird-container-one{
+        animation-duration: 15s;
+        animation-delay: 0;
+      }
+        
+      .bird-container-two{
+        animation-duration: 15s;
+        animation-delay: 2s; margin:5% 0 0 5%;
+      }
+        
+      .bird-container-three{
+        animation-duration: 15s;
+        animation-delay: 1.5s; margin:10% 0 0 10%;
+      }
+        
+      .bird-container-four {
+          animation-duration: 15s;
+          animation-delay: 1s; margin:15% 0 0 15%;
+      }
+      /* @keyframes fly-cycle {
+          100%{
+              background-position: -3600px 0;
+          }
+      } */
+      @keyframes fly-cycle {
+        
+        100% {
+          background-position: -900px 0;
+        }
+        
+      }
+
+      @keyframes fly-right-one {
+        
+        0% {
+          transform: scale(0.3) translateX(-10vw);
+        }
+        
+        10% {
+          transform: translateY(2vh) translateX(10vw) scale(0.4);
+        }
+        
+        20% {
+          transform: translateY(0vh) translateX(30vw) scale(0.5);
+        }
+        
+        30% {
+          transform: translateY(4vh) translateX(50vw) scale(0.6);
+        }
+        
+        40% {
+          transform: translateY(2vh) translateX(70vw) scale(0.6);
+        }
+        
+        50% {
+          transform: translateY(0vh) translateX(90vw) scale(0.6);
+        }
+        
+        60% {
+          transform: translateY(0vh) translateX(110vw) scale(0.6);
+        }
+        
+        100% {
+          transform: translateY(0vh) translateX(110vw) scale(0.6);
+        }
+        
+      }
+
+      @keyframes fly-right-two {
+        
+        0% {
+          transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+        }
+        
+        10% {
+          transform: translateY(0vh) translateX(10vw) scale(0.4);
+        }
+        
+        20% {
+          transform: translateY(-4vh) translateX(30vw) scale(0.6);
+        }
+        
+        30% {
+          transform: translateY(1vh) translateX(50vw) scale(0.45);
+        }
+        
+        40% {
+          transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+        }
+        
+        50% {
+          transform: translateY(0vh) translateX(90vw) scale(0.45);
+        }
+        
+        51% {
+          transform: translateY(0vh) translateX(110vw) scale(0.45);
+        }
+        
+        100% {
+          transform: translateY(0vh) translateX(110vw) scale(0.45);
+        }
+        
+      }
+  </style>
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>

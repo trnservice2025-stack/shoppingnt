@@ -1,0 +1,94 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con_wrap">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/566/base1705380588099.png" class="base1">
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a11705380299066.png" class="ani ani1"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a21705380299453.png" class="ani ani2 animate__animated animate__fadeInUp">
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a31705380299887.png" class="ani ani3 animate__animated animate__pulse animate__infinite">
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a41705380300224.png" class="ani ani4 animate__animated animate__headShake animate__infinite">
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a51705380300538.png" class="ani ani5 animate__animated animate__slideInLeft">
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a61705380301151.png" class="ani ani6 animate__animated animate__slideInRight">
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a71705380301758.png" class="ani ani7 animate__animated animate__zoomIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/641/a81705380302088.png" class="ani ani8 animate__animated animate__jackInTheBox">
+  </div>
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%;}
+    .ani1 {z-index:5; top:0; left:0;}
+    .ani2 {z-index:2; top:0; left:0; animation-delay: .3s; animation-duration:1s;}
+    .ani3 {z-index:3; top:0; left:0; animation-delay: .6s; animation-duration:1s;}
+    .ani4 {z-index:4; top:0; left:0; animation-delay: 0.9s; animation-duration:1s;}
+    .ani5 {z-index:6; top:0; left:0; animation-delay: 1.2s; animation-duration:1s;}  
+    .ani6 {z-index:7; top:0; left:0; animation-delay: 1.5s; animation-duration:1s;}  
+    .ani7 {z-index:8; top:0; left:0; animation-delay: 1.8s; animation-duration:1s;}  
+    .ani8 {z-index:9; top:0; left:0; animation-delay: 2.1s; animation-duration:1s;}  
+
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: 0 -10000px;}
+    }
+    
+    @keyframes ani1 {
+      0% {}
+      100% {}
+    }
+  </style>
+
+</div></div>
+
+<div id="con1"></div>
+<div class="promotion_con">
+    <a href="#con1" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/642/i_021705379831102.jpg" alt=""></a>
+    <a href="#con2" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/642/i_031705379831567.jpg" alt=""></a>
+</div>
+<div class="promotion_con"><div class="promotion_con_mo2">   
+    <img src="https://img.shoppingntmall.com/htmleditor/642/i_041705379832074.jpg" alt="">
+</div></div>
+
+<div id="con2"></div>
+<div class="promotion_con">
+    <a href="#con1" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/642/i_051705379832544.jpg" alt=""></a>
+    <a href="#con2" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/642/i_061705379832872.jpg" alt=""></a>
+</div>
+<div class="promotion_con"><div class="promotion_con_mo3">
+    
+    <img src="https://img.shoppingntmall.com/htmleditor/642/i_071705379833299.jpg" alt="">
+</div></div>
+
+<div class="promotion_con"><div class="promotion_con_mo4">
+    <img src="https://img.shoppingntmall.com/htmleditor/642/i_081705379833862.jpg" alt="">
+</div></div>
+</div>
+
+<style>
+    .promotion_con_wrap {font-size:0;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -5%;}
+    .promotion_con_mo2 {margin:0 -16%;}
+    .promotion_con_mo3 {margin:0 -8%;}
+    .promotion_con_mo4 {margin:0 -6%;}
+  }
+</style>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const targetTop = target.offsetTop;
+                window.scrollTo({
+                    top: targetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>

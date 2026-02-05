@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/555/base1715131181126.png" class="base1">
+    <img src="https://img.shoppingntmall.com/htmleditor/555/a11715131176685.png" class="ani ani1 animate__animated animate__fadeInDown"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/555/a21715131177517.png" class="ani ani2 animate__animated animate__fadeInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/555/a31715131177998.png" class="ani ani3 animate__animated animate__fadeInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/555/a41715131178706.png" class="ani ani4 animate__animated animate__fadeInDown">
+    <div class="ani ani5w animate__animated animate__headShake animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/555/a51715131179220.png" class="ani ani5 animate__animated animate__bounceIn"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/555/a61715131179777.png" class="ani ani6 animate__animated animate__fadeInUp">
+    <div class="ani ani7w animate__animated animate__flash animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/555/a71715131180383.png" class="ani ani7 animate__animated animate__fadeIn"></div>
+    <div class="ani ani_bg"></div>
+  </div>  
+
+  <img src="https://img.shoppingntmall.com/htmleditor/403/11715233018421.jpg" class="sday sday2 sday3 sday4">
+  <img src="https://img.shoppingntmall.com/htmleditor/403/21715233018993.jpg" class="sday sday3 sday4">
+  <img src="https://img.shoppingntmall.com/htmleditor/403/31715233019469.jpg" class="sday sday4">  
+
+  <div class="sday sday1">
+    <a href="/display/goods/11917031" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/970/zz_021715154535973.jpg"></a>
+    <a href="/display/goods/13244028" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/970/zz_02-031715154533757.jpg"></a>
+  </div>
+  <div class="sday sday1 sday2">
+    <a href="/display/goods/13244027" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/970/zz_02-041715154534289.jpg"></a>
+    <a href="/display/goods/15643497" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/970/zz_02-051715154534647.jpg"></a>
+  </div>
+  <div class="sday sday1 sday2 sday3">
+    <a href="/display/goods/13244026" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/970/zz_02-061715154535210.jpg"></a>
+    <a href="/display/goods/11782277" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/970/zz_02-071715154535545.jpg"></a>
+  </div>
+
+  <script>
+    //예약
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();
+    if ('2024-05-09 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2024-05-13 23:59:59' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+    if ('2024-05-15 23:59:59' <= nowT) { hideS(); document.querySelectorAll('.sday3').forEach(e => e.style.display = 'block');}
+    if ('2024-05-17 23:59:59' <= nowT) { hideS(); document.querySelectorAll('.sday4').forEach(e => e.style.display = 'block');}
+  </script>
+
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+    .ani2 {z-index:4; animation-delay:.4s;}
+    .ani3 {z-index:5; animation-delay:.8s;}
+    .ani4 {z-index:6; animation-delay:1.2s;}
+    .ani5 {z-index:7; animation-delay:1.6s;}  
+    .ani5w {z-index:7; animation-delay:3.2s; animation-duration:2s;}  
+    .ani6 {z-index:8; animation-delay:2s;}
+    .ani7 {z-index:9; animation-delay:2.4s;}
+    .ani7w {z-index:9; animation-delay:3.2s; animation-duration:2s;}
+
+    .ani_bg {z-index:10; top:0; left:0; animation:ani_bg 300s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/163/abg1715128798479.png); background-size:cover;}
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: -10000px 0 ;}
+    }
+  </style>
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>

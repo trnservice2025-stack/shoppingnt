@@ -1,0 +1,394 @@
+ <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
+<style> body {min-width:100%;} </style>
+<script>
+  $(window).resize(function() {
+    if($(window).width() > 768) { $(".ska1").attr("href","https://www.shoppingntmall.com/assets/css/swiper.css"); $(".ska2").attr("href","https://www.shoppingntmall.com/assets/css/common.css"); }
+    else { $(".ska1").attr("href","https://m.shoppingntmall.com/moassets/css/swiper.css"); $(".ska2").attr("href","https://m.shoppingntmall.com/moassets/css/common.css"); }
+  });
+</script> 
+<header class="fake_head">헤더</header><div class="fake_div" style="height:174px;"></div> -->
+
+
+
+<div class="promotion_con">
+
+    <div class="promotion_con_mo">
+        <div class="base">
+          <img src="https://img.shoppingntmall.com/htmleditor/394/bg1706164656208.png" class="base1">
+          <img src="https://img.shoppingntmall.com/htmleditor/394/a21706164655878.png" class="ani ani1">  
+
+          <div class="bird-container-w">
+            <div class="bird-container bird-container-one"><div class="bird bird-one"></div></div>        
+            <div class="bird-container bird-container-two"><div class="bird bird-two"></div></div>  
+            <div class="bird-container bird-container-three"><div class="bird bird-three"></div></div> 
+            <div class="bird-container bird-container-four"><div class="bird bird-four"></div></div>
+          </div>
+          
+          
+        </div>
+    </div>
+
+    <style>
+      .base {position:relative; overflow:hidden;}
+      .base1 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%;}
+      .ani1 {z-index:3; top:0; right:0;}
+
+      .bird-container-w {transform:scaleX(-1); z-index:2; position:absolute; width:100%; height:100%; left:0; top:0;}
+      @media screen and (max-width:720px) {        
+        .bird-container-w {width:133%; left:-50%;}
+    }
+      .bird{
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg');
+          filter: invert(34%) sepia(55%) saturate(427%) hue-rotate(141deg) brightness(93%) contrast(91%);
+          background-size: auto 100%;
+          width: 88px;
+          height: 125px;
+          will-change: background-position;
+
+          animation-name: fly-cycle;
+          animation-timing-function: steps(10);
+          animation-iteration-count: infinite;
+      }
+
+      .bird-one {animation-duration: 1s; animation-delay: -0.5s;}
+      .bird-two {animation-duration: 0.9; animation-delay: -0.75s;}
+      .bird-three {animation-duration:1.25s; animation-delay: -0.25s}
+      .bird-four {animation-duration: 1.1s;animation-delay: -0.5s;}
+
+      .bird-container { z-index:2; 
+        position: absolute;
+        top: 10%;
+        left: -3%;
+        transform: scale(0) translateX(-10vw);
+        will-change: transform;
+        
+        animation-name: fly-right-one;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+        
+      .bird-container-one{
+        animation-duration: 15s;
+        animation-delay: 0;
+      }
+        
+      .bird-container-two{
+        animation-duration: 15s;
+        animation-delay: 2s; margin:5% 0 0 5%;
+      }
+        
+      .bird-container-three{
+        animation-duration: 15s;
+        animation-delay: 1.5s; margin:10% 0 0 10%;
+      }
+        
+      .bird-container-four {
+          animation-duration: 15s;
+          animation-delay: 1s; margin:15% 0 0 15%;
+      }
+      /* @keyframes fly-cycle {
+          100%{
+              background-position: -3600px 0;
+          }
+      } */
+      @keyframes fly-cycle {
+        
+        100% {
+          background-position: -900px 0;
+        }
+        
+      }
+
+      @keyframes fly-right-one {
+        
+        0% {
+          transform: scale(0.3) translateX(-10vw);
+        }
+        
+        10% {
+          transform: translateY(2vh) translateX(10vw) scale(0.4);
+        }
+        
+        20% {
+          transform: translateY(0vh) translateX(30vw) scale(0.5);
+        }
+        
+        30% {
+          transform: translateY(4vh) translateX(50vw) scale(0.6);
+        }
+        
+        40% {
+          transform: translateY(2vh) translateX(70vw) scale(0.6);
+        }
+        
+        50% {
+          transform: translateY(0vh) translateX(90vw) scale(0.6);
+        }
+        
+        60% {
+          transform: translateY(0vh) translateX(110vw) scale(0.6);
+        }
+        
+        100% {
+          transform: translateY(0vh) translateX(110vw) scale(0.6);
+        }
+        
+      }
+
+      @keyframes fly-right-two {
+        
+        0% {
+          transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+        }
+        
+        10% {
+          transform: translateY(0vh) translateX(10vw) scale(0.4);
+        }
+        
+        20% {
+          transform: translateY(-4vh) translateX(30vw) scale(0.6);
+        }
+        
+        30% {
+          transform: translateY(1vh) translateX(50vw) scale(0.45);
+        }
+        
+        40% {
+          transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+        }
+        
+        50% {
+          transform: translateY(0vh) translateX(90vw) scale(0.45);
+        }
+        
+        51% {
+          transform: translateY(0vh) translateX(110vw) scale(0.45);
+        }
+        
+        100% {
+          transform: translateY(0vh) translateX(110vw) scale(0.45);
+        }
+        
+      }
+
+      
+    </style>
+
+    <div class="promotion_tab_wrap">
+      <div class="promotion_tab">
+        <a href="#pro_tab1" class="tab1">1</a>
+        <a href="#pro_tab2" class="tab2">2</a>
+        <a href="/plan/planshop/swipeDetail/S00000001021" class="tab3">3</a>        
+      </div>
+    </div>    
+
+    <div id="pro_tab1">
+        <div class="promotion_con_mo"><div>
+          <img src="https://img.shoppingntmall.com/htmleditor/394/ptit1706164657334.png" alt="">
+            <div class="swiper_pro_wrap">
+                <button class="swiper-button-prev2">이전</button><button class="swiper-button-next2">다음</button>
+                <div class="swiper swiper_pro oday oday1"><div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="/display/goods/14171373"><img src="https://img.shoppingntmall.com/htmleditor/155/141716611706273525640%20%286%291706457258295%20%283%291706487233414.png" /></a></div>
+                  <div class="swiper-slide"><a href="/display/goods/14183321"><img src="https://img.shoppingntmall.com/htmleditor/104/141833211706487898087.png" /></a></div>
+                  <!--<div class="swiper-slide"><a href="/display/goods/14382586"><img src="https://img.shoppingntmall.com/htmleditor/585/141716611706273525640%20%286%2917064572582951706487393311.png" /></a></div>-->
+                  <!--<div class="swiper-slide"><a href="/display/goods/14171463"><img src="https://img.shoppingntmall.com/htmleditor/123/141716611706273525640%20%286%291706457258295%20%282%291706487404377.png" /></a></div>-->
+                  <!--<div class="swiper-slide"><a href="/display/goods/14171661"><img src="https://img.shoppingntmall.com/htmleditor/874/141716611706487873077.png" /></a></div>-->
+                  <div class="swiper-slide"><a href="/display/goods/13511198"><img src="https://img.shoppingntmall.com/htmleditor/528/135111981706164890477.png" /></a></div>
+                </div><div class="swiper_pro_bottom"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div></div>
+
+
+                <div class="swiper swiper_pro oday oday2"><div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="/display/goods/10317957"><img src="https://img.shoppingntmall.com/htmleditor/077/103179571706847131119.png"></a></div>
+                  <div class="swiper-slide"><a href="/display/goods/13557822"><img src="https://img.shoppingntmall.com/htmleditor/077/135578221706847132164.png"></a></div>
+                  <div class="swiper-slide"><a href="/display/goods/12566929"><img src="https://img.shoppingntmall.com/htmleditor/077/125669291706847131488.png"></a></div>
+                  <div class="swiper-slide"><a href="/display/goods/12889363"><img src="https://img.shoppingntmall.com/htmleditor/077/128893631706847131819.png"></a></div>
+                  <div class="swiper-slide"><a href="/display/goods/14034630"><img src="https://img.shoppingntmall.com/htmleditor/077/140346301706847132889.png"></a></div>
+                  <div class="swiper-slide"><a href="/display/goods/13967982"><img src="https://img.shoppingntmall.com/htmleditor/077/139679821706847132521.png"></a></div>
+                  
+                </div><div class="swiper_pro_bottom"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div></div>
+
+            </div>
+        </div></div>
+        
+    </div>
+
+    <div id="pro_tab2">
+      <div class="promotion_con_mo"><div>
+        <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401254924:202401254925:202401084420:202401084421:202401224860&amp;rUrl=/plan/planshop/swipeDetail/S00000001033');">
+              <img src="https://img.shoppingntmall.com/htmleditor/394/coupon1706164656508.png">
+          </a>
+      </div></div>
+    </div>
+
+    <div id="pro_tab3"></div>
+</div>
+
+<style>
+    .fake_head {height:174px; width:100%; position:fixed; top:0; left:0; background:#fff; z-index:997;}
+    .fake_head.fixed {height:74px;}
+    .img-wrap .fake_head, .img-wrap .fake_div, .exhibi-detail-img-link .fake_head, .exhibi-detail-img-link .fake_div {display:none !important;}
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con .w50 {width:50%; display:inline-block;}
+    .promotion_con a {cursor:pointer;}
+    .promotion_con a, .promotion_con img {background:none;}
+    .promotion_con_mo {overflow:hidden;}
+
+    .promotion_tab_wrap {position:sticky; top:74px; padding: 0 20%; z-index:3; overflow:hidden; background:#3f2064;}
+    .promotion_tab {margin:0 auto; display:table; width:100%; text-align:center; table-layout: fixed; z-index:998; min-height:99px;}
+    .promotion_tab a {position:relative;cursor:pointer; height:150px; display:table-cell; vertical-align:middle; font-weight:700; flex:1; text-decoration:none; text-indent:-9999px; background-repeat:no-repeat; background-position:center; position:relative; z-index:2;}
+    .promotion_tab a:nth-child(2):after {background:#8c79a2; width:1px; height:50%; position:absolute; left:0px; top:25%; display:block; content:"";}
+    .promotion_tab a:nth-child(2):before {background:#8c79a2; width:1px; height:50%; position:absolute; right:0px; top:25%; display:block; content:"";}
+    .promotion_tab a img {width:auto; display:inline-block; max-width:100%;}
+    .promotion_tab a.on:after, .promotion_tab a.on:before {display:none;}
+    .promotion_tab a.tab1 {background-image:url("https://img.shoppingntmall.com/htmleditor/394/t11706164657800.png");}
+    .promotion_tab a.tab2 {background-image:url("https://img.shoppingntmall.com/htmleditor/394/t21706164658096.png");}
+    .promotion_tab a.tab3 {background-image:url("https://img.shoppingntmall.com/htmleditor/394/t31706164658474.png");}
+    .promotion_tab a.on {background-color:#52658a; opacity:1;}
+    .promotion_tab a.on.tab1 {}
+    .promotion_tab a.on.tab2 {}
+    .promotion_tab a.on.tab3 {}
+
+    .swiper_pro_wrap {overflow:hidden; background:url(https://img.shoppingntmall.com/htmleditor/394/pbg1706164656898.png);  padding:0 25%; position:relative;}
+    .swiper_pro_wrap .swiper-button-prev2,
+    .swiper_pro_wrap .swiper-button-next2 {background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; width:50px; height:72px; position:absolute; top:35%; text-indent:-9999px; width:50px; height:72px; background-size:cover;}
+    .swiper_pro_wrap .swiper-button-prev2 {left:18%; background-image:url(https://img.shoppingntmall.com/htmleditor/788/arr11693533250572.png);}
+    .swiper_pro_wrap .swiper-button-next2 {right:18%; background-image:url(https://img.shoppingntmall.com/htmleditor/066/arr21693533269365.png);}
+
+    .swiper_pro {overflow:hidden; z-index:1; padding:0; margin:0 0; position:relative;  padding-bottom:20%;}
+    .swiper_pro .swiper-wrapper {height:auto; }
+    .swiper_pro .swiper-slide button {width:100%;}
+    .swiper_pro .swiper-slide img {width:100%; position:relative;}
+    .swiper_pro .swiper-slide a img:first-child {z-index:1;}
+    .swiper_pro .swiper-slide a img:last-child {z-index:2; margin-top:-2%;}
+    .swiper_pro .swiper-slide.swiper-slide-active img {transform: scale(1); opacity:1;}
+
+    .swiper_pro_bottom {position:relative; margin:0; padding:0; width:100%; position:absolute; bottom:7%; left:0; text-align:center;}
+    .swiper_pro_bottom .swiper-pagination-fraction,
+    .swiper_pro_bottom .swiper-button-next,
+    .swiper_pro_bottom .swiper-button-prev {display:inline-block; vertical-align:middle; top:0; left:0; bottom:0; right:0; position:relative; border:0; border-radius:0;}
+    .swiper_pro_bottom .swiper-pagination-fraction {width:auto; font-size:18px; width:100px; margin-top:-15px; color:#fff;}
+    .swiper_pro_bottom .swiper-button-next, .swiper_pro_bottom .swiper-button-prev {width:12px; height:12px; background:none;}
+    .swiper_pro_bottom .swiper-button-next:after, .swiper_pro_bottom .swiper-button-next:before,
+    .swiper_pro_bottom .swiper-button-prev:after, .swiper_pro_bottom .swiper-button-prev:before {content:""; display:block; height:2px; width:14px; background:#fff; position:absolute; top:unset; bottom:unset; right:unset; left:unset;}
+    .swiper_pro_bottom .swiper-button-next:after {transform:rotate(-45deg); bottom:0; right:0;}
+    .swiper_pro_bottom .swiper-button-next:before {transform:rotate(45deg); top:0; right:0;}
+    .swiper_pro_bottom .swiper-button-prev:after {transform:rotate(-135deg); bottom:0; left:0;}
+    .swiper_pro_bottom .swiper-button-prev:before {transform:rotate(135deg); top:0; left:0;}
+
+    @media screen and (max-width:1200px) {
+        .promotion_tab_wrap {padding: 0 0;}
+    }
+
+    @media screen and (max-width:720px) {        
+        .promotion_con_mo>div {margin:0 -33.33%;}
+
+        .promotion_con_mo2 {overflow:hidden;}
+        .promotion_con_mo2>div {margin:0 -13%;}
+
+        .fake_head {height:100px;}
+        .fake_head.fixed {height:50px;}
+
+        .promotion_tab_wrap {top:49px;}
+        .promotion_tab {min-height:57px;}
+        .promotion_tab a.tab1, .promotion_tab a.tab2, .promotion_tab a.tab3, .promotion_tab a.tab4 {background-size:auto 110%;}
+        .promotion_tab a {height:55px; }
+
+        .swiper_pro_wrap {padding:0 25%;}
+        .swiper_pro_wrap .swiper-button-prev2,.swiper_pro_wrap .swiper-button-next2 {display:none;}
+        .swiper_pro {overflow:hidden; z-index:1; margin:0 -5%; position:relative;}
+        .swiper_pro .swiper-slide {display:block;}
+        .swiper_pro .swiper-slide img {display:block;}
+        .swiper_pro_bottom {bottom:3.5%; z-index:2;}
+        .swiper_pro_bottom .swiper-pagination-fraction {margin-top:0;}
+    }
+</style>
+
+<script>
+  $(function(){
+    $(".swiper_pro_wrap .swiper-button-prev2").bind("click", function(){
+        $(".swiper_pro_wrap .swiper-button-prev").trigger("click");
+    });
+    $(".swiper_pro_wrap .swiper-button-next2").bind("click", function(){
+        $(".swiper_pro_wrap .swiper-button-next").trigger("click");
+    });   
+    //스와이퍼
+    var swiperzzzz = new Swiper(".swiper_pro", {
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 4000,
+        },
+    });
+
+    var headh = $("header").height();
+    var tabh = $(".promotion_tab").height();
+    var proffset = $("#pro_tab1").offset();
+
+    $('.promotion_tab_wrap').css("top",headh);
+
+    $(window).scroll(function(){
+      var headh = $("header").height();
+      var tabh = $(".promotion_tab").height();
+
+      //삭제해도 되는 스크립트
+      if ($(document).scrollTop() > 30) { 
+  		  $('.fake_head').addClass('fixed');
+    	} else {
+        $('.fake_head').removeClass('fixed');
+      }
+      if ($(document).scrollTop() > proffset.top - tabh - headh === false) {
+        $('.promotion_tab').children("a").removeClass('on');
+      }
+
+      //탭 고정 위치
+      $('.promotion_tab_wrap').css("top",headh);
+
+      //클릭시 해당 영역
+      $('.promotion_tab a').click(function(){
+        $("html, body").stop().animate({scrollTop: $($.attr(this, 'href')).offset().top - headh - tabh + 1}, 500);
+        return false;
+      });
+
+      var pos = $(window).scrollTop();
+      var pos2 = pos + headh + tabh + 1;
+      var scrollBottom = pos + $(window).height();
+      if (pos2 > $('#pro_tab1').offset().top) {highlightLink('pro_tab1');}
+      if (pos2 > $('#pro_tab2').offset().top) {highlightLink('pro_tab2');}
+      if (pos2 > $('#pro_tab3').offset().top) {highlightLink('pro_tab3');}
+
+    });
+
+    function highlightLink(anchor){
+      $('.promotion_tab .on').removeClass('on');
+      $(".promotion_tab").find('[href="#' + anchor + '"]').addClass('on');
+    }
+  });
+
+  //예약
+	const nowD = new Date();
+	const formatDate = (value) => String(value).padStart(2, '0');
+	const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+	const nowT = formatDateTime(nowD);
+	const hideS = () => document.querySelectorAll('.oday').forEach(e => e.style.display = 'none');
+	hideS();
+	if ('2024-02-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.oday1').forEach(e => e.style.display = 'block');}
+	if ('2024-02-05 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.oday2').forEach(e => e.style.display = 'block');}
+
+</script>

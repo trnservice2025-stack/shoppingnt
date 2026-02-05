@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="toggle_an">
+  <span class="txt1">알람 <b>ON</b>하고 <b>시크릿 특가</b> 소식 받아보세요!</span>
+</div>
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/438/base1714027263506.png" class="base1">
+    <div class="ani ani1w animate__animated animate__infinite animate__flash"><img src="https://img.shoppingntmall.com/htmleditor/438/a11714027261014.png" class="ani ani1 animate__animated animate__fadeIn"> </div>
+    <img src="https://img.shoppingntmall.com/htmleditor/438/a21714027261478.png" class="ani ani2 animate__animated animate__fadeInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/438/a31714027261889.png" class="ani ani3 animate__animated animate__fadeInUp">
+    <img src="https://img.shoppingntmall.com/htmleditor/438/a41714027262342.png" class="ani ani4 animate__animated animate__bounceInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/438/a51714027262846.png" class="ani ani5 animate__animated animate__lightSpeedInRight">
+    <img src="https://img.shoppingntmall.com/htmleditor/438/a61714027263155.png" class="ani ani6 animate__animated animate__lightSpeedInLeft">
+  </div>
+  <img src="https://img.shoppingntmall.com/htmleditor/239/st_021714026980854.png">
+  <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202404258386&cFlag=A&rUrl=/plan/planshop/swipeDetail/S00000001173');">
+    <img src="https://img.shoppingntmall.com/htmleditor/239/st_031714026981293.png">
+  </a>
+
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1.2s;}
+    .ani1 {z-index:3; animation-delay:0s;}
+    .ani1w {z-index:3; animation-delay:2.8s; animation-duration:2.2s;}
+    .ani2 {z-index:4; animation-delay:.4s;}
+    .ani3 {z-index:5; animation-delay:.8s;}
+    .ani4 {z-index:2; animation-delay:1.2s;}
+    .ani5 {z-index:7; animation-delay:1.6s;}  
+    .ani6 {z-index:8; animation-delay:2s;}
+
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+
+    @font-face {font-family:'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight:normal; font-style:normal;}
+    @font-face {font-family:'GmarketSansBold'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight:normal; font-style:normal;}
+
+    .toggle-area {background:#ff6984; color:#fff; padding:10px 0;}
+    .toggle-area .toggle-btn-area {border:0;}
+    .toggle-area .toggle-btn-area .txt1 {font-weight:400; height:28px; line-height:26px;  font-size:28px; font-family: 'GmarketSansMedium'; display:block; margin-bottom:10px;}
+    .toggle-area .toggle-btn-area .txt1 b {font-family: 'GmarketSansBold';}
+    .toggle-area .toggle-btn-area .txt {margin-right:6px; font-size:24px; font-family: 'GmarketSansMedium';}
+    .toggle-area .toggle-switch {margin-top:-3px;}
+    .toggle-area .toggle-switch input:checked + label {background:#6bcca1;}
+
+    @media screen and (max-width:720px)  {
+      .toggle-area {padding:0;}
+      .toggle-area .toggle-btn-area .txt1 {font-size:16px; margin:0;}
+      .toggle-area .toggle-btn-area .txt {font-size:14px;}
+    }
+  </style>
+
+</div></div>
+
+<script>
+  //수신동의 이동
+  document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle_an')?.appendChild(document.querySelector('.toggle-area')));
+  document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle-area .toggle-btn-area')?.prepend(document.querySelector('.toggle_an .txt1')));
+  $(function () {
+    $('.toggle-area .toggle-btn-area .tit').hide();
+    $('.toggle-area .toggle-btn-area .txt').text("알람 현황");
+  });
+</script>

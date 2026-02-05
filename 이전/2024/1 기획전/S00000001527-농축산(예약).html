@@ -1,0 +1,40 @@
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/852/planshop_view_pc%20%2812%291730702246928.jpg" class="sday sday1">
+    <img src="https://img.shoppingntmall.com/htmleditor/324/zz1731460586334.jpg" class="sday sday2">    
+    <img src="https://img.shoppingntmall.com/htmleditor/124/pp1731908700578.jpg" class="sday sday3">    
+    <img src="https://img.shoppingntmall.com/htmleditor/803/pp1732587643113.jpg" class="sday sday4">    
+  </div></div>
+  
+  <style>
+    .promotion_con, .promotion_con-wrap * {line-height:initial;}
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+    .promotion_con a, .promotion_con img {background:none;}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>
+  
+  <script>
+    //예약
+      const nowD = new Date();
+      const formatDate = (value) => String(value).padStart(2, '0');
+      const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+      const nowT = formatDateTime(nowD);
+      const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+      hideS();
+      if ('2024-11-07 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+      if ('2024-11-14 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+      if ('2024-11-21 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday3').forEach(e => e.style.display = 'block');}
+      if ('2024-11-28 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday4').forEach(e => e.style.display = 'block');}
+
+      $(function(){
+        $('.re-coupon .coupon .tit').each(function() {
+            $(this).html($(this).html().replace("_모바일_33차", ""));
+        });
+    });
+  </script>

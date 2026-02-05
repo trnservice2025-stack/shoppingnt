@@ -1,0 +1,53 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/181/bg11704696114865.png" class="base1">
+      <img src="https://img.shoppingntmall.com/htmleditor/181/coupon1704696116188.png" class="ani ani1"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/181/bg21704696115341.png" class="ani ani2">
+      <img src="https://img.shoppingntmall.com/htmleditor/181/txt11704696116820.png" class="ani ani3">
+      <img src="https://img.shoppingntmall.com/htmleditor/181/txt21704696117234.png" class="ani ani4">
+    </div>
+  
+    <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401084401:202401084402:202401084403&amp;rUrl=/plan/planshop/swipeDetail/S00000000690');">
+        <img src="https://img.shoppingntmall.com/htmleditor/181/c1704696115780.png">
+      </a>
+  
+    <style>
+      .base {position:relative; overflow:hidden;}
+      .base1 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%;}
+      .ani2 {z-index:3; top:0; left:0;}
+
+      .ani1 {z-index:2; top:0; left:0; animation: ani1 1.2s ease-in-out forwards; left:-30%; top:-30%;}
+      .ani3 {z-index:4; top:0; left:0; animation: ani3 1s ease-in-out forwards; animation-delay: 0.3s; top:-20%;}
+      .ani4 {z-index:5; top:0; left:0; animation: ani4 1.2s ease-in-out forwards; animation-delay: 1s; opacity:0; transform:scale(1.2);}
+      
+      @keyframes ani1 {
+        0% { left:-30%; top:-30%;}
+        100% { left:0%; top:0%;}
+      }
+      @keyframes ani3 {
+        0% { top:-20%;}
+        100% { top:0%;}
+      }
+      @keyframes ani4 {
+        0% { opacity:0; transform:scale(1.2);}
+        80% {transform:scale(.9);}
+        100% {transform:scale(1); opacity:1;}
+      }
+      
+    </style>
+  
+  </div></div>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>

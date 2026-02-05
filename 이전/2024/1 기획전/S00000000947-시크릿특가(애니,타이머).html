@@ -1,0 +1,156 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/377/base1704701981612.png" class="base1">      
+      <div class="ani ani_bg"></div>
+      <img src="https://img.shoppingntmall.com/htmleditor/377/a11704701977310.png" class="ani ani1"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/377/a21704701978170.png" class="ani ani2">
+      <img src="https://img.shoppingntmall.com/htmleditor/335/a_011704859687784.png" class="ani ani4">
+      <img src="https://img.shoppingntmall.com/htmleditor/377/a51704701979763.png" class="ani ani5">
+      <img src="https://img.shoppingntmall.com/htmleditor/377/a61704701980314.png" class="ani ani6">
+      <img src="https://img.shoppingntmall.com/htmleditor/377/a71704701980778.png" class="ani ani7">
+    </div>
+  
+    <style>
+      .base {position:relative; overflow:hidden;}
+      .base1 {position:relative; z-index:1;}
+      .ani {position:absolute; width:100%;}
+      .ani1 {z-index:4; bottom:-20%; left:0; animation: ani1 1.2s ease-in-out forwards; }
+      .ani2 {z-index:3; bottom:-100%; left:0; animation: ani2 1.2s ease-in-out forwards; animation-delay: .8s; opacity:0;}
+      .ani_bg {z-index:5; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/377/a31704701978827.png); background-size:cover;}
+      .ani4 {z-index:6; top:0; left:0; animation: ani4 1.5s ease-in-out forwards; animation-delay: 1.5s; transform:scale(.8); opacity:0;}
+      .ani5 {z-index:7; top:0; left:0; animation: ani5 1.2s ease-in-out infinite; animation-delay: 1.8s; opacity:0;}
+      .ani6 {z-index:8; top:0; left:0; animation: ani5 1.2s ease-in-out infinite; animation-delay: 2.1s; opacity:0;} 
+      .ani7 {z-index:9; bottom:-100%; left:0; animation: ani1 1.2s ease-in-out forwards; animation-delay: 2.1s;} 
+      
+      @keyframes ani_bg {
+        from {background-position: 0 0;}
+        to {background-position: -9000px 0;}
+      }
+  
+      @keyframes ani1 {
+        0% {bottom:-100%; }
+        100% {bottom:0%; }
+      }
+      @keyframes ani2 {
+        0% {bottom:-20%;  opacity:0;}
+        100% {bottom:0%;  opacity:1;}
+      }
+
+      @keyframes ani4 {
+        0% {transform:scale(.8); opacity:0;}
+        80% {transform:scale(1.1); }
+        100% {transform:scale(1); opacity:1;}
+      }
+      @keyframes ani5 {
+        0% {opacity:0;}
+        50% {opacity:1;}
+        100% {opacity:0;}
+      }
+    </style>
+
+    <img src="https://img.shoppingntmall.com/htmleditor/010/ev_011704702197990.png" alt="">
+    <div class="pro_time_wrap">
+        <img src="https://img.shoppingntmall.com/htmleditor/010/ev_021704702198597.png" alt="">
+        <div class="pro_time">
+            <img src="https://img.shoppingntmall.com/htmleditor/381/time1704702319598.png">
+            <div class="dday_wrap">
+                <div class="dday">
+                    <div class="dday_d">0</div>
+                    <div class="dday_s1"></div>
+                    <div class="dday_s2"></div>
+                    <div class="dday_s3"></div>
+                </div>
+                <div class="dday end"><img src="https://img.shoppingntmall.com/htmleditor/499/end1704702969693.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <img src="https://img.shoppingntmall.com/htmleditor/010/ev_031704702199112.png">
+  
+  </div></div>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+    @font-face {
+        font-family: 'GmarketSansBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .pro_time_wrap {position:relative;}
+    .pro_time_wrap>img {position:relative; z-index:1;}
+    .pro_time {position:absolute; left:50%; top:50%; z-index:2; transform:translate(-50%, -50%);}
+    .pro_time img {width:auto;}
+
+    .dday_wrap {font-size:0; position:absolute; left:0px; top:0px; font-family:'GmarketSansMedium'; color:#fff;}
+    .dday_wrap .dday {font-size:0; width:600px;}
+    .dday_wrap .dday>div {margin-right:60px; position:relative; display:inline-block; text-align:center; font-weight:400; height:77px; line-height:77px; font-size:50px; width:147px; letter-spacing:8px; text-indent:8px;}
+    .dday_wrap .dday>div:first-child {display:none;}
+    .dday_wrap .dday>div:nth-child(2n) {margin-right:85px;}
+    .dday_wrap .dday>div:last-child {margin-right:0;}
+    .dday.end {font-size:26px; font-weight:700; text-align:center; color:#fff;}
+
+    @media screen and (max-width:1200px)  {
+        .pro_time {transform:translate(-50%, -50%) scale(0.9);}
+        .pro_time img {max-width:inherit;}
+    }
+
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+
+      .pro_time {transform:translate(-50%, -50%) scale(0.52);}
+      .pro_time img {max-width:inherit;}
+    }
+  </style>
+
+<script>
+	//타이머
+	const dday_d = document.querySelector(".dday_d");
+	const dday_s1 = document.querySelector(".dday_s1");
+	const dday_s2 = document.querySelector(".dday_s2");
+	const dday_s3 = document.querySelector(".dday_s3");
+
+	function updateTimer() {
+		const targetDate = new Date("2024-01-14T23:59:59+0900");
+		const currentDate = new Date();
+		const timeDifference = Math.max(targetDate - currentDate, 0);
+
+		const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+		const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+		const seconds = Math.floor((timeDifference / 1000) % 60);
+
+		dday_d.textContent = `${days}`;
+		[dday_s1, dday_s2, dday_s3].forEach((element, index) => {
+			element.textContent = `${String([hours, minutes, seconds][index]).padStart(2, '0')}`;
+		});
+
+		document.querySelector(".dday.end").style.display = 'none';
+		if (currentDate > targetDate) {
+			document.querySelectorAll(".dday").forEach(element => element.style.display = 'none');
+			document.querySelector(".dday.end").style.display = 'block';
+		}
+	}
+
+	function startTimer() {
+		updateTimer();
+		setInterval(updateTimer, 1000);
+	}
+
+	startTimer();
+
+	const text = dday_d.textContent;
+	const findString = "0";
+	if (text.indexOf(findString) !== -1) {
+		dday_d.remove();
+	}
+
+</script>

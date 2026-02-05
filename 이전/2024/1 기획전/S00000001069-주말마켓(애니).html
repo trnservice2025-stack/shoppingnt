@@ -1,0 +1,64 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+        <img src="https://img.shoppingntmall.com/htmleditor/347/base1698209547085.png" class="base1">
+        <img src="https://img.shoppingntmall.com/htmleditor/902/t11698209562180.png" class="ani ani1">
+        <img src="https://img.shoppingntmall.com/htmleditor/409/t21698209569516.png" class="ani ani2">
+        <img src="https://img.shoppingntmall.com/htmleditor/227/t31698209577062.png" class="ani ani3">
+        <img src="https://img.shoppingntmall.com/htmleditor/734/s11698209585463.png" class="ani ani4">
+        <img src="https://img.shoppingntmall.com/htmleditor/289/s21698209592177.png" class="ani ani5">
+    </div>
+
+    <a href="/display/goods/10978859" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/890/pc_021707805799397.png"></a>
+    <a href="/display/goods/10118749" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/890/pc_02-031707805798086.png"></a>
+    <a href="/display/goods/12595184" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/890/pc_02-041707805798509.png"></a>
+    <a href="/display/goods/14437653" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/890/pc_02-051707805798900.png"></a>
+
+    <style>
+        .base {position:relative; overflow:hidden;}
+        .base1 {position:relative; z-index:1;}
+
+        .ani {position:absolute; width:100%;}
+        .ani1 {z-index:2; top:0; left:-100%; animation: ani1 1.2s ease-in-out forwards; }
+        .ani2 {z-index:3; top:0; left:0; animation: ani2 1.2s ease-in-out forwards; animation-delay: .8s; opacity:0;}
+        .ani3 {z-index:4; bottom:-100%; left:0; animation: ani3 1.2s ease-in-out forwards; animation-delay: 1.2s;}
+        .ani4 {z-index:5; top:0; left:0; animation: ani4 1.2s ease-in-out infinite; animation-delay: 1.6s; opacity:0;}
+        .ani5 {z-index:6; top:0; left:0; animation: ani4 1.2s ease-in-out infinite; animation-delay: 2.2s; opacity:0;}      
+
+        @keyframes ani1 {
+            0% {left:-100%;}
+            80% {left:5%;}
+            100% {left:0;}
+        }
+        @keyframes ani2 {
+            0% {opacity:0; transform:scale(2);}
+            80% {opacity:.8; transform:scale(0.9);}
+            100% { opacity:1; transform:scale(1);}
+        }
+        @keyframes ani3 {
+            0% {bottom:-100%;}
+            80% {bottom:5%;}
+            100% {bottom:0;}
+        }
+        @keyframes ani4 {
+            0% {opacity:0;}
+            50% {opacity:1;}
+            100% {opacity:0;}
+        }
+        
+    </style>
+  
+</div></div>
+
+<style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+    @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33.33%;}
+    }
+</style>
+    

@@ -1,0 +1,74 @@
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<div class="promotion_con"><div class="promotion_con_mo">
+    <div class="base">
+      <img src="https://img.shoppingntmall.com/htmleditor/993/c_011704952471853.png" class="base1">      
+      <div class="ani ani_bg"></div>
+      <div class="ani ani_bg2"></div>
+      <img src="https://img.shoppingntmall.com/htmleditor/438/a11704953240485.png" class="ani ani1"> 
+      <img src="https://img.shoppingntmall.com/htmleditor/438/a21704953241250.png" class="ani ani2">
+      <img src="https://img.shoppingntmall.com/htmleditor/438/a31704953241563.png" class="ani ani3">
+      <img src="https://img.shoppingntmall.com/htmleditor/438/a41704953242141.png" class="ani ani4">
+    </div>
+
+    <style>
+        .base {position:relative; overflow:hidden;}
+        .base1 {position:relative; z-index:1;}
+        .ani {position:absolute; width:100%;}
+        .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/672/c1704952792174.png); background-size:cover;}
+        .ani_bg2 {z-index:3; top:0; left:0; animation:ani_bg2 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/506/bg21704953279123.png); background-size:cover;}
+        .ani1 {z-index:4; top:0; left:0; animation: ani1 1.5s ease-in-out infinite; }
+        .ani2 {z-index:5; top:0; left:0; animation: ani2 1.5s ease-in-out infinite; animation-delay: 0s;}
+        .ani3 {z-index:6; top:0; left:0; animation: ani3 1.5s ease-in-out infinite; animation-delay: 0s;}
+        .ani4 {z-index:7; top:0; left:0; animation: ani4 1.5s ease-in-out infinite; animation-delay: .5s;}
+        
+        @keyframes ani_bg {
+          from {background-position: -5000px  0;}
+          to {background-position: 0 0 ;}
+        }
+        @keyframes ani_bg2 {
+          from {background-position: 0 0;}
+          to {background-position: -8000px 0 ;}
+        }
+    
+        @keyframes ani1 {
+          0% {top:0;}
+          50% {top:-3px;}
+          100% {top:0;}
+        }
+        @keyframes ani2 {
+          0% {opacity:1;}
+          50% {opacity:.3;}
+          100% {opacity:1;}
+        }
+        @keyframes ani3 {
+          0% {transform:rotate(0deg);}
+          50% {transform:rotate(-3deg);}
+          100% {transform:rotate(0deg);}
+        }
+        @keyframes ani4 {
+            0% {top:0;}
+          50% {top:-2px;}
+          100% {top:0;}
+        }
+        
+      </style>
+
+    <img src="https://img.shoppingntmall.com/htmleditor/993/c_021704952472242.png" alt="">
+
+    <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202401104480:202401114513:202401114491:202401114490:202401114492:202401114493:202401114494:202401114495:202401114496:202401114497:202401114498:202401114499:202401114500:202401114501:202401114502:202401114503:202401114504:202401114505:202401114506&amp;rUrl=/plan/planshop/swipeDetail/S00000000671');">
+        <img src="https://img.shoppingntmall.com/htmleditor/993/c_031704952472726.png">
+    </a>
+  
+  </div></div>
+  
+  <style>
+    .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+    .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+    .promotion_con img {width:100%; display:block;}
+    .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+  
+    @media screen and (max-width:720px)  {
+      .promotion_con {overflow:hidden;}
+      .promotion_con_mo {margin:0 -33.33%;}
+    }
+  </style>

@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+  <div class="base">
+    <img src="https://img.shoppingntmall.com/htmleditor/430/base1710983498427.png" class="base1">
+    <img src="https://img.shoppingntmall.com/htmleditor/430/a11710983494590.png" class="ani ani1"> 
+    <img src="https://img.shoppingntmall.com/htmleditor/130/a21710986624183.png" class="ani ani2">
+    <img src="https://img.shoppingntmall.com/htmleditor/430/a31710983495458.png" class="ani ani3 animate__animated animate__bounceIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/430/a41710983495862.png" class="ani ani4 animate__animated animate__bounceIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/817/a4-11710984363746.png" class="ani ani4-1">
+    <img src="https://img.shoppingntmall.com/htmleditor/430/a51710983496297.png" class="ani ani5 animate__animated animate__fadeIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/430/a61710983496789.png" class="ani ani6 animate__animated animate__backInDown">
+    <div class="ani ani7w animate__animated animate__headShake animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/430/a81710983497474.png" class="ani ani7 animate__animated animate__bounceIn"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/430/a91710983497827.png" class="ani ani8">
+  </div>
+  <img src="https://img.shoppingntmall.com/htmleditor/430/pg_021710983499087.jpg" alt="">
+  <!--
+    https://animate.style/
+    기본클래스 : animate__animated animate__애니명
+    딜레이클래스 - animate__delay-2s / animate__delay-3s / animate__delay-4s / animate__delay-5s
+    속도클래스 - animate__slow	2s / animate__slower	3s / animate__fast	800ms / animate__faster	500ms
+    반복클래스 - animate__repeat-1	1 / animate__repeat-2	2 / animate__repeat-3	3 / animate__infinite	infinite
+  -->
+  <a href="/display/goods/14773710"><img src="https://img.shoppingntmall.com/htmleditor/430/pg_031710983499720.jpg"></a>
+  <a href="/display/goods/14773722"><img src="https://img.shoppingntmall.com/htmleditor/430/pg_041710983500202.jpg"></a>
+  <a href="/display/goods/14773722"><img src="https://img.shoppingntmall.com/htmleditor/430/pg_051710983500826.jpg"></a>
+  <a href="/display/goods/14773700"><img src="https://img.shoppingntmall.com/htmleditor/430/pg_061710983501350.jpg"></a>
+  <style>
+    .base {position:relative; overflow:hidden; cursor:pointer;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1s; display:block;}
+    .ani1 {z-index:2; }
+    .ani2 {z-index:4; animation: ani2 3.5s ease-in-out forwards; animation-delay:0; width:200% !important; max-width:200%; left:-50%; top:-80%; top:0;}
+    @keyframes ani2 {
+      0% {left:0%; top:0%;}
+      20% {left:-10%; top:-10%;}
+      40% {left:-40%; top:-50%;}
+      60% {left:-20%; top:-100%;}
+      80% {left:-80%; top:-60%;}
+      100% {left:-50%; top:-80%;}
+    }
+    .ani3 {z-index:4; animation-delay: 3.5s;}
+    .ani4 {z-index:5; animation-delay: 3.8s;}
+    .ani4-1 {z-index:6;}
+    .ani5 {z-index:7; animation-delay: 4.1s;}  
+    .ani6 {z-index:8; animation-delay: 4.4s;}
+    .ani7 {z-index:9; animation-delay: 4.7s;}
+    .ani7w {z-index:9; animation-delay: 5s; animation-duration:1.5s;}
+    .ani8 {z-index:10; }
+  </style>
+
+</div></div>
+
+<style>
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -22%;}
+  }
+  .coupon-wrap {background:none;}
+</style>
+
+<script>
+  $(function(){
+    $(".coupon-wrap").attr("id","cdown");
+    var headh = $("header").height();
+    $('.promotion_con .base').click(function(){      
+      $("html, body").animate({scrollTop: $("#cdown").offset().top - headh}, 500);
+    });
+  });
+</script>

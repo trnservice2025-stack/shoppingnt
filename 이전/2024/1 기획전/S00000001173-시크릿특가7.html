@@ -1,0 +1,48 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<div class="toggle_an">
+  <span class="txt1">알람 <b>ON</b>하고 <b>시크릿 특가</b> 소식 받아보세요!</span>
+</div>
+<div class="promotion_con"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/413/ev_021723075468895.jpg">
+    <a onclick="scriptCouponDown('/customer/provide-coupon-multi?couponNo=202408072762&cFlag=A&rUrl=/plan/planshop/swipeDetail/S00000001173');"><img src="https://img.shoppingntmall.com/htmleditor/413/ev_031723075471994.jpg"></a>
+</div></div>
+<style>
+  .acco-wrap.plan {background:#f7f7f7 !important;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con_mo {overflow:hidden; position:relative;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+
+  @font-face {font-family:'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight:normal; font-style:normal;}
+  @font-face {font-family:'GmarketSansBold'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight:normal; font-style:normal;}
+
+  .toggle-area {background:#0e52c5; color:#fff; padding:10px 0;}
+  .toggle-area .toggle-btn-area {border:0;}
+  .toggle-area .toggle-btn-area .txt1 {font-weight:400; height:28px; line-height:26px;  font-size:28px; font-family: 'GmarketSansMedium'; display:block; margin-bottom:10px;}
+  .toggle-area .toggle-btn-area .txt1 b {font-family: 'GmarketSansBold';}
+  .toggle-area .toggle-btn-area .txt {margin-right:6px; font-size:24px; font-family: 'GmarketSansMedium';}
+  .toggle-area .toggle-switch {margin-top:-3px;}
+  .toggle-area .toggle-switch input:checked + label {background:#f497ff;}
+
+  @media screen and (max-width:720px)  {
+    .toggle-area {padding:0;}
+    .toggle-area .toggle-btn-area .txt1 {font-size:16px; margin:0;}
+    .toggle-area .toggle-btn-area .txt {font-size:14px;}
+  }
+</style>
+<script>
+  //수신동의 이동
+  document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle_an')?.appendChild(document.querySelector('.toggle-area')));
+  document.addEventListener("DOMContentLoaded", () => document.querySelector('.toggle-area .toggle-btn-area')?.prepend(document.querySelector('.toggle_an .txt1')));
+  
+  $(function () {
+    $('.toggle-area .toggle-btn-area .tit').hide();
+    $('.toggle-area .toggle-btn-area .txt').text("알람 현황");
+  });
+</script>

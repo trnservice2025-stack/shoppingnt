@@ -1,0 +1,112 @@
+<!-- <script class="hidden" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<div class="promotion_con"><div class="promotion_con_mo">
+
+  <div class="sbase sday sday1">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/base1709020653527.png" class="sbase1">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/a11709020650082.png" class="sani sani1">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/a21709020650560.png" class="sani sani2">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/a31709020651058.png" class="sani sani3">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/a41709020651578.png" class="sani sani4">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/a51709020652068.png" class="sani sani5">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/a61709020652564.png" class="sani sani6">
+      <img src="https://img.shoppingntmall.com/htmleditor/137/a71709020653176.png" class="sani sani7">
+  </div>
+  <style>
+      .sbase {position:relative; overflow:hidden;}
+      .sbase1 {position:relative; z-index:1;}
+      .sani {position:absolute; width:100%;}
+      .sani1 {z-index:3; top:0; left:0; animation: sani1 1.2s ease-in-out infinite; }
+      .sani2 {z-index:4; top:0; left:0; animation: sani2 1.2s ease-in-out forwards; animation-delay: .3s; top:-100%;}
+      .sani3 {z-index:5; top:0; left:0; animation: sani3 1s ease-in-out forwards; animation-delay: .6s;}
+      .sani4 {z-index:6; top:0; left:0; animation: sani3 1s ease-in-out forwards; animation-delay: .9s;}
+      .sani5 {z-index:7; top:0; left:0; animation: sani3 1s ease-in-out forwards; animation-delay: 1.2s;} 
+      .sani6 {z-index:8; top:0; left:0; animation: sani3 1s ease-in-out forwards; animation-delay: 1.5s;} 
+      .sani7 {z-index:9; bottom:0; left:0; animation: sani7 1s ease-in-out forwards; animation-delay: 1.8s; bottom:-100%;}  
+      @keyframes sani1 {
+          0% {opacity:1;}
+          50% {opacity:.45;}
+          100% {opacity:1;}
+      }
+      @keyframes sani2 {
+          0% {top:-100%;}
+          80% {top:5%;}
+          100% {top:-0%;}
+      }
+      @keyframes sani3 {
+          0% {top:0;}
+          50% {top:-3%;}
+          100% {top:0;}
+      }
+      @keyframes sani7 {
+          0% {bottom:-100%;}
+          80% {bottom:5%;}
+          100% {bottom:-0%;}
+      }
+  </style>    
+  <div class="base sday sday2">
+    <img src="https://img.shoppingntmall.com/htmleditor/807/base1711518592797.png" class="base1">
+    <div class="ani ani_bg"></div>
+    <div class="ani ani7w animate__animated animate__headShake animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/284/a11711521908389.png" class="ani ani1 animate__animated animate__bounceInDown"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a21711521908895.png" class="ani ani2 animate__animated animate__bounceInDown">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a31711521909438.png" class="ani ani3 animate__animated animate__bounceInUp">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a41711521909892.png" class="ani ani4 animate__animated animate__rotateIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a51711521910272.png" class="ani ani5 animate__animated animate__rotateIn">
+    <img src="https://img.shoppingntmall.com/htmleditor/284/a61711521910779.png" class="ani ani6 animate__animated animate__fadeInDown">
+    <div class="ani ani7w animate__animated animate__flash animate__infinite"><img src="https://img.shoppingntmall.com/htmleditor/284/a71711521911276.png" class="ani ani7 animate__animated animate__fadeIn"></div>
+  </div>
+  <style>
+    .base {position:relative; overflow:hidden;}
+    .base1 {position:relative; z-index:1;}
+    .ani {position:absolute; width:100%; top:0; left:0; animation-duration:1s;}
+    .ani_bg {z-index:2; top:0; left:0; animation:ani_bg 500s linear infinite; position:absolute; width:100%; height:100%; background:url(https://img.shoppingntmall.com/htmleditor/359/bg1711521683115.png); background-size:cover;}
+    @keyframes ani_bg {
+      from {background-position: 0 0;}
+      to {background-position: -10000px 0 ;}
+    }
+    .ani1 {z-index:3; animation-delay: 0s;}
+    .ani2 {z-index:4; animation-delay: .3s;}
+    .ani3 {z-index:5; animation-delay: .6s;}
+    .ani4 {z-index:6; animation-delay: .9s;}
+    .ani5 {z-index:7; animation-delay: 1.2s;}  
+    .ani6 {z-index:8; animation-delay: 1.5s;}
+    .ani7 {z-index:9; animation-delay: 1.8s;}
+    .ani7w {z-index:3; animation-delay: 2.1s; animation-duration:2s;}
+  </style>
+
+  <script>
+    //예약
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();
+    if ('2024-03-27 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');} //3주차 시작
+    if ('2024-04-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');} //4주차 시작
+  </script>
+  
+</div></div>
+
+<style>    
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con .w50 {width:50%; display:inline-block;}
+  .promotion_con a {cursor:pointer;}
+  .promotion_con a, .promotion_con img {background:none;}
+  .promotion_con_mo {overflow:hidden;}
+  @media screen and (max-width:720px) {  
+      .promotion_con {overflow:hidden;}     
+      .promotion_con>div {margin:0 -33.33%;}
+  }
+</style>
+
+<script>
+  $(function(){
+    $('.coupon-wrap .coupon .tit, .coupon-info .tit').each(function() {
+      var text222 = $(this).text();
+      let reg222 = /[[\]/]/gim;
+      $(this).text(text222.replace(/\[\쿠폰\] |\[\장바구니\] |의 /g, ''));
+    });
+  })
+</script>

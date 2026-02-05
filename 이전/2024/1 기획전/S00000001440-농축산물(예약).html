@@ -1,0 +1,61 @@
+<div class="promotion_con sday sday1"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/196/planshop_view_pc%20%281%291725614127905.jpg">
+</div></div>
+<div class="promotion_con sday sday2"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/876/nh1726038132518.jpg">
+</div></div>
+  
+<style>
+.promotion_con, .promotion_con-wrap * {line-height:initial;}
+.promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+.promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+.promotion_con img {width:100%; display:block;}
+.promotion_con a {background:none; cursor:pointer;}
+.promotion_con a, .promotion_con img {background:none;}
+
+@media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+}
+</style>
+  
+<script>
+//예약
+    const nowD = new Date();
+    const formatDate = (value) => String(value).padStart(2, '0');
+    const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+    const nowT = formatDateTime(nowD);
+    const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+    hideS();
+    if ('2024-09-11 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
+    if ('2024-09-12 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+</script>
+
+
+<ul class="txt-list-disc sm kday kday2">
+    <li><b>[농식품부 할인쿠폰]</b></li>
+    <li>쿠폰은 <쿠폰 다운받기> 클릭 시 지급되며, 마이페이지 > 보유 쿠폰에서 확인 가능합니다.</li>
+    <li>최종 결제 금액은 다른 쿠폰 보유 및 적용 여부에 따라 상이할 수 있습니다.</li>
+    <li>해당 쿠폰은 <span class="ctxt" style="">9/6(금) 00:00 ~ 9/11(수)</span> 23:59까지 발급 및 사용 가능합니다.</li>
+    <li>해당 쿠폰은 9/12(목) 00:00 ~ 9/18(수) 23:59까지 발급 및 사용 가능합니다.</li>
+    <li>해당 쿠폰은 행사기간 동안 매주 목요일부터 수요일까지 1장 발급 및 사용 가능합니다.</li>
+    <li>해당 쿠폰은 최대 2만원까지 할인이 적용됩니다.</li>
+    <li>해당 쿠폰은 쇼핑엔티 모바일에서 사용 가능합니다.</li>
+    <li>해당 쿠폰은 다른 더블/장바구니 쿠폰과 중복하여 사용하실 수 있습니다.</li>
+    <li>해당 쿠폰은 장바구니 단위로 적용되지 않으며, 개별 상품 단위로 적용 가능합니다.</li>
+    <li>비회원은 쿠폰 지급 대상에서 제외됩니다. (회원가입 필수)</li>
+    <li>본 이벤트는 당사 사정에 의해 변경 또는 조기 종료될 수 있습니다.</li>
+</ul> 
+
+<script>
+    $(document).ready(function() {
+        function checkTimezz() {
+            const nowzz = new Date();
+            const targetDatezz = new Date('2024-09-12T00:00:00');            
+            if (nowzz >= targetDatezz && nowzz < new Date(targetDatezz.getTime() + 1000)) {
+                $('.ctxt').text('9/12(목) 00:00 ~ 9/18(수)');
+            }
+        }        
+        // Check every second
+        setInterval(checkTimezz, 1000);
+    });
