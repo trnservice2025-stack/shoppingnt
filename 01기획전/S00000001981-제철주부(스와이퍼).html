@@ -521,6 +521,13 @@
   const apply = () => {
     const t = device();
     if (t === type) return;
+
+    // 👉 브레이크포인트를 넘은 경우: 새로고침
+    if (type !== undefined) {
+      location.reload();
+      return;
+    }
+
     type = t;
 
     killSwiper();
@@ -533,7 +540,6 @@
   addEventListener('resize', () => setTimeout(apply, 150));
 })();
 </script>
-
 
 <script>
   $(function () {
