@@ -1,24 +1,10 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
-<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1" />
-<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2" />
-<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css" />
 <style>
   body {
     min-width: 100%;
   }
 </style>
-<script>
-  $(window).resize(function () {
-    if ($(window).width() > 768) {
-      $(".ska1").attr("href", "https://www.shoppingntmall.com/assets/css/swiper.css");
-      $(".ska2").attr("href", "https://www.shoppingntmall.com/assets/css/common.css");
-    } else {
-      $(".ska1").attr("href", "https://m.shoppingntmall.com/moassets/css/swiper.css");
-      $(".ska2").attr("href", "https://m.shoppingntmall.com/moassets/css/common.css");
-    }
-  });
-</script>
+
 <div class="promotion_con">
   <div class="promotion_con_mo">
     <div class="base">
@@ -472,6 +458,82 @@
     }
   }
 </style>
+
+<script>
+(() => {
+  const BP = 768;
+  const CSS_ATTR = 'data-css';
+  const JS_ID = 'swiper-js';
+
+  let type, swipers = [];
+
+  const device = () => innerWidth <= BP ? 'm' : 'p';
+
+  const css = t => t === 'm'
+    ? [
+        'https://m.shoppingntmall.com/moassets/css/common.css',
+        'https://m.shoppingntmall.com/moassets/css/swiper.css',
+        'https://m.shoppingntmall.com/moassets/css/content.css'
+      ]
+    : [
+        'https://www.shoppingntmall.com/assets/css/common.css',
+        'https://www.shoppingntmall.com/assets/css/swiper.css',
+        'https://www.shoppingntmall.com/assets/css/content.css'
+      ];
+
+  const js = t => t === 'm'
+    ? 'https://m.shoppingntmall.com/moassets/js/swiper.min.js'
+    : 'https://www.shoppingntmall.com/assets/js/swiper.min.js';
+
+  const rmCSS = () =>
+    document.querySelectorAll(`link[${CSS_ATTR}]`).forEach(e => e.remove());
+
+  const addCSS = t =>
+    css(t).forEach(h => {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = h;
+      l.setAttribute(CSS_ATTR, '');
+      document.head.appendChild(l);
+    });
+
+  const rmJS = () => {
+    document.getElementById(JS_ID)?.remove();
+    delete window.Swiper;
+  };
+
+  const addJS = (t, cb) => {
+    const s = document.createElement('script');
+    s.id = JS_ID;
+    s.src = js(t);
+    s.onload = cb;
+    document.body.appendChild(s);
+  };
+
+  const killSwiper = () =>
+    swipers.forEach(sw => sw.destroy(true, true)) || (swipers = []);
+
+  const initSwiper = () =>
+    window.Swiper &&
+    document.querySelectorAll('.swiper')
+      .forEach(el => swipers.push(new Swiper(el)));
+
+  const apply = () => {
+    const t = device();
+    if (t === type) return;
+    type = t;
+
+    killSwiper();
+    rmCSS(); rmJS();
+    addCSS(t);
+    addJS(t, () => setTimeout(initSwiper, 30));
+  };
+
+  apply();
+  addEventListener('resize', () => setTimeout(apply, 150));
+})();
+</script>
+
 
 <script>
   $(function () {
