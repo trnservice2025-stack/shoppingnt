@@ -5,6 +5,9 @@ from urllib.parse import quote
 
 BASE_DIR = os.getcwd()
 
+# 🔴 index 목록에서 제외할 폴더들
+EXCLUDE_DIRS = {"assets", "moassets"}
+
 def safe_url(name: str) -> str:
     """
     macOS 한글(NFD)을 NFC로 정규화한 뒤 URL 인코딩
@@ -74,8 +77,10 @@ li {{
 
     html += f"<h1>{title}</h1>\n<ul>\n"
 
-    # 하위 폴더
+    # ✅ 하위 폴더 (assets / moassets 제외)
     for _, name, _ in dirs:
+        if name in EXCLUDE_DIRS:
+            continue
         encoded = safe_url(name)
         html += f'<li><a href="{encoded}/">{name}/</a></li>\n'
 
@@ -101,11 +106,10 @@ li {{
 
     print(f"✅ index.html 생성: {current_dir}")
 
-    # 🔁 재귀 처리
+    # 🔁 재귀 처리 (❗ 제외 폴더도 재귀는 필요하면 유지)
     for _, name, _ in dirs:
         make_index(os.path.join(current_dir, name))
 
 
 # ▶ 실행 시작 (루트부터)
 make_index(BASE_DIR, is_root=True)
-     
