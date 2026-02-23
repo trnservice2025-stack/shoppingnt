@@ -1,7 +1,7 @@
 <div class="promotion_con"><div class="promotion_con_mo">    
-    <img src="https://img.shoppingntmall.com/htmleditor/037/event_view_PC%20%288%291766534815730.jpg"  class="sday sday12">
     <img src="https://img.shoppingntmall.com/htmleditor/479/event_view1766540131148.jpg"  class="sday sday1">
     <img src="https://img.shoppingntmall.com/htmleditor/411/event_view_pc1768808127214.jpg"  class="sday sday2">
+    <img src="https://img.shoppingntmall.com/htmleditor/205/ev1771890714633.jpg"  class="sday sday3">
   </div></div>
   
   <style>
@@ -26,7 +26,7 @@
     const nowT = formatDateTime(nowD);
     const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
     hideS();          
-    if ('2025-12-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday12').forEach(e => e.style.display = 'block');}
     if ('2026-01-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday1').forEach(e => e.style.display = 'block');}
     if ('2026-02-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday2').forEach(e => e.style.display = 'block');}
+    if ('2026-03-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday3').forEach(e => e.style.display = 'block');}
   </script>
