@@ -1,18 +1,32 @@
 <div class="promotion_con"><div class="promotion_con_mo">
   <img src="이미지url">
   <!-- 1단 -->
-  <a href="/display/goods/상품코드"><img src="이미지url"></a>
+   <a href="/display/goods/상품코드"><img src="이미지url"></a>
   <!-- 2단 -->
-  <a href="/display/goods/상품코드" class="w50"><img src="이미지url"></a>
+   <a href="/display/goods/상품코드" class="w50"><img src="이미지url"></a>
+  <!-- 3단 -->
+   <a href="/display/goods/상품코드" class="w33"><img src="이미지url"></a>
+  <!-- 4단 -->
+   <a href="/display/goods/상품코드" class="w25"><img src="이미지url"></a>
+  <!-- 5단 -->
+   <a href="/display/goods/상품코드" class="w20"><img src="이미지url"></a>
+  <!-- 6단 -->
+   <a href="/display/goods/상품코드" class="w16"><img src="이미지url"></a>
 </div></div>
 
 <style>
   .promotion_con * {line-height:initial;}
   .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
-  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
   .promotion_con img {width:100%; display:block;}
   .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
   .promotion_con a, .promotion_con img {background:none;}
+
+  .promotion_con .w50, .promotion_con .w33, .promotion_con .w25, .promotion_con .w20, .promotion_con .w16 {display:inline-block; vertical-align:middle;}
+  .promotion_con .w50 {width:50%;}
+  .promotion_con .w33 {width:33.33%;}
+  .promotion_con .w25 {width:25%;}
+  .promotion_con .w20 {width:20%;}
+  .promotion_con .w16 {width:16.66%;}  
 
   @media screen and (max-width:720px)  {
     .promotion_con {overflow:hidden;}
