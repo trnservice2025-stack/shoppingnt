@@ -1,9 +1,8 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Promotion Generator</title>
+<title>Promotion Generator (TEST)</title>
 <style>
 body {font-family: Arial; padding:20px;}
 textarea {width:100%; height:200px;}
@@ -12,26 +11,46 @@ button {margin-top:10px; padding:10px 20px; font-size:16px;}
 </head>
 <body>
 
-<h2>프로모션 생성기</h2>
+<h2>프로모션 생성기 (테스트용)</h2>
 
 <textarea id="input" placeholder="이미지URL / 상품코드 / 링크를 줄 단위로 입력"></textarea>
 <br>
 <button onclick="generate()">생성</button>
 
 <script>
+
+async function loadRules(){
+  const res = await fetch("gpt_rules.html");
+  return await res.text();
+}
+
 async function generate(){
 
   const input = document.getElementById("input").value;
+  const rules = await loadRules();
 
-  const res = await fetch("api.php", {
+  const prompt = `
+${rules}
+
+${input}
+`;
+
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Authorization": "Bearer YOUR_OPENAI_API_KEY"
     },
-    body: JSON.stringify({ input })
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "user", content: prompt }
+      ]
+    })
   });
 
-  const html = await res.text();
+  const data = await res.json();
+  const html = data.choices[0].message.content;
 
   const preview = `
 <html>
@@ -63,7 +82,9 @@ function copy(){
   const win = window.open();
   win.document.write(preview);
   win.document.close();
+
 }
+
 </script>
 
 </body>
