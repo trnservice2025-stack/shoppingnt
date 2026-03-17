@@ -20,15 +20,7 @@ button {margin-top:10px; padding:10px 20px; font-size:16px;}
 <script>
 
 function isImage(line){
-  return line.startsWith("http") && (line.includes(".png") || line.includes(".jpg") || line.includes(".jpeg"));
-}
-
-function isProductCode(line){
-  return /^\d+$/.test(line);
-}
-
-function isLink(line){
-  return line.startsWith("http") && !line.match(/\.(png|jpg|jpeg)/);
+  return line.startsWith("http") && line.match(/\.(png|jpg|jpeg)/);
 }
 
 function getClass(img){
@@ -41,8 +33,53 @@ function getClass(img){
   return "w100";
 }
 
-function getBaseStyle(){
-return `<style>
+function generate(){
+
+  const input = document.getElementById("input").value
+    .split("\n")
+    .map(v => v.trim())
+    .filter(v => v);
+
+  // 1️⃣ 이미지 / 코드 분리
+  const images = input.filter(v => isImage(v));
+  const others = input.filter(v => !isImage(v));
+
+  let codeIndex = 0;
+
+  let html = `<div class="promotion_con"><div class="promotion_con_mo">\n`;
+
+  for(let i = 0; i < images.length; i++){
+
+    const img = images[i];
+
+    // btnmo 처리
+    if(img.includes("btnmo")){
+      const pcImg = images[i+1];
+      const link = others[codeIndex++];
+
+      html += `<a href="${link}" class="pro_mo"><img src="${img}"></a>\n`;
+      html += `<img src="${pcImg}" class="pro_pc">\n`;
+
+      i++; // pc 이미지 skip
+      continue;
+    }
+
+    // 일반 이미지
+    const code = others[codeIndex];
+
+    if(code && /^\d+$/.test(code)){
+      html += `   <a href="/display/goods/${code}" class="${getClass(img)}"><img src="${img}"></a>\n`;
+      codeIndex++;
+    }else{
+      html += `  <img src="${img}">\n`;
+    }
+
+  }
+
+  html += `</div></div>\n`;
+
+  html += `
+<style>
   .promotion_con * {line-height:initial;}
   .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
   .promotion_con img {width:100%; display:block;}
@@ -68,100 +105,14 @@ return `<style>
       .pro_pc {display:none !important;} 
       .pro_mo {display:block !important;} 
   } 
-</style>`;
-}
+</style>
+`;
 
-function generate(){
-
-  const input = document.getElementById("input").value
-    .split("\n")
-    .map(v => v.trim())
-    .filter(v => v);
-
-  let html = `<div class="promotion_con"><div class="promotion_con_mo">\n`;
-
-  let i = 0;
-
-  while(i < input.length){
-
-    const line = input[i];
-
-    // btnmo + btnpc 세트 처리 (안정 버전)
-    if(isImage(line) && line.includes("btnmo")){
-      const moImg = line;
-      const next = input[i+1];
-
-      if(next && next.includes("btnpc")){
-        const pcImg = next;
-        const link = input[i+2];
-
-        html += `<a href="${link}" class="pro_mo"><img src="${moImg}"></a>\n`;
-        html += `<img src="${pcImg}" class="pro_pc">\n`;
-
-        i += 3;
-        continue;
-      }
-    }
-
-    // btnpc 단독 방지
-    if(isImage(line) && line.includes("btnpc")){
-      i++;
-      continue;
-    }
-
-    // 일반 이미지 처리
-    if(isImage(line)){
-      const img = line;
-      const next = input[i+1];
-
-      if(isProductCode(next)){
-        const cls = getClass(img);
-        html += `   <a href="/display/goods/${next}" class="${cls}"><img src="${img}"></a>\n`;
-        i += 2;
-      } else {
-        html += `  <img src="${img}">\n`;
-        i += 1;
-      }
-
-      continue;
-    }
-
-    i++;
-  }
-
-  html += `</div></div>\n`;
-  html += getBaseStyle();
-
-  // preview + 코드 출력
   const preview = `
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Preview</title>
-</head>
-<body>
-
+<html><body>
 ${html}
-
-<div style="margin-top:50px; padding:20px; background:#f5f5f5;">
-<h3>생성된 코드</h3>
-<textarea id="code" style="width:100%; height:300px;">${html.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</textarea>
-<br>
-<button onclick="copy()">복사</button>
-</div>
-
-<script>
-function copy(){
-  const t = document.getElementById('code');
-  t.select();
-  document.execCommand('copy');
-  alert('복사 완료');
-}
-<\/script>
-
-</body>
-</html>
+<textarea style="width:100%;height:300px;">${html.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</textarea>
+</body></html>
 `;
 
   const win = window.open();
