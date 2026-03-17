@@ -23,17 +23,27 @@ async function generate(){
 
   const input = document.getElementById("input").value;
 
-  const res = await fetch("http://pitc.co.kr/gpt/api.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ input })
-  });
+  try {
 
-  const html = await res.text();
+    const res = await fetch("https://pitc.co.kr/gpt/api.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ input })
+    });
 
-  const preview = `
+    const text = await res.text();
+    console.log(text);
+
+    if (!res.ok) {
+      alert("서버 오류:\n" + text);
+      return;
+    }
+
+    const html = text;
+
+    const preview = `
 <html>
 <head><meta charset="UTF-8"></head>
 <body>
@@ -60,9 +70,14 @@ function copy(){
 </html>
 `;
 
-  const win = window.open();
-  win.document.write(preview);
-  win.document.close();
+    const win = window.open();
+    win.document.write(preview);
+    win.document.close();
+
+  } catch (e) {
+    console.error(e);
+    alert("요청 실패 (CORS / HTTPS 확인)");
+  }
 }
 </script>
 
