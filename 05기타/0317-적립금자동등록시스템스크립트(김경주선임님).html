@@ -1,0 +1,48 @@
+<script>
+window.addEventListener('load', function () {
+  //특정 페이지에서만 실행
+  if (location.pathname !== '/mypage/saveamt') return;
+
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('secretcode2');
+
+  if (!code) return;
+
+  //적립금 등록 버튼 클릭
+  const openInterval = setInterval(() => {
+    const openBtn = document.querySelector('#reward-btn');
+
+    if (openBtn) {
+      openBtn.click();
+      clearInterval(openInterval);
+
+      //팝업 대기
+      const popupInterval = setInterval(() => {
+        const input = document.querySelector('#rewardCode');
+        const regBtn = document.querySelector('#rewardRegBtn');
+
+        if (input && regBtn) {
+          //값 입력
+          input.value = code;
+
+          //상태 반영 필수
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+          input.dispatchEvent(new Event('change', { bubbles: true }));
+
+          // 버튼 클릭
+          setTimeout(() => {
+            if (!regBtn.disabled) {
+              regBtn.click();
+            } else {
+              regBtn.disabled = false;
+              regBtn.click();
+            }
+          }, 300);
+
+          clearInterval(popupInterval);
+        }
+      }, 300);
+    }
+  }, 300);
+});
+</script>
