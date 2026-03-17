@@ -23,6 +23,14 @@ function isImage(line){
   return line.startsWith("http") && line.match(/\.(png|jpg|jpeg)/);
 }
 
+function isProductCode(line){
+  return /^\d+$/.test(line);
+}
+
+function isLink(line){
+  return line.startsWith("http") && !line.match(/\.(png|jpg|jpeg)/);
+}
+
 function getClass(img){
   if(img.includes("w100")) return "w100";
   if(img.includes("w50")) return "w50";
@@ -40,38 +48,37 @@ function generate(){
     .map(v => v.trim())
     .filter(v => v);
 
-  // 1️⃣ 이미지 / 코드 분리
-  const images = input.filter(v => isImage(v));
-  const others = input.filter(v => !isImage(v));
-
-  let codeIndex = 0;
+  // 분리
+  const images = input.filter(isImage);
+  const codes = input.filter(v => !isImage(v));
 
   let html = `<div class="promotion_con"><div class="promotion_con_mo">\n`;
 
-  for(let i = 0; i < images.length; i++){
+  let codeIndex = codes.length - 1;
+
+  for(let i = images.length - 1; i >= 0; i--){
 
     const img = images[i];
+
+    // btnpc skip
+    if(img.includes("btnpc")) continue;
 
     // btnmo 처리
     if(img.includes("btnmo")){
       const pcImg = images[i+1];
-      const link = others[codeIndex++];
+      const link = codes[codeIndex--];
 
-      html += `<a href="${link}" class="pro_mo"><img src="${img}"></a>\n`;
-      html += `<img src="${pcImg}" class="pro_pc">\n`;
-
-      i++; // pc 이미지 skip
+      html = `<a href="${link}" class="pro_mo"><img src="${img}"></a>\n<img src="${pcImg}" class="pro_pc">\n` + html;
       continue;
     }
 
-    // 일반 이미지
-    const code = others[codeIndex];
+    const code = codes[codeIndex];
 
-    if(code && /^\d+$/.test(code)){
-      html += `   <a href="/display/goods/${code}" class="${getClass(img)}"><img src="${img}"></a>\n`;
-      codeIndex++;
+    if(code && isProductCode(code)){
+      html = `   <a href="/display/goods/${code}" class="${getClass(img)}"><img src="${img}"></a>\n` + html;
+      codeIndex--;
     }else{
-      html += `  <img src="${img}">\n`;
+      html = `  <img src="${img}">\n` + html;
     }
 
   }
