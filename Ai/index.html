@@ -11,7 +11,7 @@ button {margin-top:10px; padding:10px 20px; font-size:16px;}
 </head>
 <body>
 
-<h2>프로모션 생성기</h2>
+<h2>프로모션 생성기1</h2>
 
 <textarea id="input" placeholder="이미지URL / 상품코드 / 링크를 줄 단위로 입력"></textarea>
 <br>
@@ -25,10 +25,6 @@ function isImage(line){
 
 function isProductCode(line){
   return /^\d+$/.test(line);
-}
-
-function isLink(line){
-  return line.startsWith("http") && !line.match(/\.(png|jpg|jpeg)/);
 }
 
 function getClass(img){
@@ -48,42 +44,42 @@ function generate(){
     .map(v => v.trim())
     .filter(v => v);
 
-  // 분리
   const images = input.filter(isImage);
   const codes = input.filter(v => !isImage(v));
 
-  let html = `<div class="promotion_con"><div class="promotion_con_mo">\n`;
-
   let codeIndex = codes.length - 1;
+
+  let lines = []; // 🔥 핵심
 
   for(let i = images.length - 1; i >= 0; i--){
 
     const img = images[i];
 
-    // btnpc skip
     if(img.includes("btnpc")) continue;
 
-    // btnmo 처리
     if(img.includes("btnmo")){
       const pcImg = images[i+1];
       const link = codes[codeIndex--];
 
-      html = `<a href="${link}" class="pro_mo"><img src="${img}"></a>\n<img src="${pcImg}" class="pro_pc">\n` + html;
+      lines.unshift(`<a href="${link}" class="pro_mo"><img src="${img}"></a>`);
+      lines.unshift(`<img src="${pcImg}" class="pro_pc">`);
       continue;
     }
 
     const code = codes[codeIndex];
 
     if(code && isProductCode(code)){
-      html = `   <a href="/display/goods/${code}" class="${getClass(img)}"><img src="${img}"></a>\n` + html;
+      lines.unshift(`   <a href="/display/goods/${code}" class="${getClass(img)}"><img src="${img}"></a>`);
       codeIndex--;
     }else{
-      html = `  <img src="${img}">\n` + html;
+      lines.unshift(`  <img src="${img}">`);
     }
 
   }
 
-  html += `</div></div>\n`;
+  let html = `<div class="promotion_con"><div class="promotion_con_mo">\n`;
+  html += lines.join("\n"); // 🔥 순서 유지 핵심
+  html += `\n</div></div>\n`;
 
   html += `
 <style>
@@ -128,7 +124,7 @@ ${html}
 
 }
 
-</script>
+</script> 
 
 </body>
 </html>
