@@ -101,12 +101,16 @@ li {{
 </html>
 """
 
-    with open(os.path.join(current_dir, "index.html"), "w", encoding="utf-8") as f:
-        f.write(html)
+    # 🔥 🔥 여기 핵심 추가 🔥 🔥
+    current_folder_name = os.path.basename(current_dir)
+    if current_folder_name != "Ai":
+        with open(os.path.join(current_dir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"✅ index.html 생성: {current_dir}")
+    else:
+        print(f"⛔ index.html 생성 스킵 (Ai 폴더): {current_dir}")
 
-    print(f"✅ index.html 생성: {current_dir}")
-
-    # 🔁 재귀 처리 (❗ 제외 폴더도 재귀는 필요하면 유지)
+    # 🔁 재귀 처리 (Ai 포함 모두 진행)
     for _, name, _ in dirs:
         make_index(os.path.join(current_dir, name))
 
