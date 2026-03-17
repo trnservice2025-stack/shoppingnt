@@ -2,18 +2,19 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Generator</title>
+<title>Promotion Generator</title>
 <style>
-textarea {width:100%; height:150px;}
-button {margin-top:10px;}
+body {font-family: Arial; padding:20px;}
+textarea {width:100%; height:200px;}
+button {margin-top:10px; padding:10px 20px; font-size:16px;}
 </style>
 </head>
 <body>
 
 <h2>프로모션 생성기</h2>
 
-<textarea id="images" placeholder="이미지 URL"></textarea>
-<textarea id="codes" placeholder="상품코드"></textarea>
+<p>이미지URL + 상품코드 (줄 순서대로 입력)</p>
+<textarea id="input"></textarea>
 
 <button onclick="generate()">생성</button>
 
@@ -36,20 +37,14 @@ function getClass(img){
 
 async function generate(){
 
-  const images = document.getElementById("images").value.split("\n");
-  const codes = document.getElementById("codes").value.split("\n");
-
-  // 규칙 파일 로드 (필요하면 활용 가능)
+  const input = document.getElementById("input").value.split("\n").map(v => v.trim()).filter(v => v);
   const rules = await loadRules();
 
   let html = `<div class="promotion_con"><div class="promotion_con_mo">\n`;
 
-  images.forEach((img, i) => {
-
-    img = img.trim();
-    if(!img) return;
-
-    const code = codes[i] ? codes[i].trim() : "";
+  for(let i = 0; i < input.length; i += 2){
+    const img = input[i];
+    const code = input[i+1] || "";
 
     if(!code){
       html += `  <img src="${img}">\n`;
@@ -57,20 +52,51 @@ async function generate(){
       const cls = getClass(img);
       html += `   <a href="/display/goods/${code}" class="${cls}"><img src="${img}"></a>\n`;
     }
-
-  });
+  }
 
   html += `</div></div>\n`;
 
-  // rules 파일에서 style 추출해서 붙이기 (선택)
+  // style 붙이기
   if(rules.includes("<style>")){
     const style = rules.split("<style>")[1].split("</style>")[0];
     html += `<style>${style}</style>`;
   }
 
+  // 미리보기 + 코드 출력
+  const preview = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Preview</title>
+</head>
+<body>
+
+${html}
+
+<div style="margin-top:50px; padding:20px; background:#f5f5f5;">
+  <h3>생성된 코드</h3>
+  <textarea id="result" style="width:100%; height:300px;">${html.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</textarea>
+  <button onclick="copyCode()">복사</button>
+</div>
+
+<script>
+function copyCode(){
+  const text = document.getElementById("result");
+  text.select();
+  document.execCommand("copy");
+  alert("복사 완료");
+}
+<\/script>
+
+</body>
+</html>
+`;
+
   const win = window.open();
-  win.document.write(html);
+  win.document.write(preview);
   win.document.close();
+
 }
 
 </script>
