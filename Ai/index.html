@@ -5,7 +5,7 @@
 <title>Promotion Generator</title>
 <style>
 body {font-family: Arial; padding:20px;}
-textarea {width:100%; height:200px;}
+textarea {width:100%; height:220px;}
 button {margin-top:10px; padding:10px 20px; font-size:16px;}
 </style>
 </head>
@@ -13,16 +13,22 @@ button {margin-top:10px; padding:10px 20px; font-size:16px;}
 
 <h2>프로모션 생성기</h2>
 
-<p>이미지URL + 상품코드 (줄 순서대로 입력)</p>
-<textarea id="input"></textarea>
-
+<textarea id="input" placeholder="이미지URL / 상품코드 / 링크를 줄 단위로 입력"></textarea>
+<br>
 <button onclick="generate()">생성</button>
 
 <script>
 
-async function loadRules(){
-  const res = await fetch("gpt_rules.html");
-  return await res.text();
+function isImage(line){
+  return line.startsWith("http") && (line.includes(".png") || line.includes(".jpg") || line.includes(".jpeg"));
+}
+
+function isProductCode(line){
+  return /^\d+$/.test(line);
+}
+
+function isLink(line){
+  return line.startsWith("http") && !line.match(/\.(png|jpg|jpeg)/);
 }
 
 function getClass(img){
@@ -35,34 +41,88 @@ function getClass(img){
   return "w100";
 }
 
-async function generate(){
+function getBaseStyle(){
+return `<style>
+  .promotion_con * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+  .promotion_con a, .promotion_con img {background:none;}
 
-  const input = document.getElementById("input").value.split("\n").map(v => v.trim()).filter(v => v);
-  const rules = await loadRules();
+  .promotion_con .w50, .promotion_con .w33, .promotion_con .w25, .promotion_con .w20, .promotion_con .w16 {display:inline-block; vertical-align:middle;}
+  .promotion_con .w100 {width:100%;}
+  .promotion_con .w50 {width:50%;}
+  .promotion_con .w33 {width:33.33%;}
+  .promotion_con .w25 {width:25%;}
+  .promotion_con .w20 {width:20%;}
+  .promotion_con .w16 {width:16.66%;}  
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+
+  .pro_pc {display:block !important;}
+  .pro_mo {display:none !important;} 
+  @media screen and (max-width:720px) { 
+      .pro_pc {display:none !important;} 
+      .pro_mo {display:block !important;} 
+  } 
+</style>`;
+}
+
+function generate(){
+
+  const input = document.getElementById("input").value
+    .split("\n")
+    .map(v => v.trim())
+    .filter(v => v);
 
   let html = `<div class="promotion_con"><div class="promotion_con_mo">\n`;
 
-  for(let i = 0; i < input.length; i += 2){
-    const img = input[i];
-    const code = input[i+1] || "";
+  let i = 0;
 
-    if(!code){
-      html += `  <img src="${img}">\n`;
-    } else {
-      const cls = getClass(img);
-      html += `   <a href="/display/goods/${code}" class="${cls}"><img src="${img}"></a>\n`;
+  while(i < input.length){
+
+    const line = input[i];
+
+    // btnmo / btnpc 처리
+    if(isImage(line) && line.includes("btnmo")){
+      const moImg = line;
+      const pcImg = input[i+1];
+      const link = input[i+2];
+
+      html += `<a href="${link}" class="pro_mo"><img src="${moImg}"></a>\n`;
+      html += `<img src="${pcImg}" class="pro_pc">\n`;
+
+      i += 3;
+      continue;
     }
+
+    // 일반 이미지 처리
+    if(isImage(line)){
+      const img = line;
+      const next = input[i+1];
+
+      if(isProductCode(next)){
+        const cls = getClass(img);
+        html += `   <a href="/display/goods/${next}" class="${cls}"><img src="${img}"></a>\n`;
+        i += 2;
+      } else {
+        html += `  <img src="${img}">\n`;
+        i += 1;
+      }
+
+      continue;
+    }
+
+    i++;
   }
 
   html += `</div></div>\n`;
+  html += getBaseStyle();
 
-  // style 붙이기
-  if(rules.includes("<style>")){
-    const style = rules.split("<style>")[1].split("</style>")[0];
-    html += `<style>${style}</style>`;
-  }
-
-  // 미리보기 + 코드 출력
+  // preview + 코드
   const preview = `
 <!DOCTYPE html>
 <html>
@@ -75,17 +135,18 @@ async function generate(){
 ${html}
 
 <div style="margin-top:50px; padding:20px; background:#f5f5f5;">
-  <h3>생성된 코드</h3>
-  <textarea id="result" style="width:100%; height:300px;">${html.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</textarea>
-  <button onclick="copyCode()">복사</button>
+<h3>생성된 코드</h3>
+<textarea id="code" style="width:100%; height:300px;">${html.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</textarea>
+<br>
+<button onclick="copy()">복사</button>
 </div>
 
 <script>
-function copyCode(){
-  const text = document.getElementById("result");
-  text.select();
-  document.execCommand("copy");
-  alert("복사 완료");
+function copy(){
+  const t = document.getElementById('code');
+  t.select();
+  document.execCommand('copy');
+  alert('복사 완료');
 }
 <\/script>
 
