@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- index.html (수정 버전) -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,7 +23,7 @@ async function generate(){
 
   const input = document.getElementById("input").value;
 
-  const res = await fetch("api.php", {
+  const res = await fetch("http://pitc.co.kr/gpt/api.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
