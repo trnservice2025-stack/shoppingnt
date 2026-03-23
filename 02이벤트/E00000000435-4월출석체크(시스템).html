@@ -1,0 +1,106 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" />
+<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css" />
+<style>body {min-width: 100%; padding: 0; margin: 0;}</style>
+
+<div class="check-wrap"><div><div class="check-ani">
+  <img src="https://img.shoppingntmall.com/htmleditor/173/base1774232857337.png" alt="뽑기 이벤트" class="base" />
+  <img src="https://img.shoppingntmall.com/htmleditor/173/a11774232854586.png" class="ani ani1" />
+  <img src="https://img.shoppingntmall.com/htmleditor/173/a21774232855032.png" class="ani ani3" />
+  <img src="https://img.shoppingntmall.com/htmleditor/173/a31774232855550.png" class="ani ani4" />    
+  <img src="https://img.shoppingntmall.com/htmleditor/173/a41774232855966.png" class="ani ani7" />
+  <img src="https://img.shoppingntmall.com/htmleditor/173/a51774232856436.png" class="ani ani9" />
+  <img src="https://img.shoppingntmall.com/htmleditor/173/a61774232856835.png" class="ani ani11" />
+  <div class="check-event" style="position: absolute; bottom: 0; z-index: 16">
+    <button class="check-event-start" style="background:none; display:none" type="button"><img alt="뽑기 이벤트" src="https://img.shoppingntmall.com/htmleditor/173/btn11774232858565.png" /></button>
+    <button class="check-event-comp" id="rultComp" style="background:none; display:none"><img alt="뽑기 이벤트 참여 완료" src="https://img.shoppingntmall.com/htmleditor/173/btn21774232859242.png" /></button>
+  </div>
+</div></div></div>
+
+<div class="toggle-an"></div>
+
+<div class="check-wrap"><div>
+  <img src="https://img.shoppingntmall.com/htmleditor/173/c11774232859640.png" alt="">
+  <div class="check-ing">
+    <ul style="color: #000; margin-top:0%">
+      <li><strong>0</strong> 회</li>
+      <li><strong>0</strong> 원</li>
+    </ul>
+    <img src="https://img.shoppingntmall.com/htmleditor/173/c21774232860086.png" />
+  </div>
+  <img src="https://img.shoppingntmall.com/htmleditor/173/c31774232860550.png" alt="">
+  <a href="/mypage/saveamt"><img alt="나의 적립금 보러가기" src="https://img.shoppingntmall.com/htmleditor/173/c41774232861028.png" /></a>
+  <img alt="유의사항" src="https://img.shoppingntmall.com/htmleditor/173/c51774232861461.png" />
+  <a href="/plan/event/swipeDetail/E00000000315"><img src="https://img.shoppingntmall.com/htmleditor/173/bn1774232857846.png" alt="" /></a>
+</div></div>
+
+<style type="text/css">  
+  @font-face {font-family:'GmarketSansBold'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight:normal; font-style:normal; }
+  .check-wrap {max-width:1200px; margin:0 auto; font-size:0; overflow:hidden;}
+  .check-wrap img {width:100%; vertical-align:middle;}
+  .check-wrap>div>a {position:relative; z-index:2; margin:-1px 0; display:block; margin: 0 0 !important;}
+  .check-event {position:relative; z-index:2;}
+  .check-ani {position:relative; overflow:hidden; margin-bottom:-1px; z-index:1;} 
+  .check-ani>img {position:absolute; width:100%;}
+  .check-ani .base {position:relative; z-index:1;}
+  .check-ani .ani1 {z-index:3; top:-100%; left:0; animation:check-ani1 1.5s ease-in-out forwards;}
+  .check-ani .ani2 {z-index:4; top:0; right:-100%; animation:check-ani2 1.5s ease-in-out forwards; animation-delay:.3s;}
+  .check-ani .ani3 {z-index:5; top:-100%; left:0; animation:check-ani3 1.5s ease-in-out forwards; animation-delay:.6s;}
+  .check-ani .ani4 {z-index:6; top:-100%; left:0; animation:check-ani3 1.5s ease-in-out forwards; animation-delay:.9s;}
+  .check-ani .ani5 {z-index:7; top:-100%; left:0; animation:check-ani3 1.5s ease-in-out forwards; animation-delay:1.2s;}
+  .check-ani .ani6 {z-index:8; top:-100%; left:0; animation:check-ani3 1.5s ease-in-out forwards; animation-delay:1.5s;}
+  .check-ani .ani7 {z-index:9; top:0; left:0; animation:check-ani7 1s ease-in-out forwards; animation-delay:1.8s; opacity:0; transform:scale(1.2);}
+  .check-ani .ani8 {z-index:10; top:0; left:0; animation:check-ani8 1.2s ease-in-out forwards; animation-delay:2.1s; opacity:0;}
+  .check-ani .ani9 {z-index:11; top:0; left:0; animation:check-ani7 1s ease-in-out forwards; animation-delay:2.4s; opacity:0; transform:scale(1.2);}
+  .check-ani .ani10 {z-index:12; top:0; left:0; animation:check-ani8 1.2s ease-in-out forwards; animation-delay:2.7s; opacity:0;}
+  .check-ani .ani11 {z-index:13; top:0; left:0; animation:check-ani7 1s ease-in-out forwards; animation-delay:3s; opacity:0; transform:scale(1.2);}
+  .check-ani .ani12 {z-index:14; top:0; left:0; animation:check-ani8 1.2s ease-in-out forwards; animation-delay:3.3s; opacity:0;}
+  .check-ani .ani13 {z-index:15; top:-10%; left:0; animation:check-ani13 1.2s ease-in-out forwards; animation-delay:3.6s; opacity:0; top:-4%;}
+  .check-ing {position:relative; font-family:'GmarketSansBold'; z-index:1;}
+  .check-ing>img {z-index:1; position:rlative;}
+  .check-ing ul {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:0; width: 44%; text-align:center; margin-top:3%;}
+  .check-ing li {font-size:36px; display:inline-block; width:48%;}
+  .check-ing li:first-child {margin-right:2%;}
+  .check-ing li:last-child {margin-left:2%;}
+  .check-ing li strong {font-size:55px;}  
+
+  @keyframes check-ani1 {
+    0% {top:-100%;}
+    100% {top:0;}
+  }
+  @keyframes check-ani2 {
+    0%  {right:-100%;}
+    80% {right:2%;}
+    100% {right:0;}
+  }
+  @keyframes check-ani3 {
+    0% {top:-100%;}
+    80% {top:2%;}
+    100% {top:0;}
+  }
+
+  @keyframes check-ani7 {
+    0% {opacity: 0; transform: scale(1.2);}
+    50% {opacity: 1; transform: scale(0.9);}
+    100% {opacity: 1; transform: scale(1);}
+  }
+  @keyframes check-ani8 {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @keyframes check-ani13 {
+    0% {opacity:0; top:-4%;}
+    100% {opacity:1; top:0;}
+  }
+  @media screen and (max-width:1200px)  {
+    .check-ing li {font-size:3vw;}
+    .check-ing li strong {font-size:5vw;}
+  }
+  @media screen and (max-width:720px)  {
+    .check-wrap>div {margin:0 -33.33%;}
+    .check-ing li {font-size:5.5vw;}
+    .check-ing li strong {font-size:7.5vw;}
+  }
+</style>
