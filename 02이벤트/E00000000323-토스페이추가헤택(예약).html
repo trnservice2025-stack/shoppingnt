@@ -1,0 +1,41 @@
+<div class="promotion_con sday sday3"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/555/ev_011771806958490.jpg">  
+    <div class="fake_btn"><a href="https://toss.im/_m/LDtqKyr" target="_blank">토스페이 바로가기</a><img src="https://img.shoppingntmall.com/htmleditor/555/ev_021771806959028.jpg"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/555/ev_031771806959411.jpg">
+</div></div>
+
+<div class="promotion_con sday sday4"><div class="promotion_con_mo">
+    <img src="https://img.shoppingntmall.com/htmleditor/357/pc_011774324401872.png">  
+    <div class="fake_btn"><a href="https://toss.im/_m/LDtqKyr" target="_blank">토스페이 바로가기</a><img src="https://img.shoppingntmall.com/htmleditor/357/pc_021774324402304.png"></div>
+    <img src="https://img.shoppingntmall.com/htmleditor/357/pc_031774324402711.png">
+</div></div>
+
+<style>
+  .promotion_con * {line-height:initial;}
+  .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+  .promotion_con .w50 {display:inline-block; width:50%; vertical-align:middle;}
+  .promotion_con img {width:100%; display:block;}
+  .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+  .promotion_con a, .promotion_con img {background:none;}
+
+  .fake_btn {position:relative;}
+  .fake_btn a {position:absolute; z-index:2; width:100%; height:100%; left:0; top:0; text-indent:-9999px;}
+  .fake_btn img {position:relative; z-index:1;}
+
+  @media screen and (max-width:720px)  {
+    .promotion_con {overflow:hidden;}
+    .promotion_con_mo {margin:0 -33.33%;}
+  }
+</style>
+
+<script>
+  //예약 
+  const nowD = new Date();
+  const formatDate = (value) => String(value).padStart(2, '0');
+  const formatDateTime = (date) => `${date.getFullYear()}-${formatDate(date.getMonth() + 1)}-${formatDate(date.getDate())} ${formatDate(date.getHours())}:${formatDate(date.getMinutes())}:${formatDate(date.getSeconds())}`;
+  const nowT = formatDateTime(nowD);
+  const hideS = () => document.querySelectorAll('.sday').forEach(e => e.style.display = 'none');
+  hideS();        
+  if ('2026-03-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday3').forEach(e => e.style.display = 'block');}
+  if ('2026-04-01 00:00:00' <= nowT) { hideS(); document.querySelectorAll('.sday4').forEach(e => e.style.display = 'block');}
+</script>
