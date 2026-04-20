@@ -1,0 +1,73 @@
+<div class="bbob-wrap"><div><div class="bbob-event">
+  <div class="bbob-ani">
+    <img src="base.png" class="base">
+    <img src="a1.png" class="ani a1">
+    <img src="a2.png" class="ani a2">
+  </div>
+  <button class="bbob-event-start" id="rultStart" type="button">
+    <span id="evtJoin"><img alt="뽑기 이벤트" src="btn1.png"></span>
+    <span id="evtEnd" style="display: none"><img alt="뽑기 이벤트 참여 완료" src="btn2.png"></span>
+    <span id="evtLast" style="display: none"><img alt="뽑기 이벤트 참여 완료 마지막날" src="btn3.png"></span>
+  </button>
+</div></div></div>
+<div class="bbob-wrap"><div><div class="bbob-event">
+  <div class="bbob-move">
+    <img src="link.png" alt="">
+    <a href="/mypage/mymain">당첨 선물 보러가기</a>
+    <button onclick="popup.open('#snsSharePop');" type="button">이벤트 공유하기</button>
+  </div>
+</div></div></div>
+
+<div class="toggle-an"></div>
+<div class="bbob-wrap"><div><img alt="이벤트 정보" src="txt.png"></div></div>
+
+<style type="text/css">
+  .bbob-wrap{font-size:0;max-width:1200px;margin:0 auto}
+  .bbob-wrap>div{margin:0}
+  .bbob-wrap .bbob-event-start{position:absolute;left:0;top:0;background:transparent;z-index:2}
+  .bbob-ani .ani{position:absolute;left:0;top:0;display:block;width:100%;z-index:1}
+  .bbob-ani .ani.a1{top:-100%;animation:ani1 1.5s ease-in-out forwards}
+  .bbob-ani .ani.a2{transform:scale(0);transform-origin:center 65%;animation:ani2 1.2s ease-in-out forwards;animation-delay:1.4s}
+  .bbob-ani .ani.a3{opacity:0;animation:ani3 1.2s ease-in-out infinite;animation-delay:1.4s}
+  .bbob-ani .ani.a4{opacity:0;animation:ani3 1.4s ease-in-out infinite;animation-delay:1.6s}
+  .bbob-move{z-index:3; position:relative; height:auto; top:0; left:0;}
+  .bbob-move>img {position:relative; z-index:1;}
+  .bbob-move>a, .bbob-move>button {position:absolute; top:0; height:100%; width:50%; z-index:2;}
+  .bbob-move>a {left:0;}
+  .bbob-move>button {right:0;}
+  .pop-bbob {display:none;}
+  @keyframes ani1{0%{top:-100%}100%{top:0}}
+  @keyframes ani2{0%{transform:scale(0)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+  @keyframes ani3{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
+  @media screen and (max-width:720px){
+    .bbob-wrap{overflow:hidden}
+    .bbob-wrap>div{margin:0 -33.33%}
+  }
+</style>
+
+<!-- 모바일만 -->
+<div class="pop-bbob"><div class="pop-bbob-con">
+  <div id="pop-bbob-prize" style="display: none"><img alt="경품" src=""></div>
+  <div id="pop-bbob-end" style="display: none"><img alt="이벤트 참여 완료" src="pop_end.png"></div>
+  <div id="pop-bbob-last" style="display: none"><img alt="이벤트 참여 완료 마지막날" src="pop_last.png"></div>
+  <div class="pop-bbob-btn">
+    <button type="button"><img alt="닫기" src="pop_btn1.png"></button>
+    <button type="button"><img alt="확인" src="pop_btn2.png"></button>
+  </div>
+</div></div>
+
+
+
+
+https://img.shoppingntmall.com/htmleditor/798/a11776145904236.png
+https://img.shoppingntmall.com/htmleditor/798/a21776145904859.png
+https://img.shoppingntmall.com/htmleditor/798/base1776145905412.png
+https://img.shoppingntmall.com/htmleditor/798/btn11776145905956.png
+https://img.shoppingntmall.com/htmleditor/798/btn21776145906462.png
+https://img.shoppingntmall.com/htmleditor/798/btn31776145907029.png
+https://img.shoppingntmall.com/htmleditor/798/link1776145907529.png
+https://img.shoppingntmall.com/htmleditor/798/pop_btn11776145908029.png
+https://img.shoppingntmall.com/htmleditor/798/pop_btn21776145908598.png
+https://img.shoppingntmall.com/htmleditor/798/pop_end1776145909069.png
+https://img.shoppingntmall.com/htmleditor/798/pop_last1776145909689.png
+https://img.shoppingntmall.com/htmleditor/798/txt1776145910164.png

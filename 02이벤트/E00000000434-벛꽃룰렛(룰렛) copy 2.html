@@ -1,0 +1,170 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/assets/css/common.css" media="screen and (min-width: 768px)">
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/assets/css/content.css" media="screen and (min-width: 768px)">
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/moassets/css/common.css" media="screen and (max-width: 767px)">
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/moassets/css/sub.css" media="screen and (max-width: 767px)">
+<style>
+body {min-width:100%; padding:0; margin:0;}
+.check-event-start {display:block !important;}
+</style>
+<script>
+$(function(){
+    $('a[href]').each(function(){
+        var $a = $(this);
+        var href = $a.attr('href');
+
+        if (
+            !href ||
+            href.startsWith('#') ||
+            href.startsWith('javascript:')
+        ) {
+            return;
+        }
+
+        var isRelative =
+            !href.startsWith('http://') &&
+            !href.startsWith('https://');
+
+        if (isRelative) {
+            if (href.startsWith('/')) {
+                href = 'https://www.shoppingntmall.com' + href;
+            } else {
+                href = 'https://www.shoppingntmall.com/' + href;
+            }
+
+            $a.attr('href', href);
+            $a.attr('target', '_blank');
+        }
+    });
+});
+</script>
+
+<div class="roule-event-wrap r-1"><div>
+    <div class="roule-event">
+        <img src="title1776303101717.png" alt="룰렛 배경 이미지">
+        <img src="arr1776303099704.png" alt="룰렛 상위 화살표" class="roule-over">
+    </div>
+    <div class="roule-event">
+        <img src="bg1776303100126.png" alt="">
+        <div class="roule_wrap">            
+            <div class="roule">
+                <div class="roule-wacu"><img src="roulette1776303100956.png" alt="돌아가는 룰렛 이미지">	</div>							
+                <button class="roule-btn" id="rultStart"><img src="start1776303101341.png" alt="START 버튼"></button>
+            </div>	
+        </div>
+    </div>
+    <div class="roule-event">
+        <div class="roule-move">
+            <img src="link1776303100553.png" alt="버튼">						
+            <a href="/mypage/mymain">적립금보러가기</a>
+            <button type="button" onclick="popup.open('#snsSharePop');">이벤트공유하기</button>
+        </div>
+    </div>
+    <div class="toggle_an"></div>
+    <div class="roule-event">
+        <img src="txt1776303102185.png" alt="유의사항">	
+    </div>					
+</div></div>	
+
+<style>
+    .roule-event-wrap {max-width:1200px; margin:0 auto;}
+    .r-1 .roule-move {background-image:none; z-index:5; position:relative; height:auto;}
+    .r-1 .roule .roule-btn {background-image:none !important; background-color:transparent; width:100%; height:100%; border-radius:0;}
+    .r-1 .roule .roule-btn img {display:block;}
+    .r-1 .roule {width:54.5%; bottom:inherit; top:0}
+    .r-1 .toggle-area {background:#f3f3f3; color:#333;}
+    .r-1 .roule-move {}
+    .r-1 .roule-move>img {position:relative; z-index:1;}
+    .r-1 .roule-move a, .r-1 .roule-move button {position:absolute; top:0; width:50%; height:100%; z-index:2;}
+    .r-1 .roule-move a {left:0;}
+    .r-1 .roule-move button {right:0;}
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var rolLength = 8;   // 룰렛 칸 수
+        var setNum = 0;      // 당첨 번호
+        var currentDeg = 0;  // 누적 회전 각도
+
+        // 0 ~ 7 랜덤
+        const rRandom = () => {
+            return Math.floor(Math.random() * rolLength);
+        };
+
+        // 룰렛 회전
+        const rRotate = () => {
+            var panel = document.querySelector(".roule-wacu");
+            var btn = document.querySelector(".roule-btn");
+
+            var oneDeg = 360 / rolLength;
+            setNum = rRandom();
+
+            // 8바퀴 + 당첨 위치
+            currentDeg += (360 * 8) + (oneDeg * setNum);
+
+            btn.disabled = true;
+            btn.style.pointerEvents = "none";
+
+            panel.style.transition = "transform 3s ease-out";
+            panel.style.transform = "rotate(" + currentDeg + "deg)";
+        };
+
+        // 당첨 결과 팝업
+        const rLayerPopup = (num) => {
+            switch (num) {
+                case 0:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+                case 1:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+                case 2:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+                case 3:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+                case 4:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+                case 5:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+                case 6:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+                case 7:
+                    alert("축하합니다!\n상품에 당첨되셨습니다!");
+                    break;
+            }
+        };
+
+        // 회전 종료 후 버튼 복구 + 결과 출력
+        const rReset = (ele) => {
+            setTimeout(() => {
+                ele.disabled = false;
+                ele.style.pointerEvents = "auto";
+                rLayerPopup(setNum);
+            }, 3000);
+        };
+
+        // 시작 버튼 클릭
+        $(document).on("click", ".roule-btn", function () {
+            if ($(this).prop("disabled")) return;
+
+            rRotate();
+            rReset(this);
+        });
+
+        // 기존 부가 기능 유지
+        $('.pop-roule-close').click(function () {
+            $(this).parent(".pop-roule").hide();
+        });
+
+        $('.roule-event').click(function () {
+            // alert("모바일 앱에서 참여 가능한 이벤트입니다.");
+        });
+
+        $('.toggle-area').appendTo(".toggle_an");
+    });
+</script>

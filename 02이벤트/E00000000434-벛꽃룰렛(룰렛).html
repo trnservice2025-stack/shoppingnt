@@ -1,20 +1,54 @@
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="https://www.shoppingntmall.com/assets/js/swiper.min.js"></script>
-<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/swiper.css" class="ska1">
-<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/common.css" class="ska2">
-<link rel="stylesheet" href="https://www.shoppingntmall.com/assets/css/content.css">
-<style> body {min-width:100%; padding:0; margin:0;} .roule-event-wrap {max-width:1200px; margin:0 auto;} </style> -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/assets/css/common.css" media="screen and (min-width: 768px)">
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/assets/css/content.css" media="screen and (min-width: 768px)">
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/moassets/css/common.css" media="screen and (max-width: 767px)">
+<link rel="stylesheet" href="https://img.shoppingntmall.com/pub/moassets/css/sub.css" media="screen and (max-width: 767px)">
+<style>
+body {min-width:100%; padding:0; margin:0;}
+.check-event-start {display:block !important;}
+</style>
+<script>
+$(function(){
+    $('a[href]').each(function(){
+        var $a = $(this);
+        var href = $a.attr('href');
+
+        if (
+            !href ||
+            href.startsWith('#') ||
+            href.startsWith('javascript:')
+        ) {
+            return;
+        }
+
+        var isRelative =
+            !href.startsWith('http://') &&
+            !href.startsWith('https://');
+
+        if (isRelative) {
+            if (href.startsWith('/')) {
+                href = 'https://www.shoppingntmall.com' + href;
+            } else {
+                href = 'https://www.shoppingntmall.com/' + href;
+            }
+
+            $a.attr('href', href);
+            $a.attr('target', '_blank');
+        }
+    });
+});
+</script>
 
 <div class="roule-event-wrap r-1"><div>
     <div class="roule-event">
         <img src="https://img.shoppingntmall.com/htmleditor/277/bg1774917436083.png" alt="룰렛 배경 이미지">
         <img src="https://img.shoppingntmall.com/htmleditor/256/arr1774916791420.png" alt="룰렛 상위 화살표" class="roule-over">
-        <!-- <img src="https://img.shoppingntmall.com/htmleditor/441/deco1760078558495.png" alt="꾸밈요소" class="roule-over2"> -->
-        <div class="roule-gra"></div>
+
         <div class="roule">
             <div class="roule-wacu"><img src="https://img.shoppingntmall.com/htmleditor/264/rol1774917170592.png" alt="돌아가는 룰렛 이미지">	</div>							
-            <button class="roule-btn" id="rultStart">START</button>
+            <button class="roule-btn" id="rultStart"><img src="https://img.shoppingntmall.com/htmleditor/573/btn1774917220814.png" alt="START 버튼"></button>
         </div>	
+
         <div class="roule-move">
             <a href="/mypage/mymain">적립금보러가기</a>
             <button type="button" onclick="popup.open('#snsSharePop');">이벤트공유하기</button>
@@ -25,9 +59,10 @@
 </div></div>	
 
 <style>
+    .roule-event-wrap {max-width:1200px; margin:0 auto;}
     .r-1 .roule-move {background-image:none; height:13%; z-index:5;} /* 당첨선물보러가기/이벤트공유하기 버튼 */
-    .r-1 .roule .roule-btn {background-image:url(https://img.shoppingntmall.com/htmleditor/573/btn1774917220814.png) !important; background-color:transparent; width:40%; height:40%; border-radius:0;} /* 룰렛 스타트 버튼 */
+    .r-1 .roule .roule-btn {background-image:none !important; background-color:transparent; width:40%; height:40%; border-radius:0;} /* 룰렛 스타트 버튼 */
+    .r-1 .roule .roule-btn img {display:block;}
     .r-1 .roule {width:54.5%; bottom:inherit; top:37.6%}
-    .roule-over2 {width:100%; bottom:0; left:0; position:absolute; z-index:4;} 
     .r-1 .toggle-area {background:#3daaff;}
 </style>

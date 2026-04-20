@@ -1,0 +1,54 @@
+<div class="promotion_con">
+  <div class="promotion_con_mo">
+    <div class="promotion_ani">
+      <img src="https://img.shoppingntmall.com/htmleditor/130/001773205668442.png" class="base" />
+      <img src="https://img.shoppingntmall.com/htmleditor/763/a11773205769751.png" class="ani ani1" />
+      <img src="https://img.shoppingntmall.com/htmleditor/763/a21773205770229.png" class="ani ani2" />
+      <img src="https://img.shoppingntmall.com/htmleditor/763/over1773205770784.png" class="ani ani3" />
+    </div>
+
+    <a href="/display/goods/27806664" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/591/02w501773205436923.png" /></a>
+    <a href="/display/goods/27802856" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/591/03w501773205437264.png" /></a>
+    <a href="/display/goods/27795689" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/591/04w501773205437688.png" /></a>
+    <a href="/display/goods/24913740" class="w50"><img src="https://img.shoppingntmall.com/htmleditor/591/05w501773205438055.png" /></a>
+    
+    <style>
+      @keyframes ani1 {
+        0% {top:-100%;}
+        80% {top:5%;}
+        100% {top:0;}
+      }
+      @keyframes ani2 {
+        0% {bottom:-100%;}
+        80% {bottom:5%;}
+        100% {bottom:0;}
+      }        
+      
+      .promotion_con * {line-height:initial;}
+      .promotion_con {font-size:0; max-width:1200px; margin:0 auto;}
+      .promotion_con img {width:100%; display:block;}
+      .promotion_con a, .promotion_con button {background:none; cursor:pointer; font-size:0;}
+      .promotion_con a, .promotion_con img {background:none;}
+
+      .promotion_con .w50, .promotion_con .w33, .promotion_con .w25, .promotion_con .w20, .promotion_con .w16 {display:inline-block; vertical-align:middle;}
+      .promotion_con .w50 {width:50%;}
+      .promotion_con .w33 {width:33.33%;}
+      .promotion_con .w25 {width:25%;}
+      .promotion_con .w20 {width:20%;}
+      .promotion_con .w16 {width:16.66%;}  
+
+      .promotion_ani {position:relative; overflow:hidden;}
+      .base {position:relative; z-index:1;}
+
+      .ani {position:absolute; width:100%; left:0;}
+      .ani1 {z-index:2; top:-100%; animation: ani1 1.2s ease-in-out forwards; }
+      .ani2 {z-index:3; bottom:-100%; animation: ani2 1.2s ease-in-out forwards; animation-delay: .8s;}
+      .ani3 {z-index:4; top:0%;}
+  
+      @media screen and (max-width:720px)  {
+        .promotion_con {overflow:hidden;}
+        .promotion_con_mo {margin:0 -33.33%;}
+      }
+    </style>
+  </div>
+</div>
