@@ -337,6 +337,26 @@
 
 }
 
+/* =====================================
+   모바일에서 벚꽃 크기 축소
+===================================== */
+
+@media screen and (max-width:720px){
+
+/* 전체 꽃잎 크기 약 28% 축소 */
+.p1,.p6,.p11,.p16{width:34px !important;}
+.p2,.p7,.p12,.p17{width:26px !important;}
+.p3,.p8,.p13,.p18{width:38px !important;}
+.p4,.p9,.p14,.p19{width:30px !important;}
+.p5,.p10,.p15,.p20{width:22px !important;}
+
+/* 모바일은 너무 튀지 않게 투명도 살짝 감소 */
+.petal{
+  opacity:.9;
+}
+
+}
+
 /* 모바일 */
 @media screen and (max-width:720px){
   .promotion_con{overflow:hidden;}
